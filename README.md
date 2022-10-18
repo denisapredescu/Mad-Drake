@@ -1,5 +1,4 @@
 # Mad-Drake 
-**Echipa 1**
 
 2D Roguelike Dungeon Topdown Shooter.
 
@@ -13,7 +12,7 @@ Poti alege din diferite caractere personajul cu care sa incepi(diferite personaj
 
 Dispune si de un shop pentru a ajunge la full hp sau pentru a cumpara o noua arma.
 
-**Componenta:**
+**Componenta (Echipa 1):**
 
 - Cretoiu Patriciu-Elena
 - Kayed Amar
