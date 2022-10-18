@@ -1,4 +1,4 @@
-# Mad-Drake
+# Mad-Drake Echipa 1
 
 2D Roguelike Dungeon Topdown Shooter.
 
