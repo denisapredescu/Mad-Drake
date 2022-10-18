@@ -2,7 +2,7 @@
 
 2D Roguelike Dungeon Topdown Shooter.
 
-**Descriere:
+**Descriere:**
 
 Treci de la o camera la alta pentru a ajunge la un etaj superior colectand bani, arme diverse omorand diferite creaturi(enemies).
 
@@ -12,7 +12,7 @@ Poti alege din diferite caractere personajul cu care sa incepi(diferite personaj
 
 Dispune si de un shop pentru a ajunge la full hp sau pentru a cumpara o noua arma.
 
-**Componenta:
+**Componenta:**
 
 - Cretoiu Patriciu-Elena
 - Kayed Amar
