@@ -34,22 +34,6 @@ public class Controller : MonoBehaviour
         {
             //moving
             transform.Translate(new Vector3(xMovement, yMovement, 0) * Time.deltaTime * speed);
-
-            //rotate left and right
-            if (xMovement > 0.0f && transform.localScale.x < 0.0f)
-            {
-                transform.localScale = new Vector3(
-                    -transform.localScale.x,
-                    transform.localScale.y,
-                    transform.localScale.z);
-            }
-            else if (xMovement < 0.0f && transform.localScale.x > 0.0f)
-            {
-                transform.localScale = new Vector3(
-                    -transform.localScale.x,
-                    transform.localScale.y,
-                    transform.localScale.z);
-            }
             
             //dashing
             if(Input.GetKeyDown(KeyCode.Space))
