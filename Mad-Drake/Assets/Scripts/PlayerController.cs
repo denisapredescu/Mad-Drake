@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controller : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     private new Transform transform;
     private Rigidbody2D rb2;
@@ -18,15 +18,21 @@ public class Controller : MonoBehaviour
     private bool dashing = false;
     private bool startDash = false;
 
+    private Vector3 mousePos;
+    private new Camera camera;
+
     private void Start()
     {
         transform = this.gameObject.transform;
         rb2 = this.gameObject.GetComponent<Rigidbody2D>();
         trailRenderer = this.gameObject.GetComponent<TrailRenderer>();
+        camera = Camera.main;
     }
 
     private void Update() 
     {
+        mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
+
         xMovement = Input.GetAxis("Horizontal");
         yMovement = Input.GetAxis("Vertical");
 
@@ -41,6 +47,8 @@ public class Controller : MonoBehaviour
                 startDash = true;
             }
         }
+
+        RotatePlayer();
     }
 
     private void FixedUpdate()
@@ -64,6 +72,23 @@ public class Controller : MonoBehaviour
         else if(dashing)
         {
             rb2.velocity = rb2.velocity * changeDashForce;
+        }
+    }
+
+    public void RotatePlayer()
+    {
+        //rotate player left and right
+        if((transform.position.x > mousePos.x && transform.localScale.x > 0.0f) || 
+            (transform.position.x < mousePos.x && transform.localScale.x < 0.0f))
+        {
+            //this is added to smooth the transition
+            if(Mathf.Abs(transform.position.x - mousePos.x) > 0.1f)
+            {
+                transform.localScale = new Vector3(
+                    -transform.localScale.x,
+                    transform.localScale.y,
+                    transform.localScale.z);
+            }
         }
     }
 }

@@ -340,6 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentTransform: {fileID: 2629746995567776209}
   tipTransform: {fileID: 6583843007986011287}
+  playerController: {fileID: 4453671489880107438}
 --- !u!1 &6585661173400906694
 GameObject:
   m_ObjectHideFlags: 0
