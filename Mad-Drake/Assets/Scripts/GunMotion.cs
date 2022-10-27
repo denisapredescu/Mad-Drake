@@ -22,9 +22,38 @@ public class GunMotion : MonoBehaviour
     private void Update()
     {
         Vector3 mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
+        
         //using tipTransform instead of transform actually gives the right point
-        Vector3 difference = mousePos - tipTransform.position;
-        difference.Normalize();
+
+        float distTip = (
+            new Vector2(transform.position.x, transform.position.y) - 
+            new Vector2(tipTransform.position.x, tipTransform.position.y)).magnitude;
+        float distMouse = (
+            new Vector2(transform.position.x, transform.position.y) -
+            new Vector2(mousePos.x, mousePos.y)).magnitude;
+
+        //check if the distance from center to tip is bigger than the distance from center to point
+        //that would cause the gun to glitch out because the difference vector would be in a completely other direction
+        Vector2 difference;
+        if(distTip + 1.0f >= distMouse)
+        {
+            difference = mousePos - transform.position;
+        } 
+        else 
+        {
+            difference = mousePos - tipTransform.position;
+        }
+
+        //possible yet unlikely error that the mouse hits exactly the center
+        if(difference.magnitude == 0.0f)
+        {
+            difference = Vector2.right;
+        }
+        else
+        {
+            difference.Normalize();
+        }
+        
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         
         //rotate gun
