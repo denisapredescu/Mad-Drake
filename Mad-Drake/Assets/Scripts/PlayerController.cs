@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerController : MonoBehaviour
 {
@@ -25,6 +27,12 @@ public class PlayerController : MonoBehaviour
     public int maxHealth = 5;
     public int currentHealth;
     public HealthBar healthBar;
+    public GameObject healthCard;
+    private static TextMeshProUGUI health;
+    public GameObject goldCard;
+    private static TextMeshProUGUI gold;
+    private int goldScore;
+
 
     private void Start()
     {
@@ -34,7 +42,12 @@ public class PlayerController : MonoBehaviour
         camera = Camera.main;
 
         currentHealth = maxHealth;
+        gold = goldCard.GetComponent<TextMeshProUGUI>();
+        gold.text = "0 Gold";
+        goldScore = 0;
         healthBar.SetMaxHealth(maxHealth);
+        health = healthCard.GetComponent<TextMeshProUGUI>();
+        health.text = $"{maxHealth}/{maxHealth}";
     }
 
     private void Update() 
@@ -60,6 +73,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Comma))
         {
             TakeDamage(1);
+            AddGold();
         }
     }
 
@@ -108,5 +122,15 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+        if(currentHealth >= 0)
+        {
+            health.text = $"{currentHealth}/{maxHealth}";
+        }
+    }
+
+    private void AddGold()
+    {
+        goldScore++;
+        gold.text = $"{goldScore} Gold";
     }
 }
