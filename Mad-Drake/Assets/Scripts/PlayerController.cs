@@ -21,12 +21,20 @@ public class PlayerController : MonoBehaviour
     private Vector3 mousePos;
     private new Camera camera;
 
+
+    public int maxHealth = 5;
+    public int currentHealth;
+    public HealthBar healthBar;
+
     private void Start()
     {
         transform = this.gameObject.transform;
         rb2 = this.gameObject.GetComponent<Rigidbody2D>();
         trailRenderer = this.gameObject.GetComponent<TrailRenderer>();
         camera = Camera.main;
+
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     private void Update() 
@@ -49,6 +57,10 @@ public class PlayerController : MonoBehaviour
         }
 
         RotatePlayer();
+        if (Input.GetKeyDown(KeyCode.Comma))
+        {
+            TakeDamage(1);
+        }
     }
 
     private void FixedUpdate()
@@ -90,5 +102,11 @@ public class PlayerController : MonoBehaviour
                     transform.localScale.z);
             }
         }
+    }
+
+    private void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
     }
 }
