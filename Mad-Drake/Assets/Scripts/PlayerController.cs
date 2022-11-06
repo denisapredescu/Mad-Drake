@@ -24,30 +24,13 @@ public class PlayerController : MonoBehaviour
     private new Camera camera;
 
 
-    public int maxHealth = 5;
-    public int currentHealth;
-    public HealthBar healthBar;
-    public GameObject healthCard;
-    private static TextMeshProUGUI health;
-    public GameObject goldCard;
-    private static TextMeshProUGUI gold;
-    private int goldScore;
-
 
     private void Start()
     {
         transform = this.gameObject.transform;
         rb2 = this.gameObject.GetComponent<Rigidbody2D>();
         trailRenderer = this.gameObject.GetComponent<TrailRenderer>();
-        camera = Camera.main;
-
-        currentHealth = maxHealth;
-        gold = goldCard.GetComponent<TextMeshProUGUI>();
-        gold.text = "0 Gold";
-        goldScore = 0;
-        healthBar.SetMaxHealth(maxHealth);
-        health = healthCard.GetComponent<TextMeshProUGUI>();
-        health.text = $"{maxHealth}/{maxHealth}";
+        camera = Camera.main;  
     }
 
     private void Update() 
@@ -70,11 +53,6 @@ public class PlayerController : MonoBehaviour
         }
 
         RotatePlayer();
-        if (Input.GetKeyDown(KeyCode.Comma))
-        {
-            TakeDamage(1);
-            AddGold();
-        }
     }
 
     private void FixedUpdate()
@@ -116,21 +94,5 @@ public class PlayerController : MonoBehaviour
                     transform.localScale.z);
             }
         }
-    }
-
-    private void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
-        if(currentHealth >= 0)
-        {
-            health.text = $"{currentHealth}/{maxHealth}";
-        }
-    }
-
-    private void AddGold()
-    {
-        goldScore++;
-        gold.text = $"{goldScore} Gold";
     }
 }
