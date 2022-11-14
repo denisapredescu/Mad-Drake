@@ -635,10 +635,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2993097353134942194, guid: 002443ff5ec3dce4b8727f9dbb21a069, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 4453671489880107438, guid: 002443ff5ec3dce4b8727f9dbb21a069, type: 3}
       propertyPath: goldCard
       value: 

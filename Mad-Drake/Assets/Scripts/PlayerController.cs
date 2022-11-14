@@ -81,12 +81,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag(GameTags.Coin))
+        if (collision.CompareTag("Coin"))
         {
             collision.gameObject.SetActive(false);
             PlayerHealthController.AddGold();
         }
     }
+    
     public void RotatePlayer()
     {
         //rotate player left and right
