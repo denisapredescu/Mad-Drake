@@ -14,15 +14,14 @@ public class PlayerHealthController : MonoBehaviour
     public GameObject healthCard;
     public GameObject goldCard;
     
-    private int goldScore;
+    public int goldScore = 0;
 
     private void Start()
     {
         currentHealth = maxHealth;
            
         goldGUI = goldCard.GetComponent<TextMeshProUGUI>();
-        goldGUI.text = "0 Gold";
-        goldScore = 0;
+        goldGUI.text = $"{goldScore}";
 
         healthGUI = healthCard.GetComponent<TextMeshProUGUI>();
         healthGUI.text = $"{maxHealth}/{maxHealth}";
@@ -49,11 +48,12 @@ public class PlayerHealthController : MonoBehaviour
                 playerIsDead = true;
             }
         }
+        AddGold();
     }
 
     private void AddGold()
     {
         goldScore++;
-        goldGUI.text = $"{goldScore} Gold";
+        goldGUI.text = $"{goldScore}";
     }
 }
