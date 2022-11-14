@@ -14,7 +14,7 @@ public class PlayerHealthController : MonoBehaviour
     public GameObject healthCard;
     public GameObject goldCard;
     
-    public int goldScore = 0;
+    public static int goldScore = 0;
 
     private void Start()
     {
@@ -51,7 +51,7 @@ public class PlayerHealthController : MonoBehaviour
         AddGold();
     }
 
-    private void AddGold()
+    public static void AddGold()
     {
         goldScore++;
         goldGUI.text = $"{goldScore}";
