@@ -34,7 +34,10 @@ public class BulletMovement : MonoBehaviour
         //used when the raycast hits a collider
         if(startDeactivating)
         {
-            StartCoroutine(Deactivate());
+            if (spriteRenderer.enabled == true)
+            {
+                StartCoroutine(Deactivate());
+            }
             return;
         }
         else
