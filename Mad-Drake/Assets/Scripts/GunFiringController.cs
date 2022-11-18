@@ -23,18 +23,18 @@ public class GunFiringController : MonoBehaviour
     [SerializeField]
     private float reloadTime = 2.0f;
     //references to reuse the bullets
-    private Queue<GameObject> activeBullets;
+    private Queue<GameObject> inactiveBullets;
     private GameObject activeBullet = null;
 
     //the function passed to a bullet to add itself to a queue
     private void addBullet(GameObject gameObject)
     {
-        this.activeBullets.Enqueue(gameObject);
+        this.inactiveBullets.Enqueue(gameObject);
     }
 
     private void Start()
     {
-        activeBullets = new Queue<GameObject>();
+        inactiveBullets = new Queue<GameObject>();
         tipTransform = tipOfGun.transform;
         activeMagazine = magazineSize;
 
@@ -66,9 +66,9 @@ public class GunFiringController : MonoBehaviour
             if (parent.localScale.x < 0.0f)
             {
                 //checking if there is at least one inactive bullet or creating another
-                if (activeBullets.Count > 0)
+                if (inactiveBullets.Count > 0)
                 {
-                    activeBullet = activeBullets.Dequeue();
+                    activeBullet = inactiveBullets.Dequeue();
                     activeBullet.transform.position = tipTransform.position;
                     activeBullet.transform.rotation = tipTransform.rotation * rotate180;
                     activeBullet.SetActive(true);
@@ -81,9 +81,9 @@ public class GunFiringController : MonoBehaviour
             }
             else
             {
-                if (activeBullets.Count > 0)
+                if (inactiveBullets.Count > 0)
                 {
-                    activeBullet = activeBullets.Dequeue();
+                    activeBullet = inactiveBullets.Dequeue();
                     activeBullet.transform.position = tipTransform.position;
                     activeBullet.transform.rotation = tipTransform.rotation;
                     activeBullet.SetActive(true);
