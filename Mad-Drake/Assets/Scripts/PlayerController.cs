@@ -87,6 +87,10 @@ public class PlayerController : MonoBehaviour
             PlayerHealthController.AddGold();
         }
     }
+    void OnCollisionEnter2D(Collision2D col)
+{
+	Debug.Log("OnCollisionEnter2D");
+}
     
     public void RotatePlayer()
     {

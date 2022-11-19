@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 4430560646246288708}
   - component: {fileID: 585374925092746457}
   - component: {fileID: 2800976589684100327}
+  - component: {fileID: 3654142706767745426}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -287,6 +288,22 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 0
+--- !u!70 &3654142706767745426
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2993097353134942194}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.77, y: 1.67}
+  m_Direction: 0
 --- !u!1 &3041104432392782053
 GameObject:
   m_ObjectHideFlags: 0
