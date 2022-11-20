@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 mousePos;
     private new Camera camera;
 
+    private const float cameraDistanceLimitLR = 9.2f;
+    private const float cameraDistanceLimitUD = 5.2f;
 
 
     private void Start()
@@ -53,6 +55,7 @@ public class PlayerController : MonoBehaviour
         }
 
         RotatePlayer();
+        MoveCamera();
     }
 
     private void FixedUpdate()
@@ -106,6 +109,30 @@ public class PlayerController : MonoBehaviour
                     transform.localScale.y,
                     transform.localScale.z);
             }
+        }
+    }
+
+    private void MoveCamera()
+    {
+        // move to left
+        if (camera.transform.position.x - transform.position.x > cameraDistanceLimitLR)
+        {
+            camera.transform.position = new Vector3(camera.transform.position.x - 18, camera.transform.position.y, camera.transform.position.z);
+        }
+        // move to right
+        else if (camera.transform.position.x - transform.position.x < -cameraDistanceLimitLR)
+        {
+            camera.transform.position = new Vector3(camera.transform.position.x + 18, camera.transform.position.y, camera.transform.position.z);
+        }
+        // move up
+        else if (camera.transform.position.y - transform.position.y < -cameraDistanceLimitUD)
+        {
+            camera.transform.position = new Vector3(camera.transform.position.x, camera.transform.position.y + 10, camera.transform.position.z);
+        }
+        //move down
+        else if (camera.transform.position.y - transform.position.y > cameraDistanceLimitUD)
+        {
+            camera.transform.position = new Vector3(camera.transform.position.x, camera.transform.position.y - 10, camera.transform.position.z);
         }
     }
 }
