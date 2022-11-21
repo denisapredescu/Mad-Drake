@@ -9,20 +9,18 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
+
         direction.Normalize();
         movement = direction;
+        RotatePlayer();
     }
     private void FixedUpdate()
     {
@@ -31,5 +29,33 @@ public class EnemyController : MonoBehaviour
     void moveCharacter(Vector2 direction)
     {
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+    }
+
+    public void RotatePlayer()
+    {
+        //rotate player left and right
+        if((transform.position.x > player.position.x && transform.localScale.x > 0.0f) || 
+            (transform.position.x < player.position.x && transform.localScale.x < 0.0f))
+        {
+            //this is added to smooth the transition
+            if(Mathf.Abs(transform.position.x - player.position.x) > 0.1f)
+            {
+                transform.localScale = new Vector3(
+                    -transform.localScale.x,
+                    transform.localScale.y,
+                    transform.localScale.z);
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Debug.Log("aicicicicici");
+
+            movement = Vector2.zero;
+            moveCharacter(movement);
+        }
     }
 }
