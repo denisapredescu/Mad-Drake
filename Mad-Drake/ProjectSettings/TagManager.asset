@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Coin
+  - Bullet
+  - BreakableBox
   layers:
   - Default
   - TransparentFX
@@ -12,8 +14,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - GroundForBoxParts
+  - BoxParts
   - 
   - 
   - 
@@ -47,6 +49,9 @@ TagManager:
     locked: 0
   - name: Walls
     uniqueID: 1419258917
+    locked: 0
+  - name: Props
+    uniqueID: 1804296777
     locked: 0
   - name: Character
     uniqueID: 1168635595
