@@ -15,6 +15,7 @@ public class BulletMovement : MonoBehaviour
     private bool startDeactivating = false;
     [SerializeField]
     private ParticleSystem explosionEffect;
+    private bool hitBox;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class BulletMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         //auto disable bullet if it goes too far
         StartCoroutine(WaitToDeactivate());
+        hitBox = false;
     }
 
     private void OnEnable()
@@ -48,12 +50,31 @@ public class BulletMovement : MonoBehaviour
         //moving the bullet with translate for performance
     }
 
+    private void HitBreakableBoxIfHit(GameObject objectHit)
+    {
+        if (objectHit.CompareTag("BreakableBox"))
+        {
+            objectHit.GetComponent<BreakableBox>().HitBox();
+            hitBox = true;
+        }
+            
+    }
+
     private void FixedUpdate()
     {
         //check if the bullet would hit something, it is needed because using translate can lead to the bullet teleporting without touching the collider
-        if(Physics2D.Raycast(transform.position, transform.TransformDirection(Vector3.right), speed * Time.fixedDeltaTime - 0.2f))
+        RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector3.right), speed * Time.fixedDeltaTime - 0.2f);
+        if (raycastHit2D)
         {
             startDeactivating = true;
+            GameObject objectHit = raycastHit2D.collider.gameObject;
+
+            if(!hitBox)
+            {
+                HitBreakableBoxIfHit(objectHit);
+            }
+            
+            
         }
     }
 
@@ -72,6 +93,7 @@ public class BulletMovement : MonoBehaviour
         gameObject.SetActive(false);
         spriteRenderer.enabled = true;
         startDeactivating = false;
+        hitBox = false;
         addBullet(gameObject);
     }
 
