@@ -20,3 +20,5 @@ Dispune si de un shop pentru a ajunge la full hp sau pentru a cumpara o noua arm
 - Popa Rares-Teodor 
 - Predescu Denisa
 - Solomon Flavius
+
+Link pentru recenzie: https://forms.gle/PDBdoqqyLKyrm3u17
