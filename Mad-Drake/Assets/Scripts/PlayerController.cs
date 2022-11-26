@@ -97,17 +97,20 @@ public class PlayerController : MonoBehaviour
     
     public void RotatePlayer()
     {
-        //rotate player left and right
-        if((transform.position.x > mousePos.x && transform.localScale.x > 0.0f) || 
-            (transform.position.x < mousePos.x && transform.localScale.x < 0.0f))
+        if (MenuController.GameRunning)
         {
-            //this is added to smooth the transition
-            if(Mathf.Abs(transform.position.x - mousePos.x) > 0.1f)
+            //rotate player left and right
+            if((transform.position.x > mousePos.x && transform.localScale.x > 0.0f) || 
+                (transform.position.x < mousePos.x && transform.localScale.x < 0.0f))
             {
-                transform.localScale = new Vector3(
-                    -transform.localScale.x,
-                    transform.localScale.y,
-                    transform.localScale.z);
+                //this is added to smooth the transition
+                if(Mathf.Abs(transform.position.x - mousePos.x) > 0.1f)
+                {
+                    transform.localScale = new Vector3(
+                        -transform.localScale.x,
+                        transform.localScale.y,
+                        transform.localScale.z);
+                }
             }
         }
     }

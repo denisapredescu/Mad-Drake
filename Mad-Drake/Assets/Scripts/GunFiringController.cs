@@ -51,7 +51,7 @@ public class GunFiringController : MonoBehaviour
         }
 
         //fire rate
-        if (canFire && activeMagazine > 0 && Input.GetMouseButton(0))
+        if (canFire && activeMagazine > 0 && Input.GetMouseButton(0) && MenuController.GameRunning)
         {
             StartCoroutine(waitToFire());
             activeMagazine--;
