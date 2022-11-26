@@ -2725,8 +2725,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04384f22f87e2e64e97a4a8a30625571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialChance: 0.7
-  decreaseChance: 0.3
+  mainLineRooms:
+    from: 10
+    to: 20
+  chanceToGoStraight: 0.6
+  maximumLoops: 2
+  chanceOfLoops: 0.7
+  maximumLoopAddedPoints: 10
   doorsNone: {fileID: 5441472426128138861, guid: 6d32f5725c35bf54ba0a1745bdea2dad, type: 3}
   doorsLeft: {fileID: 4769564092439180397, guid: ca2a7a0ad2f4e344e9a0e0d0d249afb6, type: 3}
   doorsUp: {fileID: 5534421745926885501, guid: e48037fbd7736ee4fae13e7600cfd9a4, type: 3}
