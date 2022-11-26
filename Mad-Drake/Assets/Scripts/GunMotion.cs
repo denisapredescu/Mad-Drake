@@ -75,12 +75,16 @@ public class GunMotion : MonoBehaviour
     {
         gunRotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
-        if(parentTransform.localScale.x > 0.0f)
+        if (MenuController.GameRunning)
         {
-            transform.rotation = Quaternion.Euler(0.0f, 0.0f, gunRotationZ);
-        } else
-        {
-            transform.rotation = Quaternion.Euler(0.0f, 0.0f, gunRotationZ + 180.0f);
+            if (parentTransform.localScale.x > 0.0f)
+            {
+                transform.rotation = Quaternion.Euler(0.0f, 0.0f, gunRotationZ);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0.0f, 0.0f, gunRotationZ + 180.0f);
+            }
         }
     }
 

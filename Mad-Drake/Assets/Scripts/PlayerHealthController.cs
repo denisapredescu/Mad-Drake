@@ -18,6 +18,8 @@ public class PlayerHealthController : MonoBehaviour
 
     private void Start()
     {
+        maxHealth = 5;
+        goldScore = 0;
         currentHealth = maxHealth;
            
         goldGUI = goldCard.GetComponent<TextMeshProUGUI>();
