@@ -7,6 +7,8 @@ TagManager:
   - Coin
   - Bullet
   - BreakableBox
+  - PickupIncreaseHealth
+  - PickupRestoreHealth
   layers:
   - Default
   - TransparentFX

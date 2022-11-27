@@ -58,4 +58,30 @@ public class PlayerHealthController : MonoBehaviour
         goldScore++;
         goldGUI.text = $"{goldScore}";
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PickupIncreaseHealth"))
+        {
+            if(currentHealth < maxHealth)
+            {
+                currentHealth++;
+                healthGUI.text = $"{currentHealth}/{maxHealth}";
+                healthBar.SetHealth(currentHealth);
+                collision.gameObject.SetActive(false);
+            }
+            
+        }
+        if (collision.CompareTag("PickupRestoreHealth"))
+        {
+            if (currentHealth < maxHealth)
+            {
+                currentHealth = maxHealth;
+                healthGUI.text = $"{currentHealth}/{maxHealth}";
+                healthBar.SetHealth(currentHealth);
+                collision.gameObject.SetActive(false);
+            }
+        }
+    }
+
 }
