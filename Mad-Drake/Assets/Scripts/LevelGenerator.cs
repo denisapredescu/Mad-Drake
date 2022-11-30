@@ -252,7 +252,7 @@ public class LevelGenerator : MonoBehaviour
         rooms = new List<RoomInfo>();
         positionInArray = new Dictionary<Vector2Int, int>();
 
-        roomGenerationV2();
+        RoomGenerationV2();
 
         //adds the prefabs for every room
         for (int i = 0; i < rooms.Count; i++)
@@ -372,7 +372,7 @@ public class LevelGenerator : MonoBehaviour
     }*/
 
     //returns a tuple with the adjacent directions
-    private Tuple<Direction, Direction> neighbourDirections(Direction direction)
+    private Tuple<Direction, Direction> NeighbourDirections(Direction direction)
     {
         if(direction == Direction.Right || direction == Direction.Left)
         {
@@ -385,7 +385,7 @@ public class LevelGenerator : MonoBehaviour
     }
 
     //gives the opposite direction
-    private Direction oppositeDirection(Direction direction)
+    private Direction OppositeDirection(Direction direction)
     {
         switch(direction)
         {
@@ -398,7 +398,7 @@ public class LevelGenerator : MonoBehaviour
     }
 
     //function that checks if moving from a room with a certain direction would lead to another room
-    private bool roomExists(RoomInfo room, Direction direction)
+    private bool RoomExists(RoomInfo room, Direction direction)
     {
         if (positionInArray.ContainsKey(
             new Vector2Int(
@@ -413,19 +413,19 @@ public class LevelGenerator : MonoBehaviour
     }
 
     //builds a certain number of rooms in one direction from a given room
-    private int buildRooms(RoomInfo room, Direction direction, int length)
+    private int BuildRooms(RoomInfo room, Direction direction, int length)
     {
         int index = -1;
         for (int i = 0; i < length; i++)
         {
-            if(roomExists(room, direction))
+            if(RoomExists(room, direction))
             {
                 int secondIndex = positionInArray[new Vector2Int(
                     room.X + directionX[(int)direction],
                     room.Y + directionY[(int)direction])];
 
                 room.addDirection(direction);
-                rooms[secondIndex].addDirection(oppositeDirection(direction));
+                rooms[secondIndex].addDirection(OppositeDirection(direction));
                 return -1;
             }
             else
@@ -436,7 +436,7 @@ public class LevelGenerator : MonoBehaviour
                     );
 
                 room.addDirection(direction);
-                rooms[newIndex].addDirection(oppositeDirection(direction));
+                rooms[newIndex].addDirection(OppositeDirection(direction));
 
                 index = newIndex;
                 room = rooms[index];
@@ -446,16 +446,16 @@ public class LevelGenerator : MonoBehaviour
         return index;
     }
 
-    private void buildSpecialRooms(RoomInfo room, Direction direction, int length, List<GameObject> specialRooms)
+    private void BuildSpecialRooms(RoomInfo room, Direction direction, int length, List<GameObject> specialRooms)
     {
-        int index = buildRooms(room, direction, length);
+        int index = BuildRooms(room, direction, length);
         room = rooms[index];
         foreach(GameObject obj in specialRooms)
         {
             int newIndex = AddRoom(room.X + directionX[(int)direction], room.Y + directionY[(int)direction]);
             
             room.addDirection(direction);
-            rooms[newIndex].addDirection(oppositeDirection(direction));
+            rooms[newIndex].addDirection(OppositeDirection(direction));
             
             index = newIndex;
             room = rooms[index];
@@ -464,7 +464,7 @@ public class LevelGenerator : MonoBehaviour
     }
 
     //generates the rooms
-    void roomGenerationV2()
+    void RoomGenerationV2()
     {
         CreateMainLine();
         CreateLoops();
@@ -484,21 +484,21 @@ public class LevelGenerator : MonoBehaviour
         for (int i = 0; i < mainRooms; i++)
         {
             RoomInfo activeRoom = rooms[activeIndex];
-            Tuple<Direction, Direction> neighbourDir = neighbourDirections(activeDirection);
+            Tuple<Direction, Direction> neighbourDir = NeighbourDirections(activeDirection);
             float totalProb = 0.0f;
 
             //next 3 <if> add themselves to the probability pool if they are valid
-            if (!roomExists(activeRoom, activeDirection))
+            if (!RoomExists(activeRoom, activeDirection))
             {
                 totalProb += chanceToGoStraight;
             }
 
-            if (!roomExists(activeRoom, neighbourDir.Item1) && neighbourDir.Item1 != Direction.Left)
+            if (!RoomExists(activeRoom, neighbourDir.Item1) && neighbourDir.Item1 != Direction.Left)
             {
                 totalProb += probChangeDir;
             }
 
-            if (!roomExists(activeRoom, neighbourDir.Item2) && neighbourDir.Item2 != Direction.Left)
+            if (!RoomExists(activeRoom, neighbourDir.Item2) && neighbourDir.Item2 != Direction.Left)
             {
                 totalProb += probChangeDir;
             }
@@ -508,7 +508,7 @@ public class LevelGenerator : MonoBehaviour
             bool changedDir = false;
 
             //next 3 <if> decide which room was picked
-            if (!roomExists(activeRoom, activeDirection))
+            if (!RoomExists(activeRoom, activeDirection))
             {
                 if (chosenProb > chanceToGoStraight)
                 {
@@ -520,7 +520,7 @@ public class LevelGenerator : MonoBehaviour
                 }
             }
 
-            if (!changedDir && !roomExists(activeRoom, neighbourDir.Item1) && neighbourDir.Item1 != Direction.Left)
+            if (!changedDir && !RoomExists(activeRoom, neighbourDir.Item1) && neighbourDir.Item1 != Direction.Left)
             {
                 if (chosenProb > probChangeDir)
                 {
@@ -542,7 +542,7 @@ public class LevelGenerator : MonoBehaviour
             int newIndex = AddRoom(
                 activeRoom.X + directionX[(int)activeDirection],
                 activeRoom.Y + directionY[(int)activeDirection]);
-            rooms[newIndex].addDirection(oppositeDirection(activeDirection));
+            rooms[newIndex].addDirection(OppositeDirection(activeDirection));
             rooms[activeIndex].addDirection(activeDirection);
             activeIndex = newIndex;
         }
@@ -576,11 +576,11 @@ public class LevelGenerator : MonoBehaviour
             if (roomStart.X == roomEnd.X)
             {
                 int probability = UnityEngine.Random.Range(0, 2);
-                if (probability == 0 && !roomExists(roomStart, Direction.Left))
+                if (probability == 0 && !RoomExists(roomStart, Direction.Left))
                 {
                     firstDir = Direction.Left;
                 }
-                else if (!roomExists(roomStart, Direction.Right))
+                else if (!RoomExists(roomStart, Direction.Right))
                 {
                     firstDir = Direction.Right;
                 }
@@ -599,7 +599,7 @@ public class LevelGenerator : MonoBehaviour
                     secondDir = Direction.Down;
                 }
 
-                thirdDir = oppositeDirection(firstDir);
+                thirdDir = OppositeDirection(firstDir);
                 secondSteps = Math.Abs(roomStart.Y - roomEnd.Y);
                 /*
                  * not making a loop stupid, it makes sure that the number of rooms that put a distance between
@@ -613,11 +613,11 @@ public class LevelGenerator : MonoBehaviour
             else if (roomStart.Y == roomEnd.Y)
             {
                 int probability = UnityEngine.Random.Range(0, 2);
-                if (probability == 0 && !roomExists(roomStart, Direction.Up))
+                if (probability == 0 && !RoomExists(roomStart, Direction.Up))
                 {
                     firstDir = Direction.Up;
                 }
-                else if (!roomExists(roomStart, Direction.Down))
+                else if (!RoomExists(roomStart, Direction.Down))
                 {
                     firstDir = Direction.Down;
                 }
@@ -627,7 +627,7 @@ public class LevelGenerator : MonoBehaviour
                 }
 
                 secondDir = Direction.Right;
-                thirdDir = oppositeDirection(firstDir);
+                thirdDir = OppositeDirection(firstDir);
                 secondSteps = Math.Abs(roomStart.X - roomEnd.X);
                 /*
                  * not making a loop stupid, it makes sure that the number of rooms that put a distance between
@@ -643,14 +643,14 @@ public class LevelGenerator : MonoBehaviour
                 int probability = UnityEngine.Random.Range(0, 2);
                 if (roomStart.Y < roomEnd.Y)
                 {
-                    if (probability == 0 && !roomExists(roomStart, Direction.Up))
+                    if (probability == 0 && !RoomExists(roomStart, Direction.Up))
                     {
                         firstDir = Direction.Up;
                         firstSteps = Math.Abs(roomStart.Y - roomEnd.Y);
                         secondDir = Direction.Right;
                         secondSteps = Mathf.Abs(roomStart.X - roomEnd.X);
                     }
-                    else if (!roomExists(roomStart, Direction.Right))
+                    else if (!RoomExists(roomStart, Direction.Right))
                     {
                         firstDir = Direction.Right;
                         firstSteps = Mathf.Abs(roomStart.X - roomEnd.X);
@@ -667,14 +667,14 @@ public class LevelGenerator : MonoBehaviour
                 }
                 else
                 {
-                    if (probability == 0 && !roomExists(roomStart, Direction.Down))
+                    if (probability == 0 && !RoomExists(roomStart, Direction.Down))
                     {
                         firstDir = Direction.Down;
                         firstSteps = Math.Abs(roomStart.Y - roomEnd.Y);
                         secondDir = Direction.Right;
                         secondSteps = Mathf.Abs(roomStart.X - roomEnd.X);
                     }
-                    else if (!roomExists(roomStart, Direction.Right))
+                    else if (!RoomExists(roomStart, Direction.Right))
                     {
                         firstDir = Direction.Right;
                         firstSteps = Mathf.Abs(roomStart.X - roomEnd.X);
@@ -694,11 +694,11 @@ public class LevelGenerator : MonoBehaviour
             }
 
             //building the path
-            int activeIndex = buildRooms(roomStart, firstDir, firstSteps);
+            int activeIndex = BuildRooms(roomStart, firstDir, firstSteps);
             if (activeIndex != -1)
-                activeIndex = buildRooms(rooms[activeIndex], secondDir, secondSteps);
+                activeIndex = BuildRooms(rooms[activeIndex], secondDir, secondSteps);
             if (activeIndex != -1 && thirdSteps != 0)
-                buildRooms(rooms[activeIndex], thirdDir, thirdSteps);
+                BuildRooms(rooms[activeIndex], thirdDir, thirdSteps);
         }
     }
     void CreateSpecialPaths()
@@ -757,7 +757,7 @@ public class LevelGenerator : MonoBehaviour
                     room = rooms[positionInArray[new Vector2Int(x, smallestY[x])]];
 
                 //building the path
-                buildSpecialRooms(room, dir, numberOfRooms, specialPath.specialRooms);
+                BuildSpecialRooms(room, dir, numberOfRooms, specialPath.specialRooms);
 
                 //updating the maps
                 if (dir == Direction.Up)
