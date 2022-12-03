@@ -185,13 +185,7 @@ public class LevelGenerator : MonoBehaviour
     //it holds the relevant data for every room
     private InfiniteMatrix<RoomInfo> rooms;
 
-    /*//RoomGenerationV1:
-    //[SerializeField]
-    private float initialChance = 0.8f;
-    //[SerializeField]
-    private float decreaseChance = 0.2f;*/
-
-    //RoomGenerationV2:
+    //RoomGeneration:
     [SerializeField]
     private IntRange mainLineRooms = new(10, 20);
     //chance for the main line to go straight and not make many curves:
@@ -267,7 +261,7 @@ public class LevelGenerator : MonoBehaviour
     {
         rooms = new InfiniteMatrix<RoomInfo>();
 
-        RoomGenerationV2();
+        RoomGeneration();
 
         //adds the prefabs for every room
         for (int i = 0; i < rooms.Count(); i++)
@@ -275,110 +269,6 @@ public class LevelGenerator : MonoBehaviour
             Build(i);
         }
     }
-
-    /*void roomGenerationV1()
-    {
-        //queue that is used to go through all the rooms, similar to a BFS
-        Queue<int> indexes = new Queue<int>();
-        int activeIndex = AddRoom(0, 0);
-        rooms[activeIndex].ChanceToExpand = initialChance;
-        indexes.Enqueue(activeIndex);
-
-        int newIndex;
-        RoomInfo activeRoom, newRoom;
-
-        while (indexes.Count > 0)
-        {
-            activeIndex = indexes.Dequeue();
-            //this is used for cleaner code and a little more performance
-            activeRoom = rooms[activeIndex];
-
-            // There are 4 blocks very similar, for every direction, going to explain only this one.
-            // If the probability falls in range, then it creates a room, the smaller the range,
-            // the smaller the chance to expand the room.
-            // The range is (0.0f, activeRoom.ChanceToExpand)
-            if (UnityEngine.Random.Range(0.0f, 1.0f) < activeRoom.ChanceToExpand && activeRoom.Left == false)
-            {
-                activeRoom.Left = true;
-                if (positionInArray.ContainsKey(new Vector2Int(activeRoom.X - 1, activeRoom.Y)) == false)
-                {
-                    newIndex = AddRoom(activeRoom.X - 1, activeRoom.Y);
-                    indexes.Enqueue(newIndex);
-                    newRoom = rooms[newIndex];
-                    //decrease the chance so the map expands less the further it goes
-                    newRoom.ChanceToExpand = activeRoom.ChanceToExpand - decreaseChance;
-                    newRoom.Right = true;
-                }
-                else
-                {
-                    //if the room was created it doesn't need to be added to the queue again
-                    newIndex = positionInArray[new Vector2Int(activeRoom.X - 1, activeRoom.Y)];
-                    newRoom = rooms[newIndex];
-                    newRoom.Right = true;
-                }
-            }
-
-            //see the explanations written for the first block
-            if (UnityEngine.Random.Range(0.0f, 1.0f) < activeRoom.ChanceToExpand && activeRoom.Right == false)
-            {
-                activeRoom.Right = true;
-                if (positionInArray.ContainsKey(new Vector2Int(activeRoom.X + 1, activeRoom.Y)) == false)
-                {
-                    newIndex = AddRoom(activeRoom.X + 1, activeRoom.Y);
-                    indexes.Enqueue(newIndex);
-                    newRoom = rooms[newIndex];
-                    newRoom.ChanceToExpand = activeRoom.ChanceToExpand - decreaseChance;
-                    newRoom.Left = true;
-                }
-                else
-                {
-                    newIndex = positionInArray[new Vector2Int(activeRoom.X + 1, activeRoom.Y)];
-                    newRoom = rooms[newIndex];
-                    newRoom.Left = true;
-                }
-            }
-
-            //see the explanations written for the first block
-            if (UnityEngine.Random.Range(0.0f, 1.0f) < activeRoom.ChanceToExpand && activeRoom.Up == false)
-            {
-                activeRoom.Up = true;
-                if (positionInArray.ContainsKey(new Vector2Int(activeRoom.X, activeRoom.Y + 1)) == false)
-                {
-                    newIndex = AddRoom(activeRoom.X, activeRoom.Y + 1);
-                    indexes.Enqueue(newIndex);
-                    newRoom = rooms[newIndex];
-                    newRoom.ChanceToExpand = activeRoom.ChanceToExpand - decreaseChance;
-                    newRoom.Down = true;
-                }
-                else
-                {
-                    newIndex = positionInArray[new Vector2Int(activeRoom.X, activeRoom.Y + 1)];
-                    newRoom = rooms[newIndex];
-                    newRoom.Down = true;
-                }
-            }
-
-            //see the explanations written for the first block
-            if (UnityEngine.Random.Range(0.0f, 1.0f) < activeRoom.ChanceToExpand && activeRoom.Down == false)
-            {
-                activeRoom.Down = true;
-                if (positionInArray.ContainsKey(new Vector2Int(activeRoom.X, activeRoom.Y - 1)) == false)
-                {
-                    newIndex = AddRoom(activeRoom.X, activeRoom.Y - 1);
-                    indexes.Enqueue(newIndex);
-                    newRoom = rooms[newIndex];
-                    newRoom.ChanceToExpand = activeRoom.ChanceToExpand - decreaseChance;
-                    newRoom.Up = true;
-                }
-                else
-                {
-                    newIndex = positionInArray[new Vector2Int(activeRoom.X, activeRoom.Y - 1)];
-                    newRoom = rooms[newIndex];
-                    newRoom.Up = true;
-                }
-            }
-        }
-    }*/
 
     //returns a tuple with the adjacent directions
     private Tuple<Direction, Direction> NeighbourDirections(Direction direction)
@@ -477,7 +367,7 @@ public class LevelGenerator : MonoBehaviour
     }
 
     //generates the rooms
-    void RoomGenerationV2()
+    void RoomGeneration()
     {
         Tuple<RoomInfo, RoomInfo> startAndEndRooms = CreateMainLine();
         CreateLoops();

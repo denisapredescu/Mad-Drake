@@ -27,16 +27,7 @@ namespace MyUtility
             return values.Count;
         }
 
-        public T GetValueByIndex(int index)
-        {
-            return values[index];
-        }
-
-        public List<T> GetAllValues()
-        {
-            return values;
-        }
-
+        //modifying methods:
         public void Clear()
         {
             values = new List<T>();
@@ -58,6 +49,7 @@ namespace MyUtility
             }
         }
 
+        //checking values existence:
         public bool Exists(Vector2Int coord)
         {
             return positionInArray.ContainsKey(coord);
@@ -68,6 +60,7 @@ namespace MyUtility
             return positionInArray.ContainsKey(new Vector2Int(i, j));
         }
 
+        //accessing methods:
         public int GetIndex(Vector2Int coord)
         {
             return positionInArray[coord];
@@ -86,6 +79,16 @@ namespace MyUtility
         public T GetValueByCoord(int i, int j)
         {
             return values[positionInArray[new Vector2Int(i, j)]];
+        }
+
+        public T GetValueByIndex(int index)
+        {
+            return values[index];
+        }
+
+        public List<T> GetAllValues()
+        {
+            return values;
         }
     }
 }
