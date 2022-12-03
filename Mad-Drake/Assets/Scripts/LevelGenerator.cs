@@ -258,7 +258,7 @@ public class LevelGenerator : MonoBehaviour
     //adds the new room in array and also the reference in the map
     private int AddRoom(int x, int y)
     {
-        rooms.Add(new RoomInfo(x, y));
+        rooms.AddValue(new RoomInfo(x, y));
         //returns the position in array of the room created
         return rooms.Count() - 1;
     }
@@ -272,12 +272,6 @@ public class LevelGenerator : MonoBehaviour
         //adds the prefabs for every room
         for (int i = 0; i < rooms.Count(); i++)
         {
-            /*Debug.Log(rooms[i].X.ToString() + " "
-                + rooms[i].Y.ToString() + " "
-                + (rooms[i].Left ? "Left " : "")
-                + (rooms[i].Up ? "Up " : "")
-                + (rooms[i].Right ? "Right " : "")
-                + (rooms[i].Down ? "Down " : ""));*/
             Build(i);
         }
     }
@@ -434,12 +428,12 @@ public class LevelGenerator : MonoBehaviour
         {
             if(RoomExists(room, direction))
             {
-                int secondIndex = rooms.getIndex(
+                int secondIndex = rooms.GetIndex(
                     room.X + directionX[(int)direction],
                     room.Y + directionY[(int)direction]);
 
                 room.addDirection(direction);
-                rooms.getValue(secondIndex).addDirection(OppositeDirection(direction));
+                rooms.GetValueByIndex(secondIndex).addDirection(OppositeDirection(direction));
                 return -1;
             }
             else
@@ -450,10 +444,10 @@ public class LevelGenerator : MonoBehaviour
                     );
 
                 room.addDirection(direction);
-                rooms.getValue(newIndex).addDirection(OppositeDirection(direction));
+                rooms.GetValueByIndex(newIndex).addDirection(OppositeDirection(direction));
 
                 index = newIndex;
-                room = rooms.getValue(index);
+                room = rooms.GetValueByIndex(index);
             }
         }
 
@@ -462,11 +456,11 @@ public class LevelGenerator : MonoBehaviour
 
     private void BuildSpecialRooms(RoomInfo room, Direction direction, int length, List<GameObject> specialRooms)
     {
-        int index = rooms.getIndex(room.GetCoord());
+        int index = rooms.GetIndex(room.GetCoord());
         if(length > 0)
         {
             index = BuildRooms(room, direction, length);
-            room = rooms.getValue(index);
+            room = rooms.GetValueByIndex(index);
         }
         
         foreach(GameObject obj in specialRooms)
@@ -474,10 +468,10 @@ public class LevelGenerator : MonoBehaviour
             int newIndex = AddRoom(room.X + directionX[(int)direction], room.Y + directionY[(int)direction]);
             
             room.addDirection(direction);
-            rooms.getValue(newIndex).addDirection(OppositeDirection(direction));
+            rooms.GetValueByIndex(newIndex).addDirection(OppositeDirection(direction));
             
             index = newIndex;
-            room = rooms.getValue(index);
+            room = rooms.GetValueByIndex(index);
             room.ownGround = obj;
         }
     }
@@ -503,7 +497,7 @@ public class LevelGenerator : MonoBehaviour
         float probChangeDir = (1.0f - chanceToGoStraight) / 2.0f;
         for (int i = 0; i < mainRooms; i++)
         {
-            RoomInfo activeRoom = rooms.getValue(activeIndex);
+            RoomInfo activeRoom = rooms.GetValueByIndex(activeIndex);
             Tuple<Direction, Direction> neighbourDir = NeighbourDirections(activeDirection);
             float totalProb = 0.0f;
 
@@ -562,13 +556,13 @@ public class LevelGenerator : MonoBehaviour
             int newIndex = AddRoom(
                 activeRoom.X + directionX[(int)activeDirection],
                 activeRoom.Y + directionY[(int)activeDirection]);
-            rooms.getValue(newIndex).addDirection(OppositeDirection(activeDirection));
-            rooms.getValue(activeIndex).addDirection(activeDirection);
+            rooms.GetValueByIndex(newIndex).addDirection(OppositeDirection(activeDirection));
+            rooms.GetValueByIndex(activeIndex).addDirection(activeDirection);
             activeIndex = newIndex;
         }
 
         //returns the first and the last room
-        return new Tuple<RoomInfo, RoomInfo>(rooms.getValue(0), rooms.getValue(rooms.Count() - 1));
+        return new Tuple<RoomInfo, RoomInfo>(rooms.GetValueByIndex(0), rooms.GetValueByIndex(rooms.Count() - 1));
     }
     void CreateLoops()
     {
@@ -591,8 +585,8 @@ public class LevelGenerator : MonoBehaviour
                 );
 
             //choosing directions and how many rooms are built in each direction
-            RoomInfo roomStart = rooms.getValue(firstPoint);
-            RoomInfo roomEnd = rooms.getValue(secondPoint);
+            RoomInfo roomStart = rooms.GetValueByIndex(firstPoint);
+            RoomInfo roomEnd = rooms.GetValueByIndex(secondPoint);
             Direction firstDir, secondDir, thirdDir = Direction.Left;
             int firstSteps, secondSteps, thirdSteps;
 
@@ -719,9 +713,9 @@ public class LevelGenerator : MonoBehaviour
             //building the path
             int activeIndex = BuildRooms(roomStart, firstDir, firstSteps);
             if (activeIndex != -1)
-                activeIndex = BuildRooms(rooms.getValue(activeIndex), secondDir, secondSteps);
+                activeIndex = BuildRooms(rooms.GetValueByIndex(activeIndex), secondDir, secondSteps);
             if (activeIndex != -1 && thirdSteps != 0)
-                BuildRooms(rooms.getValue(activeIndex), thirdDir, thirdSteps);
+                BuildRooms(rooms.GetValueByIndex(activeIndex), thirdDir, thirdSteps);
         }
     }
     void CreateSpecialPaths()
@@ -729,15 +723,15 @@ public class LevelGenerator : MonoBehaviour
         if (specialPaths.Count == 0) 
             return;
 
-        int smallestX = rooms.getValue(0).X;
-        int biggestX = rooms.getValue(0).X;
+        int smallestX = rooms.GetValueByIndex(0).X;
+        int biggestX = rooms.GetValueByIndex(0).X;
         Dictionary<int, int> smallestY = new Dictionary<int, int>();
         //for each X that has at least a room on it's axis, it gives the room that has the smallest value of Y
         Dictionary<int, int> biggestY = new Dictionary<int, int>();
         //for each X that has at least a room on it's axis, it gives the room that has the biggest value of Y
 
         //finding the rooms for the maps
-        foreach (RoomInfo room in rooms.getAllValues())
+        foreach (RoomInfo room in rooms.GetAllValues())
         {
             smallestX = Math.Min(smallestX, room.X);
             biggestX = Math.Max(biggestX, room.X);
@@ -775,9 +769,9 @@ public class LevelGenerator : MonoBehaviour
                 //choosing the room in a manner that assures that the new path doesn't collide with other rooms
                 RoomInfo room;
                 if (dir == Direction.Up)
-                    room = rooms[x, biggestY[x]];
+                    room = rooms.GetValueByCoord(x, biggestY[x]);
                 else
-                    room = rooms[x, smallestY[x]];
+                    room = rooms.GetValueByCoord(x, smallestY[x]);
 
                 //building the path
                 BuildSpecialRooms(room, dir, numberOfRooms, specialPath.specialRooms);
@@ -805,7 +799,7 @@ public class LevelGenerator : MonoBehaviour
     //using the informations in the room, adds the proper prefab
     private void Build(int position)
     {
-        RoomInfo room = rooms.getValue(position);
+        RoomInfo room = rooms.GetValueByIndex(position);
         Vector3 posInstantiate = new Vector3(room.X * 18.0f, room.Y * 10.0f, 0.0f);
         if(!room.Left && !room.Up && !room.Right && !room.Down) //1
         {

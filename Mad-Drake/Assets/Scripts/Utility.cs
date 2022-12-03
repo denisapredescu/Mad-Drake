@@ -3,12 +3,14 @@ using UnityEngine;
 
 namespace MyUtility
 {
+    //necessary interface for an object to be used in an InfiniteMatrix object
     public interface ICoordonates
     {
         public Vector2Int GetCoord();
         public void SetCoord(Vector2Int coord);
     }
 
+    //a class that can hold objects of a certain type, with any integer coordinates, on a 2D grid 
     public class InfiniteMatrix<T> where T : ICoordonates
     {
         private List<T> values;
@@ -25,22 +27,12 @@ namespace MyUtility
             return values.Count;
         }
 
-        public T getValue(int index)
+        public T GetValueByIndex(int index)
         {
             return values[index];
         }
 
-        public int getIndex(Vector2Int coord)
-        {
-            return positionInArray[coord];
-        }
-
-        public int getIndex(int i, int j)
-        {
-            return positionInArray[new Vector2Int(i, j)];
-        }
-
-        public List<T> getAllValues()
+        public List<T> GetAllValues()
         {
             return values;
         }
@@ -51,7 +43,7 @@ namespace MyUtility
             positionInArray = new Dictionary<Vector2Int, int>();
         }
 
-        public void Add(T value)
+        public void AddValue(T value)
         {
             T convertedValue = (T)value;
 
@@ -76,20 +68,24 @@ namespace MyUtility
             return positionInArray.ContainsKey(new Vector2Int(i, j));
         }
 
-        public T this[Vector2Int coord]
+        public int GetIndex(Vector2Int coord)
         {
-            get 
-            {
-                return values[positionInArray[coord]];
-            }
+            return positionInArray[coord];
         }
 
-        public T this[int i, int j]
+        public int GetIndex(int i, int j)
         {
-            get
-            {
-                return values[positionInArray[new Vector2Int(i, j)]];
-            }
+            return positionInArray[new Vector2Int(i, j)];
+        }
+
+        public T GetValueByCoord(Vector2Int coord)
+        {
+            return values[positionInArray[coord]];
+        }
+
+        public T GetValueByCoord(int i, int j)
+        {
+            return values[positionInArray[new Vector2Int(i, j)]];
         }
     }
 }
