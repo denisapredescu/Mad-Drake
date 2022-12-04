@@ -64,7 +64,7 @@ public class BulletMovement : MonoBehaviour
     {
         //check if the bullet would hit something, it is needed because using translate can lead to the bullet teleporting without touching the collider
         RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector3.right), speed * Time.fixedDeltaTime - 0.2f);
-        if (raycastHit2D)
+        if (raycastHit2D && !raycastHit2D.collider.gameObject.CompareTag("IgnoreBullet"))
         {
             startDeactivating = true;
             GameObject objectHit = raycastHit2D.collider.gameObject;

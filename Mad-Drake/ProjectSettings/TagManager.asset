@@ -9,6 +9,7 @@ TagManager:
   - BreakableBox
   - PickupIncreaseHealth
   - PickupRestoreHealth
+  - IgnoreBullet
   layers:
   - Default
   - TransparentFX

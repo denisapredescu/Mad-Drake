@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     private const float cameraDistanceLimitLR = 9.2f;
     private const float cameraDistanceLimitUD = 5.2f;
 
+    public RoomController roomControllerScript;
+
 
     private void Start()
     {
@@ -137,5 +139,6 @@ public class PlayerController : MonoBehaviour
         {
             camera.transform.position = new Vector3(camera.transform.position.x, camera.transform.position.y - 10, camera.transform.position.z);
         }
+        roomControllerScript.DoorsFollowCamera();
     }
 }
