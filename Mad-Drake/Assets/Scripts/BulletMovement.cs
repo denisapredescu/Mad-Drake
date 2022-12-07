@@ -6,7 +6,6 @@ public class BulletMovement : MonoBehaviour
 {
     private new Transform transform = null;
     private SpriteRenderer spriteRenderer = null;
-    private Rigidbody2D rb2 = null;
     [SerializeField]
     private float speed = 0.0f;
     [SerializeField]
@@ -16,14 +15,15 @@ public class BulletMovement : MonoBehaviour
     private bool startDeactivating = false;
     [SerializeField]
     private ParticleSystem explosionEffect;
+    private bool hitBox;
 
     private void Start()
     {
         transform = GetComponent<Transform>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        rb2 = GetComponent<Rigidbody2D>();
         //auto disable bullet if it goes too far
         StartCoroutine(WaitToDeactivate());
+        hitBox = false;
     }
 
     private void OnEnable()
@@ -33,35 +33,53 @@ public class BulletMovement : MonoBehaviour
 
     private void Update()
     {
-        //used when the object hits a collider
-        if (startDeactivating && spriteRenderer.enabled == true)
-            StartCoroutine(Deactivate());
+        //used when the raycast hits a collider
+        if(startDeactivating)
+        {
+            if (spriteRenderer.enabled == true)
+            {
+                StartCoroutine(Deactivate());
+            }
+            return;
+        }
+        else
+        {
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
+        }
+
+        //moving the bullet with translate for performance
     }
 
     private void HitBreakableBoxIfHit(GameObject objectHit)
     {
         if (objectHit.CompareTag("BreakableBox"))
+        {
             objectHit.GetComponent<BreakableBox>().HitBox();
+            hitBox = true;
+        }
+            
     }
 
     private void FixedUpdate()
     {
-        if (!startDeactivating)
-            rb2.MovePosition(transform.position + transform.TransformDirection(speed * Time.fixedDeltaTime * Vector3.right));
-    }
-
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (!collision.gameObject.CompareTag("Player"))
+        //check if the bullet would hit something, it is needed because using translate can lead to the bullet teleporting without touching the collider
+        RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector3.right), speed * Time.fixedDeltaTime - 0.2f);
+        if (raycastHit2D)
         {
             startDeactivating = true;
-            HitBreakableBoxIfHit(collision.gameObject);
-            Debug.Log(collision.gameObject.name);
+            GameObject objectHit = raycastHit2D.collider.gameObject;
+
+            if(!hitBox)
+            {
+                HitBreakableBoxIfHit(objectHit);
+            }
+            
+            
         }
     }
 
     //passing the function from the controller back to the bullet to use it
-    public void SetActionAddBullet(Action<GameObject> action)
+    public void setActionAddBullet(Action<GameObject> action)
     {
         addBullet = action;
     }
@@ -75,12 +93,13 @@ public class BulletMovement : MonoBehaviour
         gameObject.SetActive(false);
         spriteRenderer.enabled = true;
         startDeactivating = false;
+        hitBox = false;
         addBullet(gameObject);
     }
 
     private IEnumerator WaitToDeactivate()
     {
         yield return new WaitForSeconds(timeUntilDestruction);
-        StartCoroutine(Deactivate());
+        Deactivate();
     }
 }
