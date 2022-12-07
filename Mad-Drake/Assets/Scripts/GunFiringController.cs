@@ -76,7 +76,7 @@ public class GunFiringController : MonoBehaviour
                 else
                 {
                     activeBullet = Instantiate(bullet, tipTransform.position, tipTransform.rotation * rotate180);
-                    activeBullet.gameObject.GetComponent<BulletMovement>()?.setActionAddBullet(addBullet);
+                    activeBullet.gameObject.GetComponent<BulletMovement>()?.SetActionAddBullet(addBullet);
                 }
             }
             else
@@ -91,7 +91,7 @@ public class GunFiringController : MonoBehaviour
                 else
                 {
                     activeBullet = Instantiate(bullet, tipTransform.position, tipTransform.rotation);
-                    activeBullet.gameObject.GetComponent<BulletMovement>()?.setActionAddBullet(addBullet);
+                    activeBullet.gameObject.GetComponent<BulletMovement>()?.SetActionAddBullet(addBullet);
                 }
             }
         }
