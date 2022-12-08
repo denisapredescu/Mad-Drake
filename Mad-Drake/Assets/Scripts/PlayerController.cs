@@ -1,13 +1,15 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerController : MonoBehaviour
 {
     private new Transform transform;
     private Rigidbody2D rb2;
     private TrailRenderer trailRenderer;
-    [SerializeField]
-    private Animator animator;
 
     private float xMovement = 0.0f, yMovement = 0.0f;
     public float speed = 6.0f;
@@ -17,7 +19,6 @@ public class PlayerController : MonoBehaviour
     public float breakDash = 4.0f;
     private bool dashing = false;
     private bool startDash = false;
-    private bool run = false;
 
     private Vector3 mousePos;
     private new Camera camera;
@@ -30,10 +31,10 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        transform = gameObject.transform;
-        rb2 = gameObject.GetComponent<Rigidbody2D>();
-        trailRenderer = gameObject.GetComponent<TrailRenderer>();
-        camera = Camera.main;
+        transform = this.gameObject.transform;
+        rb2 = this.gameObject.GetComponent<Rigidbody2D>();
+        trailRenderer = this.gameObject.GetComponent<TrailRenderer>();
+        camera = Camera.main;  
     }
 
     private void Update()
@@ -60,11 +61,6 @@ public class PlayerController : MonoBehaviour
                 startDash = true;
             }
         }
-        else
-        {
-            run = false;
-            animator.SetBool("run", false);
-        }
 
         RotatePlayer();
         MoveCamera();
@@ -72,10 +68,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //moving
-        if (run)
-            rb2.MovePosition(transform.position + speed * Time.fixedDeltaTime * new Vector3(xMovement, yMovement, 0));
-
         //start dashing
         if (startDash && rb2 != null)
         {
@@ -94,7 +86,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (dashing)
         {
-            rb2.velocity *= changeDashForce;
+            rb2.velocity = rb2.velocity * changeDashForce;
         }
     }
 
