@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
         camera = Camera.main;
     }
 
-    private void Update() 
+    private void Update()
     {
         mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
 
@@ -53,9 +53,9 @@ public class PlayerController : MonoBehaviour
 
             //start moving
             run = true;
-            
+
             //dashing
-            if(Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 startDash = true;
             }
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
             rb2.MovePosition(transform.position + speed * Time.fixedDeltaTime * new Vector3(xMovement, yMovement, 0));
 
         //start dashing
-        if(startDash && rb2 != null)
+        if (startDash && rb2 != null)
         {
             rb2.velocity = new Vector2(xMovement, yMovement).normalized * dashForce;
             trailRenderer.emitting = true;
@@ -86,13 +86,13 @@ public class PlayerController : MonoBehaviour
         }
 
         //handle dash logic
-        if(dashing && rb2.velocity.magnitude < breakDash)
+        if (dashing && rb2.velocity.magnitude < breakDash)
         {
             dashing = false;
             rb2.velocity = Vector2.zero;
             trailRenderer.emitting = false;
         }
-        else if(dashing)
+        else if (dashing)
         {
             rb2.velocity *= changeDashForce;
         }
@@ -106,17 +106,17 @@ public class PlayerController : MonoBehaviour
             PlayerHealthController.AddGold();
         }
     }
-    
+
     public void RotatePlayer()
     {
         if (MenuController.GameRunning)
         {
             //rotate player left and right
-            if((transform.position.x > mousePos.x && transform.localScale.x > 0.0f) || 
+            if ((transform.position.x > mousePos.x && transform.localScale.x > 0.0f) ||
                 (transform.position.x < mousePos.x && transform.localScale.x < 0.0f))
             {
                 //this is added to smooth the transition
-                if(Mathf.Abs(transform.position.x - mousePos.x) > 0.1f)
+                if (Mathf.Abs(transform.position.x - mousePos.x) > 0.1f)
                 {
                     transform.localScale = new Vector3(
                         -transform.localScale.x,
