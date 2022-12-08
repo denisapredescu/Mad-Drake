@@ -26,15 +26,13 @@ public class PlayerController : MonoBehaviour
     private const float cameraDistanceLimitLR = 9.2f;
     private const float cameraDistanceLimitUD = 5.2f;
 
-    public RoomController roomControllerScript;
-
 
     private void Start()
     {
         transform = this.gameObject.transform;
         rb2 = this.gameObject.GetComponent<Rigidbody2D>();
         trailRenderer = this.gameObject.GetComponent<TrailRenderer>();
-        camera = Camera.main;  
+        camera = Camera.main;
     }
 
     private void Update()
@@ -46,14 +44,8 @@ public class PlayerController : MonoBehaviour
 
         if (!dashing)
         {
-            //animate running when the player is not dashing
-            if (new Vector2(xMovement, yMovement).magnitude > 0.1f)
-                animator.SetBool("run", true);
-            else
-                animator.SetBool("run", false);
-
-            //start moving
-            run = true;
+            //moving
+            transform.Translate(new Vector3(xMovement, yMovement, 0) * Time.deltaTime * speed);
 
             //dashing
             if (Input.GetKeyDown(KeyCode.Space))
@@ -98,6 +90,10 @@ public class PlayerController : MonoBehaviour
             PlayerHealthController.AddGold();
         }
     }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log("OnCollisionEnter2D");
+    }
 
     public void RotatePlayer()
     {
@@ -141,6 +137,5 @@ public class PlayerController : MonoBehaviour
         {
             camera.transform.position = new Vector3(camera.transform.position.x, camera.transform.position.y - 10, camera.transform.position.z);
         }
-        roomControllerScript.DoorsFollowCamera();
     }
 }
