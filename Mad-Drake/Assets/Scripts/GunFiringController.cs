@@ -27,7 +27,7 @@ public class GunFiringController : MonoBehaviour
     private GameObject activeBullet = null;
 
     //the function passed to a bullet to add itself to a queue
-    private void addBullet(GameObject gameObject)
+    private void AddBullet(GameObject gameObject)
     {
         this.inactiveBullets.Enqueue(gameObject);
     }
@@ -53,7 +53,7 @@ public class GunFiringController : MonoBehaviour
         //fire rate
         if (canFire && activeMagazine > 0 && Input.GetMouseButton(0) && MenuController.GameRunning)
         {
-            StartCoroutine(waitToFire());
+            StartCoroutine(WaitToFire());
             activeMagazine--;
 
             //muzzle flash for the gun
@@ -69,14 +69,16 @@ public class GunFiringController : MonoBehaviour
                 if (inactiveBullets.Count > 0)
                 {
                     activeBullet = inactiveBullets.Dequeue();
-                    activeBullet.transform.position = tipTransform.position;
-                    activeBullet.transform.rotation = tipTransform.rotation * rotate180;
+                    activeBullet.transform.SetPositionAndRotation(tipTransform.position, tipTransform.rotation * rotate180);
                     activeBullet.SetActive(true);
                 }
                 else
                 {
                     activeBullet = Instantiate(bullet, tipTransform.position, tipTransform.rotation * rotate180);
-                    activeBullet.gameObject.GetComponent<BulletMovement>()?.setActionAddBullet(addBullet);
+                    if (activeBullet.TryGetComponent<BulletMovement>(out var bulletMovement))
+                    {
+                        bulletMovement.SetActionAddBullet(AddBullet);
+                    }
                 }
             }
             else
@@ -84,20 +86,22 @@ public class GunFiringController : MonoBehaviour
                 if (inactiveBullets.Count > 0)
                 {
                     activeBullet = inactiveBullets.Dequeue();
-                    activeBullet.transform.position = tipTransform.position;
-                    activeBullet.transform.rotation = tipTransform.rotation;
+                    activeBullet.transform.SetPositionAndRotation(tipTransform.position, tipTransform.rotation);
                     activeBullet.SetActive(true);
                 }
                 else
                 {
                     activeBullet = Instantiate(bullet, tipTransform.position, tipTransform.rotation);
-                    activeBullet.gameObject.GetComponent<BulletMovement>()?.setActionAddBullet(addBullet);
+                    if(activeBullet.TryGetComponent<BulletMovement>(out var bulletMovement))
+                    {
+                        bulletMovement.SetActionAddBullet(AddBullet);
+                    }
                 }
             }
         }
     }
 
-    private IEnumerator waitToFire()
+    private IEnumerator WaitToFire()
     {
         canFire = false;
         yield return new WaitForSeconds(firingDelay);
