@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 3654142706767745426}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: IgnoreBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,7 +178,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.6185169
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -186,8 +186,8 @@ TrailRenderer:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 1
-        value: 0.6496351
+        time: 0.989624
+        value: 0.3200071
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -199,9 +199,9 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.83137256, g: 0.61986136, b: 0.3490196, a: 1}
-      key1: {r: 0.9280854, g: 0.9230681, b: 0.722376, a: 0}
-      key2: {r: 1, g: 1, b: 1, a: 0}
+      key0: {r: 0.38039216, g: 0.27450982, b: 0.7647059, a: 1}
+      key1: {r: 0.38039216, g: 0.27450982, b: 0.7647059, a: 0}
+      key2: {r: 0.38039216, g: 0.27450982, b: 0.7647059, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -248,8 +248,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.105605245, y: 0.10759783}
-  m_Size: {x: 0.83774674, y: 1.3591619}
+  m_Offset: {x: -0.105605245, y: 0.2709794}
+  m_Size: {x: 0.83774674, y: 1.3379436}
   m_Direction: 0
 --- !u!1 &3041104432392782053
 GameObject:
@@ -5089,7 +5089,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4131988854021531144}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.001000002, y: 0.018000001, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
   m_LocalScale: {x: 0.12, y: 0.12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5128,7 +5128,7 @@ MonoBehaviour:
   tipOfGun: {fileID: 1943606255175642836}
   parent: {fileID: 2629746995567776209}
   firingDelay: 0.14
-  magazineSize: 20
+  magazineSize: 45
   reloadTime: 2
 --- !u!1 &4480493556664280655
 GameObject:
@@ -10053,7 +10053,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6872898464624136437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: -0.6, z: 0}
+  m_LocalPosition: {x: -0.15, y: -0.4, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10098,9 +10098,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1168635595
+  m_SortingLayer: 4
+  m_SortingOrder: 1
   m_Sprite: {fileID: -3655621501393774895, guid: 9c447c54c8e0416e9446cadb88c48fd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
