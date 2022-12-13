@@ -4,33 +4,27 @@ using UnityEngine;
 
 public class RoomController : MonoBehaviour
 {
-    public List<GameObject> doors;
-    public Transform cameraTransform;
-    public Transform doorsTransform;
+    [SerializeField]
+    private GameObject doors;
+    [SerializeField]
+    private Transform cameraTransform;
+    [SerializeField]
+    private Transform doorsTransform;
     private void Start()
     {
-        for(int i = 0; i < doors.Count; i++)
-        {
-            doors[i].SetActive(true);
-        }
+        doors.SetActive(false);
     }
     public void OpenDoors()
     {
-        for (int i = 0; i < doors.Count; i++)
-        {
-            doors[i].SetActive(false);
-        }
+        doors.SetActive(false);
     }
 
     public void CloseDoors()
     {
-        for (int i = 0; i < doors.Count; i++)
-        {
-            doors[i].SetActive(true);
-        }
+        doors.SetActive(true);
     }
 
-    public void DoorsFollowCamera()
+    private void Update()
     {
         doorsTransform.position = new Vector3(cameraTransform.position.x, cameraTransform.position.y, 1);
     }
