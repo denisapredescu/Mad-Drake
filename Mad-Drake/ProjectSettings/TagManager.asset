@@ -10,6 +10,7 @@ TagManager:
   - PickupIncreaseHealth
   - PickupRestoreHealth
   - IgnoreBullet
+  - InfoNextLevel
   layers:
   - Default
   - TransparentFX

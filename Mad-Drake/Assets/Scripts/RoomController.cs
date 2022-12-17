@@ -24,6 +24,11 @@ public class RoomController : MonoBehaviour
         doors.SetActive(true);
     }
 
+    public void GenerateNextLevel()
+    {
+
+    }
+
     private void Update()
     {
         doorsTransform.position = new Vector3(cameraTransform.position.x, cameraTransform.position.y, 1);
