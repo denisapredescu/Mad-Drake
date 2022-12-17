@@ -18,8 +18,8 @@ public class GunFiringController : MonoBehaviour
     private bool canFire = true;
     private Quaternion rotate180 = Quaternion.Euler(0, 0, 180);
     [SerializeField]
-    private int magazineSize = 10;
-    private int activeMagazine = 0;
+    public static int magazineSize = 10;
+    public static int activeMagazine = 0;
     [SerializeField]
     private float reloadTime = 2.0f;
     //references to reuse the bullets
@@ -47,6 +47,7 @@ public class GunFiringController : MonoBehaviour
         //reload with delay
         if (Input.GetKeyDown(KeyCode.R))
         {
+            HUDController.ChangeValueOfActiveMagazine(magazineSize);
             StartCoroutine(Reload());
         }
 
@@ -55,6 +56,7 @@ public class GunFiringController : MonoBehaviour
         {
             StartCoroutine(WaitToFire());
             activeMagazine--;
+            HUDController.ChangeValueOfActiveMagazine(activeMagazine);
 
             //muzzle flash for the gun
             foreach (var ParticleEffect in tipParticleEffects)
