@@ -2484,6 +2484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04384f22f87e2e64e97a4a8a30625571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomWidth: 18
+  roomHeight: 10
   mainLineRooms:
     from: 10
     to: 20
@@ -2523,6 +2525,18 @@ MonoBehaviour:
   - {fileID: 2726891468649286100, guid: 16023242b66cd804faff373edc177141, type: 3}
   - {fileID: 2726891468649286100, guid: e8751417632cc2a46836490f0640dcda, type: 3}
   - {fileID: 2726891468649286100, guid: f46e313b4ee77f747bdb475c7dfc0086, type: 3}
+  maximumXForSpawn: 8
+  maximumYForSpawn: 4
+  collectibles:
+  - gameObject: {fileID: 6345514548074416105, guid: 6016964eb09ad0948acf9b77ceb78f35, type: 3}
+    maximumNumber: 20
+    chanceOfSpawn: 0.99
+  - gameObject: {fileID: 5471230374469097056, guid: f0a75908ecd29af4ea97faf51529f001, type: 3}
+    maximumNumber: 2
+    chanceOfSpawn: 0.99
+  - gameObject: {fileID: 3591640962735648407, guid: a76b56d22c14acd478e3bdfe4515b1ed, type: 3}
+    maximumNumber: 1
+    chanceOfSpawn: 0.99
 --- !u!114 &1683081793
 MonoBehaviour:
   m_ObjectHideFlags: 0

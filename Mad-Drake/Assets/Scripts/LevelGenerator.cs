@@ -83,12 +83,36 @@ public struct SpecialPath
     public List<GameObject> specialRooms;
 }
 
+[Serializable]
+public struct Collectible
+{
+    public GameObject gameObject;
+    public int maximumNumber;
+    [Range(0.0f, 0.99f)]
+    public float chanceOfSpawn;
+}
+
 public enum Direction
 {
     Right = 0,
     Down = 1,
     Left = 2,
     Up = 3
+}
+
+public class InsideRoomObject : IntegerCoordinates<InsideRoomObject>
+{
+    public GameObject SpawnedObject { get; set; }
+    public InsideRoomObject(GameObject gameObject, Vector2Int coord)
+    {
+        Coord = coord;
+        SpawnedObject = gameObject;
+    }
+    public InsideRoomObject(GameObject gameObject, int x, int y)
+    {
+        Coord = new Vector2Int(x, y);
+        SpawnedObject = gameObject;
+    }
 }
 
 public class RoomInfo : IntegerCoordinates<RoomInfo>
@@ -99,6 +123,7 @@ public class RoomInfo : IntegerCoordinates<RoomInfo>
     public bool Left { get; set; }
     public bool Right { get; set; }
     public GameObject OwnGround { get; set; }
+    public InfiniteMatrix<InsideRoomObject> Collectibles { get; set; }
 
     public RoomInfo(Vector2Int coord)
     {
@@ -106,6 +131,7 @@ public class RoomInfo : IntegerCoordinates<RoomInfo>
         ChanceToExpand = 0.0f;
         Up = Down = Left = Right = false;
         OwnGround = null;
+        Collectibles = new InfiniteMatrix<InsideRoomObject> { };
     }
 
     public RoomInfo(int x, int y)
@@ -114,6 +140,7 @@ public class RoomInfo : IntegerCoordinates<RoomInfo>
         ChanceToExpand = 0.0f;
         Up = Down = Left = Right = false;
         OwnGround = null;
+        Collectibles = new InfiniteMatrix<InsideRoomObject> { };
     }
 
     public void AddDirection(Direction direction)
@@ -163,6 +190,10 @@ public class LevelGenerator : MonoBehaviour
     private InfiniteMatrix<RoomInfo> rooms;
 
     //RoomGeneration:
+    [SerializeField]
+    private float roomWidth = 18.0f;
+    [SerializeField]
+    private float roomHeight = 10.0f;
     [SerializeField]
     private IntRange mainLineRooms = new(10, 20);
     //chance for the main line to go straight and not make many curves:
@@ -225,6 +256,28 @@ public class LevelGenerator : MonoBehaviour
 
     [SerializeField]
     private GameObject[] grounds;
+
+    private readonly float approachToCenter = 0.5f;
+    //this values is used to calculate the exact position for instantiation
+    /*
+     *                      C(0, 0) 
+     *
+     *         (x+1,y+1)
+     *       P
+     *(x, y)
+     * 
+     * P - the exact position, C - the center
+     * the idea is to place it in a tileof size 1x1
+    */
+    [SerializeField]
+    private int maximumXForSpawn = 8;
+    [SerializeField]
+    private int maximumYForSpawn = 4;
+    //those 2 decide how further from center can an object be spawned
+    //all of this is done in order to make sure the objects are not overlapping
+    [SerializeField]
+    private List<Collectible> collectibles;
+
 
     //adds the new room in array and also the reference in the map
     private int AddRoom(int x, int y)
@@ -348,6 +401,7 @@ public class LevelGenerator : MonoBehaviour
         CreateLoops();
         CreateSpecialPaths();
         CreateSpecialRoomsOnMainLine(startAndEndRooms.Item1, startAndEndRooms.Item2);
+        AddCollectibles();
     }
 
     Tuple<RoomInfo, RoomInfo> CreateMainLine()
@@ -632,12 +686,63 @@ public class LevelGenerator : MonoBehaviour
         if (specialEndRooms.Count > 0)
             BuildSpecialRooms(endRoom, Direction.Right, 0, specialEndRooms);
     }
+    void AddCollectibles()
+    {
+        List<int> basicRoomsIndexes = new();
+
+        //gets all non-special rooms indexes
+        for(int i = 0; i < rooms.Count(); i++)
+        {
+            if (rooms.GetByIndex(i).OwnGround == null)
+                basicRoomsIndexes.Add(i);
+        }
+
+        foreach(var collectibleInfo in collectibles)
+        {
+            //spawns the collectibles
+            for(int i = 0; i < collectibleInfo.maximumNumber; i++)
+            {
+                if (UnityEngine.Random.Range(0.0f, 1.0f) > collectibleInfo.chanceOfSpawn)
+                    continue;
+
+                int index = UnityEngine.Random.Range(0, basicRoomsIndexes.Count);
+                RoomInfo room = rooms.GetByIndex(basicRoomsIndexes[index]);
+                //it picks a basic room
+
+                int pickedX = UnityEngine.Random.Range(-maximumXForSpawn, maximumXForSpawn + 1);
+                int pickedY = UnityEngine.Random.Range(-maximumYForSpawn, maximumYForSpawn + 1);
+                if(pickedX == 0)
+                    pickedX += UnityEngine.Random.Range(0, 2) == 0 ? -1 : 1;
+                if(pickedY == 0)
+                    pickedY += UnityEngine.Random.Range(0, 2) == 0 ? -1 : 1;
+                //it makes no sense for either x or y to be in the center
+
+                if (!room.Collectibles.Exists(pickedX, pickedY))
+                {
+                    room.Collectibles.Add(new InsideRoomObject(collectibleInfo.gameObject, pickedX, pickedY));
+                    Vector3 position = Vector3.zero;
+
+                    if (pickedX > 0)
+                        position.x = room.Coord.x * roomWidth + pickedX - approachToCenter;
+                    else
+                        position.x = room.Coord.x * roomWidth + pickedX + approachToCenter;
+
+                    if (pickedY > 0)
+                        position.y = room.Coord.y * roomHeight + pickedY - approachToCenter;
+                    else
+                        position.y = room.Coord.y * roomHeight + pickedY + approachToCenter;
+
+                    Instantiate(collectibleInfo.gameObject, position, Quaternion.identity);
+                }
+            }
+        }
+    }
 
     //using the informations in the room, adds the proper prefab
     private void Build(int position)
     {
         RoomInfo room = rooms.GetByIndex(position);
-        Vector3 posInstantiate = new Vector3(room.Coord.x * 18.0f, room.Coord.y * 10.0f, 0.0f);
+        Vector3 posInstantiate = new(room.Coord.x * roomWidth, room.Coord.y * roomHeight, 0.0f);
         if (!room.Left && !room.Up && !room.Right && !room.Down) //1
         {
             Instantiate(doorsNone, posInstantiate, Quaternion.identity);
