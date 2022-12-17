@@ -56,7 +56,6 @@ public class BulletMovement : MonoBehaviour
         {
             startDeactivating = true;
             HitBreakableBoxIfHit(collision.gameObject);
-            Debug.Log(collision.gameObject.name);
         }
     }
 
