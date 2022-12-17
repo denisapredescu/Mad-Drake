@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using MyUtility;
 
 //an integer interval struct
 [Serializable]
@@ -17,7 +18,7 @@ public struct IntRange
     }
     public uint To
     {
-        get 
+        get
         {
             if (to < from)
             {
@@ -82,6 +83,15 @@ public struct SpecialPath
     public List<GameObject> specialRooms;
 }
 
+[Serializable]
+public struct Collectible
+{
+    public GameObject gameObject;
+    public int maximumNumber;
+    [Range(0.0f, 0.99f)]
+    public float chanceOfSpawn;
+}
+
 public enum Direction
 {
     Right = 0,
@@ -90,96 +100,100 @@ public enum Direction
     Up = 3
 }
 
-public class RoomInfo : IComparable<RoomInfo>
+public class InsideRoomObject : IntegerCoordinates<InsideRoomObject>
 {
-    public int X { get; set; }
-    public int Y { get; set; }
+    public GameObject SpawnedObject { get; set; }
+    public InsideRoomObject(GameObject gameObject, Vector2Int coord)
+    {
+        Coord = coord;
+        SpawnedObject = gameObject;
+    }
+    public InsideRoomObject(GameObject gameObject, int x, int y)
+    {
+        Coord = new Vector2Int(x, y);
+        SpawnedObject = gameObject;
+    }
+}
+
+public class RoomInfo : IntegerCoordinates<RoomInfo>
+{
     public float ChanceToExpand { get; set; }
     public bool Up { get; set; }
     public bool Down { get; set; }
     public bool Left { get; set; }
     public bool Right { get; set; }
-    public GameObject ownGround { get; set; }
+    public GameObject OwnGround { get; set; }
+    public InfiniteMatrix<InsideRoomObject> Collectibles { get; set; }
 
-    public RoomInfo(int X, int Y)
+    public RoomInfo(Vector2Int coord)
     {
-        this.X = X;
-        this.Y = Y;
-        this.ChanceToExpand = 0.0f;
+        Coord = coord;
+        ChanceToExpand = 0.0f;
         Up = Down = Left = Right = false;
-        ownGround = null;
+        OwnGround = null;
+        Collectibles = new InfiniteMatrix<InsideRoomObject> { };
     }
 
-    public void addDirection(Direction direction)
+    public RoomInfo(int x, int y)
     {
-        switch(direction)
-        {
-            case Direction.Right:
-                this.Right = true;
-                break;
-            case Direction.Down:
-                this.Down = true;
-                break;
-            case Direction.Left:
-                this.Left = true;
-                break;
-            case Direction.Up:
-                this.Up = true;
-                break;
-            default: break;
-        }
+        Coord = new Vector2Int(x, y);
+        ChanceToExpand = 0.0f;
+        Up = Down = Left = Right = false;
+        OwnGround = null;
+        Collectibles = new InfiniteMatrix<InsideRoomObject> { };
     }
 
-    public void removeDirection(Direction direction)
+    public void AddDirection(Direction direction)
     {
         switch (direction)
         {
             case Direction.Right:
-                this.Right = false;
+                Right = true;
                 break;
             case Direction.Down:
-                this.Down = false;
+                Down = true;
                 break;
             case Direction.Left:
-                this.Left = false;
+                Left = true;
                 break;
             case Direction.Up:
-                this.Up = false;
+                Up = true;
                 break;
             default: break;
         }
     }
 
-    public int CompareTo(RoomInfo other)
+    public void RemoveDirection(Direction direction)
     {
-        if (this.X < other.X)
-            return -1;
-        else if (this.X > other.X)
-            return 1;
-        else if (this.Y < other.Y)
-            return -1;
-        else if (this.Y > other.Y)
-            return 1;
-
-        return 0;
+        switch (direction)
+        {
+            case Direction.Right:
+                Right = false;
+                break;
+            case Direction.Down:
+                Down = false;
+                break;
+            case Direction.Left:
+                Left = false;
+                break;
+            case Direction.Up:
+                Up = false;
+                break;
+            default: break;
+        }
     }
 }
 
 public class LevelGenerator : MonoBehaviour
 {
     //it holds the relevant data for every room
-    private List<RoomInfo> rooms;
-    //it holds the index in rooms array for every pair of coordinates
-    //if you have the coordinates, you can get the rest of the room data
-    private Dictionary<Vector2Int, int> positionInArray;
+    private InfiniteMatrix<RoomInfo> rooms;
 
-    /*//RoomGenerationV1:
-    //[SerializeField]
-    private float initialChance = 0.8f;
-    //[SerializeField]
-    private float decreaseChance = 0.2f;*/
-
-    //RoomGenerationV2:
+    //RoomGeneration:
+    [SerializeField]
+    private float roomWidth = 18.0f;
+    [SerializeField]
+    private float roomHeight = 10.0f;
     [SerializeField]
     private IntRange mainLineRooms = new(10, 20);
     //chance for the main line to go straight and not make many curves:
@@ -194,6 +208,11 @@ public class LevelGenerator : MonoBehaviour
     private uint maximumLoopAddedPoints = 3;
     [SerializeField]
     private List<SpecialPath> specialPaths;
+    //adding special rooms at the end and start of the main line
+    [SerializeField]
+    private List<GameObject> specialStartRooms;
+    [SerializeField]
+    private List<GameObject> specialEndRooms;
     //help to trnaslate enum Direction to practical changes in coordinates:
     private static readonly int[] directionX = { 1, 0, -1, 0 };
     private static readonly int[] directionY = { 0, -1, 0, 1 };
@@ -238,143 +257,53 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField]
     private GameObject[] grounds;
 
+    private readonly float approachToCenter = 0.5f;
+    //this values is used to calculate the exact position for instantiation
+    /*
+     *                      C(0, 0) 
+     *
+     *         (x+1,y+1)
+     *       P
+     *(x, y)
+     * 
+     * P - the exact position, C - the center
+     * the idea is to place it in a tileof size 1x1
+    */
+    [SerializeField]
+    private int maximumXForSpawn = 8;
+    [SerializeField]
+    private int maximumYForSpawn = 4;
+    //those 2 decide how further from center can an object be spawned
+    //all of this is done in order to make sure the objects are not overlapping
+    [SerializeField]
+    private List<Collectible> collectibles;
+
+
     //adds the new room in array and also the reference in the map
     private int AddRoom(int x, int y)
     {
-        rooms.Add(new RoomInfo(x, y));
-        positionInArray[new Vector2Int(x, y)] = rooms.Count - 1;
+        rooms.AddSafe(new RoomInfo(x, y));
         //returns the position in array of the room created
-        return rooms.Count - 1;
+        return rooms.Count() - 1;
     }
 
     private void Start()
     {
-        rooms = new List<RoomInfo>();
-        positionInArray = new Dictionary<Vector2Int, int>();
+        rooms = new InfiniteMatrix<RoomInfo>();
 
-        RoomGenerationV2();
+        RoomGeneration();
 
         //adds the prefabs for every room
-        for (int i = 0; i < rooms.Count; i++)
+        for (int i = 0; i < rooms.Count(); i++)
         {
-            /*Debug.Log(rooms[i].X.ToString() + " "
-                + rooms[i].Y.ToString() + " "
-                + (rooms[i].Left ? "Left " : "")
-                + (rooms[i].Up ? "Up " : "")
-                + (rooms[i].Right ? "Right " : "")
-                + (rooms[i].Down ? "Down " : ""));*/
             Build(i);
         }
     }
 
-    /*void roomGenerationV1()
-    {
-        //queue that is used to go through all the rooms, similar to a BFS
-        Queue<int> indexes = new Queue<int>();
-        int activeIndex = AddRoom(0, 0);
-        rooms[activeIndex].ChanceToExpand = initialChance;
-        indexes.Enqueue(activeIndex);
-
-        int newIndex;
-        RoomInfo activeRoom, newRoom;
-
-        while (indexes.Count > 0)
-        {
-            activeIndex = indexes.Dequeue();
-            //this is used for cleaner code and a little more performance
-            activeRoom = rooms[activeIndex];
-
-            // There are 4 blocks very similar, for every direction, going to explain only this one.
-            // If the probability falls in range, then it creates a room, the smaller the range,
-            // the smaller the chance to expand the room.
-            // The range is (0.0f, activeRoom.ChanceToExpand)
-            if (UnityEngine.Random.Range(0.0f, 1.0f) < activeRoom.ChanceToExpand && activeRoom.Left == false)
-            {
-                activeRoom.Left = true;
-                if (positionInArray.ContainsKey(new Vector2Int(activeRoom.X - 1, activeRoom.Y)) == false)
-                {
-                    newIndex = AddRoom(activeRoom.X - 1, activeRoom.Y);
-                    indexes.Enqueue(newIndex);
-                    newRoom = rooms[newIndex];
-                    //decrease the chance so the map expands less the further it goes
-                    newRoom.ChanceToExpand = activeRoom.ChanceToExpand - decreaseChance;
-                    newRoom.Right = true;
-                }
-                else
-                {
-                    //if the room was created it doesn't need to be added to the queue again
-                    newIndex = positionInArray[new Vector2Int(activeRoom.X - 1, activeRoom.Y)];
-                    newRoom = rooms[newIndex];
-                    newRoom.Right = true;
-                }
-            }
-
-            //see the explanations written for the first block
-            if (UnityEngine.Random.Range(0.0f, 1.0f) < activeRoom.ChanceToExpand && activeRoom.Right == false)
-            {
-                activeRoom.Right = true;
-                if (positionInArray.ContainsKey(new Vector2Int(activeRoom.X + 1, activeRoom.Y)) == false)
-                {
-                    newIndex = AddRoom(activeRoom.X + 1, activeRoom.Y);
-                    indexes.Enqueue(newIndex);
-                    newRoom = rooms[newIndex];
-                    newRoom.ChanceToExpand = activeRoom.ChanceToExpand - decreaseChance;
-                    newRoom.Left = true;
-                }
-                else
-                {
-                    newIndex = positionInArray[new Vector2Int(activeRoom.X + 1, activeRoom.Y)];
-                    newRoom = rooms[newIndex];
-                    newRoom.Left = true;
-                }
-            }
-
-            //see the explanations written for the first block
-            if (UnityEngine.Random.Range(0.0f, 1.0f) < activeRoom.ChanceToExpand && activeRoom.Up == false)
-            {
-                activeRoom.Up = true;
-                if (positionInArray.ContainsKey(new Vector2Int(activeRoom.X, activeRoom.Y + 1)) == false)
-                {
-                    newIndex = AddRoom(activeRoom.X, activeRoom.Y + 1);
-                    indexes.Enqueue(newIndex);
-                    newRoom = rooms[newIndex];
-                    newRoom.ChanceToExpand = activeRoom.ChanceToExpand - decreaseChance;
-                    newRoom.Down = true;
-                }
-                else
-                {
-                    newIndex = positionInArray[new Vector2Int(activeRoom.X, activeRoom.Y + 1)];
-                    newRoom = rooms[newIndex];
-                    newRoom.Down = true;
-                }
-            }
-
-            //see the explanations written for the first block
-            if (UnityEngine.Random.Range(0.0f, 1.0f) < activeRoom.ChanceToExpand && activeRoom.Down == false)
-            {
-                activeRoom.Down = true;
-                if (positionInArray.ContainsKey(new Vector2Int(activeRoom.X, activeRoom.Y - 1)) == false)
-                {
-                    newIndex = AddRoom(activeRoom.X, activeRoom.Y - 1);
-                    indexes.Enqueue(newIndex);
-                    newRoom = rooms[newIndex];
-                    newRoom.ChanceToExpand = activeRoom.ChanceToExpand - decreaseChance;
-                    newRoom.Up = true;
-                }
-                else
-                {
-                    newIndex = positionInArray[new Vector2Int(activeRoom.X, activeRoom.Y - 1)];
-                    newRoom = rooms[newIndex];
-                    newRoom.Up = true;
-                }
-            }
-        }
-    }*/
-
     //returns a tuple with the adjacent directions
     private Tuple<Direction, Direction> NeighbourDirections(Direction direction)
     {
-        if(direction == Direction.Right || direction == Direction.Left)
+        if (direction == Direction.Right || direction == Direction.Left)
         {
             return new Tuple<Direction, Direction>(Direction.Down, Direction.Up);
         }
@@ -387,27 +316,24 @@ public class LevelGenerator : MonoBehaviour
     //gives the opposite direction
     private Direction OppositeDirection(Direction direction)
     {
-        switch(direction)
+        return direction switch
         {
-            case Direction.Left: return Direction.Right;
-            case Direction.Down: return Direction.Up;
-            case Direction.Right: return Direction.Left;
-            case Direction.Up: return Direction.Down;
-            default: return direction;
-        }
+            Direction.Left => Direction.Right,
+            Direction.Down => Direction.Up,
+            Direction.Right => Direction.Left,
+            Direction.Up => Direction.Down,
+            _ => direction,
+        };
     }
 
     //function that checks if moving from a room with a certain direction would lead to another room
     private bool RoomExists(RoomInfo room, Direction direction)
     {
-        if (positionInArray.ContainsKey(
-            new Vector2Int(
-                room.X + directionX[(int)direction],
-                room.Y + directionY[(int)direction]
-            )) == false)
-        {
+        if (!rooms.Exists(
+            room.Coord.x + directionX[(int)direction],
+            room.Coord.y + directionY[(int)direction]
+            ))
             return false;
-        }
 
         return true;
     }
@@ -418,28 +344,28 @@ public class LevelGenerator : MonoBehaviour
         int index = -1;
         for (int i = 0; i < length; i++)
         {
-            if(RoomExists(room, direction))
+            if (RoomExists(room, direction))
             {
-                int secondIndex = positionInArray[new Vector2Int(
-                    room.X + directionX[(int)direction],
-                    room.Y + directionY[(int)direction])];
+                int secondIndex = rooms.GetIndex(
+                    room.Coord.x + directionX[(int)direction],
+                    room.Coord.y + directionY[(int)direction]);
 
-                room.addDirection(direction);
-                rooms[secondIndex].addDirection(OppositeDirection(direction));
+                room.AddDirection(direction);
+                rooms.GetByIndex(secondIndex).AddDirection(OppositeDirection(direction));
                 return -1;
             }
             else
             {
                 int newIndex = AddRoom(
-                    room.X + directionX[(int)direction],
-                    room.Y + directionY[(int)direction]
+                    room.Coord.x + directionX[(int)direction],
+                    room.Coord.y + directionY[(int)direction]
                     );
 
-                room.addDirection(direction);
-                rooms[newIndex].addDirection(OppositeDirection(direction));
+                room.AddDirection(direction);
+                rooms.GetByIndex(newIndex).AddDirection(OppositeDirection(direction));
 
                 index = newIndex;
-                room = rooms[index];
+                room = rooms.GetByIndex(index);
             }
         }
 
@@ -448,30 +374,37 @@ public class LevelGenerator : MonoBehaviour
 
     private void BuildSpecialRooms(RoomInfo room, Direction direction, int length, List<GameObject> specialRooms)
     {
-        int index = BuildRooms(room, direction, length);
-        room = rooms[index];
-        foreach(GameObject obj in specialRooms)
+        int index = rooms.GetIndex(room.Coord);
+        if (length > 0)
         {
-            int newIndex = AddRoom(room.X + directionX[(int)direction], room.Y + directionY[(int)direction]);
-            
-            room.addDirection(direction);
-            rooms[newIndex].addDirection(OppositeDirection(direction));
-            
+            index = BuildRooms(room, direction, length);
+            room = rooms.GetByIndex(index);
+        }
+
+        foreach (GameObject obj in specialRooms)
+        {
+            int newIndex = AddRoom(room.Coord.x + directionX[(int)direction], room.Coord.y + directionY[(int)direction]);
+
+            room.AddDirection(direction);
+            rooms.GetByIndex(newIndex).AddDirection(OppositeDirection(direction));
+
             index = newIndex;
-            room = rooms[index];
-            room.ownGround = obj;
+            room = rooms.GetByIndex(index);
+            room.OwnGround = obj;
         }
     }
 
     //generates the rooms
-    void RoomGenerationV2()
+    void RoomGeneration()
     {
-        CreateMainLine();
+        Tuple<RoomInfo, RoomInfo> startAndEndRooms = CreateMainLine();
         CreateLoops();
         CreateSpecialPaths();
+        CreateSpecialRoomsOnMainLine(startAndEndRooms.Item1, startAndEndRooms.Item2);
+        AddCollectibles();
     }
 
-    void CreateMainLine()
+    Tuple<RoomInfo, RoomInfo> CreateMainLine()
     {
         int activeIndex = AddRoom(0, 0);
         Direction activeDirection = Direction.Right;
@@ -483,7 +416,7 @@ public class LevelGenerator : MonoBehaviour
         float probChangeDir = (1.0f - chanceToGoStraight) / 2.0f;
         for (int i = 0; i < mainRooms; i++)
         {
-            RoomInfo activeRoom = rooms[activeIndex];
+            RoomInfo activeRoom = rooms.GetByIndex(activeIndex);
             Tuple<Direction, Direction> neighbourDir = NeighbourDirections(activeDirection);
             float totalProb = 0.0f;
 
@@ -540,12 +473,15 @@ public class LevelGenerator : MonoBehaviour
 
             //add the room and the doors
             int newIndex = AddRoom(
-                activeRoom.X + directionX[(int)activeDirection],
-                activeRoom.Y + directionY[(int)activeDirection]);
-            rooms[newIndex].addDirection(OppositeDirection(activeDirection));
-            rooms[activeIndex].addDirection(activeDirection);
+                activeRoom.Coord.x + directionX[(int)activeDirection],
+                activeRoom.Coord.y + directionY[(int)activeDirection]);
+            rooms.GetByIndex(newIndex).AddDirection(OppositeDirection(activeDirection));
+            rooms.GetByIndex(activeIndex).AddDirection(activeDirection);
             activeIndex = newIndex;
         }
+
+        //returns the first and the last room
+        return new Tuple<RoomInfo, RoomInfo>(rooms.GetByIndex(0), rooms.GetByIndex(rooms.Count() - 1));
     }
     void CreateLoops()
     {
@@ -553,7 +489,7 @@ public class LevelGenerator : MonoBehaviour
             return;
 
         //rooms are in the right order and that is very usefull
-        int lengthOfSortedPoints = rooms.Count; //used to pick the 2 random points for the loop
+        int lengthOfSortedPoints = rooms.Count(); //used to pick the 2 random points for the loop
         //building the loops
         for (int i = 0; i < maximumLoops; i++)
         {
@@ -568,12 +504,12 @@ public class LevelGenerator : MonoBehaviour
                 );
 
             //choosing directions and how many rooms are built in each direction
-            RoomInfo roomStart = rooms[firstPoint];
-            RoomInfo roomEnd = rooms[secondPoint];
+            RoomInfo roomStart = rooms.GetByIndex(firstPoint);
+            RoomInfo roomEnd = rooms.GetByIndex(secondPoint);
             Direction firstDir, secondDir, thirdDir = Direction.Left;
             int firstSteps, secondSteps, thirdSteps;
 
-            if (roomStart.X == roomEnd.X)
+            if (roomStart.Coord.x == roomEnd.Coord.x)
             {
                 int probability = UnityEngine.Random.Range(0, 2);
                 if (probability == 0 && !RoomExists(roomStart, Direction.Left))
@@ -590,7 +526,7 @@ public class LevelGenerator : MonoBehaviour
                 }
 
 
-                if (roomStart.Y < roomEnd.Y)
+                if (roomStart.Coord.y < roomEnd.Coord.y)
                 {
                     secondDir = Direction.Up;
                 }
@@ -600,7 +536,7 @@ public class LevelGenerator : MonoBehaviour
                 }
 
                 thirdDir = OppositeDirection(firstDir);
-                secondSteps = Math.Abs(roomStart.Y - roomEnd.Y);
+                secondSteps = Math.Abs(roomStart.Coord.y - roomEnd.Coord.y);
                 /*
                  * not making a loop stupid, it makes sure that the number of rooms that put a distance between
                  * the main corridor and the main line is not too high compared to the length of the corridor
@@ -610,7 +546,7 @@ public class LevelGenerator : MonoBehaviour
                     Math.Min(secondSteps - 1, Convert.ToInt32((maximumLoopAddedPoints - secondSteps) / 2) + 1)
                     );
             }
-            else if (roomStart.Y == roomEnd.Y)
+            else if (roomStart.Coord.y == roomEnd.Coord.y)
             {
                 int probability = UnityEngine.Random.Range(0, 2);
                 if (probability == 0 && !RoomExists(roomStart, Direction.Up))
@@ -628,7 +564,7 @@ public class LevelGenerator : MonoBehaviour
 
                 secondDir = Direction.Right;
                 thirdDir = OppositeDirection(firstDir);
-                secondSteps = Math.Abs(roomStart.X - roomEnd.X);
+                secondSteps = Math.Abs(roomStart.Coord.x - roomEnd.Coord.x);
                 /*
                  * not making a loop stupid, it makes sure that the number of rooms that put a distance between
                  * the main corridor and the main line is not too high compared to the length of the corridor
@@ -641,28 +577,28 @@ public class LevelGenerator : MonoBehaviour
             else
             {
                 int probability = UnityEngine.Random.Range(0, 2);
-                if (roomStart.Y < roomEnd.Y)
+                if (roomStart.Coord.y < roomEnd.Coord.y)
                 {
                     if (probability == 0 && !RoomExists(roomStart, Direction.Up))
                     {
                         firstDir = Direction.Up;
-                        firstSteps = Math.Abs(roomStart.Y - roomEnd.Y);
+                        firstSteps = Math.Abs(roomStart.Coord.y - roomEnd.Coord.y);
                         secondDir = Direction.Right;
-                        secondSteps = Mathf.Abs(roomStart.X - roomEnd.X);
+                        secondSteps = Mathf.Abs(roomStart.Coord.x - roomEnd.Coord.x);
                     }
                     else if (!RoomExists(roomStart, Direction.Right))
                     {
                         firstDir = Direction.Right;
-                        firstSteps = Mathf.Abs(roomStart.X - roomEnd.X);
+                        firstSteps = Mathf.Abs(roomStart.Coord.x - roomEnd.Coord.x);
                         secondDir = Direction.Up;
-                        secondSteps = Mathf.Abs(roomStart.Y - roomEnd.Y);
+                        secondSteps = Mathf.Abs(roomStart.Coord.y - roomEnd.Coord.y);
                     }
                     else
                     {
                         firstDir = Direction.Up;
-                        firstSteps = Math.Abs(roomStart.Y - roomEnd.Y);
+                        firstSteps = Math.Abs(roomStart.Coord.y - roomEnd.Coord.y);
                         secondDir = Direction.Right;
-                        secondSteps = Mathf.Abs(roomStart.X - roomEnd.X);
+                        secondSteps = Mathf.Abs(roomStart.Coord.x - roomEnd.Coord.x);
                     }
                 }
                 else
@@ -670,23 +606,23 @@ public class LevelGenerator : MonoBehaviour
                     if (probability == 0 && !RoomExists(roomStart, Direction.Down))
                     {
                         firstDir = Direction.Down;
-                        firstSteps = Math.Abs(roomStart.Y - roomEnd.Y);
+                        firstSteps = Math.Abs(roomStart.Coord.y - roomEnd.Coord.y);
                         secondDir = Direction.Right;
-                        secondSteps = Mathf.Abs(roomStart.X - roomEnd.X);
+                        secondSteps = Mathf.Abs(roomStart.Coord.x - roomEnd.Coord.x);
                     }
                     else if (!RoomExists(roomStart, Direction.Right))
                     {
                         firstDir = Direction.Right;
-                        firstSteps = Mathf.Abs(roomStart.X - roomEnd.X);
+                        firstSteps = Mathf.Abs(roomStart.Coord.x - roomEnd.Coord.x);
                         secondDir = Direction.Down;
-                        secondSteps = Mathf.Abs(roomStart.Y - roomEnd.Y);
+                        secondSteps = Mathf.Abs(roomStart.Coord.y - roomEnd.Coord.y);
                     }
                     else
                     {
                         firstDir = Direction.Down;
-                        firstSteps = Math.Abs(roomStart.Y - roomEnd.Y);
+                        firstSteps = Math.Abs(roomStart.Coord.y - roomEnd.Coord.y);
                         secondDir = Direction.Right;
-                        secondSteps = Mathf.Abs(roomStart.X - roomEnd.X);
+                        secondSteps = Mathf.Abs(roomStart.Coord.x - roomEnd.Coord.x);
                     }
                 }
 
@@ -696,40 +632,17 @@ public class LevelGenerator : MonoBehaviour
             //building the path
             int activeIndex = BuildRooms(roomStart, firstDir, firstSteps);
             if (activeIndex != -1)
-                activeIndex = BuildRooms(rooms[activeIndex], secondDir, secondSteps);
+                activeIndex = BuildRooms(rooms.GetByIndex(activeIndex), secondDir, secondSteps);
             if (activeIndex != -1 && thirdSteps != 0)
-                BuildRooms(rooms[activeIndex], thirdDir, thirdSteps);
+                BuildRooms(rooms.GetByIndex(activeIndex), thirdDir, thirdSteps);
         }
     }
     void CreateSpecialPaths()
     {
-        if (specialPaths.Count == 0) 
+        if (specialPaths.Count == 0)
             return;
 
-        int smallestX = rooms[0].X;
-        int biggestX = rooms[0].X;
-        Dictionary<int, int> smallestY = new Dictionary<int, int>();
-        //for each X that has at least a room on it's axis, it gives the room that has the smallest value of Y
-        Dictionary<int, int> biggestY = new Dictionary<int, int>();
-        //for each X that has at least a room on it's axis, it gives the room that has the biggest value of Y
-
-        //finding the rooms for the maps
-        foreach (RoomInfo room in rooms)
-        {
-            smallestX = Math.Min(smallestX, room.X);
-            biggestX = Math.Max(biggestX, room.X);
-
-            if(smallestY.ContainsKey(room.X))
-            {
-                smallestY[room.X] = Math.Min(smallestY[room.X], room.Y);
-                biggestY[room.X] = Math.Max(biggestY[room.X], room.Y);
-            }
-            else
-            {
-                smallestY[room.X] = room.Y;
-                biggestY[room.X] = room.Y;
-            }
-        }
+        Interval<int> intervalX = rooms.GetXInterval();
 
         //building the paths
         foreach (SpecialPath specialPath in specialPaths)
@@ -741,7 +654,7 @@ public class LevelGenerator : MonoBehaviour
                     Convert.ToInt32(specialPath.normalRooms.From),
                     Convert.ToInt32(specialPath.normalRooms.To) + 1);
 
-                int x = UnityEngine.Random.Range(smallestX, biggestX + 1);
+                int x = UnityEngine.Random.Range(intervalX.Min, intervalX.Max + 1);
                 float probDir = UnityEngine.Random.Range(0, 2);
                 Direction dir;
                 if (probDir == 0)
@@ -751,28 +664,86 @@ public class LevelGenerator : MonoBehaviour
 
                 //choosing the room in a manner that assures that the new path doesn't collide with other rooms
                 RoomInfo room;
+                Interval<int> intervalY = rooms.GetYIntervalForCertainX(x);
                 if (dir == Direction.Up)
-                    room = rooms[positionInArray[new Vector2Int(x, biggestY[x])]];
+                    room = rooms.GetByCoord(x, intervalY.Max);
                 else
-                    room = rooms[positionInArray[new Vector2Int(x, smallestY[x])]];
+                    room = rooms.GetByCoord(x, intervalY.Min);
 
                 //building the path
                 BuildSpecialRooms(room, dir, numberOfRooms, specialPath.specialRooms);
-
-                //updating the maps
-                if (dir == Direction.Up)
-                    biggestY[x] += numberOfRooms + specialPath.specialRooms.Count;
-                else
-                    smallestY[x] -= numberOfRooms + specialPath.specialRooms.Count;
             }
         }
     }
+    void CreateSpecialRoomsOnMainLine(RoomInfo startRoom, RoomInfo endRoom)
+    {
+        if (specialStartRooms.Count > 0)
+        {
+            specialStartRooms.Reverse();
+            BuildSpecialRooms(startRoom, Direction.Left, 0, specialStartRooms);
+        }
+
+        if (specialEndRooms.Count > 0)
+            BuildSpecialRooms(endRoom, Direction.Right, 0, specialEndRooms);
+    }
+    void AddCollectibles()
+    {
+        List<int> basicRoomsIndexes = new();
+
+        //gets all non-special rooms indexes
+        for(int i = 0; i < rooms.Count(); i++)
+        {
+            if (rooms.GetByIndex(i).OwnGround == null)
+                basicRoomsIndexes.Add(i);
+        }
+
+        foreach(var collectibleInfo in collectibles)
+        {
+            //spawns the collectibles
+            for(int i = 0; i < collectibleInfo.maximumNumber; i++)
+            {
+                if (UnityEngine.Random.Range(0.0f, 1.0f) > collectibleInfo.chanceOfSpawn)
+                    continue;
+
+                int index = UnityEngine.Random.Range(0, basicRoomsIndexes.Count);
+                RoomInfo room = rooms.GetByIndex(basicRoomsIndexes[index]);
+                //it picks a basic room
+
+                int pickedX = UnityEngine.Random.Range(-maximumXForSpawn, maximumXForSpawn + 1);
+                int pickedY = UnityEngine.Random.Range(-maximumYForSpawn, maximumYForSpawn + 1);
+                if(pickedX == 0)
+                    pickedX += UnityEngine.Random.Range(0, 2) == 0 ? -1 : 1;
+                if(pickedY == 0)
+                    pickedY += UnityEngine.Random.Range(0, 2) == 0 ? -1 : 1;
+                //it makes no sense for either x or y to be in the center
+
+                if (!room.Collectibles.Exists(pickedX, pickedY))
+                {
+                    room.Collectibles.Add(new InsideRoomObject(collectibleInfo.gameObject, pickedX, pickedY));
+                    Vector3 position = Vector3.zero;
+
+                    if (pickedX > 0)
+                        position.x = room.Coord.x * roomWidth + pickedX - approachToCenter;
+                    else
+                        position.x = room.Coord.x * roomWidth + pickedX + approachToCenter;
+
+                    if (pickedY > 0)
+                        position.y = room.Coord.y * roomHeight + pickedY - approachToCenter;
+                    else
+                        position.y = room.Coord.y * roomHeight + pickedY + approachToCenter;
+
+                    Instantiate(collectibleInfo.gameObject, position, Quaternion.identity);
+                }
+            }
+        }
+    }
+
     //using the informations in the room, adds the proper prefab
     private void Build(int position)
     {
-        RoomInfo room = rooms[position];
-        Vector3 posInstantiate = new Vector3(room.X * 18.0f, room.Y * 10.0f, 0.0f);
-        if(!room.Left && !room.Up && !room.Right && !room.Down) //1
+        RoomInfo room = rooms.GetByIndex(position);
+        Vector3 posInstantiate = new(room.Coord.x * roomWidth, room.Coord.y * roomHeight, 0.0f);
+        if (!room.Left && !room.Up && !room.Right && !room.Down) //1
         {
             Instantiate(doorsNone, posInstantiate, Quaternion.identity);
         }
@@ -837,9 +808,9 @@ public class LevelGenerator : MonoBehaviour
             Instantiate(doorsAll, posInstantiate, Quaternion.identity);
         }
 
-        if(room.ownGround == null)
+        if (room.OwnGround == null)
             Instantiate(grounds[UnityEngine.Random.Range(0, grounds.Length)], posInstantiate, Quaternion.identity);
         else
-            Instantiate(room.ownGround, posInstantiate, Quaternion.identity);
+            Instantiate(room.OwnGround, posInstantiate, Quaternion.identity);
     }
 }
