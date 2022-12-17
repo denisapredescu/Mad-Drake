@@ -47,7 +47,7 @@ public class GunFiringController : MonoBehaviour
         //reload with delay
         if (Input.GetKeyDown(KeyCode.R))
         {
-            PlayerGunController.ChangeValueOfActiveMagazine(magazineSize);
+            HUDController.ChangeValueOfActiveMagazine(magazineSize);
             StartCoroutine(Reload());
         }
 
@@ -56,7 +56,7 @@ public class GunFiringController : MonoBehaviour
         {
             StartCoroutine(waitToFire());
             activeMagazine--;
-            PlayerGunController.ChangeValueOfActiveMagazine(activeMagazine);
+            HUDController.ChangeValueOfActiveMagazine(activeMagazine);
 
             //muzzle flash for the gun
             foreach (var ParticleEffect in tipParticleEffects)

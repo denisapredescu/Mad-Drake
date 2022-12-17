@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("Coin"))
         {
             collision.gameObject.SetActive(false);
-            PlayerHealthController.AddGold();
+            HUDController.AddGold();
         }
     }
     void OnCollisionEnter2D(Collision2D col)
