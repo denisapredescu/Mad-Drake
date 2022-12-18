@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 2800976589684100327}
   - component: {fileID: 3654142706767745426}
   - component: {fileID: 8653344844711565031}
+  - component: {fileID: 7715017894992459588}
   m_Layer: 0
   m_Name: Player
   m_TagString: IgnoreBullet
@@ -253,6 +254,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7715017894992459588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2993097353134942194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ea53cb26543f5488d2b84649785b9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 2781557892473424365, guid: 245db9da654b4374a929d52627cc9a0f, type: 3}
+  timeUntilExplosion: 2
+  nrOfBombs: 3
 --- !u!1 &3041104432392782053
 GameObject:
   m_ObjectHideFlags: 0
@@ -5131,6 +5147,7 @@ MonoBehaviour:
   parent: {fileID: 2629746995567776209}
   firingDelay: 0.14
   reloadTime: 2
+  reloadObjectAnimation: {fileID: 0}
 --- !u!1 &4480493556664280655
 GameObject:
   m_ObjectHideFlags: 0
