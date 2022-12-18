@@ -10,6 +10,8 @@ public class GoToNextLevel : MonoBehaviour
     [SerializeField]
     private GameObject textInfoNextLevel;
     private bool inTrigger;
+    [SerializeField]
+    private string nextSceneName;
 
 
     private void Start()
@@ -22,8 +24,9 @@ public class GoToNextLevel : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && inTrigger)
         {
-            Debug.Log("bv ai apasAT PE E");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(nextSceneName);
+            textInfoNextLevel.SetActive(false);
+            inTrigger = false;
         }
     }
 

@@ -2765,8 +2765,7 @@ MonoBehaviour:
     - {fileID: 2120354130917282042, guid: 7864360b8ae318641b5198cce8d6c98d, type: 3}
     - {fileID: 5536218476057425402, guid: 5d921a24e371bdd44858b62bbc2a5b1e, type: 3}
   specialStartRooms: []
-  specialEndRooms:
-  - {fileID: 2726891468649286100, guid: bb0656b4d8e42e448ad91c56eaa9d611, type: 3}
+  specialEndRooms: []
   doorsNone: {fileID: 5441472426128138861, guid: 6d32f5725c35bf54ba0a1745bdea2dad, type: 3}
   doorsLeft: {fileID: 4769564092439180397, guid: ca2a7a0ad2f4e344e9a0e0d0d249afb6, type: 3}
   doorsUp: {fileID: 5534421745926885501, guid: e48037fbd7736ee4fae13e7600cfd9a4, type: 3}

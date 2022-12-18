@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 925394522424921610}
   - component: {fileID: 3269465317609387215}
   - component: {fileID: 6179515610902356626}
+  - component: {fileID: 5084953072833466791}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -183,3 +184,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textInfoNextLevel: {fileID: 0}
+  nextSceneName: Level 2
+--- !u!70 &5084953072833466791
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8260345068324255344}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 1}
+  m_Direction: 0
