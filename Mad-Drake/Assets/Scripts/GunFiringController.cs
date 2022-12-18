@@ -22,6 +22,10 @@ public class GunFiringController : MonoBehaviour
     public static int activeMagazine = 0;
     [SerializeField]
     private float reloadTime = 2.0f;
+    [SerializeField]
+    private GameObject reloadObjectAnimation = null;
+    //used to not start more coroutines
+    private bool activeReloading = false;
     //references to reuse the bullets
     private Queue<GameObject> inactiveBullets;
     private GameObject activeBullet = null;
@@ -48,55 +52,71 @@ public class GunFiringController : MonoBehaviour
         //reload with delay
         if (Input.GetKeyDown(KeyCode.R))
         {
-            StartCoroutine(Reload());
+            if (!activeReloading)
+            {
+                activeReloading = true;
+                activeMagazine = 0;
+                StartCoroutine(Reload());
+            }
         }
 
         //fire rate
-        if (canFire && activeMagazine > 0 && Input.GetMouseButton(0) && MenuController.GameRunning)
+        if (canFire && Input.GetMouseButton(0) && MenuController.GameRunning)
         {
-            StartCoroutine(WaitToFire());
-            activeMagazine--;
-
-            //muzzle flash for the gun
-            foreach (var ParticleEffect in tipParticleEffects)
+            if (activeMagazine > 0)
             {
-                ParticleEffect.Play();
-            }
+                StartCoroutine(WaitToFire());
+                activeMagazine--;
 
-            //if x-scale is -1 there is applied a 180 rotation to the bullet
-            if (parent.localScale.x < 0.0f)
-            {
-                //checking if there is at least one inactive bullet or creating another
-                if (inactiveBullets.Count > 0)
+                //muzzle flash for the gun
+                foreach (var ParticleEffect in tipParticleEffects)
                 {
-                    activeBullet = inactiveBullets.Dequeue();
-                    activeBullet.transform.SetPositionAndRotation(tipTransform.position, tipTransform.rotation * rotate180);
-                    activeBullet.SetActive(true);
+                    ParticleEffect.Play();
+                }
+
+                //if x-scale is -1 there is applied a 180 rotation to the bullet
+                if (parent.localScale.x < 0.0f)
+                {
+                    //checking if there is at least one inactive bullet or creating another
+                    if (inactiveBullets.Count > 0)
+                    {
+                        activeBullet = inactiveBullets.Dequeue();
+                        activeBullet.transform.SetPositionAndRotation(tipTransform.position, tipTransform.rotation * rotate180);
+                        activeBullet.SetActive(true);
+                    }
+                    else
+                    {
+                        activeBullet = Instantiate(bullet, tipTransform.position, tipTransform.rotation * rotate180);
+                        if (activeBullet.TryGetComponent<BulletMovement>(out var bulletMovement))
+                        {
+                            bulletMovement.SetActionAddBullet(AddBullet);
+                        }
+                    }
                 }
                 else
                 {
-                    activeBullet = Instantiate(bullet, tipTransform.position, tipTransform.rotation * rotate180);
-                    if (activeBullet.TryGetComponent<BulletMovement>(out var bulletMovement))
+                    if (inactiveBullets.Count > 0)
                     {
-                        bulletMovement.SetActionAddBullet(AddBullet);
+                        activeBullet = inactiveBullets.Dequeue();
+                        activeBullet.transform.SetPositionAndRotation(tipTransform.position, tipTransform.rotation);
+                        activeBullet.SetActive(true);
+                    }
+                    else
+                    {
+                        activeBullet = Instantiate(bullet, tipTransform.position, tipTransform.rotation);
+                        if (activeBullet.TryGetComponent<BulletMovement>(out var bulletMovement))
+                        {
+                            bulletMovement.SetActionAddBullet(AddBullet);
+                        }
                     }
                 }
             }
             else
             {
-                if (inactiveBullets.Count > 0)
+                if(!activeReloading)
                 {
-                    activeBullet = inactiveBullets.Dequeue();
-                    activeBullet.transform.SetPositionAndRotation(tipTransform.position, tipTransform.rotation);
-                    activeBullet.SetActive(true);
-                }
-                else
-                {
-                    activeBullet = Instantiate(bullet, tipTransform.position, tipTransform.rotation);
-                    if(activeBullet.TryGetComponent<BulletMovement>(out var bulletMovement))
-                    {
-                        bulletMovement.SetActionAddBullet(AddBullet);
-                    }
+                    activeReloading = true;
+                    StartCoroutine(Reload());
                 }
             }
         }
@@ -111,7 +131,10 @@ public class GunFiringController : MonoBehaviour
 
     private IEnumerator Reload()
     {
+        reloadObjectAnimation.SetActive(true);
         yield return new WaitForSeconds(reloadTime);
+        activeReloading = false;
         activeMagazine = magazineSize;
+        reloadObjectAnimation.SetActive(false);
     }
 }
