@@ -25,8 +25,7 @@ public class GoToNextLevel : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && inTrigger)
         {
             SceneManager.LoadScene(nextSceneName);
-            textInfoNextLevel.SetActive(false);
-            inTrigger = false;
+            Start();
         }
     }
 
