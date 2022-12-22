@@ -18,6 +18,8 @@ public class HUDController : MonoBehaviour
     public GameObject healthCard;
     public GameObject goldCard;
     public GameObject gunCard;
+    [SerializeField]
+    private GunFiringController playerFiringController;
 
     private static bool numberOfBulletsIsChanged = false;
 
@@ -29,7 +31,7 @@ public class HUDController : MonoBehaviour
         goldScore = 0;
         currentHealth = maxHealth;
 
-        maxBullets = GunFiringController.magazineSize;
+        maxBullets = playerFiringController.GetMagazineSize();
         currentBullets = maxBullets;
 
         healthGUI = healthCard.GetComponent<TextMeshProUGUI>();
