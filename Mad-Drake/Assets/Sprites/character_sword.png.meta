@@ -1,349 +1,367 @@
 fileFormatVersion: 2
-guid: 263bbf868f1c40ef9da04b8d96ce8d7b
+guid: 15eb07192dee43dcb169478da3b487d0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9114202556735134241
-    second: 001_jump_0
+      213: -3855204590384013555
+    second: 001_sword_0
   - first:
-      213: 4221240542453117958
-    second: 001_jump_1
+      213: 4181214240253420791
+    second: 001_sword_1
   - first:
-      213: 625860610720932487
-    second: 001_jump_2
+      213: 500075716813855800
+    second: 001_sword_2
   - first:
-      213: 3523357379933079629
-    second: 001_jump_3
+      213: 8281719026080161630
+    second: 001_sword_3
   - first:
-      213: -8596044663396146486
-    second: 001_jump_4
+      213: -3848643188270562764
+    second: 001_sword_4
   - first:
-      213: 7766096164885648235
-    second: 001_jump_5
+      213: -1361668555134528780
+    second: 001_sword_5
   - first:
-      213: -221532185665806817
-    second: 001_jump_6
+      213: 4328707009619189361
+    second: 001_sword_6
   - first:
-      213: -2645646650756458663
-    second: 001_jump_7
+      213: 730045474444299474
+    second: 001_sword_7
   - first:
-      213: 6988379754232823971
-    second: 001_jump_8
+      213: 5558601486879711269
+    second: 001_sword_8
   - first:
-      213: 1683834108819331414
-    second: 001_jump_9
+      213: -7791959794064657738
+    second: 001_sword_9
   - first:
-      213: 6064178719993600600
-    second: 001_jump_10
+      213: 6827086041007633331
+    second: 001_sword_10
   - first:
-      213: 2472163329611532525
-    second: 001_jump_11
+      213: 1787054976660919517
+    second: 001_sword_11
   - first:
-      213: -3165558793767378419
-    second: 001_jump_12
+      213: 8414710541518763857
+    second: 001_sword_12
   - first:
-      213: 5786448668047499669
-    second: 001_jump_13
+      213: 569692869438586843
+    second: 001_sword_13
   - first:
-      213: -1128452367775406630
-    second: 001_jump_14
+      213: -3607438522710574676
+    second: 001_sword_14
   - first:
-      213: 1549108345473997953
-    second: 001_jump_15
+      213: 6883986114499811420
+    second: 001_sword_15
   - first:
-      213: 8546767250485949977
-    second: 001_jump_16
+      213: -4792939842899420706
+    second: 001_sword_16
   - first:
-      213: 7718823525455001438
-    second: 001_jump_17
+      213: -2383299260181338470
+    second: 001_sword_17
   - first:
-      213: 3241160507509925713
-    second: 001_jump_18
+      213: 974464698378331236
+    second: 001_sword_18
   - first:
-      213: -7144980770290666002
-    second: 001_jump_19
+      213: -6324485716168645022
+    second: 001_sword_19
   - first:
-      213: -7798761364044411119
-    second: 001_jump_20
+      213: 8332378804251301189
+    second: 001_sword_20
   - first:
-      213: -4200744471105117014
-    second: 001_jump_21
+      213: -6998592517452918070
+    second: 001_sword_21
   - first:
-      213: -2546569432375483509
-    second: 001_jump_22
+      213: -2706291634701402968
+    second: 001_sword_22
   - first:
-      213: -2593606421509952089
-    second: 001_jump_23
+      213: -7766883052025624904
+    second: 001_sword_23
   - first:
-      213: 2271080002275288218
-    second: 001_jump_24
+      213: -458718184587049151
+    second: 001_sword_24
   - first:
-      213: 8150424015197610105
-    second: 001_jump_25
+      213: 1086123471200527776
+    second: 001_sword_25
   - first:
-      213: 837937211342497361
-    second: 001_jump_26
+      213: -875543638013893890
+    second: 001_sword_26
   - first:
-      213: -5622323336855697055
-    second: 001_jump_27
+      213: 7784281977902292456
+    second: 001_sword_27
   - first:
-      213: -7732624904553514781
-    second: 001_jump_28
+      213: 2484058284368744050
+    second: 001_sword_28
   - first:
-      213: 3366633695454195772
-    second: 001_jump_29
+      213: 8718438570933462425
+    second: 001_sword_29
   - first:
-      213: -5156514977379621497
-    second: 001_jump_30
+      213: -2873167347774993182
+    second: 001_sword_30
   - first:
-      213: 6145213700378084583
-    second: 001_jump_31
+      213: -8241387661762751315
+    second: 001_sword_31
   - first:
-      213: 6108321960906106380
-    second: 001_jump_32
+      213: -8672195202158242819
+    second: 001_sword_32
   - first:
-      213: 3783802579322338861
-    second: 001_jump_33
+      213: -93393355984829712
+    second: 001_sword_33
   - first:
-      213: -2538966895637739013
-    second: 001_jump_34
+      213: 8079720314530105445
+    second: 001_sword_34
   - first:
-      213: -1405247069241052193
-    second: 001_jump_35
+      213: 1059417632682858715
+    second: 001_sword_35
   - first:
-      213: -4930467523365018115
-    second: 001_jump_36
+      213: 1040236175520811723
+    second: 001_sword_36
   - first:
-      213: -7417247119052711875
-    second: 001_jump_37
+      213: 6721489254220709140
+    second: 001_sword_37
   - first:
-      213: 9108005026504243730
-    second: 001_jump_38
+      213: -4021804422083401510
+    second: 001_sword_38
   - first:
-      213: 3410505507434650709
-    second: 001_jump_39
+      213: -1356975778065085683
+    second: 001_sword_39
   - first:
-      213: 4416189965293721309
-    second: 001_jump_40
+      213: 156960328803023687
+    second: 001_sword_40
   - first:
-      213: -2029763084082002710
-    second: 001_jump_41
+      213: 5271699394813670582
+    second: 001_sword_41
   - first:
-      213: -6136193618735109045
-    second: 001_jump_42
+      213: 3342016725803805588
+    second: 001_sword_42
   - first:
-      213: -8115319712057032983
-    second: 001_jump_43
+      213: -476466097059313849
+    second: 001_sword_43
   - first:
-      213: 4176211210457991390
-    second: 001_jump_44
+      213: -4123463040672865457
+    second: 001_sword_44
   - first:
-      213: 7416874720079056826
-    second: 001_jump_45
+      213: -8805450352675467007
+    second: 001_sword_45
   - first:
-      213: -2104138660335823819
-    second: 001_jump_46
+      213: 8680247583309459003
+    second: 001_sword_46
   - first:
-      213: -2526837041037885326
-    second: 001_jump_47
+      213: 8527961454528090082
+    second: 001_sword_47
   - first:
-      213: -4084849350089397005
-    second: 001_jump_48
+      213: -502680078569381695
+    second: 001_sword_48
   - first:
-      213: -5900666461143171812
-    second: 001_jump_49
+      213: -6686550738128721693
+    second: 001_sword_49
   - first:
-      213: 8997578858755286425
-    second: 001_jump_50
+      213: -3599828562024217965
+    second: 001_sword_50
   - first:
-      213: 4337972451501577924
-    second: 001_jump_51
+      213: -8239610267497516901
+    second: 001_sword_51
   - first:
-      213: 4081869134426036897
-    second: 001_jump_52
+      213: -3240372604394494037
+    second: 001_sword_52
   - first:
-      213: 5239781697185573371
-    second: 001_jump_53
+      213: -8950520646982335461
+    second: 001_sword_53
   - first:
-      213: 8980053975697065995
-    second: 001_jump_54
+      213: 8457141234064561266
+    second: 001_sword_54
   - first:
-      213: 8568708744317499222
-    second: 001_jump_55
+      213: 8904224906985028767
+    second: 001_sword_55
   - first:
-      213: 7968338374564930328
-    second: 001_jump_56
+      213: -6252605834854675406
+    second: 001_sword_56
   - first:
-      213: 4281637774074219296
-    second: jump_0
+      213: 5718070078251477820
+    second: 001_sword_57
   - first:
-      213: -7862396843884538191
-    second: jump_1
+      213: -5443568202577513877
+    second: 001_sword_58
   - first:
-      213: 8276514422256456541
-    second: jump_2
+      213: -2484203241694233772
+    second: 001_sword_59
   - first:
-      213: -3697937850672776721
-    second: jump_3
+      213: -3753825769889500098
+    second: sword_0
   - first:
-      213: 4987614716155920338
-    second: jump_4
+      213: 776136188158623729
+    second: sword_1
   - first:
-      213: -1184746109927277663
-    second: jump_5
+      213: -7502302234203853145
+    second: sword_2
   - first:
-      213: -4845626741048118468
-    second: jump_6
+      213: -7573694343354198120
+    second: sword_3
   - first:
-      213: 7014594740173477433
-    second: jump_7
+      213: -3113763368734956792
+    second: sword_4
   - first:
-      213: 1578323387413840467
-    second: jump_8
+      213: 3650304123865126532
+    second: sword_5
   - first:
-      213: 7655840988501763603
-    second: jump_9
+      213: -1525763588066094277
+    second: sword_6
   - first:
-      213: -9197958414588387290
-    second: jump_10
+      213: 5330840028906773656
+    second: sword_7
   - first:
-      213: -5086767228222736262
-    second: jump_11
+      213: -1614411906201746745
+    second: sword_8
   - first:
-      213: 6181903233876262169
-    second: jump_12
+      213: 2888725853716638510
+    second: sword_9
   - first:
-      213: 6085027727657474495
-    second: jump_13
+      213: 6287047653866031396
+    second: sword_10
   - first:
-      213: -7558048255918937315
-    second: jump_14
+      213: 2996700135033197648
+    second: sword_11
   - first:
-      213: 1978480726327293745
-    second: jump_15
+      213: -4519076053455810618
+    second: sword_12
   - first:
-      213: -6132592246010354800
-    second: jump_16
+      213: 563748580988458004
+    second: sword_13
   - first:
-      213: -418148235218303146
-    second: jump_17
+      213: -8551796387700029265
+    second: sword_14
   - first:
-      213: 4014067163673467108
-    second: jump_18
+      213: -6580160932500289361
+    second: sword_15
   - first:
-      213: 1506671210523702264
-    second: jump_19
+      213: -6469916797677484604
+    second: sword_16
   - first:
-      213: -698269485225333976
-    second: jump_20
+      213: -106492298241405289
+    second: sword_17
   - first:
-      213: 58559517799479068
-    second: jump_21
+      213: 5368310613557176870
+    second: sword_18
   - first:
-      213: 5786932790349076467
-    second: jump_22
+      213: 4133054002345373002
+    second: sword_19
   - first:
-      213: -2979544516068205554
-    second: jump_23
+      213: 486422696980654493
+    second: sword_20
   - first:
-      213: -2046193111815958161
-    second: jump_24
+      213: -5238232506152905777
+    second: sword_21
   - first:
-      213: 6484181237898064512
-    second: jump_25
+      213: -2408560815710786100
+    second: sword_22
   - first:
-      213: -3225056911852106339
-    second: jump_26
+      213: 8960651169117535451
+    second: sword_23
   - first:
-      213: 6577321620887939973
-    second: jump_27
+      213: -5596403434367763912
+    second: sword_24
   - first:
-      213: 3640988351627517149
-    second: jump_28
+      213: -7145805432888423624
+    second: sword_25
   - first:
-      213: -7335557793373392994
-    second: jump_29
+      213: 3071205789112617865
+    second: sword_26
   - first:
-      213: -8316701790580645646
-    second: jump_30
+      213: -3670109957379440039
+    second: sword_27
   - first:
-      213: 2798516111748293662
-    second: jump_31
+      213: 5864560565712805051
+    second: sword_28
   - first:
-      213: 382114916140565309
-    second: jump_32
+      213: 4078094221647819816
+    second: sword_29
   - first:
-      213: -8569130885922760573
-    second: jump_33
+      213: 8966263863505769567
+    second: sword_30
   - first:
-      213: -2210091775306831888
-    second: jump_34
+      213: 7827905936403376988
+    second: sword_31
   - first:
-      213: -2390990006331752667
-    second: jump_35
+      213: -253428081577774302
+    second: sword_32
   - first:
-      213: 1163623551245970900
-    second: jump_36
+      213: 8151861652172512272
+    second: sword_33
   - first:
-      213: 8782299771862856864
-    second: jump_37
+      213: -7483180673390476490
+    second: sword_34
   - first:
-      213: -1642604694477414606
-    second: jump_38
+      213: -1779436703557748743
+    second: sword_35
   - first:
-      213: 4557966941776416813
-    second: jump_39
+      213: -5491352476739438165
+    second: sword_36
   - first:
-      213: -468062509844781452
-    second: jump_40
+      213: -3419703854961030808
+    second: sword_37
   - first:
-      213: 8792727220414031832
-    second: jump_41
+      213: 1743087472360240393
+    second: sword_38
   - first:
-      213: -4019479287016693394
-    second: jump_42
+      213: -8668661951845185021
+    second: sword_39
   - first:
-      213: 4299268544362008819
-    second: jump_43
+      213: 8139953163264633919
+    second: sword_40
   - first:
-      213: 6915982704474624033
-    second: jump_44
+      213: -4784464808165361374
+    second: sword_41
   - first:
-      213: 968882803572095880
-    second: jump_45
+      213: 2082147127012340432
+    second: sword_42
   - first:
-      213: -8151224023099486137
-    second: jump_46
+      213: 7359020226494390081
+    second: sword_43
   - first:
-      213: -5518532394716831622
-    second: jump_47
+      213: -8093663778538518646
+    second: sword_44
   - first:
-      213: -8673869656153820657
-    second: jump_48
+      213: -3872822088525449186
+    second: sword_45
   - first:
-      213: -502782083493106410
-    second: jump_49
+      213: 572793228676377529
+    second: sword_46
   - first:
-      213: 6269712752928560008
-    second: jump_50
+      213: -175654804570326794
+    second: sword_47
   - first:
-      213: 5076106088197164608
-    second: jump_51
+      213: -8272864303179755500
+    second: sword_48
   - first:
-      213: -3594697368027660631
-    second: jump_52
+      213: 2073197639881629554
+    second: sword_49
   - first:
-      213: 6246700890586870840
-    second: jump_53
+      213: 5995929880275638782
+    second: sword_50
   - first:
-      213: -2691006794766528024
-    second: jump_54
+      213: 5432285341092793107
+    second: sword_51
   - first:
-      213: -8753627081805103990
-    second: jump_55
+      213: -126533514132887298
+    second: sword_52
   - first:
-      213: -5144560166212167377
-    second: jump_56
+      213: 8860563177825543115
+    second: sword_53
+  - first:
+      213: 8954298471889022205
+    second: sword_54
+  - first:
+      213: 4944767824322628197
+    second: sword_55
+  - first:
+      213: -3092001884677592009
+    second: sword_56
+  - first:
+      213: 8389336678365196091
+    second: sword_57
+  - first:
+      213: -1915811263547743982
+    second: sword_58
+  - first:
+      213: 8560743639282438105
+    second: sword_59
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -483,7 +501,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jump_0
+      name: sword_0
       rect:
         serializedVersion: 2
         x: 0
@@ -497,14 +515,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02b8694dede6b6b30800000000000000
-      internalID: 4281637774074219296
+      spriteID: e347705d95bb7ebc0800000000000000
+      internalID: -3753825769889500098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_1
+      name: sword_1
       rect:
         serializedVersion: 2
         x: 360
@@ -518,14 +536,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b61c1d2ab723e290800000000000000
-      internalID: -7862396843884538191
+      spriteID: 1ff358040c365ca00800000000000000
+      internalID: 776136188158623729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_2
+      name: sword_2
       rect:
         serializedVersion: 2
         x: 720
@@ -539,14 +557,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d535ef424061cd270800000000000000
-      internalID: 8276514422256456541
+      spriteID: 7aee8acedd772e790800000000000000
+      internalID: -7502302234203853145
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_3
+      name: sword_3
       rect:
         serializedVersion: 2
         x: 1080
@@ -560,14 +578,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe97d290e194eacc0800000000000000
-      internalID: -3697937850672776721
+      spriteID: 897dcf23f15d4e690800000000000000
+      internalID: -7573694343354198120
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_4
+      name: sword_4
       rect:
         serializedVersion: 2
         x: 1440
@@ -581,14 +599,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dffbf8a821973540800000000000000
-      internalID: 4987614716155920338
+      spriteID: 803edeba6b0b9c4d0800000000000000
+      internalID: -3113763368734956792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_5
+      name: sword_5
       rect:
         serializedVersion: 2
         x: 1800
@@ -602,14 +620,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ab32c8a0bfee8fe0800000000000000
-      internalID: -1184746109927277663
+      spriteID: 486df11b24c78a230800000000000000
+      internalID: 3650304123865126532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_6
+      name: sword_6
       rect:
         serializedVersion: 2
         x: 2160
@@ -623,14 +641,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3371b9f620e0ccb0800000000000000
-      internalID: -4845626741048118468
+      spriteID: b33581ab91663dae0800000000000000
+      internalID: -1525763588066094277
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_7
+      name: sword_7
       rect:
         serializedVersion: 2
         x: 2520
@@ -644,14 +662,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9361d5350c8d85160800000000000000
-      internalID: 7014594740173477433
+      spriteID: 89cdb6523c2faf940800000000000000
+      internalID: 5330840028906773656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_8
+      name: sword_8
       rect:
         serializedVersion: 2
         x: 2880
@@ -665,14 +683,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3524e7f22c457e510800000000000000
-      internalID: 1578323387413840467
+      spriteID: 7c20fa1cce47899e0800000000000000
+      internalID: -1614411906201746745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_9
+      name: sword_9
       rect:
         serializedVersion: 2
         x: 3240
@@ -686,14 +704,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 316e58011d20f3a60800000000000000
-      internalID: 7655840988501763603
+      spriteID: e2b644cdbd0d61820800000000000000
+      internalID: 2888725853716638510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_10
+      name: sword_10
       rect:
         serializedVersion: 2
         x: 3600
@@ -707,14 +725,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 620e4a70e894a5080800000000000000
-      internalID: -9197958414588387290
+      spriteID: 42943aee784104750800000000000000
+      internalID: 6287047653866031396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_11
+      name: sword_11
       rect:
         serializedVersion: 2
         x: 0
@@ -728,14 +746,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a787fa2282c2869b0800000000000000
-      internalID: -5086767228222736262
+      spriteID: 054d40745ea669920800000000000000
+      internalID: 2996700135033197648
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_12
+      name: sword_12
       rect:
         serializedVersion: 2
         x: 360
@@ -749,14 +767,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91d7803fc388ac550800000000000000
-      internalID: 6181903233876262169
+      spriteID: 6cfcac0c5440941c0800000000000000
+      internalID: -4519076053455810618
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_13
+      name: sword_13
       rect:
         serializedVersion: 2
         x: 720
@@ -770,14 +788,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb91d6b7a7c527450800000000000000
-      internalID: 6085027727657474495
+      spriteID: 4149278f856d2d700800000000000000
+      internalID: 563748580988458004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_14
+      name: sword_14
       rect:
         serializedVersion: 2
         x: 1080
@@ -791,14 +809,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1be0bec72b6c1790800000000000000
-      internalID: -7558048255918937315
+      spriteID: fa8cba7ae7ae15980800000000000000
+      internalID: -8551796387700029265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_15
+      name: sword_15
       rect:
         serializedVersion: 2
         x: 1440
@@ -812,14 +830,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 137f1b7fcb9f47b10800000000000000
-      internalID: 1978480726327293745
+      spriteID: fa8ca6dbe729ea4a0800000000000000
+      internalID: -6580160932500289361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_16
+      name: sword_16
       rect:
         serializedVersion: 2
         x: 1800
@@ -833,14 +851,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 093ec3818d7a4eaa0800000000000000
-      internalID: -6132592246010354800
+      spriteID: 4c5c91c93fc3636a0800000000000000
+      internalID: -6469916797677484604
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_17
+      name: sword_17
       rect:
         serializedVersion: 2
         x: 2160
@@ -854,14 +872,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6574b504560723af0800000000000000
-      internalID: -418148235218303146
+      spriteID: 79e8108a1d9a58ef0800000000000000
+      internalID: -106492298241405289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_18
+      name: sword_18
       rect:
         serializedVersion: 2
         x: 2520
@@ -875,14 +893,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e8115361d4d4b730800000000000000
-      internalID: 4014067163673467108
+      spriteID: 62ae80d7f02108a40800000000000000
+      internalID: 5368310613557176870
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_19
+      name: sword_19
       rect:
         serializedVersion: 2
         x: 2880
@@ -896,14 +914,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f3b298bb75c8e410800000000000000
-      internalID: 1506671210523702264
+      spriteID: a4d6d4f97be8b5930800000000000000
+      internalID: 4133054002345373002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_20
+      name: sword_20
       rect:
         serializedVersion: 2
         x: 3240
@@ -917,14 +935,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82b26af4a9f3f46f0800000000000000
-      internalID: -698269485225333976
+      spriteID: d992830adde10c600800000000000000
+      internalID: 486422696980654493
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_21
+      name: sword_21
       rect:
         serializedVersion: 2
         x: 3600
@@ -938,14 +956,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c17f7a8329b00d000800000000000000
-      internalID: 58559517799479068
+      spriteID: fc31adbf94f0e47b0800000000000000
+      internalID: -5238232506152905777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_22
+      name: sword_22
       rect:
         serializedVersion: 2
         x: 0
@@ -959,14 +977,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f711db56b05f4050800000000000000
-      internalID: 5786932790349076467
+      spriteID: ccd22aff2b2139ed0800000000000000
+      internalID: -2408560815710786100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_23
+      name: sword_23
       rect:
         serializedVersion: 2
         x: 360
@@ -980,14 +998,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0c9a478c0886a6d0800000000000000
-      internalID: -2979544516068205554
+      spriteID: bdc707343c0aa5c70800000000000000
+      internalID: 8960651169117535451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_24
+      name: sword_24
       rect:
         serializedVersion: 2
         x: 720
@@ -1001,14 +1019,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f61db5cb4367a93e0800000000000000
-      internalID: -2046193111815958161
+      spriteID: 83abbba3ab49552b0800000000000000
+      internalID: -5596403434367763912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_25
+      name: sword_25
       rect:
         serializedVersion: 2
         x: 1080
@@ -1022,14 +1040,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 082ba203b707cf950800000000000000
-      internalID: 6484181237898064512
+      spriteID: 83b01a2a1dff4dc90800000000000000
+      internalID: -7145805432888423624
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_26
+      name: sword_26
       rect:
         serializedVersion: 2
         x: 1440
@@ -1043,14 +1061,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9d03a463db4e33d0800000000000000
-      internalID: -3225056911852106339
+      spriteID: 98b4e2ca46d1f9a20800000000000000
+      internalID: 3071205789112617865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_27
+      name: sword_27
       rect:
         serializedVersion: 2
         x: 1800
@@ -1064,14 +1082,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58ba5828a27574b50800000000000000
-      internalID: 6577321620887939973
+      spriteID: 95246c75076211dc0800000000000000
+      internalID: -3670109957379440039
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_28
+      name: sword_28
       rect:
         serializedVersion: 2
         x: 2160
@@ -1085,14 +1103,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddcd7127d93678230800000000000000
-      internalID: 3640988351627517149
+      spriteID: bbc531343ca136150800000000000000
+      internalID: 5864560565712805051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_29
+      name: sword_29
       rect:
         serializedVersion: 2
         x: 2520
@@ -1106,14 +1124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9f61a86d0dd23a90800000000000000
-      internalID: -7335557793373392994
+      spriteID: 82434e1861d489830800000000000000
+      internalID: 4078094221647819816
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_30
+      name: sword_30
       rect:
         serializedVersion: 2
         x: 2880
@@ -1127,14 +1145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f0e59509c3259c80800000000000000
-      internalID: -8316701790580645646
+      spriteID: f54dea28a719e6c70800000000000000
+      internalID: 8966263863505769567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_31
+      name: sword_31
       rect:
         serializedVersion: 2
         x: 3240
@@ -1148,14 +1166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e14e6f2939356d620800000000000000
-      internalID: 2798516111748293662
+      spriteID: c5bae72a9fe42ac60800000000000000
+      internalID: 7827905936403376988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_32
+      name: sword_32
       rect:
         serializedVersion: 2
         x: 3600
@@ -1169,14 +1187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d33cfefdd7b8d4500800000000000000
-      internalID: 382114916140565309
+      spriteID: 223b275a084ab7cf0800000000000000
+      internalID: -253428081577774302
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_33
+      name: sword_33
       rect:
         serializedVersion: 2
         x: 0
@@ -1190,14 +1208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 388deb64cd4541980800000000000000
-      internalID: -8569130885922760573
+      spriteID: 01c1fd37bfa312170800000000000000
+      internalID: 8151861652172512272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_34
+      name: sword_34
       rect:
         serializedVersion: 2
         x: 360
@@ -1211,14 +1229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f7e2db6d3d2451e0800000000000000
-      internalID: -2210091775306831888
+      spriteID: 6330e7c33d6662890800000000000000
+      internalID: -7483180673390476490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_35
+      name: sword_35
       rect:
         serializedVersion: 2
         x: 720
@@ -1232,14 +1250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52f361bd14f71ded0800000000000000
-      internalID: -2390990006331752667
+      spriteID: 9f7f528febb2e47e0800000000000000
+      internalID: -1779436703557748743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_36
+      name: sword_36
       rect:
         serializedVersion: 2
         x: 1080
@@ -1253,14 +1271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dd6b486475062010800000000000000
-      internalID: 1163623551245970900
+      spriteID: ba9fb7f440ccac3b0800000000000000
+      internalID: -5491352476739438165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_37
+      name: sword_37
       rect:
         serializedVersion: 2
         x: 1440
@@ -1274,14 +1292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a431e4ac1ff0e970800000000000000
-      internalID: 8782299771862856864
+      spriteID: 86983085675ca80d0800000000000000
+      internalID: -3419703854961030808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_38
+      name: sword_38
       rect:
         serializedVersion: 2
         x: 1800
@@ -1295,14 +1313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23fd847bbbb4439e0800000000000000
-      internalID: -1642604694477414606
+      spriteID: 905377222d0b03810800000000000000
+      internalID: 1743087472360240393
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_39
+      name: sword_39
       rect:
         serializedVersion: 2
         x: 2160
@@ -1316,14 +1334,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d209e8ec8c6214f30800000000000000
-      internalID: 4557966941776416813
+      spriteID: 30ac25222e9b2b780800000000000000
+      internalID: -8668661951845185021
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_40
+      name: sword_40
       rect:
         serializedVersion: 2
         x: 2520
@@ -1337,14 +1355,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 476260090ab1189f0800000000000000
-      internalID: -468062509844781452
+      spriteID: f3ca4b0564ce6f070800000000000000
+      internalID: 8139953163264633919
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_41
+      name: sword_41
       rect:
         serializedVersion: 2
         x: 2880
@@ -1358,14 +1376,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d7afa332da060a70800000000000000
-      internalID: 8792727220414031832
+      spriteID: 22932fc2b9a2a9db0800000000000000
+      internalID: -4784464808165361374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_42
+      name: sword_42
       rect:
         serializedVersion: 2
         x: 3240
@@ -1379,14 +1397,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e61645372e0f738c0800000000000000
-      internalID: -4019479287016693394
+      spriteID: 0d2bba3c7c545ec10800000000000000
+      internalID: 2082147127012340432
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_43
+      name: sword_43
       rect:
         serializedVersion: 2
         x: 3600
@@ -1400,14 +1418,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f055bc66f11aab30800000000000000
-      internalID: 4299268544362008819
+      spriteID: 14fdc1ff7ed702660800000000000000
+      internalID: 7359020226494390081
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_44
+      name: sword_44
       rect:
         serializedVersion: 2
         x: 0
@@ -1421,14 +1439,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12094f490a18aff50800000000000000
-      internalID: 6915982704474624033
+      spriteID: a8704cceca78daf80800000000000000
+      internalID: -8093663778538518646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_45
+      name: sword_45
       rect:
         serializedVersion: 2
         x: 360
@@ -1442,14 +1460,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88b36e7c6c9227d00800000000000000
-      internalID: 968882803572095880
+      spriteID: e18772f54d8f04ac0800000000000000
+      internalID: -3872822088525449186
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_46
+      name: sword_46
       rect:
         serializedVersion: 2
         x: 720
@@ -1463,14 +1481,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 740568220f801ee80800000000000000
-      internalID: -8151224023099486137
+      spriteID: 9bb210d1868f2f700800000000000000
+      internalID: 572793228676377529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_47
+      name: sword_47
       rect:
         serializedVersion: 2
         x: 1080
@@ -1484,14 +1502,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a70ea63860c3a63b0800000000000000
-      internalID: -5518532394716831622
+      spriteID: 6f8be7ac2e2ff8df0800000000000000
+      internalID: -175654804570326794
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_48
+      name: sword_48
       rect:
         serializedVersion: 2
         x: 1440
@@ -1505,14 +1523,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0279ecf08930a780800000000000000
-      internalID: -8673869656153820657
+      spriteID: 41016fd6fb1e03d80800000000000000
+      internalID: -8272864303179755500
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_49
+      name: sword_49
       rect:
         serializedVersion: 2
         x: 1800
@@ -1526,14 +1544,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61d66f1eb52c509f0800000000000000
-      internalID: -502782083493106410
+      spriteID: 27f925ae44a75cc10800000000000000
+      internalID: 2073197639881629554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_50
+      name: sword_50
       rect:
         serializedVersion: 2
         x: 2160
@@ -1547,14 +1565,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8831b0ac78e720750800000000000000
-      internalID: 6269712752928560008
+      spriteID: ef9daf35572d53350800000000000000
+      internalID: 5995929880275638782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_51
+      name: sword_51
       rect:
         serializedVersion: 2
         x: 2520
@@ -1568,14 +1586,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04e8035c793f17640800000000000000
-      internalID: 5076106088197164608
+      spriteID: 31bc56a7cba536b40800000000000000
+      internalID: 5432285341092793107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_52
+      name: sword_52
       rect:
         serializedVersion: 2
         x: 2880
@@ -1589,14 +1607,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9aefdaf0ac11d1ec0800000000000000
-      internalID: -3594697368027660631
+      spriteID: ef86de570767e3ef0800000000000000
+      internalID: -126533514132887298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_53
+      name: sword_53
       rect:
         serializedVersion: 2
         x: 3240
@@ -1610,14 +1628,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 834fb811d5db0b650800000000000000
-      internalID: 6246700890586870840
+      spriteID: bc3a234d34b07fa70800000000000000
+      internalID: 8860563177825543115
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_54
+      name: sword_54
       rect:
         serializedVersion: 2
         x: 3600
@@ -1631,14 +1649,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e157c5e39f97aad0800000000000000
-      internalID: -2691006794766528024
+      spriteID: dfca4cda40f044c70800000000000000
+      internalID: 8954298471889022205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_55
+      name: sword_55
       rect:
         serializedVersion: 2
         x: 0
@@ -1652,14 +1670,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8c74cc3c8ed48680800000000000000
-      internalID: -8753627081805103990
+      spriteID: 56a088143285f9440800000000000000
+      internalID: 4944767824322628197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_56
+      name: sword_56
       rect:
         serializedVersion: 2
         x: 360
@@ -1673,8 +1691,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f299c4f29c9da98b0800000000000000
-      internalID: -5144560166212167377
+      spriteID: 73c24f20ba00715d0800000000000000
+      internalID: -3092001884677592009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword_57
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3fec17a249ec6470800000000000000
+      internalID: 8389336678365196091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword_58
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 0
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2116b836ecba965e0800000000000000
+      internalID: -1915811263547743982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword_59
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9df4d90bbfeddc670800000000000000
+      internalID: 8560743639282438105
       vertices: []
       indices: 
       edges: []
@@ -1690,63 +1771,66 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      jump_36: 1163623551245970900
-      jump_30: -8316701790580645646
-      jump_26: -3225056911852106339
-      jump_45: 968882803572095880
-      jump_19: 1506671210523702264
-      jump_20: -698269485225333976
-      jump_39: 4557966941776416813
-      jump_31: 2798516111748293662
-      jump_8: 1578323387413840467
-      jump_5: -1184746109927277663
-      jump_7: 7014594740173477433
-      jump_28: 3640988351627517149
-      jump_44: 6915982704474624033
-      jump_12: 6181903233876262169
-      jump_38: -1642604694477414606
-      jump_13: 6085027727657474495
-      jump_50: 6269712752928560008
-      jump_34: -2210091775306831888
-      jump_46: -8151224023099486137
-      jump_51: 5076106088197164608
-      jump_35: -2390990006331752667
-      jump_56: -5144560166212167377
-      jump_9: 7655840988501763603
-      jump_37: 8782299771862856864
-      jump_32: 382114916140565309
-      jump_3: -3697937850672776721
-      jump_14: -7558048255918937315
-      jump_2: 8276514422256456541
-      jump_52: -3594697368027660631
-      jump_49: -502782083493106410
-      jump_17: -418148235218303146
-      jump_43: 4299268544362008819
-      jump_27: 6577321620887939973
-      jump_24: -2046193111815958161
-      jump_53: 6246700890586870840
-      jump_42: -4019479287016693394
-      jump_0: 4281637774074219296
-      jump_11: -5086767228222736262
-      jump_47: -5518532394716831622
-      jump_1: -7862396843884538191
-      jump_10: -9197958414588387290
-      jump_22: 5786932790349076467
-      jump_55: -8753627081805103990
-      jump_21: 58559517799479068
-      jump_54: -2691006794766528024
-      jump_48: -8673869656153820657
-      jump_29: -7335557793373392994
-      jump_18: 4014067163673467108
-      jump_6: -4845626741048118468
-      jump_40: -468062509844781452
-      jump_33: -8569130885922760573
-      jump_15: 1978480726327293745
-      jump_41: 8792727220414031832
-      jump_25: 6484181237898064512
-      jump_23: -2979544516068205554
-      jump_16: -6132592246010354800
-      jump_4: 4987614716155920338
+      sword_35: -1779436703557748743
+      sword_48: -8272864303179755500
+      sword_18: 5368310613557176870
+      sword_2: -7502302234203853145
+      sword_19: 4133054002345373002
+      sword_42: 2082147127012340432
+      sword_14: -8551796387700029265
+      sword_50: 5995929880275638782
+      sword_26: 3071205789112617865
+      sword_0: -3753825769889500098
+      sword_31: 7827905936403376988
+      sword_40: 8139953163264633919
+      sword_15: -6580160932500289361
+      sword_7: 5330840028906773656
+      sword_5: 3650304123865126532
+      sword_11: 2996700135033197648
+      sword_55: 4944767824322628197
+      sword_12: -4519076053455810618
+      sword_27: -3670109957379440039
+      sword_4: -3113763368734956792
+      sword_28: 5864560565712805051
+      sword_46: 572793228676377529
+      sword_37: -3419703854961030808
+      sword_9: 2888725853716638510
+      sword_10: 6287047653866031396
+      sword_29: 4078094221647819816
+      sword_23: 8960651169117535451
+      sword_32: -253428081577774302
+      sword_57: 8389336678365196091
+      sword_8: -1614411906201746745
+      sword_24: -5596403434367763912
+      sword_54: 8954298471889022205
+      sword_58: -1915811263547743982
+      sword_36: -5491352476739438165
+      sword_39: -8668661951845185021
+      sword_43: 7359020226494390081
+      sword_3: -7573694343354198120
+      sword_34: -7483180673390476490
+      sword_17: -106492298241405289
+      sword_33: 8151861652172512272
+      sword_47: -175654804570326794
+      sword_16: -6469916797677484604
+      sword_1: 776136188158623729
+      sword_45: -3872822088525449186
+      sword_13: 563748580988458004
+      sword_22: -2408560815710786100
+      sword_56: -3092001884677592009
+      sword_53: 8860563177825543115
+      sword_52: -126533514132887298
+      sword_6: -1525763588066094277
+      sword_21: -5238232506152905777
+      sword_20: 486422696980654493
+      sword_25: -7145805432888423624
+      sword_30: 8966263863505769567
+      sword_49: 2073197639881629554
+      sword_59: 8560743639282438105
+      sword_44: -8093663778538518646
+      sword_38: 1743087472360240393
+      sword_41: -4784464808165361374
+      sword_51: 5432285341092793107
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1592,7 +1592,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       bomb_carry_32: -8356942119643643144
-      bomb_carry_50: -2903064536554436723
+      bomb_carry_47: -7786814676978144675
       bomb_carry_51: 2934130862261920784
       bomb_carry_26: -1884944641070344108
       bomb_carry_37: -2259918027125460838
@@ -1618,15 +1618,15 @@ TextureImporter:
       bomb_carry_17: 1549090396521370193
       bomb_carry_54: -7832170681101788709
       bomb_carry_57: -5552274904183291310
+      bomb_carry_20: 3858067993903375844
       bomb_carry_38: -5272604260540768587
       bomb_carry_36: 8857386175257959013
-      bomb_carry_20: 3858067993903375844
       bomb_carry_25: 4899933861312448138
       bomb_carry_6: -1720672432891114299
       bomb_carry_18: 2098574990290000551
+      bomb_carry_48: 4082997720054145224
       bomb_carry_15: -7276686299914379311
       bomb_carry_41: 8337478563610747139
-      bomb_carry_48: 4082997720054145224
       bomb_carry_31: -5917952954266617794
       bomb_carry_59: 8662631689425337124
       bomb_carry_45: -602997321593226613
@@ -1647,10 +1647,10 @@ TextureImporter:
       bomb_carry_39: 3916555645117337140
       bomb_carry_14: -1675275874971344914
       bomb_carry_27: -4646496869904889924
+      bomb_carry_50: -2903064536554436723
       bomb_carry_0: 2837247941802057891
-      bomb_carry_22: 3217347994292953808
       bomb_carry_10: 2602264901856014461
-      bomb_carry_47: -7786814676978144675
+      bomb_carry_22: 3217347994292953808
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

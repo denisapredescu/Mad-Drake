@@ -92,6 +92,13 @@ public struct Collectible
     public float chanceOfSpawn;
 }
 
+[Serializable]
+public struct Enemy
+{
+    public GameObject enemy;
+    public int maximumNumberOfEnemies;
+}
+
 public enum Direction
 {
     Right = 0,
@@ -124,6 +131,7 @@ public class RoomInfo : IntegerCoordinates<RoomInfo>
     public bool Right { get; set; }
     public GameObject OwnGround { get; set; }
     public InfiniteMatrix<InsideRoomObject> Collectibles { get; set; }
+    public InfiniteMatrix<InsideRoomObject> Enemies { get; set; }
 
     public RoomInfo(Vector2Int coord)
     {
@@ -132,6 +140,7 @@ public class RoomInfo : IntegerCoordinates<RoomInfo>
         Up = Down = Left = Right = false;
         OwnGround = null;
         Collectibles = new InfiniteMatrix<InsideRoomObject> { };
+        Enemies = new InfiniteMatrix<InsideRoomObject> { };
     }
 
     public RoomInfo(int x, int y)
@@ -141,6 +150,7 @@ public class RoomInfo : IntegerCoordinates<RoomInfo>
         Up = Down = Left = Right = false;
         OwnGround = null;
         Collectibles = new InfiniteMatrix<InsideRoomObject> { };
+        Enemies = new InfiniteMatrix<InsideRoomObject> { };
     }
 
     public void AddDirection(Direction direction)
@@ -277,7 +287,15 @@ public class LevelGenerator : MonoBehaviour
     //all of this is done in order to make sure the objects are not overlapping
     [SerializeField]
     private List<Collectible> collectibles;
-
+    [SerializeField]
+    private GameObject player;
+    [SerializeField]
+    private Transform playerCamera;
+    private Vector3 lastCameraPosition;
+    private Vector2Int activeRoomCoordinates;
+    private RoomController roomController;
+    [SerializeField]
+    private List<Enemy> enemies;
 
     //adds the new room in array and also the reference in the map
     private int AddRoom(int x, int y)
@@ -290,6 +308,10 @@ public class LevelGenerator : MonoBehaviour
     private void Start()
     {
         rooms = new InfiniteMatrix<RoomInfo>();
+        roomController = GetComponent<RoomController>();
+        lastCameraPosition = playerCamera.position;
+        activeRoomCoordinates.x = (int)(lastCameraPosition.x / roomWidth);
+        activeRoomCoordinates.y = (int)(lastCameraPosition.y / roomHeight);
 
         RoomGeneration();
 
@@ -297,6 +319,58 @@ public class LevelGenerator : MonoBehaviour
         for (int i = 0; i < rooms.Count(); i++)
         {
             Build(i);
+        }
+    }
+
+    private RoomInfo activeRoomForEnemies;
+    private bool lockRoom = false;
+
+    private bool HasActiveEnemies(RoomInfo room)
+    {
+        for (int i = 0; i < room.Enemies.Count(); i++)
+            if (room.Enemies.GetByIndex(i).SpawnedObject.activeSelf)
+                return true;
+
+        return false;
+    }
+
+    private void Update()
+    {
+        if(lastCameraPosition != playerCamera.position)
+        {
+            if (lastCameraPosition.x < playerCamera.position.x)
+                activeRoomCoordinates.x++;
+            else if (lastCameraPosition.x > playerCamera.position.x)
+                activeRoomCoordinates.x--;
+
+            if (lastCameraPosition.y < playerCamera.position.y)
+                activeRoomCoordinates.y++;
+            else if (lastCameraPosition.y > playerCamera.position.y)
+                activeRoomCoordinates.y--;
+
+            activeRoomForEnemies = rooms.GetByCoord(activeRoomCoordinates);
+
+            if(HasActiveEnemies(activeRoomForEnemies))
+            {
+                roomController.CloseDoors();
+
+                for (int i = 0; i < activeRoomForEnemies.Enemies.Count(); i++)
+                {
+                    GameObject enemy = activeRoomForEnemies.Enemies.GetByIndex(i).SpawnedObject;
+                    enemy.GetComponent<UniversalSetTarget>().SetEnemyActivity(true);
+                }
+
+                lockRoom = true;
+            }
+
+            lastCameraPosition = playerCamera.position;
+            Debug.Log(activeRoomCoordinates);
+        }
+
+        if(lockRoom && !HasActiveEnemies(activeRoomForEnemies))
+        {
+            roomController.OpenDoors();
+            lockRoom = false;
         }
     }
 
@@ -402,6 +476,7 @@ public class LevelGenerator : MonoBehaviour
         CreateSpecialPaths();
         CreateSpecialRoomsOnMainLine(startAndEndRooms.Item1, startAndEndRooms.Item2);
         AddCollectibles();
+        AddEnemies();
     }
 
     Tuple<RoomInfo, RoomInfo> CreateMainLine()
@@ -686,18 +761,24 @@ public class LevelGenerator : MonoBehaviour
         if (specialEndRooms.Count > 0)
             BuildSpecialRooms(endRoom, Direction.Right, 0, specialEndRooms);
     }
-    void AddCollectibles()
+    private List<int> GetBasicRoomsIndexes()
     {
         List<int> basicRoomsIndexes = new();
 
         //gets all non-special rooms indexes
-        for(int i = 0; i < rooms.Count(); i++)
+        for (int i = 0; i < rooms.Count(); i++)
         {
             if (rooms.GetByIndex(i).OwnGround == null)
                 basicRoomsIndexes.Add(i);
         }
 
-        foreach(var collectibleInfo in collectibles)
+        return basicRoomsIndexes;
+    }
+    void AddCollectibles()
+    {
+        List<int> basicRoomsIndexes = GetBasicRoomsIndexes();
+
+        foreach (var collectibleInfo in collectibles)
         {
             //spawns the collectibles
             for(int i = 0; i < collectibleInfo.maximumNumber; i++)
@@ -719,7 +800,6 @@ public class LevelGenerator : MonoBehaviour
 
                 if (!room.Collectibles.Exists(pickedX, pickedY))
                 {
-                    room.Collectibles.Add(new InsideRoomObject(collectibleInfo.gameObject, pickedX, pickedY));
                     Vector3 position = Vector3.zero;
 
                     if (pickedX > 0)
@@ -732,7 +812,49 @@ public class LevelGenerator : MonoBehaviour
                     else
                         position.y = room.Coord.y * roomHeight + pickedY + approachToCenter;
 
-                    Instantiate(collectibleInfo.gameObject, position, Quaternion.identity);
+                    GameObject collectibleInstance = Instantiate(collectibleInfo.gameObject, position, Quaternion.identity);
+                    room.Collectibles.Add(new InsideRoomObject(collectibleInstance, pickedX, pickedY));
+                }
+            }
+        }
+    }
+    void AddEnemies()
+    {
+        List<int> basicRoomsIndexes = GetBasicRoomsIndexes();
+
+        foreach (Enemy enemyInfo in enemies)
+        {
+            for (int i = 0; i < enemyInfo.maximumNumberOfEnemies; i++)
+            {
+                int index = UnityEngine.Random.Range(0, basicRoomsIndexes.Count);
+                RoomInfo room = rooms.GetByIndex(basicRoomsIndexes[index]);
+
+                //for enemies is [minimum + 1, maximum - 1] to make sure is in the room itself
+                int pickedX = UnityEngine.Random.Range(-maximumXForSpawn + 1, maximumXForSpawn);
+                int pickedY = UnityEngine.Random.Range(-maximumYForSpawn + 1, maximumYForSpawn);
+                if (pickedX == 0)
+                    pickedX += UnityEngine.Random.Range(0, 2) == 0 ? -1 : 1;
+                if (pickedY == 0)
+                    pickedY += UnityEngine.Random.Range(0, 2) == 0 ? -1 : 1;
+
+                if (!room.Enemies.Exists(pickedX, pickedY))
+                {
+                    
+                    Vector3 position = Vector3.zero;
+
+                    if (pickedX > 0)
+                        position.x = room.Coord.x * roomWidth + pickedX - approachToCenter;
+                    else
+                        position.x = room.Coord.x * roomWidth + pickedX + approachToCenter;
+
+                    if (pickedY > 0)
+                        position.y = room.Coord.y * roomHeight + pickedY - approachToCenter;
+                    else
+                        position.y = room.Coord.y * roomHeight + pickedY + approachToCenter;
+                    
+                    GameObject enemyInstance = Instantiate(enemyInfo.enemy, position, Quaternion.identity);
+                    enemyInstance.GetComponent<UniversalSetTarget>().SetTarget(player);
+                    room.Enemies.Add(new InsideRoomObject(enemyInstance, pickedX, pickedY));
                 }
             }
         }

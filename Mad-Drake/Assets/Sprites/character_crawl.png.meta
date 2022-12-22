@@ -1,367 +1,349 @@
 fileFormatVersion: 2
-guid: 15eb07192dee43dcb169478da3b487d0
+guid: 43eb704c8d3f4f02b188c5988c58b4fb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3855204590384013555
-    second: 001_sword_0
+      213: -8278718988134912920
+    second: 001_crawl_0
   - first:
-      213: 4181214240253420791
-    second: 001_sword_1
+      213: -5869736859029309157
+    second: 001_crawl_1
   - first:
-      213: 500075716813855800
-    second: 001_sword_2
+      213: 1805059510254218393
+    second: 001_crawl_2
   - first:
-      213: 8281719026080161630
-    second: 001_sword_3
+      213: 5301829085726349033
+    second: 001_crawl_3
   - first:
-      213: -3848643188270562764
-    second: 001_sword_4
+      213: 5235573502336527071
+    second: 001_crawl_4
   - first:
-      213: -1361668555134528780
-    second: 001_sword_5
+      213: -4484548554359974427
+    second: 001_crawl_5
   - first:
-      213: 4328707009619189361
-    second: 001_sword_6
+      213: -2073284639423726515
+    second: 001_crawl_6
   - first:
-      213: 730045474444299474
-    second: 001_sword_7
+      213: 5261148301550944624
+    second: 001_crawl_7
   - first:
-      213: 5558601486879711269
-    second: 001_sword_8
+      213: 3176515651580295083
+    second: 001_crawl_8
   - first:
-      213: -7791959794064657738
-    second: 001_sword_9
+      213: 317733829993152270
+    second: 001_crawl_9
   - first:
-      213: 6827086041007633331
-    second: 001_sword_10
+      213: -6547178414495432779
+    second: 001_crawl_10
   - first:
-      213: 1787054976660919517
-    second: 001_sword_11
+      213: -551620309600875965
+    second: 001_crawl_11
   - first:
-      213: 8414710541518763857
-    second: 001_sword_12
+      213: 126869401708836414
+    second: 001_crawl_12
   - first:
-      213: 569692869438586843
-    second: 001_sword_13
+      213: 5061579826844059489
+    second: 001_crawl_13
   - first:
-      213: -3607438522710574676
-    second: 001_sword_14
+      213: -2764402748930544997
+    second: 001_crawl_14
   - first:
-      213: 6883986114499811420
-    second: 001_sword_15
+      213: -8192535459070767541
+    second: 001_crawl_15
   - first:
-      213: -4792939842899420706
-    second: 001_sword_16
+      213: -8905651254822466290
+    second: 001_crawl_16
   - first:
-      213: -2383299260181338470
-    second: 001_sword_17
+      213: -4535440378235963215
+    second: 001_crawl_17
   - first:
-      213: 974464698378331236
-    second: 001_sword_18
+      213: -3900459488720378412
+    second: 001_crawl_18
   - first:
-      213: -6324485716168645022
-    second: 001_sword_19
+      213: 3828528524008090071
+    second: 001_crawl_19
   - first:
-      213: 8332378804251301189
-    second: 001_sword_20
+      213: 3648585747572644525
+    second: 001_crawl_20
   - first:
-      213: -6998592517452918070
-    second: 001_sword_21
+      213: 8332281044773490492
+    second: 001_crawl_21
   - first:
-      213: -2706291634701402968
-    second: 001_sword_22
+      213: 5644031063374137027
+    second: 001_crawl_22
   - first:
-      213: -7766883052025624904
-    second: 001_sword_23
+      213: -3363443975034586583
+    second: 001_crawl_23
   - first:
-      213: -458718184587049151
-    second: 001_sword_24
+      213: -7094048987413350752
+    second: 001_crawl_24
   - first:
-      213: 1086123471200527776
-    second: 001_sword_25
+      213: 8802966961096409756
+    second: 001_crawl_25
   - first:
-      213: -875543638013893890
-    second: 001_sword_26
+      213: -1183956736984191471
+    second: 001_crawl_26
   - first:
-      213: 7784281977902292456
-    second: 001_sword_27
+      213: 2707196928252972941
+    second: 001_crawl_27
   - first:
-      213: 2484058284368744050
-    second: 001_sword_28
+      213: -6842271882808038225
+    second: 001_crawl_28
   - first:
-      213: 8718438570933462425
-    second: 001_sword_29
+      213: -1574998691784601377
+    second: 001_crawl_29
   - first:
-      213: -2873167347774993182
-    second: 001_sword_30
+      213: 3540922041612233255
+    second: 001_crawl_30
   - first:
-      213: -8241387661762751315
-    second: 001_sword_31
+      213: -6719377116490255970
+    second: 001_crawl_31
   - first:
-      213: -8672195202158242819
-    second: 001_sword_32
+      213: -2026477787031756177
+    second: 001_crawl_32
   - first:
-      213: -93393355984829712
-    second: 001_sword_33
+      213: 586962718998189682
+    second: 001_crawl_33
   - first:
-      213: 8079720314530105445
-    second: 001_sword_34
+      213: -7408316839425961689
+    second: 001_crawl_34
   - first:
-      213: 1059417632682858715
-    second: 001_sword_35
+      213: -6282502359498492993
+    second: 001_crawl_35
   - first:
-      213: 1040236175520811723
-    second: 001_sword_36
+      213: -3528693367939412637
+    second: 001_crawl_36
   - first:
-      213: 6721489254220709140
-    second: 001_sword_37
+      213: -3829275991645537076
+    second: 001_crawl_37
   - first:
-      213: -4021804422083401510
-    second: 001_sword_38
+      213: -4546619556867711157
+    second: 001_crawl_38
   - first:
-      213: -1356975778065085683
-    second: 001_sword_39
+      213: -599791038833843841
+    second: 001_crawl_39
   - first:
-      213: 156960328803023687
-    second: 001_sword_40
+      213: 4481279138063796619
+    second: 001_crawl_40
   - first:
-      213: 5271699394813670582
-    second: 001_sword_41
+      213: 9036870624855127330
+    second: 001_crawl_41
   - first:
-      213: 3342016725803805588
-    second: 001_sword_42
+      213: -2458452827944631840
+    second: 001_crawl_42
   - first:
-      213: -476466097059313849
-    second: 001_sword_43
+      213: 6334144011790709698
+    second: 001_crawl_43
   - first:
-      213: -4123463040672865457
-    second: 001_sword_44
+      213: -1425461724839098982
+    second: 001_crawl_44
   - first:
-      213: -8805450352675467007
-    second: 001_sword_45
+      213: -6345260508401321341
+    second: 001_crawl_45
   - first:
-      213: 8680247583309459003
-    second: 001_sword_46
+      213: 261936785317415390
+    second: 001_crawl_46
   - first:
-      213: 8527961454528090082
-    second: 001_sword_47
+      213: -1161545628493037522
+    second: 001_crawl_47
   - first:
-      213: -502680078569381695
-    second: 001_sword_48
+      213: 1258150422525355161
+    second: 001_crawl_48
   - first:
-      213: -6686550738128721693
-    second: 001_sword_49
+      213: 7114754101330800316
+    second: 001_crawl_49
   - first:
-      213: -3599828562024217965
-    second: 001_sword_50
+      213: -5911986164207435395
+    second: 001_crawl_50
   - first:
-      213: -8239610267497516901
-    second: 001_sword_51
+      213: -2948016885212443511
+    second: 001_crawl_51
   - first:
-      213: -3240372604394494037
-    second: 001_sword_52
+      213: 4216314581792426518
+    second: 001_crawl_52
   - first:
-      213: -8950520646982335461
-    second: 001_sword_53
+      213: 8053267923685378398
+    second: 001_crawl_53
   - first:
-      213: 8457141234064561266
-    second: 001_sword_54
+      213: -3621966957645045730
+    second: 001_crawl_54
   - first:
-      213: 8904224906985028767
-    second: 001_sword_55
+      213: 7038774226226932363
+    second: 001_crawl_55
   - first:
-      213: -6252605834854675406
-    second: 001_sword_56
+      213: 5793722704695050961
+    second: 001_crawl_56
   - first:
-      213: 5718070078251477820
-    second: 001_sword_57
+      213: 5792233493864853039
+    second: crawl_0
   - first:
-      213: -5443568202577513877
-    second: 001_sword_58
+      213: -5914337903272671382
+    second: crawl_1
   - first:
-      213: -2484203241694233772
-    second: 001_sword_59
+      213: 8126159601515112270
+    second: crawl_2
   - first:
-      213: -3753825769889500098
-    second: sword_0
+      213: -96816851516590350
+    second: crawl_3
   - first:
-      213: 776136188158623729
-    second: sword_1
+      213: 486937601099912534
+    second: crawl_4
   - first:
-      213: -7502302234203853145
-    second: sword_2
+      213: 3939315157784225482
+    second: crawl_5
   - first:
-      213: -7573694343354198120
-    second: sword_3
+      213: -5594292679508710131
+    second: crawl_6
   - first:
-      213: -3113763368734956792
-    second: sword_4
+      213: -6434335881165984772
+    second: crawl_7
   - first:
-      213: 3650304123865126532
-    second: sword_5
+      213: -2034017288316516060
+    second: crawl_8
   - first:
-      213: -1525763588066094277
-    second: sword_6
+      213: -6685071927711561165
+    second: crawl_9
   - first:
-      213: 5330840028906773656
-    second: sword_7
+      213: 1742120214890030487
+    second: crawl_10
   - first:
-      213: -1614411906201746745
-    second: sword_8
+      213: -5258127474107793880
+    second: crawl_11
   - first:
-      213: 2888725853716638510
-    second: sword_9
+      213: -6362150260077783213
+    second: crawl_12
   - first:
-      213: 6287047653866031396
-    second: sword_10
+      213: 6000624626258909499
+    second: crawl_13
   - first:
-      213: 2996700135033197648
-    second: sword_11
+      213: -11110300402350004
+    second: crawl_14
   - first:
-      213: -4519076053455810618
-    second: sword_12
+      213: 6447806580407756438
+    second: crawl_15
   - first:
-      213: 563748580988458004
-    second: sword_13
+      213: 2807875772997353430
+    second: crawl_16
   - first:
-      213: -8551796387700029265
-    second: sword_14
+      213: 2968091915239856228
+    second: crawl_17
   - first:
-      213: -6580160932500289361
-    second: sword_15
+      213: 4676100857148509383
+    second: crawl_18
   - first:
-      213: -6469916797677484604
-    second: sword_16
+      213: 8104880570697270812
+    second: crawl_19
   - first:
-      213: -106492298241405289
-    second: sword_17
+      213: -8856784199705759540
+    second: crawl_20
   - first:
-      213: 5368310613557176870
-    second: sword_18
+      213: 7452436772714525783
+    second: crawl_21
   - first:
-      213: 4133054002345373002
-    second: sword_19
+      213: -860543551424008256
+    second: crawl_22
   - first:
-      213: 486422696980654493
-    second: sword_20
+      213: 3586605008171751350
+    second: crawl_23
   - first:
-      213: -5238232506152905777
-    second: sword_21
+      213: -3400195510834182565
+    second: crawl_24
   - first:
-      213: -2408560815710786100
-    second: sword_22
+      213: 5449512723201042851
+    second: crawl_25
   - first:
-      213: 8960651169117535451
-    second: sword_23
+      213: -7627005738687656529
+    second: crawl_26
   - first:
-      213: -5596403434367763912
-    second: sword_24
+      213: 4494362804759634629
+    second: crawl_27
   - first:
-      213: -7145805432888423624
-    second: sword_25
+      213: 3569718664385638660
+    second: crawl_28
   - first:
-      213: 3071205789112617865
-    second: sword_26
+      213: -3983158180796669194
+    second: crawl_29
   - first:
-      213: -3670109957379440039
-    second: sword_27
+      213: 7400986306123696863
+    second: crawl_30
   - first:
-      213: 5864560565712805051
-    second: sword_28
+      213: -3057175438058508694
+    second: crawl_31
   - first:
-      213: 4078094221647819816
-    second: sword_29
+      213: -8608127710979843644
+    second: crawl_32
   - first:
-      213: 8966263863505769567
-    second: sword_30
+      213: -1263638343768063347
+    second: crawl_33
   - first:
-      213: 7827905936403376988
-    second: sword_31
+      213: -5579383255283400151
+    second: crawl_34
   - first:
-      213: -253428081577774302
-    second: sword_32
+      213: 2019367882814495041
+    second: crawl_35
   - first:
-      213: 8151861652172512272
-    second: sword_33
+      213: 3107586583600170310
+    second: crawl_36
   - first:
-      213: -7483180673390476490
-    second: sword_34
+      213: -9137437818618697191
+    second: crawl_37
   - first:
-      213: -1779436703557748743
-    second: sword_35
+      213: 5114913469538373822
+    second: crawl_38
   - first:
-      213: -5491352476739438165
-    second: sword_36
+      213: 1014957662144463546
+    second: crawl_39
   - first:
-      213: -3419703854961030808
-    second: sword_37
+      213: -8223079984406861596
+    second: crawl_40
   - first:
-      213: 1743087472360240393
-    second: sword_38
+      213: 4992470158981406054
+    second: crawl_41
   - first:
-      213: -8668661951845185021
-    second: sword_39
+      213: -3831006634410245999
+    second: crawl_42
   - first:
-      213: 8139953163264633919
-    second: sword_40
+      213: 1359726691504142802
+    second: crawl_43
   - first:
-      213: -4784464808165361374
-    second: sword_41
+      213: -4618456634548236013
+    second: crawl_44
   - first:
-      213: 2082147127012340432
-    second: sword_42
+      213: -4569225806363393815
+    second: crawl_45
   - first:
-      213: 7359020226494390081
-    second: sword_43
+      213: -1625478186239610321
+    second: crawl_46
   - first:
-      213: -8093663778538518646
-    second: sword_44
+      213: 4218489630342958338
+    second: crawl_47
   - first:
-      213: -3872822088525449186
-    second: sword_45
+      213: 761719822367975211
+    second: crawl_48
   - first:
-      213: 572793228676377529
-    second: sword_46
+      213: -7958919152973655842
+    second: crawl_49
   - first:
-      213: -175654804570326794
-    second: sword_47
+      213: -4529299603484360848
+    second: crawl_50
   - first:
-      213: -8272864303179755500
-    second: sword_48
+      213: 7862533774488162087
+    second: crawl_51
   - first:
-      213: 2073197639881629554
-    second: sword_49
+      213: -2335506168021647421
+    second: crawl_52
   - first:
-      213: 5995929880275638782
-    second: sword_50
+      213: -945946520908109945
+    second: crawl_53
   - first:
-      213: 5432285341092793107
-    second: sword_51
+      213: 4002703697122042371
+    second: crawl_54
   - first:
-      213: -126533514132887298
-    second: sword_52
+      213: -8302552366268929842
+    second: crawl_55
   - first:
-      213: 8860563177825543115
-    second: sword_53
-  - first:
-      213: 8954298471889022205
-    second: sword_54
-  - first:
-      213: 4944767824322628197
-    second: sword_55
-  - first:
-      213: -3092001884677592009
-    second: sword_56
-  - first:
-      213: 8389336678365196091
-    second: sword_57
-  - first:
-      213: -1915811263547743982
-    second: sword_58
-  - first:
-      213: 8560743639282438105
-    second: sword_59
+      213: 7586075192726971330
+    second: crawl_56
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -501,7 +483,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sword_0
+      name: crawl_0
       rect:
         serializedVersion: 2
         x: 0
@@ -515,14 +497,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e347705d95bb7ebc0800000000000000
-      internalID: -3753825769889500098
+      spriteID: f2e2fe19ca5226050800000000000000
+      internalID: 5792233493864853039
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_1
+      name: crawl_1
       rect:
         serializedVersion: 2
         x: 360
@@ -536,14 +518,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ff358040c365ca00800000000000000
-      internalID: 776136188158623729
+      spriteID: a67cdc1330d0ceda0800000000000000
+      internalID: -5914337903272671382
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_2
+      name: crawl_2
       rect:
         serializedVersion: 2
         x: 720
@@ -557,14 +539,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7aee8acedd772e790800000000000000
-      internalID: -7502302234203853145
+      spriteID: e4720747a1be5c070800000000000000
+      internalID: 8126159601515112270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_3
+      name: crawl_3
       rect:
         serializedVersion: 2
         x: 1080
@@ -578,14 +560,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 897dcf23f15d4e690800000000000000
-      internalID: -7573694343354198120
+      spriteID: 2f6f415269908aef0800000000000000
+      internalID: -96816851516590350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_4
+      name: crawl_4
       rect:
         serializedVersion: 2
         x: 1440
@@ -599,14 +581,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 803edeba6b0b9c4d0800000000000000
-      internalID: -3113763368734956792
+      spriteID: 65557551b23f1c600800000000000000
+      internalID: 486937601099912534
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_5
+      name: crawl_5
       rect:
         serializedVersion: 2
         x: 1800
@@ -620,14 +602,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 486df11b24c78a230800000000000000
-      internalID: 3650304123865126532
+      spriteID: ac66a0eb3424ba630800000000000000
+      internalID: 3939315157784225482
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_6
+      name: crawl_6
       rect:
         serializedVersion: 2
         x: 2160
@@ -641,14 +623,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b33581ab91663dae0800000000000000
-      internalID: -1525763588066094277
+      spriteID: d0da054a2741d52b0800000000000000
+      internalID: -5594292679508710131
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_7
+      name: crawl_7
       rect:
         serializedVersion: 2
         x: 2520
@@ -662,14 +644,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89cdb6523c2faf940800000000000000
-      internalID: 5330840028906773656
+      spriteID: cfb2d8d4b95a4b6a0800000000000000
+      internalID: -6434335881165984772
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_8
+      name: crawl_8
       rect:
         serializedVersion: 2
         x: 2880
@@ -683,14 +665,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c20fa1cce47899e0800000000000000
-      internalID: -1614411906201746745
+      spriteID: 42904ee8d08b5c3e0800000000000000
+      internalID: -2034017288316516060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_9
+      name: crawl_9
       rect:
         serializedVersion: 2
         x: 3240
@@ -704,14 +686,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2b644cdbd0d61820800000000000000
-      internalID: 2888725853716638510
+      spriteID: 33a01d2308ad933a0800000000000000
+      internalID: -6685071927711561165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_10
+      name: crawl_10
       rect:
         serializedVersion: 2
         x: 3600
@@ -725,14 +707,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42943aee784104750800000000000000
-      internalID: 6287047653866031396
+      spriteID: 7952c84fa114d2810800000000000000
+      internalID: 1742120214890030487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_11
+      name: crawl_11
       rect:
         serializedVersion: 2
         x: 0
@@ -746,14 +728,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 054d40745ea669920800000000000000
-      internalID: 2996700135033197648
+      spriteID: 82e351acbe06707b0800000000000000
+      internalID: -5258127474107793880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_12
+      name: crawl_12
       rect:
         serializedVersion: 2
         x: 360
@@ -767,14 +749,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cfcac0c5440941c0800000000000000
-      internalID: -4519076053455810618
+      spriteID: 357976ceb0a15b7a0800000000000000
+      internalID: -6362150260077783213
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_13
+      name: crawl_13
       rect:
         serializedVersion: 2
         x: 720
@@ -788,14 +770,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4149278f856d2d700800000000000000
-      internalID: 563748580988458004
+      spriteID: b399f9e0e40864350800000000000000
+      internalID: 6000624626258909499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_14
+      name: crawl_14
       rect:
         serializedVersion: 2
         x: 1080
@@ -809,14 +791,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa8cba7ae7ae15980800000000000000
-      internalID: -8551796387700029265
+      spriteID: c488b2b9d3788dff0800000000000000
+      internalID: -11110300402350004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_15
+      name: crawl_15
       rect:
         serializedVersion: 2
         x: 1440
@@ -830,14 +812,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa8ca6dbe729ea4a0800000000000000
-      internalID: -6580160932500289361
+      spriteID: 69661a54ce53b7950800000000000000
+      internalID: 6447806580407756438
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_16
+      name: crawl_16
       rect:
         serializedVersion: 2
         x: 1800
@@ -851,14 +833,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c5c91c93fc3636a0800000000000000
-      internalID: -6469916797677484604
+      spriteID: 6dfbee6832497f620800000000000000
+      internalID: 2807875772997353430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_17
+      name: crawl_17
       rect:
         serializedVersion: 2
         x: 2160
@@ -872,14 +854,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79e8108a1d9a58ef0800000000000000
-      internalID: -106492298241405289
+      spriteID: 468949c0fd7c03920800000000000000
+      internalID: 2968091915239856228
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_18
+      name: crawl_18
       rect:
         serializedVersion: 2
         x: 2520
@@ -893,14 +875,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62ae80d7f02108a40800000000000000
-      internalID: 5368310613557176870
+      spriteID: 7cc8c3c54f8d4e040800000000000000
+      internalID: 4676100857148509383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_19
+      name: crawl_19
       rect:
         serializedVersion: 2
         x: 2880
@@ -914,14 +896,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4d6d4f97be8b5930800000000000000
-      internalID: 4133054002345373002
+      spriteID: c16406300f15a7070800000000000000
+      internalID: 8104880570697270812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_20
+      name: crawl_20
       rect:
         serializedVersion: 2
         x: 3240
@@ -935,14 +917,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d992830adde10c600800000000000000
-      internalID: 486422696980654493
+      spriteID: cc0fe3412b1661580800000000000000
+      internalID: -8856784199705759540
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_21
+      name: crawl_21
       rect:
         serializedVersion: 2
         x: 3600
@@ -956,14 +938,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc31adbf94f0e47b0800000000000000
-      internalID: -5238232506152905777
+      spriteID: 75435b492cf5c6760800000000000000
+      internalID: 7452436772714525783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_22
+      name: crawl_22
       rect:
         serializedVersion: 2
         x: 0
@@ -977,14 +959,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccd22aff2b2139ed0800000000000000
-      internalID: -2408560815710786100
+      spriteID: 0cf6e97033cbe04f0800000000000000
+      internalID: -860543551424008256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_23
+      name: crawl_23
       rect:
         serializedVersion: 2
         x: 360
@@ -998,14 +980,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdc707343c0aa5c70800000000000000
-      internalID: 8960651169117535451
+      spriteID: 6b7d6b5904e26c130800000000000000
+      internalID: 3586605008171751350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_24
+      name: crawl_24
       rect:
         serializedVersion: 2
         x: 720
@@ -1019,14 +1001,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83abbba3ab49552b0800000000000000
-      internalID: -5596403434367763912
+      spriteID: b56c9d9a23410d0d0800000000000000
+      internalID: -3400195510834182565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_25
+      name: crawl_25
       rect:
         serializedVersion: 2
         x: 1080
@@ -1040,14 +1022,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83b01a2a1dff4dc90800000000000000
-      internalID: -7145805432888423624
+      spriteID: 3a9ae51f2fe80ab40800000000000000
+      internalID: 5449512723201042851
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_26
+      name: crawl_26
       rect:
         serializedVersion: 2
         x: 1440
@@ -1061,14 +1043,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98b4e2ca46d1f9a20800000000000000
-      internalID: 3071205789112617865
+      spriteID: fad08a5b0be672690800000000000000
+      internalID: -7627005738687656529
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_27
+      name: crawl_27
       rect:
         serializedVersion: 2
         x: 1800
@@ -1082,14 +1064,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95246c75076211dc0800000000000000
-      internalID: -3670109957379440039
+      spriteID: 5c22d65a82f2f5e30800000000000000
+      internalID: 4494362804759634629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_28
+      name: crawl_28
       rect:
         serializedVersion: 2
         x: 2160
@@ -1103,14 +1085,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbc531343ca136150800000000000000
-      internalID: 5864560565712805051
+      spriteID: 401b9ca46303a8130800000000000000
+      internalID: 3569718664385638660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_29
+      name: crawl_29
       rect:
         serializedVersion: 2
         x: 2520
@@ -1124,14 +1106,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82434e1861d489830800000000000000
-      internalID: 4078094221647819816
+      spriteID: 6f26c6dfcbaf8b8c0800000000000000
+      internalID: -3983158180796669194
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_30
+      name: crawl_30
       rect:
         serializedVersion: 2
         x: 2880
@@ -1145,14 +1127,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f54dea28a719e6c70800000000000000
-      internalID: 8966263863505769567
+      spriteID: fda880455d595b660800000000000000
+      internalID: 7400986306123696863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_31
+      name: crawl_31
       rect:
         serializedVersion: 2
         x: 3240
@@ -1166,14 +1148,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5bae72a9fe42ac60800000000000000
-      internalID: 7827905936403376988
+      spriteID: a6e297ef22bb295d0800000000000000
+      internalID: -3057175438058508694
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_32
+      name: crawl_32
       rect:
         serializedVersion: 2
         x: 3600
@@ -1187,14 +1169,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 223b275a084ab7cf0800000000000000
-      internalID: -253428081577774302
+      spriteID: 4c999d56479c98880800000000000000
+      internalID: -8608127710979843644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_33
+      name: crawl_33
       rect:
         serializedVersion: 2
         x: 0
@@ -1208,14 +1190,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01c1fd37bfa312170800000000000000
-      internalID: 8151861652172512272
+      spriteID: d8244231f97a67ee0800000000000000
+      internalID: -1263638343768063347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_34
+      name: crawl_34
       rect:
         serializedVersion: 2
         x: 360
@@ -1229,14 +1211,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6330e7c33d6662890800000000000000
-      internalID: -7483180673390476490
+      spriteID: 922021b7d7c0292b0800000000000000
+      internalID: -5579383255283400151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_35
+      name: crawl_35
       rect:
         serializedVersion: 2
         x: 720
@@ -1250,14 +1232,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f7f528febb2e47e0800000000000000
-      internalID: -1779436703557748743
+      spriteID: 1499dfde36c360c10800000000000000
+      internalID: 2019367882814495041
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_36
+      name: crawl_36
       rect:
         serializedVersion: 2
         x: 1080
@@ -1271,14 +1253,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba9fb7f440ccac3b0800000000000000
-      internalID: -5491352476739438165
+      spriteID: 6450248788d502b20800000000000000
+      internalID: 3107586583600170310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_37
+      name: crawl_37
       rect:
         serializedVersion: 2
         x: 1440
@@ -1292,14 +1274,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86983085675ca80d0800000000000000
-      internalID: -3419703854961030808
+      spriteID: 91a230857bc413180800000000000000
+      internalID: -9137437818618697191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_38
+      name: crawl_38
       rect:
         serializedVersion: 2
         x: 1800
@@ -1313,14 +1295,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 905377222d0b03810800000000000000
-      internalID: 1743087472360240393
+      spriteID: eb012b853b2dbf640800000000000000
+      internalID: 5114913469538373822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_39
+      name: crawl_39
       rect:
         serializedVersion: 2
         x: 2160
@@ -1334,14 +1316,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30ac25222e9b2b780800000000000000
-      internalID: -8668661951845185021
+      spriteID: ab28e22cd9ad51e00800000000000000
+      internalID: 1014957662144463546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_40
+      name: crawl_40
       rect:
         serializedVersion: 2
         x: 2520
@@ -1355,14 +1337,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3ca4b0564ce6f070800000000000000
-      internalID: 8139953163264633919
+      spriteID: 4e8edc96250c1ed80800000000000000
+      internalID: -8223079984406861596
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_41
+      name: crawl_41
       rect:
         serializedVersion: 2
         x: 2880
@@ -1376,14 +1358,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22932fc2b9a2a9db0800000000000000
-      internalID: -4784464808165361374
+      spriteID: 66d13d98821d84540800000000000000
+      internalID: 4992470158981406054
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_42
+      name: crawl_42
       rect:
         serializedVersion: 2
         x: 3240
@@ -1397,14 +1379,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d2bba3c7c545ec10800000000000000
-      internalID: 2082147127012340432
+      spriteID: 19000d773c785dac0800000000000000
+      internalID: -3831006634410245999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_43
+      name: crawl_43
       rect:
         serializedVersion: 2
         x: 3600
@@ -1418,14 +1400,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14fdc1ff7ed702660800000000000000
-      internalID: 7359020226494390081
+      spriteID: 2d9b8b6c838bed210800000000000000
+      internalID: 1359726691504142802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_44
+      name: crawl_44
       rect:
         serializedVersion: 2
         x: 0
@@ -1439,14 +1421,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8704cceca78daf80800000000000000
-      internalID: -8093663778538518646
+      spriteID: 311d4371922f7efb0800000000000000
+      internalID: -4618456634548236013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_45
+      name: crawl_45
       rect:
         serializedVersion: 2
         x: 360
@@ -1460,14 +1442,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e18772f54d8f04ac0800000000000000
-      internalID: -3872822088525449186
+      spriteID: 9e089218659d690c0800000000000000
+      internalID: -4569225806363393815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_46
+      name: crawl_46
       rect:
         serializedVersion: 2
         x: 720
@@ -1481,14 +1463,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bb210d1868f2f700800000000000000
-      internalID: 572793228676377529
+      spriteID: f22ba07a3342179e0800000000000000
+      internalID: -1625478186239610321
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_47
+      name: crawl_47
       rect:
         serializedVersion: 2
         x: 1080
@@ -1502,14 +1484,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f8be7ac2e2ff8df0800000000000000
-      internalID: -175654804570326794
+      spriteID: 20dc241e7f51b8a30800000000000000
+      internalID: 4218489630342958338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_48
+      name: crawl_48
       rect:
         serializedVersion: 2
         x: 1440
@@ -1523,14 +1505,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41016fd6fb1e03d80800000000000000
-      internalID: -8272864303179755500
+      spriteID: b27ed96842c229a00800000000000000
+      internalID: 761719822367975211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_49
+      name: crawl_49
       rect:
         serializedVersion: 2
         x: 1800
@@ -1544,14 +1526,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27f925ae44a75cc10800000000000000
-      internalID: 2073197639881629554
+      spriteID: ed0d3f2d23d3c8190800000000000000
+      internalID: -7958919152973655842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_50
+      name: crawl_50
       rect:
         serializedVersion: 2
         x: 2160
@@ -1565,14 +1547,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef9daf35572d53350800000000000000
-      internalID: 5995929880275638782
+      spriteID: 07f3ff40202b421c0800000000000000
+      internalID: -4529299603484360848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_51
+      name: crawl_51
       rect:
         serializedVersion: 2
         x: 2520
@@ -1586,14 +1568,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31bc56a7cba536b40800000000000000
-      internalID: 5432285341092793107
+      spriteID: 72fc0e67fc45d1d60800000000000000
+      internalID: 7862533774488162087
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_52
+      name: crawl_52
       rect:
         serializedVersion: 2
         x: 2880
@@ -1607,14 +1589,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef86de570767e3ef0800000000000000
-      internalID: -126533514132887298
+      spriteID: 3cff554a38d969fd0800000000000000
+      internalID: -2335506168021647421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_53
+      name: crawl_53
       rect:
         serializedVersion: 2
         x: 3240
@@ -1628,14 +1610,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc3a234d34b07fa70800000000000000
-      internalID: 8860563177825543115
+      spriteID: 78761cca6a25fd2f0800000000000000
+      internalID: -945946520908109945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_54
+      name: crawl_54
       rect:
         serializedVersion: 2
         x: 3600
@@ -1649,14 +1631,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfca4cda40f044c70800000000000000
-      internalID: 8954298471889022205
+      spriteID: 3022a182ec57c8730800000000000000
+      internalID: 4002703697122042371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_55
+      name: crawl_55
       rect:
         serializedVersion: 2
         x: 0
@@ -1670,14 +1652,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56a088143285f9440800000000000000
-      internalID: 4944767824322628197
+      spriteID: ec826779c9867cc80800000000000000
+      internalID: -8302552366268929842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sword_56
+      name: crawl_56
       rect:
         serializedVersion: 2
         x: 360
@@ -1691,71 +1673,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73c24f20ba00715d0800000000000000
-      internalID: -3092001884677592009
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sword_57
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 0
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3fec17a249ec6470800000000000000
-      internalID: 8389336678365196091
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sword_58
-      rect:
-        serializedVersion: 2
-        x: 1080
-        y: 0
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2116b836ecba965e0800000000000000
-      internalID: -1915811263547743982
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sword_59
-      rect:
-        serializedVersion: 2
-        x: 1440
-        y: 0
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9df4d90bbfeddc670800000000000000
-      internalID: 8560743639282438105
+      spriteID: 2c3e4ede137274960800000000000000
+      internalID: 7586075192726971330
       vertices: []
       indices: 
       edges: []
@@ -1771,66 +1690,63 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sword_35: -1779436703557748743
-      sword_48: -8272864303179755500
-      sword_18: 5368310613557176870
-      sword_2: -7502302234203853145
-      sword_19: 4133054002345373002
-      sword_42: 2082147127012340432
-      sword_14: -8551796387700029265
-      sword_50: 5995929880275638782
-      sword_26: 3071205789112617865
-      sword_0: -3753825769889500098
-      sword_31: 7827905936403376988
-      sword_40: 8139953163264633919
-      sword_15: -6580160932500289361
-      sword_7: 5330840028906773656
-      sword_5: 3650304123865126532
-      sword_11: 2996700135033197648
-      sword_55: 4944767824322628197
-      sword_12: -4519076053455810618
-      sword_27: -3670109957379440039
-      sword_4: -3113763368734956792
-      sword_28: 5864560565712805051
-      sword_46: 572793228676377529
-      sword_37: -3419703854961030808
-      sword_9: 2888725853716638510
-      sword_10: 6287047653866031396
-      sword_29: 4078094221647819816
-      sword_23: 8960651169117535451
-      sword_32: -253428081577774302
-      sword_43: 7359020226494390081
-      sword_8: -1614411906201746745
-      sword_24: -5596403434367763912
-      sword_54: 8954298471889022205
-      sword_58: -1915811263547743982
-      sword_36: -5491352476739438165
-      sword_39: -8668661951845185021
-      sword_57: 8389336678365196091
-      sword_3: -7573694343354198120
-      sword_34: -7483180673390476490
-      sword_17: -106492298241405289
-      sword_33: 8151861652172512272
-      sword_47: -175654804570326794
-      sword_16: -6469916797677484604
-      sword_1: 776136188158623729
-      sword_45: -3872822088525449186
-      sword_13: 563748580988458004
-      sword_22: -2408560815710786100
-      sword_56: -3092001884677592009
-      sword_53: 8860563177825543115
-      sword_52: -126533514132887298
-      sword_6: -1525763588066094277
-      sword_21: -5238232506152905777
-      sword_20: 486422696980654493
-      sword_25: -7145805432888423624
-      sword_30: 8966263863505769567
-      sword_49: 2073197639881629554
-      sword_59: 8560743639282438105
-      sword_44: -8093663778538518646
-      sword_38: 1743087472360240393
-      sword_41: -4784464808165361374
-      sword_51: 5432285341092793107
+      crawl_42: -3831006634410245999
+      crawl_34: -5579383255283400151
+      crawl_25: 5449512723201042851
+      crawl_43: 1359726691504142802
+      crawl_15: 6447806580407756438
+      crawl_4: 486937601099912534
+      crawl_30: 7400986306123696863
+      crawl_39: 1014957662144463546
+      crawl_2: 8126159601515112270
+      crawl_32: -8608127710979843644
+      crawl_31: -3057175438058508694
+      crawl_1: -5914337903272671382
+      crawl_3: -96816851516590350
+      crawl_13: 6000624626258909499
+      crawl_5: 3939315157784225482
+      crawl_28: 3569718664385638660
+      crawl_22: -860543551424008256
+      crawl_54: 4002703697122042371
+      crawl_37: -9137437818618697191
+      crawl_7: -6434335881165984772
+      crawl_27: 4494362804759634629
+      crawl_36: 3107586583600170310
+      crawl_46: -1625478186239610321
+      crawl_55: -8302552366268929842
+      crawl_44: -4618456634548236013
+      crawl_17: 2968091915239856228
+      crawl_40: -8223079984406861596
+      crawl_9: -6685071927711561165
+      crawl_26: -7627005738687656529
+      crawl_29: -3983158180796669194
+      crawl_38: 5114913469538373822
+      crawl_14: -11110300402350004
+      crawl_49: -7958919152973655842
+      crawl_51: 7862533774488162087
+      crawl_24: -3400195510834182565
+      crawl_33: -1263638343768063347
+      crawl_16: 2807875772997353430
+      crawl_10: 1742120214890030487
+      crawl_47: 4218489630342958338
+      crawl_56: 7586075192726971330
+      crawl_19: 8104880570697270812
+      crawl_20: -8856784199705759540
+      crawl_41: 4992470158981406054
+      crawl_6: -5594292679508710131
+      crawl_21: 7452436772714525783
+      crawl_35: 2019367882814495041
+      crawl_45: -4569225806363393815
+      crawl_50: -4529299603484360848
+      crawl_52: -2335506168021647421
+      crawl_0: 5792233493864853039
+      crawl_23: 3586605008171751350
+      crawl_48: 761719822367975211
+      crawl_53: -945946520908109945
+      crawl_12: -6362150260077783213
+      crawl_11: -5258127474107793880
+      crawl_18: 4676100857148509383
+      crawl_8: -2034017288316516060
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
