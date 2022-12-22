@@ -309,8 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toFollow: {fileID: 305107508}
   speed: 4
-  maximumApproach: 2
-  attackRange: 0.2
+  attackRange: 1.1
 --- !u!1 &305107508 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2993097353134942194, guid: 002443ff5ec3dce4b8727f9dbb21a069, type: 3}
@@ -1219,7 +1218,7 @@ GameObject:
   - component: {fileID: 591488293}
   - component: {fileID: 591488294}
   - component: {fileID: 591488295}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4548,7 +4547,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4515385423342987}
   - component: {fileID: 212538335969146511}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4565,7 +4564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4252552117561337}
   - component: {fileID: 212794996364838823}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4584,9 +4583,8 @@ GameObject:
   - component: {fileID: 218531557}
   - component: {fileID: 218531555}
   - component: {fileID: 218531554}
-  - component: {fileID: 4567294726314090}
   - component: {fileID: 218531558}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4603,7 +4601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4425937085903821}
   - component: {fileID: 212645768514660135}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4620,7 +4618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4040130626572525}
   - component: {fileID: 212190093761318379}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4707,23 +4705,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &4567294726314090
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450552893635679}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 7400000, guid: 2698a047706ba4e4885e920eb0117aea, type: 2}
-  - {fileID: 7400000, guid: 1648f217da1cede48a90090f2ee19b54, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!212 &212190093761318379
 SpriteRenderer:
   m_ObjectHideFlags: 0

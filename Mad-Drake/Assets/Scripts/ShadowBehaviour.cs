@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Purchasing;
 
 public class ShadowBehaviour : MonoBehaviour
 {
@@ -9,13 +10,14 @@ public class ShadowBehaviour : MonoBehaviour
     private Rigidbody2D rb2;
     private bool follow = true;
     [SerializeField]
-    private float speed = 1.0f;
+    private float speed = 3.0f;
     private Vector3 flipped = new(-1.0f, 1.0f, 1.0f);
     [SerializeField]
-    private float maximumApproach = 1.0f;
-    [SerializeField]
     private float attackRange = 0.1f;
+    private bool canAttack = false;
     private Animator anim;
+    private Vector3 allignToCenter = new(0.0f, -0.5f);
+    private readonly int layerMask = ~(1 << 2);
 
     private void Start()
     {
@@ -30,7 +32,7 @@ public class ShadowBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if(follow && (toFollow.transform.position - transform.position).magnitude < maximumApproach + attackRange)
+        if(canAttack)
         {
             if(toFollow.transform.position.y > transform.position.y)
             {
@@ -58,12 +60,17 @@ public class ShadowBehaviour : MonoBehaviour
             else
                 transform.localScale = flipped;
 
-            if ((toFollow.transform.position - transform.position).magnitude > maximumApproach)
-            {
-                rb2.MovePosition(
-                    transform.position +
-                    speed * Time.deltaTime * (toFollow.transform.position - transform.position).normalized);
-            }
+            RaycastHit2D hit = Physics2D.Raycast(
+                transform.position + allignToCenter, 
+                (toFollow.transform.position - transform.position - allignToCenter).normalized,  
+                attackRange,
+                layerMask);
+
+            canAttack = (hit.collider != null);
+
+            rb2.MovePosition(
+                transform.position +
+                speed * Time.fixedDeltaTime * (toFollow.transform.position - transform.position).normalized);
         }
     }
 }
