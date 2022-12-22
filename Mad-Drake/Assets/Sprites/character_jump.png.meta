@@ -1,385 +1,349 @@
 fileFormatVersion: 2
-guid: 9c447c54c8e0416e9446cadb88c48fd3
+guid: 263bbf868f1c40ef9da04b8d96ce8d7b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3702516244040528198
-    second: 001_idle_0
+      213: 9114202556735134241
+    second: 001_jump_0
   - first:
-      213: 6034185568779365093
-    second: 001_idle_1
+      213: 4221240542453117958
+    second: 001_jump_1
   - first:
-      213: 3892904981192818417
-    second: 001_idle_2
+      213: 625860610720932487
+    second: 001_jump_2
   - first:
-      213: 6915866934838428674
-    second: 001_idle_3
+      213: 3523357379933079629
+    second: 001_jump_3
   - first:
-      213: -3605188460204216795
-    second: 001_idle_4
+      213: -8596044663396146486
+    second: 001_jump_4
   - first:
-      213: 7423398425901215220
-    second: 001_idle_5
+      213: 7766096164885648235
+    second: 001_jump_5
   - first:
-      213: 4640359904912673053
-    second: 001_idle_6
+      213: -221532185665806817
+    second: 001_jump_6
   - first:
-      213: -6433590614986559282
-    second: 001_idle_7
+      213: -2645646650756458663
+    second: 001_jump_7
   - first:
-      213: 5124449047340183718
-    second: 001_idle_8
+      213: 6988379754232823971
+    second: 001_jump_8
   - first:
-      213: 4500629578318668449
-    second: 001_idle_9
+      213: 1683834108819331414
+    second: 001_jump_9
   - first:
-      213: -6594993999103286912
-    second: 001_idle_10
+      213: 6064178719993600600
+    second: 001_jump_10
   - first:
-      213: -830214651084074712
-    second: 001_idle_11
+      213: 2472163329611532525
+    second: 001_jump_11
   - first:
-      213: -3890047994063881195
-    second: 001_idle_12
+      213: -3165558793767378419
+    second: 001_jump_12
   - first:
-      213: 6885296785342767966
-    second: 001_idle_13
+      213: 5786448668047499669
+    second: 001_jump_13
   - first:
-      213: -4532883398158979797
-    second: 001_idle_14
+      213: -1128452367775406630
+    second: 001_jump_14
   - first:
-      213: 5182138269887193247
-    second: 001_idle_15
+      213: 1549108345473997953
+    second: 001_jump_15
   - first:
-      213: -1600205373447154881
-    second: 001_idle_16
+      213: 8546767250485949977
+    second: 001_jump_16
   - first:
-      213: -6035137365046657425
-    second: 001_idle_17
+      213: 7718823525455001438
+    second: 001_jump_17
   - first:
-      213: -7458279415564851145
-    second: 001_idle_18
+      213: 3241160507509925713
+    second: 001_jump_18
   - first:
-      213: 5807500304956595962
-    second: 001_idle_19
+      213: -7144980770290666002
+    second: 001_jump_19
   - first:
-      213: 7838944672733093095
-    second: 001_idle_20
+      213: -7798761364044411119
+    second: 001_jump_20
   - first:
-      213: 6159295766311068023
-    second: 001_idle_21
+      213: -4200744471105117014
+    second: 001_jump_21
   - first:
-      213: 7039799940356716592
-    second: 001_idle_22
+      213: -2546569432375483509
+    second: 001_jump_22
   - first:
-      213: -660556070519831599
-    second: 001_idle_23
+      213: -2593606421509952089
+    second: 001_jump_23
   - first:
-      213: -4775381799492527512
-    second: 001_idle_24
+      213: 2271080002275288218
+    second: 001_jump_24
   - first:
-      213: 1489850165684756502
-    second: 001_idle_25
+      213: 8150424015197610105
+    second: 001_jump_25
   - first:
-      213: -2595104355296491694
-    second: 001_idle_26
+      213: 837937211342497361
+    second: 001_jump_26
   - first:
-      213: -5928392785459496407
-    second: 001_idle_27
+      213: -5622323336855697055
+    second: 001_jump_27
   - first:
-      213: -2239023949275087141
-    second: 001_idle_28
+      213: -7732624904553514781
+    second: 001_jump_28
   - first:
-      213: 8931016501097915595
-    second: 001_idle_29
+      213: 3366633695454195772
+    second: 001_jump_29
   - first:
-      213: 8536105055251720041
-    second: 001_idle_30
+      213: -5156514977379621497
+    second: 001_jump_30
   - first:
-      213: -2556637107437071743
-    second: 001_idle_31
+      213: 6145213700378084583
+    second: 001_jump_31
   - first:
-      213: 9174607200023989941
-    second: 001_idle_32
+      213: 6108321960906106380
+    second: 001_jump_32
   - first:
-      213: -8138877855713073682
-    second: 001_idle_33
+      213: 3783802579322338861
+    second: 001_jump_33
   - first:
-      213: 5233951495072884592
-    second: 001_idle_34
+      213: -2538966895637739013
+    second: 001_jump_34
   - first:
-      213: -394623722695260171
-    second: 001_idle_35
+      213: -1405247069241052193
+    second: 001_jump_35
   - first:
-      213: -1398877805265062695
-    second: 001_idle_36
+      213: -4930467523365018115
+    second: 001_jump_36
   - first:
-      213: 6501025724080950761
-    second: 001_idle_37
+      213: -7417247119052711875
+    second: 001_jump_37
   - first:
-      213: -5353374243238198214
-    second: 001_idle_38
+      213: 9108005026504243730
+    second: 001_jump_38
   - first:
-      213: -3227699185204008030
-    second: 001_idle_39
+      213: 3410505507434650709
+    second: 001_jump_39
   - first:
-      213: 3133287194620652148
-    second: 001_idle_40
+      213: 4416189965293721309
+    second: 001_jump_40
   - first:
-      213: -8923341872077287988
-    second: 001_idle_41
+      213: -2029763084082002710
+    second: 001_jump_41
   - first:
-      213: 262265941627136954
-    second: 001_idle_42
+      213: -6136193618735109045
+    second: 001_jump_42
   - first:
-      213: 2794591406097128291
-    second: 001_idle_43
+      213: -8115319712057032983
+    second: 001_jump_43
   - first:
-      213: -7333076349938631789
-    second: 001_idle_44
+      213: 4176211210457991390
+    second: 001_jump_44
   - first:
-      213: -7261051625008537040
-    second: 001_idle_45
+      213: 7416874720079056826
+    second: 001_jump_45
   - first:
-      213: 3186419676745877423
-    second: 001_idle_46
+      213: -2104138660335823819
+    second: 001_jump_46
   - first:
-      213: 4674950817945298978
-    second: 001_idle_47
+      213: -2526837041037885326
+    second: 001_jump_47
   - first:
-      213: -4365678145897439421
-    second: 001_idle_48
+      213: -4084849350089397005
+    second: 001_jump_48
   - first:
-      213: -2906340270884833858
-    second: 001_idle_49
+      213: -5900666461143171812
+    second: 001_jump_49
   - first:
-      213: 6520107428607614743
-    second: 001_idle_50
+      213: 8997578858755286425
+    second: 001_jump_50
   - first:
-      213: 1167696249258456634
-    second: 001_idle_51
+      213: 4337972451501577924
+    second: 001_jump_51
   - first:
-      213: 3834338905651312059
-    second: 001_idle_52
+      213: 4081869134426036897
+    second: 001_jump_52
   - first:
-      213: -2046107902980942880
-    second: 001_idle_53
+      213: 5239781697185573371
+    second: 001_jump_53
   - first:
-      213: 7106752131502798379
-    second: 001_idle_54
+      213: 8980053975697065995
+    second: 001_jump_54
   - first:
-      213: -7749316617149033733
-    second: 001_idle_55
+      213: 8568708744317499222
+    second: 001_jump_55
   - first:
-      213: 3925573066441106933
-    second: 001_idle_56
+      213: 7968338374564930328
+    second: 001_jump_56
   - first:
-      213: -6337529836633202707
-    second: 001_idle_57
+      213: 4281637774074219296
+    second: jump_0
   - first:
-      213: 4811936371513311704
-    second: 001_idle_58
+      213: -7862396843884538191
+    second: jump_1
   - first:
-      213: -3887533752387564973
-    second: 001_idle_59
+      213: 8276514422256456541
+    second: jump_2
   - first:
-      213: -4353198013425023729
-    second: 001_idle_60
+      213: -3697937850672776721
+    second: jump_3
   - first:
-      213: -9221309551114482960
-    second: 001_idle_61
+      213: 4987614716155920338
+    second: jump_4
   - first:
-      213: 8327781051735486476
-    second: 001_idle_62
+      213: -1184746109927277663
+    second: jump_5
   - first:
-      213: 8793639957104055765
-    second: idle_0
+      213: -4845626741048118468
+    second: jump_6
   - first:
-      213: 6084859605308855041
-    second: idle_1
+      213: 7014594740173477433
+    second: jump_7
   - first:
-      213: 8603369663158992956
-    second: idle_2
+      213: 1578323387413840467
+    second: jump_8
   - first:
-      213: -5906421172241655209
-    second: idle_3
+      213: 7655840988501763603
+    second: jump_9
   - first:
-      213: 5704420531145803721
-    second: idle_4
+      213: -9197958414588387290
+    second: jump_10
   - first:
-      213: -148617073940163930
-    second: idle_5
+      213: -5086767228222736262
+    second: jump_11
   - first:
-      213: 4729606205655721961
-    second: idle_6
+      213: 6181903233876262169
+    second: jump_12
   - first:
-      213: -2073685336235588006
-    second: idle_7
+      213: 6085027727657474495
+    second: jump_13
   - first:
-      213: 512795395688303107
-    second: idle_8
+      213: -7558048255918937315
+    second: jump_14
   - first:
-      213: 5667770778836351527
-    second: idle_9
+      213: 1978480726327293745
+    second: jump_15
   - first:
-      213: -1480364998338425778
-    second: idle_10
+      213: -6132592246010354800
+    second: jump_16
   - first:
-      213: -189419392851352084
-    second: idle_11
+      213: -418148235218303146
+    second: jump_17
   - first:
-      213: 2253685004373748758
-    second: idle_12
+      213: 4014067163673467108
+    second: jump_18
   - first:
-      213: 275251749332817211
-    second: idle_13
+      213: 1506671210523702264
+    second: jump_19
   - first:
-      213: -2717920588507469212
-    second: idle_14
+      213: -698269485225333976
+    second: jump_20
   - first:
-      213: -928564814986837825
-    second: idle_15
+      213: 58559517799479068
+    second: jump_21
   - first:
-      213: 1047728824233847905
-    second: idle_16
+      213: 5786932790349076467
+    second: jump_22
   - first:
-      213: -526835129060445694
-    second: idle_17
+      213: -2979544516068205554
+    second: jump_23
   - first:
-      213: 5896261190451672117
-    second: idle_18
+      213: -2046193111815958161
+    second: jump_24
   - first:
-      213: -8256383322693916834
-    second: idle_19
+      213: 6484181237898064512
+    second: jump_25
   - first:
-      213: -8410472694813616623
-    second: idle_20
+      213: -3225056911852106339
+    second: jump_26
   - first:
-      213: -3655621501393774895
-    second: idle_21
+      213: 6577321620887939973
+    second: jump_27
   - first:
-      213: -3185995270805410201
-    second: idle_22
+      213: 3640988351627517149
+    second: jump_28
   - first:
-      213: -6334799096112948352
-    second: idle_23
+      213: -7335557793373392994
+    second: jump_29
   - first:
-      213: -2134340880611598165
-    second: idle_24
+      213: -8316701790580645646
+    second: jump_30
   - first:
-      213: -2151818530499332596
-    second: idle_25
+      213: 2798516111748293662
+    second: jump_31
   - first:
-      213: 3051071556821484571
-    second: idle_26
+      213: 382114916140565309
+    second: jump_32
   - first:
-      213: -5705869721440319331
-    second: idle_27
+      213: -8569130885922760573
+    second: jump_33
   - first:
-      213: 7168834123846226226
-    second: idle_28
+      213: -2210091775306831888
+    second: jump_34
   - first:
-      213: -5112156401277642946
-    second: idle_29
+      213: -2390990006331752667
+    second: jump_35
   - first:
-      213: -4904485453230194659
-    second: idle_30
+      213: 1163623551245970900
+    second: jump_36
   - first:
-      213: 929150727014594773
-    second: idle_31
+      213: 8782299771862856864
+    second: jump_37
   - first:
-      213: -8898634129254946022
-    second: idle_32
+      213: -1642604694477414606
+    second: jump_38
   - first:
-      213: -1574576503455686002
-    second: idle_33
+      213: 4557966941776416813
+    second: jump_39
   - first:
-      213: 6367498201634126667
-    second: idle_34
+      213: -468062509844781452
+    second: jump_40
   - first:
-      213: -7207429827535173402
-    second: idle_35
+      213: 8792727220414031832
+    second: jump_41
   - first:
-      213: -8215856964752772259
-    second: idle_36
+      213: -4019479287016693394
+    second: jump_42
   - first:
-      213: -6871614914986685141
-    second: idle_37
+      213: 4299268544362008819
+    second: jump_43
   - first:
-      213: 532023552575573989
-    second: idle_38
+      213: 6915982704474624033
+    second: jump_44
   - first:
-      213: -3490280450085971560
-    second: idle_39
+      213: 968882803572095880
+    second: jump_45
   - first:
-      213: 2973940874069163354
-    second: idle_40
+      213: -8151224023099486137
+    second: jump_46
   - first:
-      213: -3547867813687463170
-    second: idle_41
+      213: -5518532394716831622
+    second: jump_47
   - first:
-      213: 3838556530734163676
-    second: idle_42
+      213: -8673869656153820657
+    second: jump_48
   - first:
-      213: -1499976257121873182
-    second: idle_43
+      213: -502782083493106410
+    second: jump_49
   - first:
-      213: 168846979551174993
-    second: idle_44
+      213: 6269712752928560008
+    second: jump_50
   - first:
-      213: 1848214276972832728
-    second: idle_45
+      213: 5076106088197164608
+    second: jump_51
   - first:
-      213: -5438464607267775908
-    second: idle_46
+      213: -3594697368027660631
+    second: jump_52
   - first:
-      213: -2162490490912676814
-    second: idle_47
+      213: 6246700890586870840
+    second: jump_53
   - first:
-      213: -2923966642950171172
-    second: idle_48
+      213: -2691006794766528024
+    second: jump_54
   - first:
-      213: -4266579293378190299
-    second: idle_49
+      213: -8753627081805103990
+    second: jump_55
   - first:
-      213: -2616059018411542186
-    second: idle_50
-  - first:
-      213: 8979487438362149139
-    second: idle_51
-  - first:
-      213: 841086773508559625
-    second: idle_52
-  - first:
-      213: -5243070509038418389
-    second: idle_53
-  - first:
-      213: -6981167418715947851
-    second: idle_54
-  - first:
-      213: 9209814845565376561
-    second: idle_55
-  - first:
-      213: -2952999747656002874
-    second: idle_56
-  - first:
-      213: 8697369147165302195
-    second: idle_57
-  - first:
-      213: -8940617572574351099
-    second: idle_58
-  - first:
-      213: 516610896262579559
-    second: idle_59
-  - first:
-      213: 2254349733851700077
-    second: idle_60
-  - first:
-      213: -3260541572077893329
-    second: idle_61
-  - first:
-      213: -3299202918059221898
-    second: idle_62
+      213: -5144560166212167377
+    second: jump_56
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -519,7 +483,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_0
+      name: jump_0
       rect:
         serializedVersion: 2
         x: 0
@@ -533,14 +497,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d55ed543f8490a70800000000000000
-      internalID: 8793639957104055765
+      spriteID: 02b8694dede6b6b30800000000000000
+      internalID: 4281637774074219296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_1
+      name: jump_1
       rect:
         serializedVersion: 2
         x: 360
@@ -554,14 +518,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 103de827293c17450800000000000000
-      internalID: 6084859605308855041
+      spriteID: 1b61c1d2ab723e290800000000000000
+      internalID: -7862396843884538191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_2
+      name: jump_2
       rect:
         serializedVersion: 2
         x: 720
@@ -575,14 +539,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c30c6f3402f456770800000000000000
-      internalID: 8603369663158992956
+      spriteID: d535ef424061cd270800000000000000
+      internalID: 8276514422256456541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_3
+      name: jump_3
       rect:
         serializedVersion: 2
         x: 1080
@@ -596,14 +560,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75a90b6cc3d280ea0800000000000000
-      internalID: -5906421172241655209
+      spriteID: fe97d290e194eacc0800000000000000
+      internalID: -3697937850672776721
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_4
+      name: jump_4
       rect:
         serializedVersion: 2
         x: 1440
@@ -617,14 +581,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c70460ff3c2a2f40800000000000000
-      internalID: 5704420531145803721
+      spriteID: 2dffbf8a821973540800000000000000
+      internalID: 4987614716155920338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_5
+      name: jump_5
       rect:
         serializedVersion: 2
         x: 1800
@@ -638,14 +602,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a21d340f8100fdf0800000000000000
-      internalID: -148617073940163930
+      spriteID: 1ab32c8a0bfee8fe0800000000000000
+      internalID: -1184746109927277663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_6
+      name: jump_6
       rect:
         serializedVersion: 2
         x: 2160
@@ -659,14 +623,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e7a79719cfe2a140800000000000000
-      internalID: 4729606205655721961
+      spriteID: c3371b9f620e0ccb0800000000000000
+      internalID: -4845626741048118468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_7
+      name: jump_7
       rect:
         serializedVersion: 2
         x: 2520
@@ -680,14 +644,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a56cdbd6c2ac833e0800000000000000
-      internalID: -2073685336235588006
+      spriteID: 9361d5350c8d85160800000000000000
+      internalID: 7014594740173477433
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_8
+      name: jump_8
       rect:
         serializedVersion: 2
         x: 2880
@@ -701,14 +665,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30a057a02b0dd1700800000000000000
-      internalID: 512795395688303107
+      spriteID: 3524e7f22c457e510800000000000000
+      internalID: 1578323387413840467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_9
+      name: jump_9
       rect:
         serializedVersion: 2
         x: 3240
@@ -722,14 +686,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72a31e48e77f7ae40800000000000000
-      internalID: 5667770778836351527
+      spriteID: 316e58011d20f3a60800000000000000
+      internalID: 7655840988501763603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_10
+      name: jump_10
       rect:
         serializedVersion: 2
         x: 3600
@@ -743,14 +707,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4ccd1890efa47be0800000000000000
-      internalID: -1480364998338425778
+      spriteID: 620e4a70e894a5080800000000000000
+      internalID: -9197958414588387290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_11
+      name: jump_11
       rect:
         serializedVersion: 2
         x: 0
@@ -764,14 +728,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce56687d01c0f5df0800000000000000
-      internalID: -189419392851352084
+      spriteID: a787fa2282c2869b0800000000000000
+      internalID: -5086767228222736262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_12
+      name: jump_12
       rect:
         serializedVersion: 2
         x: 360
@@ -785,14 +749,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61c62592292b64f10800000000000000
-      internalID: 2253685004373748758
+      spriteID: 91d7803fc388ac550800000000000000
+      internalID: 6181903233876262169
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_13
+      name: jump_13
       rect:
         serializedVersion: 2
         x: 720
@@ -806,14 +770,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3599c6f104e1d300800000000000000
-      internalID: 275251749332817211
+      spriteID: fb91d6b7a7c527450800000000000000
+      internalID: 6085027727657474495
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_14
+      name: jump_14
       rect:
         serializedVersion: 2
         x: 1080
@@ -827,14 +791,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46aaa4aff91084ad0800000000000000
-      internalID: -2717920588507469212
+      spriteID: d1be0bec72b6c1790800000000000000
+      internalID: -7558048255918937315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_15
+      name: jump_15
       rect:
         serializedVersion: 2
         x: 1440
@@ -848,14 +812,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb088c378331d13f0800000000000000
-      internalID: -928564814986837825
+      spriteID: 137f1b7fcb9f47b10800000000000000
+      internalID: 1978480726327293745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_16
+      name: jump_16
       rect:
         serializedVersion: 2
         x: 1800
@@ -869,14 +833,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16c656580d74a8e00800000000000000
-      internalID: 1047728824233847905
+      spriteID: 093ec3818d7a4eaa0800000000000000
+      internalID: -6132592246010354800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_17
+      name: jump_17
       rect:
         serializedVersion: 2
         x: 2160
@@ -890,14 +854,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 202b72dcd3e40b8f0800000000000000
-      internalID: -526835129060445694
+      spriteID: 6574b504560723af0800000000000000
+      internalID: -418148235218303146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_18
+      name: jump_18
       rect:
         serializedVersion: 2
         x: 2520
@@ -911,14 +875,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5343bcf105ab3d150800000000000000
-      internalID: 5896261190451672117
+      spriteID: 4e8115361d4d4b730800000000000000
+      internalID: 4014067163673467108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_19
+      name: jump_19
       rect:
         serializedVersion: 2
         x: 2880
@@ -932,14 +896,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e57ae59bc1f6b6d80800000000000000
-      internalID: -8256383322693916834
+      spriteID: 8f3b298bb75c8e410800000000000000
+      internalID: 1506671210523702264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_20
+      name: jump_20
       rect:
         serializedVersion: 2
         x: 3240
@@ -953,14 +917,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 116138805aff74b80800000000000000
-      internalID: -8410472694813616623
+      spriteID: 82b26af4a9f3f46f0800000000000000
+      internalID: -698269485225333976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_21
+      name: jump_21
       rect:
         serializedVersion: 2
         x: 3600
@@ -974,14 +938,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d6d420ec9f944dc0800000000000000
-      internalID: -3655621501393774895
+      spriteID: c17f7a8329b00d000800000000000000
+      internalID: 58559517799479068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_22
+      name: jump_22
       rect:
         serializedVersion: 2
         x: 0
@@ -995,14 +959,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76ea19b6e2219c3d0800000000000000
-      internalID: -3185995270805410201
+      spriteID: 3f711db56b05f4050800000000000000
+      internalID: 5786932790349076467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_23
+      name: jump_23
       rect:
         serializedVersion: 2
         x: 360
@@ -1016,14 +980,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08bd8b809c54618a0800000000000000
-      internalID: -6334799096112948352
+      spriteID: e0c9a478c0886a6d0800000000000000
+      internalID: -2979544516068205554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_24
+      name: jump_24
       rect:
         serializedVersion: 2
         x: 720
@@ -1037,14 +1001,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba02d8df64c4162e0800000000000000
-      internalID: -2134340880611598165
+      spriteID: f61db5cb4367a93e0800000000000000
+      internalID: -2046193111815958161
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_25
+      name: jump_25
       rect:
         serializedVersion: 2
         x: 1080
@@ -1058,14 +1022,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c06fb7482743322e0800000000000000
-      internalID: -2151818530499332596
+      spriteID: 082ba203b707cf950800000000000000
+      internalID: 6484181237898064512
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_26
+      name: jump_26
       rect:
         serializedVersion: 2
         x: 1440
@@ -1079,14 +1043,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1484a86a65975a20800000000000000
-      internalID: 3051071556821484571
+      spriteID: d9d03a463db4e33d0800000000000000
+      internalID: -3225056911852106339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_27
+      name: jump_27
       rect:
         serializedVersion: 2
         x: 1800
@@ -1100,14 +1064,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9884e628bda0d0b0800000000000000
-      internalID: -5705869721440319331
+      spriteID: 58ba5828a27574b50800000000000000
+      internalID: 6577321620887939973
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_28
+      name: jump_28
       rect:
         serializedVersion: 2
         x: 2160
@@ -1121,14 +1085,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2319d8d47a0dc7360800000000000000
-      internalID: 7168834123846226226
+      spriteID: ddcd7127d93678230800000000000000
+      internalID: 3640988351627517149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_29
+      name: jump_29
       rect:
         serializedVersion: 2
         x: 2520
@@ -1142,14 +1106,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e375b91a6d8fd09b0800000000000000
-      internalID: -5112156401277642946
+      spriteID: e9f61a86d0dd23a90800000000000000
+      internalID: -7335557793373392994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_30
+      name: jump_30
       rect:
         serializedVersion: 2
         x: 2880
@@ -1163,14 +1127,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d10c4222774cfebb0800000000000000
-      internalID: -4904485453230194659
+      spriteID: 2f0e59509c3259c80800000000000000
+      internalID: -8316701790580645646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_31
+      name: jump_31
       rect:
         serializedVersion: 2
         x: 3240
@@ -1184,14 +1148,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d83082d9a105ec00800000000000000
-      internalID: 929150727014594773
+      spriteID: e14e6f2939356d620800000000000000
+      internalID: 2798516111748293662
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_32
+      name: jump_32
       rect:
         serializedVersion: 2
         x: 3600
@@ -1205,14 +1169,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1b679b0863b18480800000000000000
-      internalID: -8898634129254946022
+      spriteID: d33cfefdd7b8d4500800000000000000
+      internalID: 382114916140565309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_33
+      name: jump_33
       rect:
         serializedVersion: 2
         x: 0
@@ -1226,14 +1190,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e82e8d7330bf52ae0800000000000000
-      internalID: -1574576503455686002
+      spriteID: 388deb64cd4541980800000000000000
+      internalID: -8569130885922760573
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_34
+      name: jump_34
       rect:
         serializedVersion: 2
         x: 360
@@ -1247,14 +1211,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4b3750c0e5ed5850800000000000000
-      internalID: 6367498201634126667
+      spriteID: 0f7e2db6d3d2451e0800000000000000
+      internalID: -2210091775306831888
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_35
+      name: jump_35
       rect:
         serializedVersion: 2
         x: 720
@@ -1268,14 +1232,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e8063a22c01afb90800000000000000
-      internalID: -7207429827535173402
+      spriteID: 52f361bd14f71ded0800000000000000
+      internalID: -2390990006331752667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_36
+      name: jump_36
       rect:
         serializedVersion: 2
         x: 1080
@@ -1289,14 +1253,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d53fd7abe996bfd80800000000000000
-      internalID: -8215856964752772259
+      spriteID: 4dd6b486475062010800000000000000
+      internalID: 1163623551245970900
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_37
+      name: jump_37
       rect:
         serializedVersion: 2
         x: 1440
@@ -1310,14 +1274,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2d41f664ae13a0a0800000000000000
-      internalID: -6871614914986685141
+      spriteID: 0a431e4ac1ff0e970800000000000000
+      internalID: 8782299771862856864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_38
+      name: jump_38
       rect:
         serializedVersion: 2
         x: 1800
@@ -1331,14 +1295,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ef886f2a90226700800000000000000
-      internalID: 532023552575573989
+      spriteID: 23fd847bbbb4439e0800000000000000
+      internalID: -1642604694477414606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_39
+      name: jump_39
       rect:
         serializedVersion: 2
         x: 2160
@@ -1352,14 +1316,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89992264c68009fc0800000000000000
-      internalID: -3490280450085971560
+      spriteID: d209e8ec8c6214f30800000000000000
+      internalID: 4557966941776416813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_40
+      name: jump_40
       rect:
         serializedVersion: 2
         x: 2520
@@ -1373,14 +1337,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5d38e5e77f854920800000000000000
-      internalID: 2973940874069163354
+      spriteID: 476260090ab1189f0800000000000000
+      internalID: -468062509844781452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_41
+      name: jump_41
       rect:
         serializedVersion: 2
         x: 2880
@@ -1394,14 +1358,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef2fd17550173cec0800000000000000
-      internalID: -3547867813687463170
+      spriteID: 8d7afa332da060a70800000000000000
+      internalID: 8792727220414031832
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_42
+      name: jump_42
       rect:
         serializedVersion: 2
         x: 3240
@@ -1415,14 +1379,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd66aa0c3da454530800000000000000
-      internalID: 3838556530734163676
+      spriteID: e61645372e0f738c0800000000000000
+      internalID: -4019479287016693394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_43
+      name: jump_43
       rect:
         serializedVersion: 2
         x: 3600
@@ -1436,14 +1400,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e21bb69a830f2be0800000000000000
-      internalID: -1499976257121873182
+      spriteID: 3f055bc66f11aab30800000000000000
+      internalID: 4299268544362008819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_44
+      name: jump_44
       rect:
         serializedVersion: 2
         x: 0
@@ -1457,14 +1421,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 151ab8dee6dd75200800000000000000
-      internalID: 168846979551174993
+      spriteID: 12094f490a18aff50800000000000000
+      internalID: 6915982704474624033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_45
+      name: jump_45
       rect:
         serializedVersion: 2
         x: 360
@@ -1478,14 +1442,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d765c7b71d26a910800000000000000
-      internalID: 1848214276972832728
+      spriteID: 88b36e7c6c9227d00800000000000000
+      internalID: 968882803572095880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_46
+      name: jump_46
       rect:
         serializedVersion: 2
         x: 720
@@ -1499,14 +1463,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5a15400141b684b0800000000000000
-      internalID: -5438464607267775908
+      spriteID: 740568220f801ee80800000000000000
+      internalID: -8151224023099486137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_47
+      name: jump_47
       rect:
         serializedVersion: 2
         x: 1080
@@ -1520,14 +1484,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2346dfa1b5a4df1e0800000000000000
-      internalID: -2162490490912676814
+      spriteID: a70ea63860c3a63b0800000000000000
+      internalID: -5518532394716831622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_48
+      name: jump_48
       rect:
         serializedVersion: 2
         x: 1440
@@ -1541,14 +1505,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd51ddf74dbfb67d0800000000000000
-      internalID: -2923966642950171172
+      spriteID: f0279ecf08930a780800000000000000
+      internalID: -8673869656153820657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_49
+      name: jump_49
       rect:
         serializedVersion: 2
         x: 1800
@@ -1562,14 +1526,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 524e72cecb01ac4c0800000000000000
-      internalID: -4266579293378190299
+      spriteID: 61d66f1eb52c509f0800000000000000
+      internalID: -502782083493106410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_50
+      name: jump_50
       rect:
         serializedVersion: 2
         x: 2160
@@ -1583,14 +1547,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6597f18ee24e1bbd0800000000000000
-      internalID: -2616059018411542186
+      spriteID: 8831b0ac78e720750800000000000000
+      internalID: 6269712752928560008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_51
+      name: jump_51
       rect:
         serializedVersion: 2
         x: 2520
@@ -1604,14 +1568,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31188a4ff3c8d9c70800000000000000
-      internalID: 8979487438362149139
+      spriteID: 04e8035c793f17640800000000000000
+      internalID: 5076106088197164608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_52
+      name: jump_52
       rect:
         serializedVersion: 2
         x: 2880
@@ -1625,14 +1589,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 903d148d6f32cab00800000000000000
-      internalID: 841086773508559625
+      spriteID: 9aefdaf0ac11d1ec0800000000000000
+      internalID: -3594697368027660631
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_53
+      name: jump_53
       rect:
         serializedVersion: 2
         x: 3240
@@ -1646,14 +1610,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b264078a62fdc37b0800000000000000
-      internalID: -5243070509038418389
+      spriteID: 834fb811d5db0b650800000000000000
+      internalID: 6246700890586870840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_54
+      name: jump_54
       rect:
         serializedVersion: 2
         x: 3600
@@ -1667,14 +1631,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bcb7e17839ed1f90800000000000000
-      internalID: -6981167418715947851
+      spriteID: 8e157c5e39f97aad0800000000000000
+      internalID: -2691006794766528024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_55
+      name: jump_55
       rect:
         serializedVersion: 2
         x: 0
@@ -1688,14 +1652,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1381b0d6ec5dfcf70800000000000000
-      internalID: 9209814845565376561
+      spriteID: a8c74cc3c8ed48680800000000000000
+      internalID: -8753627081805103990
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_56
+      name: jump_56
       rect:
         serializedVersion: 2
         x: 360
@@ -1709,134 +1673,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c2552b0066d407d0800000000000000
-      internalID: -2952999747656002874
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_57
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 0
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3bdda31a82343b870800000000000000
-      internalID: 8697369147165302195
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_58
-      rect:
-        serializedVersion: 2
-        x: 1080
-        y: 0
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 501371aefab8ce380800000000000000
-      internalID: -8940617572574351099
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_59
-      rect:
-        serializedVersion: 2
-        x: 1440
-        y: 0
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 765c3de7fde5b2700800000000000000
-      internalID: 516610896262579559
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_60
-      rect:
-        serializedVersion: 2
-        x: 1800
-        y: 0
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d6b1abd832f094f10800000000000000
-      internalID: 2254349733851700077
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_61
-      rect:
-        serializedVersion: 2
-        x: 2160
-        y: 0
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f2947ec17ba30c2d0800000000000000
-      internalID: -3260541572077893329
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_62
-      rect:
-        serializedVersion: 2
-        x: 2520
-        y: 0
-        width: 360
-        height: 300
-      alignment: 9
-      pivot: {x: 0.5, y: 0.1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 67cd52b0d60e632d0800000000000000
-      internalID: -3299202918059221898
+      spriteID: f299c4f29c9da98b0800000000000000
+      internalID: -5144560166212167377
       vertices: []
       indices: 
       edges: []
@@ -1852,69 +1690,63 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      idle_51: 8979487438362149139
-      idle_46: -5438464607267775908
-      idle_33: -1574576503455686002
-      idle_53: -5243070509038418389
-      idle_59: 516610896262579559
-      idle_54: -6981167418715947851
-      idle_17: -526835129060445694
-      idle_30: -4904485453230194659
-      idle_11: -189419392851352084
-      idle_3: -5906421172241655209
-      idle_31: 929150727014594773
-      idle_0: 8793639957104055765
-      idle_1: 6084859605308855041
-      idle_13: 275251749332817211
-      idle_8: 512795395688303107
-      idle_62: -3299202918059221898
-      idle_36: -8215856964752772259
-      idle_14: -2717920588507469212
-      idle_7: -2073685336235588006
-      idle_2: 8603369663158992956
-      idle_58: -8940617572574351099
-      idle_16: 1047728824233847905
-      idle_21: -3655621501393774895
-      idle_10: -1480364998338425778
-      idle_48: -2923966642950171172
-      idle_61: -3260541572077893329
-      idle_50: -2616059018411542186
-      idle_41: -3547867813687463170
-      idle_56: -2952999747656002874
-      idle_4: 5704420531145803721
-      idle_57: 8697369147165302195
-      idle_52: 841086773508559625
-      idle_37: -6871614914986685141
-      idle_20: -8410472694813616623
-      idle_34: 6367498201634126667
-      idle_15: -928564814986837825
-      idle_43: -1499976257121873182
-      idle_47: -2162490490912676814
-      idle_45: 1848214276972832728
-      idle_39: -3490280450085971560
-      idle_55: 9209814845565376561
-      idle_6: 4729606205655721961
-      idle_19: -8256383322693916834
-      idle_27: -5705869721440319331
-      idle_40: 2973940874069163354
-      idle_49: -4266579293378190299
-      idle_24: -2134340880611598165
-      idle_60: 2254349733851700077
-      idle_28: 7168834123846226226
-      idle_5: -148617073940163930
-      idle_12: 2253685004373748758
-      idle_32: -8898634129254946022
-      idle_23: -6334799096112948352
-      idle_35: -7207429827535173402
-      idle_29: -5112156401277642946
-      idle_9: 5667770778836351527
-      idle_38: 532023552575573989
-      idle_25: -2151818530499332596
-      idle_18: 5896261190451672117
-      idle_42: 3838556530734163676
-      idle_22: -3185995270805410201
-      idle_26: 3051071556821484571
-      idle_44: 168846979551174993
+      jump_36: 1163623551245970900
+      jump_30: -8316701790580645646
+      jump_26: -3225056911852106339
+      jump_45: 968882803572095880
+      jump_19: 1506671210523702264
+      jump_20: -698269485225333976
+      jump_39: 4557966941776416813
+      jump_31: 2798516111748293662
+      jump_8: 1578323387413840467
+      jump_5: -1184746109927277663
+      jump_7: 7014594740173477433
+      jump_28: 3640988351627517149
+      jump_44: 6915982704474624033
+      jump_12: 6181903233876262169
+      jump_38: -1642604694477414606
+      jump_13: 6085027727657474495
+      jump_50: 6269712752928560008
+      jump_34: -2210091775306831888
+      jump_46: -8151224023099486137
+      jump_51: 5076106088197164608
+      jump_35: -2390990006331752667
+      jump_56: -5144560166212167377
+      jump_9: 7655840988501763603
+      jump_37: 8782299771862856864
+      jump_32: 382114916140565309
+      jump_3: -3697937850672776721
+      jump_14: -7558048255918937315
+      jump_2: 8276514422256456541
+      jump_52: -3594697368027660631
+      jump_49: -502782083493106410
+      jump_17: -418148235218303146
+      jump_43: 4299268544362008819
+      jump_27: 6577321620887939973
+      jump_24: -2046193111815958161
+      jump_53: 6246700890586870840
+      jump_42: -4019479287016693394
+      jump_0: 4281637774074219296
+      jump_47: -5518532394716831622
+      jump_55: -8753627081805103990
+      jump_11: -5086767228222736262
+      jump_1: -7862396843884538191
+      jump_10: -9197958414588387290
+      jump_22: 5786932790349076467
+      jump_21: 58559517799479068
+      jump_54: -2691006794766528024
+      jump_48: -8673869656153820657
+      jump_29: -7335557793373392994
+      jump_18: 4014067163673467108
+      jump_6: -4845626741048118468
+      jump_40: -468062509844781452
+      jump_33: -8569130885922760573
+      jump_15: 1978480726327293745
+      jump_41: 8792727220414031832
+      jump_25: 6484181237898064512
+      jump_23: -2979544516068205554
+      jump_16: -6132592246010354800
+      jump_4: 4987614716155920338
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

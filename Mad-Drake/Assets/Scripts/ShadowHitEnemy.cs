@@ -16,9 +16,26 @@ public class ShadowHitEnemy : MonoBehaviour
     private float delay = 1.0f;
     private bool waiting = false;
 
+    private ShadowBehaviour shadowBehaviour;
+
+    private void Start()
+    {
+        shadowBehaviour = GetComponentInParent<ShadowBehaviour>();
+        toHit = shadowBehaviour.GetFollowingObject();
+    }
+
+    private void Update()
+    {
+        if(toHit == null)
+        {
+            Debug.Log("ha!");
+            toHit = shadowBehaviour.GetFollowingObject();
+        }
+    }
+
     private void FixedUpdate()
     {
-        if (canHit)
+        if (canHit && !toHit)
         {
             Vector3 forces = toHit.transform.position - transform.position;
             toHit.GetComponent<PlayerController>().TakeDamage(damage, forceOfImpact * forces.normalized, timeForImpact);

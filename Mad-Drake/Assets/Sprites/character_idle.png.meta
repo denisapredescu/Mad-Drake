@@ -1,349 +1,385 @@
 fileFormatVersion: 2
-guid: 43eb704c8d3f4f02b188c5988c58b4fb
+guid: 9c447c54c8e0416e9446cadb88c48fd3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8278718988134912920
-    second: 001_crawl_0
+      213: 3702516244040528198
+    second: 001_idle_0
   - first:
-      213: -5869736859029309157
-    second: 001_crawl_1
+      213: 6034185568779365093
+    second: 001_idle_1
   - first:
-      213: 1805059510254218393
-    second: 001_crawl_2
+      213: 3892904981192818417
+    second: 001_idle_2
   - first:
-      213: 5301829085726349033
-    second: 001_crawl_3
+      213: 6915866934838428674
+    second: 001_idle_3
   - first:
-      213: 5235573502336527071
-    second: 001_crawl_4
+      213: -3605188460204216795
+    second: 001_idle_4
   - first:
-      213: -4484548554359974427
-    second: 001_crawl_5
+      213: 7423398425901215220
+    second: 001_idle_5
   - first:
-      213: -2073284639423726515
-    second: 001_crawl_6
+      213: 4640359904912673053
+    second: 001_idle_6
   - first:
-      213: 5261148301550944624
-    second: 001_crawl_7
+      213: -6433590614986559282
+    second: 001_idle_7
   - first:
-      213: 3176515651580295083
-    second: 001_crawl_8
+      213: 5124449047340183718
+    second: 001_idle_8
   - first:
-      213: 317733829993152270
-    second: 001_crawl_9
+      213: 4500629578318668449
+    second: 001_idle_9
   - first:
-      213: -6547178414495432779
-    second: 001_crawl_10
+      213: -6594993999103286912
+    second: 001_idle_10
   - first:
-      213: -551620309600875965
-    second: 001_crawl_11
+      213: -830214651084074712
+    second: 001_idle_11
   - first:
-      213: 126869401708836414
-    second: 001_crawl_12
+      213: -3890047994063881195
+    second: 001_idle_12
   - first:
-      213: 5061579826844059489
-    second: 001_crawl_13
+      213: 6885296785342767966
+    second: 001_idle_13
   - first:
-      213: -2764402748930544997
-    second: 001_crawl_14
+      213: -4532883398158979797
+    second: 001_idle_14
   - first:
-      213: -8192535459070767541
-    second: 001_crawl_15
+      213: 5182138269887193247
+    second: 001_idle_15
   - first:
-      213: -8905651254822466290
-    second: 001_crawl_16
+      213: -1600205373447154881
+    second: 001_idle_16
   - first:
-      213: -4535440378235963215
-    second: 001_crawl_17
+      213: -6035137365046657425
+    second: 001_idle_17
   - first:
-      213: -3900459488720378412
-    second: 001_crawl_18
+      213: -7458279415564851145
+    second: 001_idle_18
   - first:
-      213: 3828528524008090071
-    second: 001_crawl_19
+      213: 5807500304956595962
+    second: 001_idle_19
   - first:
-      213: 3648585747572644525
-    second: 001_crawl_20
+      213: 7838944672733093095
+    second: 001_idle_20
   - first:
-      213: 8332281044773490492
-    second: 001_crawl_21
+      213: 6159295766311068023
+    second: 001_idle_21
   - first:
-      213: 5644031063374137027
-    second: 001_crawl_22
+      213: 7039799940356716592
+    second: 001_idle_22
   - first:
-      213: -3363443975034586583
-    second: 001_crawl_23
+      213: -660556070519831599
+    second: 001_idle_23
   - first:
-      213: -7094048987413350752
-    second: 001_crawl_24
+      213: -4775381799492527512
+    second: 001_idle_24
   - first:
-      213: 8802966961096409756
-    second: 001_crawl_25
+      213: 1489850165684756502
+    second: 001_idle_25
   - first:
-      213: -1183956736984191471
-    second: 001_crawl_26
+      213: -2595104355296491694
+    second: 001_idle_26
   - first:
-      213: 2707196928252972941
-    second: 001_crawl_27
+      213: -5928392785459496407
+    second: 001_idle_27
   - first:
-      213: -6842271882808038225
-    second: 001_crawl_28
+      213: -2239023949275087141
+    second: 001_idle_28
   - first:
-      213: -1574998691784601377
-    second: 001_crawl_29
+      213: 8931016501097915595
+    second: 001_idle_29
   - first:
-      213: 3540922041612233255
-    second: 001_crawl_30
+      213: 8536105055251720041
+    second: 001_idle_30
   - first:
-      213: -6719377116490255970
-    second: 001_crawl_31
+      213: -2556637107437071743
+    second: 001_idle_31
   - first:
-      213: -2026477787031756177
-    second: 001_crawl_32
+      213: 9174607200023989941
+    second: 001_idle_32
   - first:
-      213: 586962718998189682
-    second: 001_crawl_33
+      213: -8138877855713073682
+    second: 001_idle_33
   - first:
-      213: -7408316839425961689
-    second: 001_crawl_34
+      213: 5233951495072884592
+    second: 001_idle_34
   - first:
-      213: -6282502359498492993
-    second: 001_crawl_35
+      213: -394623722695260171
+    second: 001_idle_35
   - first:
-      213: -3528693367939412637
-    second: 001_crawl_36
+      213: -1398877805265062695
+    second: 001_idle_36
   - first:
-      213: -3829275991645537076
-    second: 001_crawl_37
+      213: 6501025724080950761
+    second: 001_idle_37
   - first:
-      213: -4546619556867711157
-    second: 001_crawl_38
+      213: -5353374243238198214
+    second: 001_idle_38
   - first:
-      213: -599791038833843841
-    second: 001_crawl_39
+      213: -3227699185204008030
+    second: 001_idle_39
   - first:
-      213: 4481279138063796619
-    second: 001_crawl_40
+      213: 3133287194620652148
+    second: 001_idle_40
   - first:
-      213: 9036870624855127330
-    second: 001_crawl_41
+      213: -8923341872077287988
+    second: 001_idle_41
   - first:
-      213: -2458452827944631840
-    second: 001_crawl_42
+      213: 262265941627136954
+    second: 001_idle_42
   - first:
-      213: 6334144011790709698
-    second: 001_crawl_43
+      213: 2794591406097128291
+    second: 001_idle_43
   - first:
-      213: -1425461724839098982
-    second: 001_crawl_44
+      213: -7333076349938631789
+    second: 001_idle_44
   - first:
-      213: -6345260508401321341
-    second: 001_crawl_45
+      213: -7261051625008537040
+    second: 001_idle_45
   - first:
-      213: 261936785317415390
-    second: 001_crawl_46
+      213: 3186419676745877423
+    second: 001_idle_46
   - first:
-      213: -1161545628493037522
-    second: 001_crawl_47
+      213: 4674950817945298978
+    second: 001_idle_47
   - first:
-      213: 1258150422525355161
-    second: 001_crawl_48
+      213: -4365678145897439421
+    second: 001_idle_48
   - first:
-      213: 7114754101330800316
-    second: 001_crawl_49
+      213: -2906340270884833858
+    second: 001_idle_49
   - first:
-      213: -5911986164207435395
-    second: 001_crawl_50
+      213: 6520107428607614743
+    second: 001_idle_50
   - first:
-      213: -2948016885212443511
-    second: 001_crawl_51
+      213: 1167696249258456634
+    second: 001_idle_51
   - first:
-      213: 4216314581792426518
-    second: 001_crawl_52
+      213: 3834338905651312059
+    second: 001_idle_52
   - first:
-      213: 8053267923685378398
-    second: 001_crawl_53
+      213: -2046107902980942880
+    second: 001_idle_53
   - first:
-      213: -3621966957645045730
-    second: 001_crawl_54
+      213: 7106752131502798379
+    second: 001_idle_54
   - first:
-      213: 7038774226226932363
-    second: 001_crawl_55
+      213: -7749316617149033733
+    second: 001_idle_55
   - first:
-      213: 5793722704695050961
-    second: 001_crawl_56
+      213: 3925573066441106933
+    second: 001_idle_56
   - first:
-      213: 5792233493864853039
-    second: crawl_0
+      213: -6337529836633202707
+    second: 001_idle_57
   - first:
-      213: -5914337903272671382
-    second: crawl_1
+      213: 4811936371513311704
+    second: 001_idle_58
   - first:
-      213: 8126159601515112270
-    second: crawl_2
+      213: -3887533752387564973
+    second: 001_idle_59
   - first:
-      213: -96816851516590350
-    second: crawl_3
+      213: -4353198013425023729
+    second: 001_idle_60
   - first:
-      213: 486937601099912534
-    second: crawl_4
+      213: -9221309551114482960
+    second: 001_idle_61
   - first:
-      213: 3939315157784225482
-    second: crawl_5
+      213: 8327781051735486476
+    second: 001_idle_62
   - first:
-      213: -5594292679508710131
-    second: crawl_6
+      213: 8793639957104055765
+    second: idle_0
   - first:
-      213: -6434335881165984772
-    second: crawl_7
+      213: 6084859605308855041
+    second: idle_1
   - first:
-      213: -2034017288316516060
-    second: crawl_8
+      213: 8603369663158992956
+    second: idle_2
   - first:
-      213: -6685071927711561165
-    second: crawl_9
+      213: -5906421172241655209
+    second: idle_3
   - first:
-      213: 1742120214890030487
-    second: crawl_10
+      213: 5704420531145803721
+    second: idle_4
   - first:
-      213: -5258127474107793880
-    second: crawl_11
+      213: -148617073940163930
+    second: idle_5
   - first:
-      213: -6362150260077783213
-    second: crawl_12
+      213: 4729606205655721961
+    second: idle_6
   - first:
-      213: 6000624626258909499
-    second: crawl_13
+      213: -2073685336235588006
+    second: idle_7
   - first:
-      213: -11110300402350004
-    second: crawl_14
+      213: 512795395688303107
+    second: idle_8
   - first:
-      213: 6447806580407756438
-    second: crawl_15
+      213: 5667770778836351527
+    second: idle_9
   - first:
-      213: 2807875772997353430
-    second: crawl_16
+      213: -1480364998338425778
+    second: idle_10
   - first:
-      213: 2968091915239856228
-    second: crawl_17
+      213: -189419392851352084
+    second: idle_11
   - first:
-      213: 4676100857148509383
-    second: crawl_18
+      213: 2253685004373748758
+    second: idle_12
   - first:
-      213: 8104880570697270812
-    second: crawl_19
+      213: 275251749332817211
+    second: idle_13
   - first:
-      213: -8856784199705759540
-    second: crawl_20
+      213: -2717920588507469212
+    second: idle_14
   - first:
-      213: 7452436772714525783
-    second: crawl_21
+      213: -928564814986837825
+    second: idle_15
   - first:
-      213: -860543551424008256
-    second: crawl_22
+      213: 1047728824233847905
+    second: idle_16
   - first:
-      213: 3586605008171751350
-    second: crawl_23
+      213: -526835129060445694
+    second: idle_17
   - first:
-      213: -3400195510834182565
-    second: crawl_24
+      213: 5896261190451672117
+    second: idle_18
   - first:
-      213: 5449512723201042851
-    second: crawl_25
+      213: -8256383322693916834
+    second: idle_19
   - first:
-      213: -7627005738687656529
-    second: crawl_26
+      213: -8410472694813616623
+    second: idle_20
   - first:
-      213: 4494362804759634629
-    second: crawl_27
+      213: -3655621501393774895
+    second: idle_21
   - first:
-      213: 3569718664385638660
-    second: crawl_28
+      213: -3185995270805410201
+    second: idle_22
   - first:
-      213: -3983158180796669194
-    second: crawl_29
+      213: -6334799096112948352
+    second: idle_23
   - first:
-      213: 7400986306123696863
-    second: crawl_30
+      213: -2134340880611598165
+    second: idle_24
   - first:
-      213: -3057175438058508694
-    second: crawl_31
+      213: -2151818530499332596
+    second: idle_25
   - first:
-      213: -8608127710979843644
-    second: crawl_32
+      213: 3051071556821484571
+    second: idle_26
   - first:
-      213: -1263638343768063347
-    second: crawl_33
+      213: -5705869721440319331
+    second: idle_27
   - first:
-      213: -5579383255283400151
-    second: crawl_34
+      213: 7168834123846226226
+    second: idle_28
   - first:
-      213: 2019367882814495041
-    second: crawl_35
+      213: -5112156401277642946
+    second: idle_29
   - first:
-      213: 3107586583600170310
-    second: crawl_36
+      213: -4904485453230194659
+    second: idle_30
   - first:
-      213: -9137437818618697191
-    second: crawl_37
+      213: 929150727014594773
+    second: idle_31
   - first:
-      213: 5114913469538373822
-    second: crawl_38
+      213: -8898634129254946022
+    second: idle_32
   - first:
-      213: 1014957662144463546
-    second: crawl_39
+      213: -1574576503455686002
+    second: idle_33
   - first:
-      213: -8223079984406861596
-    second: crawl_40
+      213: 6367498201634126667
+    second: idle_34
   - first:
-      213: 4992470158981406054
-    second: crawl_41
+      213: -7207429827535173402
+    second: idle_35
   - first:
-      213: -3831006634410245999
-    second: crawl_42
+      213: -8215856964752772259
+    second: idle_36
   - first:
-      213: 1359726691504142802
-    second: crawl_43
+      213: -6871614914986685141
+    second: idle_37
   - first:
-      213: -4618456634548236013
-    second: crawl_44
+      213: 532023552575573989
+    second: idle_38
   - first:
-      213: -4569225806363393815
-    second: crawl_45
+      213: -3490280450085971560
+    second: idle_39
   - first:
-      213: -1625478186239610321
-    second: crawl_46
+      213: 2973940874069163354
+    second: idle_40
   - first:
-      213: 4218489630342958338
-    second: crawl_47
+      213: -3547867813687463170
+    second: idle_41
   - first:
-      213: 761719822367975211
-    second: crawl_48
+      213: 3838556530734163676
+    second: idle_42
   - first:
-      213: -7958919152973655842
-    second: crawl_49
+      213: -1499976257121873182
+    second: idle_43
   - first:
-      213: -4529299603484360848
-    second: crawl_50
+      213: 168846979551174993
+    second: idle_44
   - first:
-      213: 7862533774488162087
-    second: crawl_51
+      213: 1848214276972832728
+    second: idle_45
   - first:
-      213: -2335506168021647421
-    second: crawl_52
+      213: -5438464607267775908
+    second: idle_46
   - first:
-      213: -945946520908109945
-    second: crawl_53
+      213: -2162490490912676814
+    second: idle_47
   - first:
-      213: 4002703697122042371
-    second: crawl_54
+      213: -2923966642950171172
+    second: idle_48
   - first:
-      213: -8302552366268929842
-    second: crawl_55
+      213: -4266579293378190299
+    second: idle_49
   - first:
-      213: 7586075192726971330
-    second: crawl_56
+      213: -2616059018411542186
+    second: idle_50
+  - first:
+      213: 8979487438362149139
+    second: idle_51
+  - first:
+      213: 841086773508559625
+    second: idle_52
+  - first:
+      213: -5243070509038418389
+    second: idle_53
+  - first:
+      213: -6981167418715947851
+    second: idle_54
+  - first:
+      213: 9209814845565376561
+    second: idle_55
+  - first:
+      213: -2952999747656002874
+    second: idle_56
+  - first:
+      213: 8697369147165302195
+    second: idle_57
+  - first:
+      213: -8940617572574351099
+    second: idle_58
+  - first:
+      213: 516610896262579559
+    second: idle_59
+  - first:
+      213: 2254349733851700077
+    second: idle_60
+  - first:
+      213: -3260541572077893329
+    second: idle_61
+  - first:
+      213: -3299202918059221898
+    second: idle_62
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -483,7 +519,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: crawl_0
+      name: idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -497,14 +533,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2e2fe19ca5226050800000000000000
-      internalID: 5792233493864853039
+      spriteID: 5d55ed543f8490a70800000000000000
+      internalID: 8793639957104055765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_1
+      name: idle_1
       rect:
         serializedVersion: 2
         x: 360
@@ -518,14 +554,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a67cdc1330d0ceda0800000000000000
-      internalID: -5914337903272671382
+      spriteID: 103de827293c17450800000000000000
+      internalID: 6084859605308855041
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_2
+      name: idle_2
       rect:
         serializedVersion: 2
         x: 720
@@ -539,14 +575,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4720747a1be5c070800000000000000
-      internalID: 8126159601515112270
+      spriteID: c30c6f3402f456770800000000000000
+      internalID: 8603369663158992956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_3
+      name: idle_3
       rect:
         serializedVersion: 2
         x: 1080
@@ -560,14 +596,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f6f415269908aef0800000000000000
-      internalID: -96816851516590350
+      spriteID: 75a90b6cc3d280ea0800000000000000
+      internalID: -5906421172241655209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_4
+      name: idle_4
       rect:
         serializedVersion: 2
         x: 1440
@@ -581,14 +617,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65557551b23f1c600800000000000000
-      internalID: 486937601099912534
+      spriteID: 9c70460ff3c2a2f40800000000000000
+      internalID: 5704420531145803721
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_5
+      name: idle_5
       rect:
         serializedVersion: 2
         x: 1800
@@ -602,14 +638,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac66a0eb3424ba630800000000000000
-      internalID: 3939315157784225482
+      spriteID: 6a21d340f8100fdf0800000000000000
+      internalID: -148617073940163930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_6
+      name: idle_6
       rect:
         serializedVersion: 2
         x: 2160
@@ -623,14 +659,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0da054a2741d52b0800000000000000
-      internalID: -5594292679508710131
+      spriteID: 9e7a79719cfe2a140800000000000000
+      internalID: 4729606205655721961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_7
+      name: idle_7
       rect:
         serializedVersion: 2
         x: 2520
@@ -644,14 +680,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfb2d8d4b95a4b6a0800000000000000
-      internalID: -6434335881165984772
+      spriteID: a56cdbd6c2ac833e0800000000000000
+      internalID: -2073685336235588006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_8
+      name: idle_8
       rect:
         serializedVersion: 2
         x: 2880
@@ -665,14 +701,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42904ee8d08b5c3e0800000000000000
-      internalID: -2034017288316516060
+      spriteID: 30a057a02b0dd1700800000000000000
+      internalID: 512795395688303107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_9
+      name: idle_9
       rect:
         serializedVersion: 2
         x: 3240
@@ -686,14 +722,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33a01d2308ad933a0800000000000000
-      internalID: -6685071927711561165
+      spriteID: 72a31e48e77f7ae40800000000000000
+      internalID: 5667770778836351527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_10
+      name: idle_10
       rect:
         serializedVersion: 2
         x: 3600
@@ -707,14 +743,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7952c84fa114d2810800000000000000
-      internalID: 1742120214890030487
+      spriteID: e4ccd1890efa47be0800000000000000
+      internalID: -1480364998338425778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_11
+      name: idle_11
       rect:
         serializedVersion: 2
         x: 0
@@ -728,14 +764,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82e351acbe06707b0800000000000000
-      internalID: -5258127474107793880
+      spriteID: ce56687d01c0f5df0800000000000000
+      internalID: -189419392851352084
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_12
+      name: idle_12
       rect:
         serializedVersion: 2
         x: 360
@@ -749,14 +785,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 357976ceb0a15b7a0800000000000000
-      internalID: -6362150260077783213
+      spriteID: 61c62592292b64f10800000000000000
+      internalID: 2253685004373748758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_13
+      name: idle_13
       rect:
         serializedVersion: 2
         x: 720
@@ -770,14 +806,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b399f9e0e40864350800000000000000
-      internalID: 6000624626258909499
+      spriteID: b3599c6f104e1d300800000000000000
+      internalID: 275251749332817211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_14
+      name: idle_14
       rect:
         serializedVersion: 2
         x: 1080
@@ -791,14 +827,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c488b2b9d3788dff0800000000000000
-      internalID: -11110300402350004
+      spriteID: 46aaa4aff91084ad0800000000000000
+      internalID: -2717920588507469212
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_15
+      name: idle_15
       rect:
         serializedVersion: 2
         x: 1440
@@ -812,14 +848,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69661a54ce53b7950800000000000000
-      internalID: 6447806580407756438
+      spriteID: fb088c378331d13f0800000000000000
+      internalID: -928564814986837825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_16
+      name: idle_16
       rect:
         serializedVersion: 2
         x: 1800
@@ -833,14 +869,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6dfbee6832497f620800000000000000
-      internalID: 2807875772997353430
+      spriteID: 16c656580d74a8e00800000000000000
+      internalID: 1047728824233847905
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_17
+      name: idle_17
       rect:
         serializedVersion: 2
         x: 2160
@@ -854,14 +890,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 468949c0fd7c03920800000000000000
-      internalID: 2968091915239856228
+      spriteID: 202b72dcd3e40b8f0800000000000000
+      internalID: -526835129060445694
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_18
+      name: idle_18
       rect:
         serializedVersion: 2
         x: 2520
@@ -875,14 +911,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cc8c3c54f8d4e040800000000000000
-      internalID: 4676100857148509383
+      spriteID: 5343bcf105ab3d150800000000000000
+      internalID: 5896261190451672117
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_19
+      name: idle_19
       rect:
         serializedVersion: 2
         x: 2880
@@ -896,14 +932,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c16406300f15a7070800000000000000
-      internalID: 8104880570697270812
+      spriteID: e57ae59bc1f6b6d80800000000000000
+      internalID: -8256383322693916834
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_20
+      name: idle_20
       rect:
         serializedVersion: 2
         x: 3240
@@ -917,14 +953,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc0fe3412b1661580800000000000000
-      internalID: -8856784199705759540
+      spriteID: 116138805aff74b80800000000000000
+      internalID: -8410472694813616623
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_21
+      name: idle_21
       rect:
         serializedVersion: 2
         x: 3600
@@ -938,14 +974,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75435b492cf5c6760800000000000000
-      internalID: 7452436772714525783
+      spriteID: 1d6d420ec9f944dc0800000000000000
+      internalID: -3655621501393774895
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_22
+      name: idle_22
       rect:
         serializedVersion: 2
         x: 0
@@ -959,14 +995,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0cf6e97033cbe04f0800000000000000
-      internalID: -860543551424008256
+      spriteID: 76ea19b6e2219c3d0800000000000000
+      internalID: -3185995270805410201
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_23
+      name: idle_23
       rect:
         serializedVersion: 2
         x: 360
@@ -980,14 +1016,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b7d6b5904e26c130800000000000000
-      internalID: 3586605008171751350
+      spriteID: 08bd8b809c54618a0800000000000000
+      internalID: -6334799096112948352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_24
+      name: idle_24
       rect:
         serializedVersion: 2
         x: 720
@@ -1001,14 +1037,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b56c9d9a23410d0d0800000000000000
-      internalID: -3400195510834182565
+      spriteID: ba02d8df64c4162e0800000000000000
+      internalID: -2134340880611598165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_25
+      name: idle_25
       rect:
         serializedVersion: 2
         x: 1080
@@ -1022,14 +1058,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a9ae51f2fe80ab40800000000000000
-      internalID: 5449512723201042851
+      spriteID: c06fb7482743322e0800000000000000
+      internalID: -2151818530499332596
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_26
+      name: idle_26
       rect:
         serializedVersion: 2
         x: 1440
@@ -1043,14 +1079,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fad08a5b0be672690800000000000000
-      internalID: -7627005738687656529
+      spriteID: b1484a86a65975a20800000000000000
+      internalID: 3051071556821484571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_27
+      name: idle_27
       rect:
         serializedVersion: 2
         x: 1800
@@ -1064,14 +1100,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c22d65a82f2f5e30800000000000000
-      internalID: 4494362804759634629
+      spriteID: d9884e628bda0d0b0800000000000000
+      internalID: -5705869721440319331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_28
+      name: idle_28
       rect:
         serializedVersion: 2
         x: 2160
@@ -1085,14 +1121,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 401b9ca46303a8130800000000000000
-      internalID: 3569718664385638660
+      spriteID: 2319d8d47a0dc7360800000000000000
+      internalID: 7168834123846226226
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_29
+      name: idle_29
       rect:
         serializedVersion: 2
         x: 2520
@@ -1106,14 +1142,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f26c6dfcbaf8b8c0800000000000000
-      internalID: -3983158180796669194
+      spriteID: e375b91a6d8fd09b0800000000000000
+      internalID: -5112156401277642946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_30
+      name: idle_30
       rect:
         serializedVersion: 2
         x: 2880
@@ -1127,14 +1163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fda880455d595b660800000000000000
-      internalID: 7400986306123696863
+      spriteID: d10c4222774cfebb0800000000000000
+      internalID: -4904485453230194659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_31
+      name: idle_31
       rect:
         serializedVersion: 2
         x: 3240
@@ -1148,14 +1184,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6e297ef22bb295d0800000000000000
-      internalID: -3057175438058508694
+      spriteID: 5d83082d9a105ec00800000000000000
+      internalID: 929150727014594773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_32
+      name: idle_32
       rect:
         serializedVersion: 2
         x: 3600
@@ -1169,14 +1205,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c999d56479c98880800000000000000
-      internalID: -8608127710979843644
+      spriteID: a1b679b0863b18480800000000000000
+      internalID: -8898634129254946022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_33
+      name: idle_33
       rect:
         serializedVersion: 2
         x: 0
@@ -1190,14 +1226,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8244231f97a67ee0800000000000000
-      internalID: -1263638343768063347
+      spriteID: e82e8d7330bf52ae0800000000000000
+      internalID: -1574576503455686002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_34
+      name: idle_34
       rect:
         serializedVersion: 2
         x: 360
@@ -1211,14 +1247,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 922021b7d7c0292b0800000000000000
-      internalID: -5579383255283400151
+      spriteID: b4b3750c0e5ed5850800000000000000
+      internalID: 6367498201634126667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_35
+      name: idle_35
       rect:
         serializedVersion: 2
         x: 720
@@ -1232,14 +1268,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1499dfde36c360c10800000000000000
-      internalID: 2019367882814495041
+      spriteID: 6e8063a22c01afb90800000000000000
+      internalID: -7207429827535173402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_36
+      name: idle_36
       rect:
         serializedVersion: 2
         x: 1080
@@ -1253,14 +1289,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6450248788d502b20800000000000000
-      internalID: 3107586583600170310
+      spriteID: d53fd7abe996bfd80800000000000000
+      internalID: -8215856964752772259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_37
+      name: idle_37
       rect:
         serializedVersion: 2
         x: 1440
@@ -1274,14 +1310,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91a230857bc413180800000000000000
-      internalID: -9137437818618697191
+      spriteID: b2d41f664ae13a0a0800000000000000
+      internalID: -6871614914986685141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_38
+      name: idle_38
       rect:
         serializedVersion: 2
         x: 1800
@@ -1295,14 +1331,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb012b853b2dbf640800000000000000
-      internalID: 5114913469538373822
+      spriteID: 5ef886f2a90226700800000000000000
+      internalID: 532023552575573989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_39
+      name: idle_39
       rect:
         serializedVersion: 2
         x: 2160
@@ -1316,14 +1352,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab28e22cd9ad51e00800000000000000
-      internalID: 1014957662144463546
+      spriteID: 89992264c68009fc0800000000000000
+      internalID: -3490280450085971560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_40
+      name: idle_40
       rect:
         serializedVersion: 2
         x: 2520
@@ -1337,14 +1373,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e8edc96250c1ed80800000000000000
-      internalID: -8223079984406861596
+      spriteID: a5d38e5e77f854920800000000000000
+      internalID: 2973940874069163354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_41
+      name: idle_41
       rect:
         serializedVersion: 2
         x: 2880
@@ -1358,14 +1394,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66d13d98821d84540800000000000000
-      internalID: 4992470158981406054
+      spriteID: ef2fd17550173cec0800000000000000
+      internalID: -3547867813687463170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_42
+      name: idle_42
       rect:
         serializedVersion: 2
         x: 3240
@@ -1379,14 +1415,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19000d773c785dac0800000000000000
-      internalID: -3831006634410245999
+      spriteID: cd66aa0c3da454530800000000000000
+      internalID: 3838556530734163676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_43
+      name: idle_43
       rect:
         serializedVersion: 2
         x: 3600
@@ -1400,14 +1436,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d9b8b6c838bed210800000000000000
-      internalID: 1359726691504142802
+      spriteID: 2e21bb69a830f2be0800000000000000
+      internalID: -1499976257121873182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_44
+      name: idle_44
       rect:
         serializedVersion: 2
         x: 0
@@ -1421,14 +1457,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 311d4371922f7efb0800000000000000
-      internalID: -4618456634548236013
+      spriteID: 151ab8dee6dd75200800000000000000
+      internalID: 168846979551174993
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_45
+      name: idle_45
       rect:
         serializedVersion: 2
         x: 360
@@ -1442,14 +1478,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e089218659d690c0800000000000000
-      internalID: -4569225806363393815
+      spriteID: 8d765c7b71d26a910800000000000000
+      internalID: 1848214276972832728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_46
+      name: idle_46
       rect:
         serializedVersion: 2
         x: 720
@@ -1463,14 +1499,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f22ba07a3342179e0800000000000000
-      internalID: -1625478186239610321
+      spriteID: c5a15400141b684b0800000000000000
+      internalID: -5438464607267775908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_47
+      name: idle_47
       rect:
         serializedVersion: 2
         x: 1080
@@ -1484,14 +1520,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20dc241e7f51b8a30800000000000000
-      internalID: 4218489630342958338
+      spriteID: 2346dfa1b5a4df1e0800000000000000
+      internalID: -2162490490912676814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_48
+      name: idle_48
       rect:
         serializedVersion: 2
         x: 1440
@@ -1505,14 +1541,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b27ed96842c229a00800000000000000
-      internalID: 761719822367975211
+      spriteID: cd51ddf74dbfb67d0800000000000000
+      internalID: -2923966642950171172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_49
+      name: idle_49
       rect:
         serializedVersion: 2
         x: 1800
@@ -1526,14 +1562,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed0d3f2d23d3c8190800000000000000
-      internalID: -7958919152973655842
+      spriteID: 524e72cecb01ac4c0800000000000000
+      internalID: -4266579293378190299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_50
+      name: idle_50
       rect:
         serializedVersion: 2
         x: 2160
@@ -1547,14 +1583,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07f3ff40202b421c0800000000000000
-      internalID: -4529299603484360848
+      spriteID: 6597f18ee24e1bbd0800000000000000
+      internalID: -2616059018411542186
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_51
+      name: idle_51
       rect:
         serializedVersion: 2
         x: 2520
@@ -1568,14 +1604,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72fc0e67fc45d1d60800000000000000
-      internalID: 7862533774488162087
+      spriteID: 31188a4ff3c8d9c70800000000000000
+      internalID: 8979487438362149139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_52
+      name: idle_52
       rect:
         serializedVersion: 2
         x: 2880
@@ -1589,14 +1625,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cff554a38d969fd0800000000000000
-      internalID: -2335506168021647421
+      spriteID: 903d148d6f32cab00800000000000000
+      internalID: 841086773508559625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_53
+      name: idle_53
       rect:
         serializedVersion: 2
         x: 3240
@@ -1610,14 +1646,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78761cca6a25fd2f0800000000000000
-      internalID: -945946520908109945
+      spriteID: b264078a62fdc37b0800000000000000
+      internalID: -5243070509038418389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_54
+      name: idle_54
       rect:
         serializedVersion: 2
         x: 3600
@@ -1631,14 +1667,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3022a182ec57c8730800000000000000
-      internalID: 4002703697122042371
+      spriteID: 5bcb7e17839ed1f90800000000000000
+      internalID: -6981167418715947851
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_55
+      name: idle_55
       rect:
         serializedVersion: 2
         x: 0
@@ -1652,14 +1688,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec826779c9867cc80800000000000000
-      internalID: -8302552366268929842
+      spriteID: 1381b0d6ec5dfcf70800000000000000
+      internalID: 9209814845565376561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crawl_56
+      name: idle_56
       rect:
         serializedVersion: 2
         x: 360
@@ -1673,8 +1709,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c3e4ede137274960800000000000000
-      internalID: 7586075192726971330
+      spriteID: 6c2552b0066d407d0800000000000000
+      internalID: -2952999747656002874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_57
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bdda31a82343b870800000000000000
+      internalID: 8697369147165302195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_58
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 0
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 501371aefab8ce380800000000000000
+      internalID: -8940617572574351099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_59
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 765c3de7fde5b2700800000000000000
+      internalID: 516610896262579559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_60
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b1abd832f094f10800000000000000
+      internalID: 2254349733851700077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_61
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 0
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2947ec17ba30c2d0800000000000000
+      internalID: -3260541572077893329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_62
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 0
+        width: 360
+        height: 300
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67cd52b0d60e632d0800000000000000
+      internalID: -3299202918059221898
       vertices: []
       indices: 
       edges: []
@@ -1690,63 +1852,69 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      crawl_42: -3831006634410245999
-      crawl_34: -5579383255283400151
-      crawl_25: 5449512723201042851
-      crawl_43: 1359726691504142802
-      crawl_15: 6447806580407756438
-      crawl_4: 486937601099912534
-      crawl_30: 7400986306123696863
-      crawl_39: 1014957662144463546
-      crawl_2: 8126159601515112270
-      crawl_32: -8608127710979843644
-      crawl_31: -3057175438058508694
-      crawl_1: -5914337903272671382
-      crawl_3: -96816851516590350
-      crawl_13: 6000624626258909499
-      crawl_5: 3939315157784225482
-      crawl_28: 3569718664385638660
-      crawl_22: -860543551424008256
-      crawl_54: 4002703697122042371
-      crawl_37: -9137437818618697191
-      crawl_7: -6434335881165984772
-      crawl_27: 4494362804759634629
-      crawl_36: 3107586583600170310
-      crawl_46: -1625478186239610321
-      crawl_55: -8302552366268929842
-      crawl_44: -4618456634548236013
-      crawl_17: 2968091915239856228
-      crawl_40: -8223079984406861596
-      crawl_9: -6685071927711561165
-      crawl_26: -7627005738687656529
-      crawl_29: -3983158180796669194
-      crawl_38: 5114913469538373822
-      crawl_14: -11110300402350004
-      crawl_49: -7958919152973655842
-      crawl_51: 7862533774488162087
-      crawl_24: -3400195510834182565
-      crawl_33: -1263638343768063347
-      crawl_16: 2807875772997353430
-      crawl_10: 1742120214890030487
-      crawl_47: 4218489630342958338
-      crawl_20: -8856784199705759540
-      crawl_56: 7586075192726971330
-      crawl_19: 8104880570697270812
-      crawl_41: 4992470158981406054
-      crawl_6: -5594292679508710131
-      crawl_21: 7452436772714525783
-      crawl_35: 2019367882814495041
-      crawl_45: -4569225806363393815
-      crawl_50: -4529299603484360848
-      crawl_52: -2335506168021647421
-      crawl_0: 5792233493864853039
-      crawl_23: 3586605008171751350
-      crawl_48: 761719822367975211
-      crawl_53: -945946520908109945
-      crawl_12: -6362150260077783213
-      crawl_11: -5258127474107793880
-      crawl_18: 4676100857148509383
-      crawl_8: -2034017288316516060
+      idle_44: 168846979551174993
+      idle_46: -5438464607267775908
+      idle_33: -1574576503455686002
+      idle_53: -5243070509038418389
+      idle_59: 516610896262579559
+      idle_54: -6981167418715947851
+      idle_17: -526835129060445694
+      idle_30: -4904485453230194659
+      idle_11: -189419392851352084
+      idle_3: -5906421172241655209
+      idle_31: 929150727014594773
+      idle_0: 8793639957104055765
+      idle_1: 6084859605308855041
+      idle_13: 275251749332817211
+      idle_8: 512795395688303107
+      idle_62: -3299202918059221898
+      idle_36: -8215856964752772259
+      idle_14: -2717920588507469212
+      idle_7: -2073685336235588006
+      idle_2: 8603369663158992956
+      idle_58: -8940617572574351099
+      idle_16: 1047728824233847905
+      idle_21: -3655621501393774895
+      idle_10: -1480364998338425778
+      idle_48: -2923966642950171172
+      idle_61: -3260541572077893329
+      idle_50: -2616059018411542186
+      idle_41: -3547867813687463170
+      idle_56: -2952999747656002874
+      idle_4: 5704420531145803721
+      idle_57: 8697369147165302195
+      idle_52: 841086773508559625
+      idle_37: -6871614914986685141
+      idle_20: -8410472694813616623
+      idle_34: 6367498201634126667
+      idle_15: -928564814986837825
+      idle_43: -1499976257121873182
+      idle_47: -2162490490912676814
+      idle_45: 1848214276972832728
+      idle_39: -3490280450085971560
+      idle_55: 9209814845565376561
+      idle_6: 4729606205655721961
+      idle_19: -8256383322693916834
+      idle_27: -5705869721440319331
+      idle_40: 2973940874069163354
+      idle_49: -4266579293378190299
+      idle_24: -2134340880611598165
+      idle_60: 2254349733851700077
+      idle_28: 7168834123846226226
+      idle_5: -148617073940163930
+      idle_51: 8979487438362149139
+      idle_12: 2253685004373748758
+      idle_23: -6334799096112948352
+      idle_32: -8898634129254946022
+      idle_29: -5112156401277642946
+      idle_9: 5667770778836351527
+      idle_35: -7207429827535173402
+      idle_25: -2151818530499332596
+      idle_38: 532023552575573989
+      idle_18: 5896261190451672117
+      idle_22: -3185995270805410201
+      idle_42: 3838556530734163676
+      idle_26: 3051071556821484571
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -11,6 +11,7 @@ TagManager:
   - PickupRestoreHealth
   - IgnoreBullet
   - InfoNextLevel
+  - Shadow
   layers:
   - Default
   - TransparentFX

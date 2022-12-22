@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Net;
 using UnityEngine;
 
 public class BulletMovement : MonoBehaviour
@@ -9,6 +10,8 @@ public class BulletMovement : MonoBehaviour
     private Rigidbody2D rb2 = null;
     [SerializeField]
     private float speed = 0.0f;
+    [SerializeField]
+    private int damage = 1;
     [SerializeField]
     private float timeUntilDestruction = 5.0f;
     //a function that adds this bullet refernce in the queue of a controller for later use
@@ -52,10 +55,16 @@ public class BulletMovement : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        if (startDeactivating == true)
+            return;
+
         if (!collision.gameObject.CompareTag("IgnoreBullet"))
         {
             startDeactivating = true;
             HitBreakableBoxIfHit(collision.gameObject);
+
+            if (collision.gameObject.CompareTag("Shadow"))
+                collision.gameObject.GetComponent<ShadowBehaviour>().TakeDamage(damage);
         }
     }
 
@@ -63,6 +72,11 @@ public class BulletMovement : MonoBehaviour
     public void SetActionAddBullet(Action<GameObject> action)
     {
         addBullet = action;
+    }
+
+    public void SetDamage(uint value)
+    {
+        damage = (int)value;
     }
 
     private IEnumerator Deactivate()

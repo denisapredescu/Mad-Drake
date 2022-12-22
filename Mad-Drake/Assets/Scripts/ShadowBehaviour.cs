@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShadowBehaviour : MonoBehaviour
 {
@@ -16,20 +17,40 @@ public class ShadowBehaviour : MonoBehaviour
     private Vector3 allignToCenter = new(0.0f, -0.5f);
     private readonly int layerMask = ~(1 << 2);
 
+    [SerializeField]
+    private int health = 5;
+    [SerializeField]
+    private Slider healthBar;
+    [SerializeField]
+    private Canvas canvas;
+
     private void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-    }
-
-    public void SetFollowing(bool value)
-    {
-        follow = value;
+        healthBar.maxValue = health;
     }
 
     private void Update()
     {
-        if(canAttack)
+        if (toFollow.transform.position.x - transform.position.x < 0.0f)
+        {
+            transform.localScale = Vector3.one;
+            canvas.transform.localScale = new Vector3(
+                Mathf.Abs(canvas.transform.localScale.x),
+                canvas.transform.localScale.y,
+                1);
+        }
+        else
+        {
+            transform.localScale = flipped;
+            canvas.transform.localScale = new Vector3(
+                -Mathf.Abs(canvas.transform.localScale.x),
+                canvas.transform.localScale.y,
+                1);
+        }
+
+        if (canAttack)
         {
             if(toFollow.transform.position.y > transform.position.y)
             {
@@ -52,11 +73,6 @@ public class ShadowBehaviour : MonoBehaviour
     {
         if(follow)
         {
-            if (toFollow.transform.position.x - transform.position.x < 0.0f)
-                transform.localScale = Vector3.one;
-            else
-                transform.localScale = flipped;
-
             RaycastHit2D hit = Physics2D.Raycast(
                 transform.position + allignToCenter, 
                 (toFollow.transform.position - transform.position - allignToCenter).normalized,  
@@ -69,5 +85,25 @@ public class ShadowBehaviour : MonoBehaviour
                 transform.position +
                 speed * Time.fixedDeltaTime * (toFollow.transform.position - transform.position).normalized);
         }
+    }
+
+    public void SetFollowingObject(GameObject toFollow)
+    {
+        this.toFollow = toFollow;
+    }
+    public GameObject GetFollowingObject()
+    {
+        return toFollow;
+    }
+    public void SetFollowing(bool value)
+    {
+        follow = value;
+    }
+    public void TakeDamage(int value)
+    {
+        health -= value;
+        healthBar.value = health;
+        if (health <= 0)
+            gameObject.SetActive(false);
     }
 }
