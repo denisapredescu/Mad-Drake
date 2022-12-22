@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private TrailRenderer trailRenderer;
     [SerializeField]
     private Animator animator;
+    private HUDController hudController;
 
     private float xMovement = 0.0f, yMovement = 0.0f;
     public float speed = 6.0f;
@@ -25,12 +27,32 @@ public class PlayerController : MonoBehaviour
     private const float cameraDistanceLimitLR = 9.2f;
     private const float cameraDistanceLimitUD = 5.2f;
 
+    private bool disableFixedUpdate = false;
+    private Vector3 forcesToApply = Vector3.zero;
+    private bool reanebleFixedUpdateStarted = false;
+    private float timeToEnableFixedUpdate = 0.0f;
+
+    public void TakeDamage(int damage, Vector3 forces, float time)
+    {
+        hudController.TakeDamage(damage);
+        forcesToApply = forces;
+        disableFixedUpdate = true;
+        timeToEnableFixedUpdate = time;
+    }
+
+    private IEnumerator EnableFixedUpdate(float time)
+    {
+        yield return new WaitForSeconds(time);
+        disableFixedUpdate = false;
+        reanebleFixedUpdateStarted = false;
+    }
 
     private void Start()
     {
         transform = gameObject.transform;
         rb2 = gameObject.GetComponent<Rigidbody2D>();
         trailRenderer = gameObject.GetComponent<TrailRenderer>();
+        hudController = gameObject.GetComponent<HUDController>();
         camera = Camera.main;
     }
 
@@ -70,6 +92,17 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(disableFixedUpdate)
+        {
+            if(reanebleFixedUpdateStarted == false)
+            {
+                rb2.AddForce(forcesToApply * Time.fixedDeltaTime, ForceMode2D.Force);
+                reanebleFixedUpdateStarted = true;
+                StartCoroutine(EnableFixedUpdate(timeToEnableFixedUpdate));
+            }
+            return;
+        }
+
         //moving
         if (run)
             rb2.MovePosition(transform.position + speed * Time.fixedDeltaTime * new Vector3(xMovement, yMovement, 0));
