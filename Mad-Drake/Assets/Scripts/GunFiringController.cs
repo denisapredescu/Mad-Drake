@@ -18,8 +18,8 @@ public class GunFiringController : MonoBehaviour
     private bool canFire = true;
     private Quaternion rotate180 = Quaternion.Euler(0, 0, 180);
     [SerializeField]
-    public static int magazineSize = 10;
-    public static int activeMagazine = 0;
+    private int magazineSize = 10;
+    private int activeMagazine = 0;
     [SerializeField]
     private float reloadTime = 2.0f;
     [SerializeField]
@@ -29,6 +29,11 @@ public class GunFiringController : MonoBehaviour
     //references to reuse the bullets
     private Queue<GameObject> inactiveBullets;
     private GameObject activeBullet = null;
+
+    public int GetMagazineSize()
+    {
+        return magazineSize;
+    }
 
     //the function passed to a bullet to add itself to a queue
     private void AddBullet(GameObject gameObject)
