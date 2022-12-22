@@ -6,7 +6,7 @@ public class ShadowBehaviour : MonoBehaviour
     [SerializeField]
     private GameObject toFollow;
     private Rigidbody2D rb2;
-    private bool follow = true;
+    private bool follow = false;
     [SerializeField]
     private float speed = 3.0f;
     private Vector3 flipped = new(-1.0f, 1.0f, 1.0f);
@@ -71,7 +71,7 @@ public class ShadowBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(follow)
+        if(follow && toFollow != null)
         {
             RaycastHit2D hit = Physics2D.Raycast(
                 transform.position + allignToCenter, 

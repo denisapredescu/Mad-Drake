@@ -3,9 +3,8 @@ using UnityEngine;
 
 public class ShadowHitEnemy : MonoBehaviour
 {
-    [SerializeField]
     private GameObject toHit;
-    private bool canHit;
+    private bool canHit = false;
     [SerializeField]
     private int damage = 1;
     [SerializeField]
@@ -26,16 +25,12 @@ public class ShadowHitEnemy : MonoBehaviour
 
     private void Update()
     {
-        if(toHit == null)
-        {
-            Debug.Log("ha!");
-            toHit = shadowBehaviour.GetFollowingObject();
-        }
+        toHit = shadowBehaviour.GetFollowingObject();
     }
 
     private void FixedUpdate()
     {
-        if (canHit && !toHit)
+        if (canHit && toHit != null)
         {
             Vector3 forces = toHit.transform.position - transform.position;
             toHit.GetComponent<PlayerController>().TakeDamage(damage, forceOfImpact * forces.normalized, timeForImpact);
