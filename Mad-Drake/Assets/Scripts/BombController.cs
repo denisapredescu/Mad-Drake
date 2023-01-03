@@ -24,6 +24,7 @@ public class BombController : MonoBehaviour
 
             ParticleSystem bombExplosionPS = bomb.GetComponent<ParticleSystem>();
             nrOfBombs--;
+            HUDController.ReleaseBomb();
             StartCoroutine(ExplodeBomb(bomb, bombExplosionPS));
         }
     }

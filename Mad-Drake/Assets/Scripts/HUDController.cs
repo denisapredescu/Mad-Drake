@@ -7,10 +7,11 @@ public class HUDController : MonoBehaviour
 {
     public HealthBar healthBar;
     public GunBar gunBar;
-    private bool playerIsDead;
+    private static bool playerIsDead;
     private static TextMeshProUGUI healthGUI;
     private static TextMeshProUGUI goldGUI;
     private static TextMeshProUGUI gunGUI;
+    private static TextMeshProUGUI bombGUI;
     public int maxHealth = 5;
     public int currentHealth;
     private int maxBullets;
@@ -18,18 +19,22 @@ public class HUDController : MonoBehaviour
     public GameObject healthCard;
     public GameObject goldCard;
     public GameObject gunCard;
+    public GameObject bombCard;
     [SerializeField]
     private GunFiringController playerFiringController;
 
     private static bool numberOfBulletsIsChanged = false;
 
     public static int goldScore = 0;
+    public static int bombs = 3;
 
     private void Start()
     {
         maxHealth = 5;
         goldScore = 0;
         currentHealth = maxHealth;
+        bombs = 3;
+
 
         maxBullets = playerFiringController.GetMagazineSize();
         currentBullets = maxBullets;
@@ -43,6 +48,9 @@ public class HUDController : MonoBehaviour
         gunGUI = gunCard.GetComponent<TextMeshProUGUI>();
         gunGUI.text = $"{currentBullets}/{maxBullets}";
 
+        bombGUI = bombCard.GetComponent<TextMeshProUGUI>();
+        bombGUI.text = $"{bombs}";
+
         playerIsDead = false;
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(5);
@@ -53,6 +61,11 @@ public class HUDController : MonoBehaviour
 
     public void Update()
     {
+        if (currentHealth > 0)
+        {
+            playerIsDead = false;
+        }
+
         if (numberOfBulletsIsChanged)
         {
             gunBar.SetBullets(currentBullets);
@@ -67,7 +80,7 @@ public class HUDController : MonoBehaviour
         numberOfBulletsIsChanged = true;
     }
 
-    public bool GetPlayerDeadStatus() 
+    public static bool GetPlayerDeadStatus() 
     {
         return playerIsDead;
     }
@@ -91,6 +104,11 @@ public class HUDController : MonoBehaviour
     {
         goldScore++;
         goldGUI.text = $"{goldScore}";
+    }
+    public static void ReleaseBomb()
+    {
+        bombs--;
+        bombGUI.text = $"{bombs}";
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
