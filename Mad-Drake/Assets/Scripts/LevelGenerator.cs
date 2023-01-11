@@ -853,6 +853,7 @@ public class LevelGenerator : MonoBehaviour
                         position.y = room.Coord.y * roomHeight + pickedY + approachToCenter;
                     
                     GameObject enemyInstance = Instantiate(enemyInfo.enemy, position, Quaternion.identity);
+                    Debug.Log(enemyInstance.transform.localScale);
                     enemyInstance.GetComponent<UniversalSetTarget>().SetTarget(player);
                     room.Enemies.Add(new InsideRoomObject(enemyInstance, pickedX, pickedY));
                 }
