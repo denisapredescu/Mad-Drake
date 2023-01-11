@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toFollow: {fileID: 4598070040644708721}
-  speed: 3.5
+  speed: 3
   attackRange: 1.1
   health: 3
   healthBar: {fileID: 4598070041569979629}
