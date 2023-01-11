@@ -12,6 +12,7 @@ TagManager:
   - IgnoreBullet
   - InfoNextLevel
   - Shadow
+  - Zombie
   layers:
   - Default
   - TransparentFX

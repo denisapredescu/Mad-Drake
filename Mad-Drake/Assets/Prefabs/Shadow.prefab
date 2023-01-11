@@ -504,7 +504,7 @@ MonoBehaviour:
   toFollow: {fileID: 4598070040644708721}
   speed: 3.5
   attackRange: 1.1
-  health: 5
+  health: 3
   healthBar: {fileID: 4598070041569979629}
   canvas: {fileID: 4598070040644708717}
 --- !u!114 &4440744568894341112

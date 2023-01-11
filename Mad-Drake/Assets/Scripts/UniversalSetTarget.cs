@@ -17,6 +17,11 @@ public class UniversalSetTarget : MonoBehaviour
         {
             gameObject.GetComponent<ShadowBehaviour>().SetFollowingObject(target);
         }
+
+        if (gameObject.CompareTag("Zombie"))
+        {
+            gameObject.GetComponent<ZombieBehaviour>().SetFollowingObject(target);
+        }
     }
 
     public void SetTarget(GameObject target)
@@ -30,6 +35,10 @@ public class UniversalSetTarget : MonoBehaviour
         if(gameObject.CompareTag("Shadow"))
         {
             gameObject.GetComponent<ShadowBehaviour>().SetFollowing(active);
+        }
+        if (gameObject.CompareTag("Zombie"))
+        {
+            gameObject.GetComponent<ZombieBehaviour>().SetFollowing(active);
         }
     }
 }

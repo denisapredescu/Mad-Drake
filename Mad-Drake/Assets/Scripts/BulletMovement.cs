@@ -65,6 +65,9 @@ public class BulletMovement : MonoBehaviour
 
             if (collision.gameObject.CompareTag("Shadow"))
                 collision.gameObject.GetComponent<ShadowBehaviour>().TakeDamage(damage);
+
+            if (collision.gameObject.CompareTag("Zombie"))
+                collision.gameObject.GetComponent<ZombieBehaviour>().TakeDamage(damage);
         }
     }
 

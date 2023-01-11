@@ -5,21 +5,21 @@ public class ShadowBehaviour : MonoBehaviour
 {
     [SerializeField]
     private GameObject toFollow;
-    private Rigidbody2D rb2;
+    protected Rigidbody2D rb2;
     private bool follow = false;
     [SerializeField]
-    private float speed = 3.0f;
+    protected float speed = 1.0f;
     [SerializeField]
     private float attackRange = 0.1f;
-    private bool canAttack = false;
-    private Animator anim;
+    protected bool canAttack = false;
+    protected Animator anim;
     private Vector3 allignToCenter = new(0.0f, -0.5f);
     private readonly int layerMask = ~(1 << 2);
 
     [SerializeField]
-    private int health = 5;
+    protected int health = 1;
     [SerializeField]
-    private Slider healthBar;
+    protected Slider healthBar;
     [SerializeField]
     private Canvas canvas;
 
@@ -57,23 +57,24 @@ public class ShadowBehaviour : MonoBehaviour
                 1);
         }
 
-        if (canAttack)
-        {
-            if(toFollow.transform.position.y > transform.position.y)
+        if (!gameObject.CompareTag("Zombie"))
+            if (canAttack)
             {
-                anim.SetBool("follow_high", true);
-            } 
+                if(toFollow.transform.position.y > transform.position.y)
+                {
+                    anim.SetBool("follow_high", true);
+                } 
+                else
+                {
+                    anim.SetBool("follow_high", false);
+                }
+
+                anim.SetBool("attack", true);
+            }
             else
             {
-                anim.SetBool("follow_high", false);
+                anim.SetBool("attack", false);
             }
-
-            anim.SetBool("attack", true);
-        }
-        else
-        {
-            anim.SetBool("attack", false);
-        }
     }
 
     private void FixedUpdate()
