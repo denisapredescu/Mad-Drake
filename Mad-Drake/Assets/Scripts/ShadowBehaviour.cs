@@ -9,7 +9,6 @@ public class ShadowBehaviour : MonoBehaviour
     private bool follow = false;
     [SerializeField]
     private float speed = 3.0f;
-    private Vector3 flipped = new(-1.0f, 1.0f, 1.0f);
     [SerializeField]
     private float attackRange = 0.1f;
     private bool canAttack = false;
@@ -35,7 +34,11 @@ public class ShadowBehaviour : MonoBehaviour
     {
         if (toFollow.transform.position.x - transform.position.x < 0.0f)
         {
-            transform.localScale = Vector3.one;
+            transform.localScale = new Vector3(
+                Mathf.Abs(transform.localScale.x),
+                transform.localScale.y,
+                1);
+
             canvas.transform.localScale = new Vector3(
                 Mathf.Abs(canvas.transform.localScale.x),
                 canvas.transform.localScale.y,
@@ -43,7 +46,11 @@ public class ShadowBehaviour : MonoBehaviour
         }
         else
         {
-            transform.localScale = flipped;
+            transform.localScale = new Vector3(
+                -Mathf.Abs(transform.localScale.x),
+                transform.localScale.y,
+                1);
+
             canvas.transform.localScale = new Vector3(
                 -Mathf.Abs(canvas.transform.localScale.x),
                 canvas.transform.localScale.y,

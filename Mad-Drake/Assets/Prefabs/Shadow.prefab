@@ -218,7 +218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e73abba125db3cb4196bfa3c7ef326c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toHit: {fileID: 0}
   damage: 1
   forceOfImpact: 10000
   timeForImpact: 0.2
@@ -421,7 +420,7 @@ Transform:
   m_GameObject: {fileID: 4309560997670373428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4598070040644708718}
@@ -502,8 +501,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd1595a2b811a34f9d92c35e1b654a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toFollow: {fileID: 0}
-  speed: 4
+  toFollow: {fileID: 4598070040644708721}
+  speed: 3.5
   attackRange: 1.1
   health: 5
   healthBar: {fileID: 4598070041569979629}
@@ -770,7 +769,7 @@ GameObject:
   - component: {fileID: 4598070040644708716}
   - component: {fileID: 4598070040644708719}
   m_Layer: 5
-  m_Name: Shadow Canvas
+  m_Name: Health Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
