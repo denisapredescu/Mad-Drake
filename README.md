@@ -2,7 +2,7 @@
 
 2D Roguelike Dungeon Topdown Shooter.
 
-**Descriere:**
+## Descriere
 
 Treci de la o camera la alta pentru a ajunge la un etaj superior colectand bani, arme diverse omorand diferite creaturi(enemies).
 
@@ -11,8 +11,17 @@ Etajul 3 reprezinta un boss fight.
 Poti alege din diferite caractere personajul cu care sa incepi(diferite personaje au abilitati speciale diferite). Harta este generata random dintr o serie de camere create anterior. 
 
 Dispune si de un shop pentru a ajunge la full hp sau pentru a cumpara o noua arma.
+ 
+## How to play
+- UP/DOWN/LEFT/RIGHT - miscarea playerului
+- CLICK - trage cu arma
+- mouse - miscarea armei 
+- tasta R - reload arma
+- tasta B - plaseaza bomba
+- tasta E - teleportare la nivelul urmator
+- ESC - intrerupere joc, aparitie meniu 
 
-**Componenta (Echipa 1):**
+## Componenta (Echipa 1)
 
 - Cretoiu Patriciu-Elena
 - Kayed Amar
