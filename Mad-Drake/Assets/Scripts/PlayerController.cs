@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 forcesToApply = Vector3.zero;
     private bool reanebleFixedUpdateStarted = false;
     private float timeToEnableFixedUpdate = 0.0f;
-
     public void TakeDamage(int damage, Vector3 forces, float time)
     {
         hudController.TakeDamage(damage);

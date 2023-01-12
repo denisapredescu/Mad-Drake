@@ -185,6 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textInfoNextLevel: {fileID: 0}
   nextSceneName: Level 2
+  playerController: {fileID: 4453671489880107438, guid: 002443ff5ec3dce4b8727f9dbb21a069, type: 3}
 --- !u!70 &5084953072833466791
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
