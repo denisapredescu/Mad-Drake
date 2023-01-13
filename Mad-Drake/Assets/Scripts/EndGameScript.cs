@@ -40,7 +40,7 @@ public class EndGameScript : MonoBehaviour
     {
         _inputField.onEndEdit.AddListener(ReadInput);
         scoreGUI = scoreCard.GetComponent<TextMeshProUGUI>();
-        scoreGUI.text = $"Your score {newScore}";
+        scoreGUI.text = $"Your score: {newScore}";
     }
 
     private void Update()
@@ -60,7 +60,7 @@ public class EndGameScript : MonoBehaviour
                 float damageTaken = (float)HUDController.getDamageTaken();
                 newScore = gold / ((lives + 1) * damageTaken);
                 newScore = (float)(Mathf.Round(newScore * 100) / 100.0);
-                scoreGUI.text = $"Your score {newScore}";
+                scoreGUI.text = $"Your score: {newScore}";
 
                 if (!File.Exists(saveFilePath))
                     return;

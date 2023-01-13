@@ -15,4 +15,11 @@ public class MainMenuScript : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void OnShowHighscoreButtonPressed()
+    {
+        Debug.Log("HIGHSCORE");
+    }
+
+
 }
