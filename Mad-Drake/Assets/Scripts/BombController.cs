@@ -10,7 +10,7 @@ public class BombController : MonoBehaviour
     private float timeUntilExplosion;
     [SerializeField]
     private int nrOfBombs;
-
+ 
 
     private void Update()
     {
@@ -22,19 +22,27 @@ public class BombController : MonoBehaviour
                             transform.position.z), 
                 Quaternion.identity);
 
+            bomb.GetComponent<CircleCollider2D>().enabled = false;
             ParticleSystem bombExplosionPS = bomb.GetComponent<ParticleSystem>();
             nrOfBombs--;
             HUDController.ReleaseBomb();
+            
             StartCoroutine(ExplodeBomb(bomb, bombExplosionPS));
         }
+
+        
     }
 
     private IEnumerator ExplodeBomb(GameObject bomb, ParticleSystem bombExplosionPS)
     {
         yield return new WaitForSeconds(timeUntilExplosion);
-        bomb.GetComponent<SpriteRenderer>().enabled = false;
+        bomb.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+        bomb.transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
         // Note: in particle system component Stop Action is set to Destroy, so the object will be destroyed after 
         // the effect is completed
-        bombExplosionPS.Play(); 
+        bombExplosionPS.Play();
+        // activate collider to call the OnTrigger event inside the bomb game object
+        bomb.GetComponent<CircleCollider2D>().enabled = true;
     }
+
 }
