@@ -9,8 +9,8 @@ public class HUDController : MonoBehaviour
     public HealthBar healthBar;
     public GunBar gunBar;
     private static bool playerIsDead;
-    private static TextMeshProUGUI healthGUI;
-    private static TextMeshProUGUI goldGUI;
+    public static TextMeshProUGUI healthGUI;
+    public static TextMeshProUGUI goldGUI;
     private static TextMeshProUGUI gunGUI;
     private static TextMeshProUGUI bombGUI;
     public int maxHealth = 5;
@@ -101,7 +101,6 @@ public class HUDController : MonoBehaviour
                 playerIsDead = true;
             }
         }
-        AddGold();
     }
 
     public static void AddGold()
