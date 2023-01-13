@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using MyUtility;
+using System.ComponentModel;
+using Unity.VisualScripting;
 
 //an integer interval struct
 [Serializable]
@@ -222,6 +224,8 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField]
     private List<GameObject> specialStartRooms;
     [SerializeField]
+    private GameObject playerIfUsingStartRooms = null;
+    [SerializeField]
     private List<GameObject> specialEndRooms;
     //help to trnaslate enum Direction to practical changes in coordinates:
     private static readonly int[] directionX = { 1, 0, -1, 0 };
@@ -300,9 +304,11 @@ public class LevelGenerator : MonoBehaviour
     //adds the new room in array and also the reference in the map
     private int AddRoom(int x, int y)
     {
-        rooms.AddSafe(new RoomInfo(x, y));
         //returns the position in array of the room created
-        return rooms.Count() - 1;
+        if(rooms.AddSafe(new RoomInfo(x, y)))
+            return rooms.Count() - 1;
+
+        return -1;
     }
 
     private void Start()
@@ -364,7 +370,6 @@ public class LevelGenerator : MonoBehaviour
             }
 
             lastCameraPosition = playerCamera.position;
-            Debug.Log(activeRoomCoordinates);
         }
 
         if(lockRoom && !HasActiveEnemies(activeRoomForEnemies))
@@ -446,26 +451,41 @@ public class LevelGenerator : MonoBehaviour
         return index;
     }
 
-    private void BuildSpecialRooms(RoomInfo room, Direction direction, int length, List<GameObject> specialRooms)
+    private void BuildSpecialRooms(RoomInfo room, Direction direction, int length, List<GameObject> specialRooms, bool pushUntilPossible = false, bool movePlayer = false)
     {
-        int index = rooms.GetIndex(room.Coord);
         if (length > 0)
         {
-            index = BuildRooms(room, direction, length);
+            int index = BuildRooms(room, direction, length);
             room = rooms.GetByIndex(index);
         }
 
         foreach (GameObject obj in specialRooms)
         {
-            int newIndex = AddRoom(room.Coord.x + directionX[(int)direction], room.Coord.y + directionY[(int)direction]);
+            int index = AddRoom(room.Coord.x + directionX[(int)direction], room.Coord.y + directionY[(int)direction]);
+            int pas = 1;
+
+            if (pushUntilPossible)
+            {
+                while (index == -1)
+                {
+                    pas++;
+                    index = AddRoom(room.Coord.x + directionX[(int)direction] * pas, room.Coord.y + directionY[(int)direction] * pas);
+                }
+            }
+            else
+            {   
+                break;
+            }
 
             room.AddDirection(direction);
-            rooms.GetByIndex(newIndex).AddDirection(OppositeDirection(direction));
+            rooms.GetByIndex(index).AddDirection(OppositeDirection(direction));
 
-            index = newIndex;
             room = rooms.GetByIndex(index);
             room.OwnGround = obj;
         }
+
+        if(movePlayer && playerIfUsingStartRooms != null)
+            playerIfUsingStartRooms.transform.position = new(room.Coord.x * roomWidth, room.Coord.y * roomHeight, 0.0f);
     }
 
     //generates the rooms
@@ -518,7 +538,7 @@ public class LevelGenerator : MonoBehaviour
             //next 3 <if> decide which room was picked
             if (!RoomExists(activeRoom, activeDirection))
             {
-                if (chosenProb > chanceToGoStraight)
+                if (FloatMath.Larger(chosenProb, chanceToGoStraight))
                 {
                     chosenProb -= chanceToGoStraight;
                 }
@@ -528,17 +548,10 @@ public class LevelGenerator : MonoBehaviour
                 }
             }
 
-            if (!changedDir && !RoomExists(activeRoom, neighbourDir.Item1) && neighbourDir.Item1 != Direction.Left)
+            if (!changedDir && !RoomExists(activeRoom, neighbourDir.Item1) && neighbourDir.Item1 != Direction.Left && FloatMath.SmallerOrEqual(chosenProb, probChangeDir))
             {
-                if (chosenProb > probChangeDir)
-                {
-                    chosenProb -= probChangeDir;
-                }
-                else
-                {
-                    activeDirection = neighbourDir.Item1;
-                    changedDir = true;
-                }
+                activeDirection = neighbourDir.Item1;
+                changedDir = true;
             }
 
             if (!changedDir)
@@ -755,11 +768,11 @@ public class LevelGenerator : MonoBehaviour
         if (specialStartRooms.Count > 0)
         {
             specialStartRooms.Reverse();
-            BuildSpecialRooms(startRoom, Direction.Left, 0, specialStartRooms);
+            BuildSpecialRooms(startRoom, Direction.Left, 0, specialStartRooms, true, true);
         }
 
         if (specialEndRooms.Count > 0)
-            BuildSpecialRooms(endRoom, Direction.Right, 0, specialEndRooms);
+            BuildSpecialRooms(endRoom, Direction.Right, 0, specialEndRooms, true);
     }
     private List<int> GetBasicRoomsIndexes()
     {
@@ -853,7 +866,6 @@ public class LevelGenerator : MonoBehaviour
                         position.y = room.Coord.y * roomHeight + pickedY + approachToCenter;
                     
                     GameObject enemyInstance = Instantiate(enemyInfo.enemy, position, Quaternion.identity);
-                    Debug.Log(enemyInstance.transform.localScale);
                     enemyInstance.GetComponent<UniversalSetTarget>().SetTarget(player);
                     room.Enemies.Add(new InsideRoomObject(enemyInstance, pickedX, pickedY));
                 }

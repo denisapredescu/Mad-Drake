@@ -1,9 +1,38 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace MyUtility
 {
+    public class FloatMath
+    {
+        public static bool Equal(float val1, float val2, uint precision = 4)
+        {
+            return Math.Abs(val1 - val2) <= Mathf.Pow(0.1f, precision);
+        }
+
+        public static bool Smaller(float val1, float val2, uint precision = 4)
+        {
+            return val1 < val2 && !Equal(val1, val2, precision);
+        }
+
+        public static bool SmallerOrEqual(float val1, float val2, uint precision = 4)
+        {
+            return Smaller(val1, val2, precision) || Equal(val1, val2, precision);
+        }
+
+        public static bool Larger(float val1, float val2, uint precision = 4)
+        {
+            return !SmallerOrEqual(val1, val2, precision);
+        }
+
+        public static bool LargerOrEqual(float val1, float val2, uint precision = 4)
+        {
+            return !Smaller(val1, val2, precision);
+        }
+    }
+
     public class IntegerCoordinates<T> : IComparable<IntegerCoordinates<T>>
     {
         public Vector2Int Coord { get; set; }

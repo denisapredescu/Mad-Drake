@@ -2868,6 +2868,7 @@ MonoBehaviour:
     - {fileID: 5536218476057425402, guid: 5d921a24e371bdd44858b62bbc2a5b1e, type: 3}
   specialStartRooms:
   - {fileID: 3276946393025172312, guid: 402d3ac6a9bbfec42976e682879a32cc, type: 3}
+  playerIfUsingStartRooms: {fileID: 1818455085}
   specialEndRooms:
   - {fileID: 2726891468649286100, guid: bb0656b4d8e42e448ad91c56eaa9d611, type: 3}
   doorsNone: {fileID: 5441472426128138861, guid: 6d32f5725c35bf54ba0a1745bdea2dad, type: 3}
@@ -3830,7 +3831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2629746995567776209, guid: 002443ff5ec3dce4b8727f9dbb21a069, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2629746995567776209, guid: 002443ff5ec3dce4b8727f9dbb21a069, type: 3}
       propertyPath: m_LocalPosition.y
