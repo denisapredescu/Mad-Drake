@@ -1,12 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Animations;
 
 public class GunMotion : MonoBehaviour
 {
-    private new Transform transform;
     private new Camera camera;
     [SerializeField]
     private Transform parentTransform;
@@ -19,12 +14,10 @@ public class GunMotion : MonoBehaviour
     private Vector3 mousePos;
     private float distTip;
     private float distMouse;
-
-    float gunRotationZ;
+    private float gunRotationZ;
 
     private void Start()
     {
-        transform = this.gameObject.transform;
         camera = Camera.main;
     }
 
@@ -34,7 +27,6 @@ public class GunMotion : MonoBehaviour
         
         CalculateDifferenceVector();
         RotateGun();
-        
     }
 
     void CalculateDifferenceVector()
@@ -87,6 +79,4 @@ public class GunMotion : MonoBehaviour
             }
         }
     }
-
-    
 }
