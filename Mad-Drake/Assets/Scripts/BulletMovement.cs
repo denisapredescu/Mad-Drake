@@ -64,7 +64,7 @@ public class BulletMovement : MonoBehaviour
             HitBreakableBoxIfHit(collision.gameObject);
 
             if (collision.gameObject.CompareTag("Shadow"))
-                collision.gameObject.GetComponent<ShadowBehaviour>().TakeDamage(damage);
+                collision.gameObject.GetComponent<ShadowBehaviour>().TakeDamage(damage+GameObject.FindGameObjectWithTag("IgnoreBullet").GetComponent<PlayerController>().bonusDamage);
         }
     }
 
