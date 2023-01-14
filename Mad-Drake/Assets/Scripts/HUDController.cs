@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEditor.PackageManager;
 
 public class HUDController : MonoBehaviour
 {
     public HealthBar healthBar;
     public GunBar gunBar;
     private static bool playerIsDead;
-    private static TextMeshProUGUI healthGUI;
-    private static TextMeshProUGUI goldGUI;
+    public static TextMeshProUGUI healthGUI;
+    public static TextMeshProUGUI goldGUI;
     private static TextMeshProUGUI gunGUI;
     private static TextMeshProUGUI bombGUI;
     public int maxHealth = 5;
-    public int currentHealth;
-    private int maxBullets;
+    public static int currentHealth;
+    private int maxBullets = 10;
     private static int currentBullets;
     public GameObject healthCard;
     public GameObject goldCard;
@@ -28,13 +29,15 @@ public class HUDController : MonoBehaviour
     public static int goldScore = 0;
     public static int bombs = 3;
 
+    private static int damageTaken;
+
     private void Start()
     {
+        damageTaken = 0;
         maxHealth = 5;
         goldScore = 0;
         currentHealth = maxHealth;
         bombs = 3;
-
 
         maxBullets = playerFiringController.GetMagazineSize();
         currentBullets = maxBullets;
@@ -89,6 +92,7 @@ public class HUDController : MonoBehaviour
     {
         if (!playerIsDead)
         {
+            damageTaken += 1;
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
             healthGUI.text = $"{currentHealth}/{maxHealth}";
@@ -97,7 +101,6 @@ public class HUDController : MonoBehaviour
                 playerIsDead = true;
             }
         }
-        AddGold();
     }
 
     public static void AddGold()
@@ -134,6 +137,21 @@ public class HUDController : MonoBehaviour
                 collision.gameObject.SetActive(false);
             }
         }
+    }
+
+    public static int getGold()
+    {
+        return goldScore;
+    }
+
+    public static int getLives()
+    {
+        return currentHealth;
+    }
+
+    public static int getDamageTaken()
+    {
+        return damageTaken;
     }
 
 }

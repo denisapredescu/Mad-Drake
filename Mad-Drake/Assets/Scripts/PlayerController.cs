@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private bool dashing = false;
     private bool startDash = false;
     private bool run = false;
+    public int bonusDamage = 0;
 
     private Vector3 mousePos;
     private new Camera camera;
@@ -31,7 +32,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 forcesToApply = Vector3.zero;
     private bool reanebleFixedUpdateStarted = false;
     private float timeToEnableFixedUpdate = 0.0f;
-
     public void TakeDamage(int damage, Vector3 forces, float time)
     {
         hudController.TakeDamage(damage);
@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
         trailRenderer = gameObject.GetComponent<TrailRenderer>();
         hudController = gameObject.GetComponent<HUDController>();
         camera = Camera.main;
+        bonusDamage = 0;
     }
 
     private void Update()
