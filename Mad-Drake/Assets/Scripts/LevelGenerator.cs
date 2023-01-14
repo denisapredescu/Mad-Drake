@@ -340,8 +340,6 @@ public class LevelGenerator : MonoBehaviour
         float minY = center.y * roomHeight - roomHeight / 2 - 0.5f;
         float maxY = center.y * roomHeight + roomHeight / 2 + 0.5f;
 
-        Debug.Log(minX.ToString() + " " + maxX.ToString() + " " + minY.ToString() + " " + maxY.ToString());
-
         if (position.x >= minX && position.x <= maxX && position.y >= minY && position.y <= maxY)
             return true;
         return false;
@@ -908,7 +906,6 @@ public class LevelGenerator : MonoBehaviour
                 {
                     foundX = pickedX;
                     foundY = pickedY;
-                    Debug.Log("first");
                 }
                 else
                 {
@@ -919,7 +916,6 @@ public class LevelGenerator : MonoBehaviour
                         {
                             foundX = pickedX + fullDirectionX[d];
                             foundY = pickedY + fullDirectionY[d];
-                            Debug.Log(d);
                             break;
                         }
                     }

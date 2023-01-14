@@ -44,12 +44,28 @@ public class EnemySkirmisherBehaviour : MonoBehaviour
 
             if (target.position.x - 0.1f >= transform.position.x)
             {
-                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, 1.0f);
+                transform.localScale = new Vector3(
+                    -Mathf.Abs(transform.localScale.x), 
+                    transform.localScale.y, 
+                    1.0f);
+
+                canvas.transform.localScale = new Vector3(
+                    -Mathf.Abs(canvas.transform.localScale.x), 
+                    canvas.transform.localScale.y, 
+                    1.0f);
             }
 
             if (target.position.x + 0.1f <= transform.position.x)
             {
-                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, 1.0f);
+                transform.localScale = new Vector3(
+                    Mathf.Abs(transform.localScale.x), 
+                    transform.localScale.y, 
+                    1.0f);
+
+                canvas.transform.localScale = new Vector3(
+                    Mathf.Abs(canvas.transform.localScale.x), 
+                    canvas.transform.localScale.y, 
+                    1.0f);
             }
         }
     }

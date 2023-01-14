@@ -19,6 +19,8 @@ public class GunFiringController : MonoBehaviour
     private Quaternion rotate180 = Quaternion.Euler(0, 0, 180);
     [SerializeField]
     private int magazineSize = 10;
+    [SerializeField]
+    private uint damage = 1;
     private int activeMagazine = 0;
     [SerializeField]
     private float reloadTime = 2.0f;
@@ -49,6 +51,14 @@ public class GunFiringController : MonoBehaviour
 
         //getting all the particle effects and making them 10 times faster
         tipParticleEffects = tipOfGun.GetComponentsInChildren<ParticleSystem>();
+        HUDController.ChangeValueOfMagazineSize(magazineSize);
+        HUDController.ChangeValueOfActiveMagazine(magazineSize);
+    }
+
+    private void OnEnable()
+    {
+        HUDController.ChangeValueOfMagazineSize(magazineSize);
+        HUDController.ChangeValueOfActiveMagazine(activeMagazine);
     }
 
     void Update()
@@ -104,6 +114,7 @@ public class GunFiringController : MonoBehaviour
                     {
                         activeBullet = inactiveBullets.Dequeue();
                         activeBullet.transform.SetPositionAndRotation(tipTransform.position, tipTransform.rotation);
+                        activeBullet.GetComponent<BulletMovement>().SetDamage(damage);
                         activeBullet.SetActive(true);
                     }
                     else
@@ -111,6 +122,7 @@ public class GunFiringController : MonoBehaviour
                         activeBullet = Instantiate(bullet, tipTransform.position, tipTransform.rotation);
                         if (activeBullet.TryGetComponent<BulletMovement>(out var bulletMovement))
                         {
+                            bulletMovement.SetDamage(damage);
                             bulletMovement.SetActionAddBullet(AddBullet);
                         }
                     }
