@@ -26,6 +26,9 @@ public class HUDController : MonoBehaviour
 
     private static int damageTaken;
 
+    [SerializeField]
+    private AudioSource potionCollectAudio;
+
     private void Start()
     {
         damageTaken = 0;
@@ -97,7 +100,7 @@ public class HUDController : MonoBehaviour
             if (currentHealth <= 0)
             {
                 playerIsDead = true;
-            }
+            } 
         }
     }
 
@@ -118,6 +121,7 @@ public class HUDController : MonoBehaviour
         {
             if(currentHealth < maxHealth)
             {
+                potionCollectAudio.Play();
                 currentHealth++;
                 healthGUI.text = $"{currentHealth}/{maxHealth}";
                 healthBar.SetHealth(currentHealth);
@@ -129,6 +133,7 @@ public class HUDController : MonoBehaviour
         {
             if (currentHealth < maxHealth)
             {
+                potionCollectAudio.Play();
                 currentHealth = maxHealth;
                 healthGUI.text = $"{currentHealth}/{maxHealth}";
                 healthBar.SetHealth(currentHealth);

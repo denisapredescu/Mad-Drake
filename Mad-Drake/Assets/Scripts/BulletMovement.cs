@@ -67,7 +67,7 @@ public class BulletMovement : MonoBehaviour
 
         if(target == Target.Enemy)
         {
-            if(!collision.gameObject.CompareTag("Player"))
+            if (!collision.gameObject.CompareTag("Player"))
                 startDeactivating = true;
             HitBreakableBoxIfHit(collision.gameObject);
 

@@ -27,6 +27,9 @@ public class EnemySkirmisherBehaviour : MonoBehaviour
     [SerializeField]
     private Canvas canvas;
 
+    [SerializeField]
+    private AudioSource enemyDamageAudio;
+
     private void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
@@ -125,6 +128,7 @@ public class EnemySkirmisherBehaviour : MonoBehaviour
     }
     public void TakeDamage(int value)
     {
+        enemyDamageAudio.Play();
         health -= value;
         healthBar.value = health;
         if (health <= 0)

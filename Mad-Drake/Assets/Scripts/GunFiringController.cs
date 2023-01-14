@@ -31,6 +31,10 @@ public class GunFiringController : MonoBehaviour
     //references to reuse the bullets
     private Queue<GameObject> inactiveBullets;
     private GameObject activeBullet = null;
+    [SerializeField]
+    private AudioSource reloadAudio;
+    [SerializeField]
+    private AudioSource gunshotAudio;
 
     public int GetMagazineSize()
     {
@@ -141,6 +145,7 @@ public class GunFiringController : MonoBehaviour
 
     private IEnumerator WaitToFire()
     {
+        gunshotAudio.Play();
         canFire = false;
         yield return new WaitForSeconds(firingDelay);
         canFire = true;
@@ -148,6 +153,7 @@ public class GunFiringController : MonoBehaviour
 
     private IEnumerator Reload()
     {
+        reloadAudio.Play();
         reloadObjectAnimation.SetActive(true);
         yield return new WaitForSeconds(reloadTime);
         activeReloading = false;
