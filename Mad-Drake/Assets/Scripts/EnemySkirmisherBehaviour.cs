@@ -1,5 +1,5 @@
 using MyUtility;
-using Unity.VisualScripting;
+using System.Collections;
 using UnityEngine;
 
 public class EnemySkirmisherBehaviour : MonoBehaviour
@@ -11,6 +11,10 @@ public class EnemySkirmisherBehaviour : MonoBehaviour
     private float minimumDistanceToFire = 5.0f;
     [SerializeField]
     private float speed = 2.0f;
+    [SerializeField]
+    private float moveCooldown = 2.0f;
+    private bool canRun = true;
+    private bool canShoot = false;
     private Rigidbody2D rb2;
 
     private void Start()
@@ -36,15 +40,29 @@ public class EnemySkirmisherBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(follow)
+        if(follow && canRun)
         {
-            if(FloatMath.Larger((target.position - transform.position).magnitude, minimumDistanceToFire))
+            if (FloatMath.Larger((target.position - transform.position).magnitude, minimumDistanceToFire))
+            {
+                canShoot = false;
                 rb2.MovePosition(
                     transform.position +
                     speed * Time.fixedDeltaTime * (target.position - transform.position).normalized);
+            } 
+            else
+            {
+                canShoot = true;
+                canRun = false;
+                StartCoroutine(PrepareRunning());
+            }
         }
     }
 
+    private IEnumerator PrepareRunning()
+    {
+        yield return new WaitForSeconds(moveCooldown);
+        canRun = true;
+    }
     public void SetFollowingObject(GameObject toFollow)
     {
         target = toFollow.transform;
@@ -60,5 +78,9 @@ public class EnemySkirmisherBehaviour : MonoBehaviour
     public bool IsFollowing()
     {
         return follow;
+    }
+    public bool CanShoot()
+    {
+        return canShoot;
     }
 }

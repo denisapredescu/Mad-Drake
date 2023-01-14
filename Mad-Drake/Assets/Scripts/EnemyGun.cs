@@ -16,6 +16,24 @@ public class EnemyGun : MonoBehaviour
     private float distTip;
     private float distTarget;
 
+    [SerializeField]
+    private GameObject bullet = null;
+    private Quaternion rotate180 = Quaternion.Euler(0, 0, 180);
+    private Queue<GameObject> inactiveBullets;
+    private GameObject activeBullet = null;
+    private bool gunCanFire = true;
+    [SerializeField]
+    private int bulletBurst = 2;
+    [SerializeField]
+    private float delayInBurst = 0.2f;
+    [SerializeField]
+    private float reloadTime = 2.0f;
+
+    private void Start()
+    {
+        inactiveBullets = new Queue<GameObject>();
+    }
+
     private void Update()
     {
         target = enemyBehaviour.Target();
@@ -24,7 +42,65 @@ public class EnemyGun : MonoBehaviour
         {
             CalculateDifferenceVector();
             RotateGun();
+
+            if(enemyBehaviour.CanShoot() && gunCanFire)
+            {
+                gunCanFire = false;
+                StartCoroutine(Fire());
+            }
         }
+    }
+
+    private IEnumerator Fire()
+    {
+        for (int i = 0; i < bulletBurst; i++)
+        {
+            if (parentTransform.localScale.x < 0.0f)
+            {
+                //checking if there is at least one inactive bullet or creating another
+                if (inactiveBullets.Count > 0)
+                {
+                    activeBullet = inactiveBullets.Dequeue();
+                    activeBullet.transform.SetPositionAndRotation(tipTransform.position, tipTransform.rotation);
+                    activeBullet.SetActive(true);
+                }
+                else
+                {
+                    activeBullet = Instantiate(bullet, tipTransform.position, tipTransform.rotation);
+                    if (activeBullet.TryGetComponent<BulletMovement>(out var bulletMovement))
+                    {
+                        bulletMovement.SetActionAddBullet(AddBullet);
+                    }
+                }
+            }
+            else
+            {
+                if (inactiveBullets.Count > 0)
+                {
+                    activeBullet = inactiveBullets.Dequeue();
+                    activeBullet.transform.SetPositionAndRotation(tipTransform.position, tipTransform.rotation * rotate180);
+                    activeBullet.SetActive(true);
+                }
+                else
+                {
+                    activeBullet = Instantiate(bullet, tipTransform.position, tipTransform.rotation * rotate180);
+                    if (activeBullet.TryGetComponent<BulletMovement>(out var bulletMovement))
+                    {
+                        bulletMovement.SetActionAddBullet(AddBullet);
+                    }
+                }
+            }
+
+            yield return new WaitForSeconds(delayInBurst);
+        }
+
+        yield return new WaitForSeconds(reloadTime);
+        gunCanFire = true;
+    }
+
+    private void AddBullet(GameObject gameObject)
+    {
+        this.inactiveBullets.Enqueue(gameObject);
     }
 
     void CalculateDifferenceVector()
