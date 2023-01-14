@@ -10,7 +10,9 @@ public class BombController : MonoBehaviour
     private float timeUntilExplosion;
     [SerializeField]
     private int nrOfBombs;
- 
+    [SerializeField]
+    private AudioSource bombExplosionAudio;
+
 
     private void Update()
     {
@@ -40,6 +42,7 @@ public class BombController : MonoBehaviour
         bomb.transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = false;
         // Note: in particle system component Stop Action is set to Destroy, so the object will be destroyed after 
         // the effect is completed
+        bombExplosionAudio.Play();
         bombExplosionPS.Play();
         // activate collider to call the OnTrigger event inside the bomb game object
         bomb.GetComponent<CircleCollider2D>().enabled = true;

@@ -28,6 +28,8 @@ public class EnemyGun : MonoBehaviour
     private float delayInBurst = 0.2f;
     [SerializeField]
     private float reloadTime = 2.0f;
+    [SerializeField]
+    private AudioSource enemyGunAudio;
 
     private void Start()
     {
@@ -90,7 +92,7 @@ public class EnemyGun : MonoBehaviour
                     }
                 }
             }
-
+            enemyGunAudio.Play();
             yield return new WaitForSeconds(delayInBurst);
         }
 

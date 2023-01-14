@@ -31,6 +31,10 @@ PrefabInstance:
       propertyPath: target
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 533692863077850684, guid: 3abfe752dbd0d4d47b5e0667e1c5e883, type: 3}
+      propertyPath: enemyGunAudio
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 533692863077850685, guid: 3abfe752dbd0d4d47b5e0667e1c5e883, type: 3}
       propertyPath: m_RootOrder
       value: 0

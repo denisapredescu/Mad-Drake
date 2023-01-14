@@ -22,6 +22,8 @@ public class ShadowBehaviour : MonoBehaviour
     private Slider healthBar;
     [SerializeField]
     private Canvas canvas;
+    [SerializeField]
+    private AudioSource shadowDamageAudio;
 
     private void Start()
     {
@@ -108,6 +110,7 @@ public class ShadowBehaviour : MonoBehaviour
     }
     public void TakeDamage(int value)
     {
+        shadowDamageAudio.Play();
         health -= value;
         healthBar.value = health;
         if (health <= 0)

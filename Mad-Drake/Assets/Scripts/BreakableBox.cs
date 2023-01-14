@@ -10,6 +10,11 @@ public class BreakableBox : MonoBehaviour
     private BoxCollider2D boxCollider2D;
     public int nrOfBulletsToDestroy = 3;
     private int bulletCounter;
+    [SerializeField]
+    private AudioSource boxHitAudio;
+    [SerializeField]
+    private AudioSource boxBreakAudio;
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -29,10 +34,12 @@ public class BreakableBox : MonoBehaviour
             spriteRenderer.enabled = false;
             boxCollider2D.enabled = false;
         }
+        boxBreakAudio.Play();
     }
 
     public void HitBox()
     {
+        boxHitAudio.Play();
         Debug.Log("bang");
         bulletCounter++;
         if (bulletCounter == nrOfBulletsToDestroy)

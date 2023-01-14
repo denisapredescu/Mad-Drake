@@ -32,8 +32,15 @@ public class PlayerController : MonoBehaviour
     private Vector3 forcesToApply = Vector3.zero;
     private bool reanebleFixedUpdateStarted = false;
     private float timeToEnableFixedUpdate = 0.0f;
+
+    [SerializeField]
+    private AudioSource playerDamageAudio;
+    [SerializeField]
+    private AudioSource coinCollectAudio;
+
     public void TakeDamage(int damage, Vector3 forces, float time)
     {
+        playerDamageAudio.Play();
         hudController.TakeDamage(damage);
         forcesToApply = forces;
         disableFixedUpdate = true;
@@ -134,6 +141,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.CompareTag("Coin"))
         {
+            coinCollectAudio.Play();
             collision.gameObject.SetActive(false);
             HUDController.AddGold();
         }
