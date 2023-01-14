@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using MyUtility;
-using System.ComponentModel;
-using Unity.VisualScripting;
+using System.Linq;
 
 //an integer interval struct
 [Serializable]
@@ -98,7 +97,7 @@ public struct Collectible
 public struct Enemy
 {
     public GameObject enemy;
-    public int maximumNumberOfEnemies;
+    public int valueOfEnemy;
 }
 
 public enum Direction
@@ -299,13 +298,15 @@ public class LevelGenerator : MonoBehaviour
     private Vector2Int activeRoomCoordinates;
     private RoomController roomController;
     [SerializeField]
+    private IntRange enemiesInRoom = new(3, 5);
+    [SerializeField]
     private List<Enemy> enemies;
 
     //adds the new room in array and also the reference in the map
     private int AddRoom(int x, int y)
     {
         //returns the position in array of the room created
-        if(rooms.AddSafe(new RoomInfo(x, y)))
+        if (rooms.AddSafe(new RoomInfo(x, y)))
             return rooms.Count() - 1;
 
         return -1;
@@ -331,10 +332,24 @@ public class LevelGenerator : MonoBehaviour
     private RoomInfo activeRoomForEnemies;
     private bool lockRoom = false;
 
+    //verifies if the enemy is in the room
+    private bool InRoom(Vector2Int center, Vector3 position)
+    {
+        float minX = center.x * roomWidth - roomWidth / 2 - 0.5f;
+        float maxX = center.x * roomWidth + roomWidth / 2 + 0.5f;
+        float minY = center.y * roomHeight - roomHeight / 2 - 0.5f;
+        float maxY = center.y * roomHeight + roomHeight / 2 + 0.5f;
+
+        if (position.x >= minX && position.x <= maxX && position.y >= minY && position.y <= maxY)
+            return true;
+        return false;
+    }
+
     private bool HasActiveEnemies(RoomInfo room)
     {
         for (int i = 0; i < room.Enemies.Count(); i++)
-            if (room.Enemies.GetByIndex(i).SpawnedObject.activeSelf)
+            if (room.Enemies.GetByIndex(i).SpawnedObject.activeSelf && 
+                InRoom(room.Coord, room.Enemies.GetByIndex(i).SpawnedObject.transform.position))
                 return true;
 
         return false;
@@ -342,7 +357,7 @@ public class LevelGenerator : MonoBehaviour
 
     private void Update()
     {
-        if(lastCameraPosition != playerCamera.position)
+        if (lastCameraPosition != playerCamera.position)
         {
             if (lastCameraPosition.x < playerCamera.position.x)
                 activeRoomCoordinates.x++;
@@ -356,7 +371,7 @@ public class LevelGenerator : MonoBehaviour
 
             activeRoomForEnemies = rooms.GetByCoord(activeRoomCoordinates);
 
-            if(HasActiveEnemies(activeRoomForEnemies))
+            if (HasActiveEnemies(activeRoomForEnemies))
             {
                 roomController.CloseDoors();
 
@@ -372,7 +387,7 @@ public class LevelGenerator : MonoBehaviour
             lastCameraPosition = playerCamera.position;
         }
 
-        if(lockRoom && !HasActiveEnemies(activeRoomForEnemies))
+        if (lockRoom && !HasActiveEnemies(activeRoomForEnemies))
         {
             roomController.OpenDoors();
             lockRoom = false;
@@ -473,8 +488,9 @@ public class LevelGenerator : MonoBehaviour
                 }
             }
             else
-            {   
-                break;
+            {
+                if (index == -1)
+                    break;
             }
 
             room.AddDirection(direction);
@@ -484,7 +500,7 @@ public class LevelGenerator : MonoBehaviour
             room.OwnGround = obj;
         }
 
-        if(movePlayer && playerIfUsingStartRooms != null)
+        if (movePlayer && playerIfUsingStartRooms != null)
             playerIfUsingStartRooms.transform.position = new(room.Coord.x * roomWidth, room.Coord.y * roomHeight, 0.0f);
     }
 
@@ -794,7 +810,7 @@ public class LevelGenerator : MonoBehaviour
         foreach (var collectibleInfo in collectibles)
         {
             //spawns the collectibles
-            for(int i = 0; i < collectibleInfo.maximumNumber; i++)
+            for (int i = 0; i < collectibleInfo.maximumNumber; i++)
             {
                 if (UnityEngine.Random.Range(0.0f, 1.0f) > collectibleInfo.chanceOfSpawn)
                     continue;
@@ -805,9 +821,9 @@ public class LevelGenerator : MonoBehaviour
 
                 int pickedX = UnityEngine.Random.Range(-maximumXForSpawn, maximumXForSpawn + 1);
                 int pickedY = UnityEngine.Random.Range(-maximumYForSpawn, maximumYForSpawn + 1);
-                if(pickedX == 0)
+                if (pickedX == 0)
                     pickedX += UnityEngine.Random.Range(0, 2) == 0 ? -1 : 1;
-                if(pickedY == 0)
+                if (pickedY == 0)
                     pickedY += UnityEngine.Random.Range(0, 2) == 0 ? -1 : 1;
                 //it makes no sense for either x or y to be in the center
 
@@ -831,18 +847,50 @@ public class LevelGenerator : MonoBehaviour
             }
         }
     }
+
+    private readonly int[] fullDirectionX = { -1, 0, 1, 1, 1, 0, -1, -1 };
+    private readonly int[] fullDirectionY = { 1, 1, 1, 0, -1, -1, -1, 0 };
+
+    private bool InRoomBounds(int x, int y)
+    {
+        if (x >= -maximumXForSpawn + 1 && x <= maximumXForSpawn - 1 && y >= -maximumYForSpawn + 1 && y <= maximumYForSpawn - 1)
+            return true;
+        return false;
+    }
+
     void AddEnemies()
     {
         List<int> basicRoomsIndexes = GetBasicRoomsIndexes();
+        int sumOfValues = enemies.Sum(value => value.valueOfEnemy);
 
-        foreach (Enemy enemyInfo in enemies)
+        //spawning enemies in all basic rooms
+        basicRoomsIndexes.ForEach(index =>
         {
-            for (int i = 0; i < enemyInfo.maximumNumberOfEnemies; i++)
-            {
-                int index = UnityEngine.Random.Range(0, basicRoomsIndexes.Count);
-                RoomInfo room = rooms.GetByIndex(basicRoomsIndexes[index]);
+            RoomInfo room = rooms.GetByIndex(index);
+            //the number of enemies to spawn in a room
+            int spawn = UnityEngine.Random.Range((int)enemiesInRoom.From, (int)enemiesInRoom.To + 1);
 
-                //for enemies is [minimum + 1, maximum - 1] to make sure is in the room itself
+            for (int i = 0; i < spawn; i++)
+            {
+                int valueChosen = UnityEngine.Random.Range(1, sumOfValues + 1);
+                int currentValue = 0;
+                int indexOfEnemy = 0;
+
+                //picking the enemy
+                for (int j = 0; j < enemies.Count(); j++)
+                {
+                    if (j == enemies.Count() - 1 || currentValue + enemies[j].valueOfEnemy + enemies[j + 1].valueOfEnemy > valueChosen)
+                    {
+                        indexOfEnemy = j;
+                        break;
+                    }
+                    else
+                    {
+                        currentValue += enemies[j].valueOfEnemy;
+                    }
+                }
+
+                //picking the room tile
                 int pickedX = UnityEngine.Random.Range(-maximumXForSpawn + 1, maximumXForSpawn);
                 int pickedY = UnityEngine.Random.Range(-maximumYForSpawn + 1, maximumYForSpawn);
                 if (pickedX == 0)
@@ -850,9 +898,32 @@ public class LevelGenerator : MonoBehaviour
                 if (pickedY == 0)
                     pickedY += UnityEngine.Random.Range(0, 2) == 0 ? -1 : 1;
 
+                int foundX = -1000;
+                int foundY = -1000;
+
+                //trying with the neighbouring tiles if the chosen tile is full
                 if (!room.Enemies.Exists(pickedX, pickedY))
                 {
-                    
+                    foundX = pickedX;
+                    foundY = pickedY;
+                }
+                else
+                {
+                    for (int d = 0; d < 9; d++)
+                    {
+                        if (InRoomBounds(pickedX + fullDirectionX[d], pickedY + fullDirectionY[d]) &&
+                        !room.Enemies.Exists(pickedX + fullDirectionX[d], pickedY + fullDirectionY[d]))
+                        {
+                            foundX = pickedX + fullDirectionX[d];
+                            foundY = pickedY + fullDirectionY[d];
+                            break;
+                        }
+                    }
+                }
+
+                //spawn the enemy only if an empty tile was found
+                if (foundX != -1000 && foundY != -1000)
+                {
                     Vector3 position = Vector3.zero;
 
                     if (pickedX > 0)
@@ -864,13 +935,13 @@ public class LevelGenerator : MonoBehaviour
                         position.y = room.Coord.y * roomHeight + pickedY - approachToCenter;
                     else
                         position.y = room.Coord.y * roomHeight + pickedY + approachToCenter;
-                    
-                    GameObject enemyInstance = Instantiate(enemyInfo.enemy, position, Quaternion.identity);
+
+                    GameObject enemyInstance = Instantiate(enemies[indexOfEnemy].enemy, position, Quaternion.identity);
                     enemyInstance.GetComponent<UniversalSetTarget>().SetTarget(player);
                     room.Enemies.Add(new InsideRoomObject(enemyInstance, pickedX, pickedY));
                 }
             }
-        }
+        });
     }
 
     //using the informations in the room, adds the proper prefab

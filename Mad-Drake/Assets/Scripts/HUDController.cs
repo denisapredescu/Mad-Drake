@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEditor.PackageManager;
 
 public class HUDController : MonoBehaviour
 {
@@ -15,14 +12,12 @@ public class HUDController : MonoBehaviour
     private static TextMeshProUGUI bombGUI;
     public int maxHealth = 5;
     public static int currentHealth;
-    private int maxBullets = 10;
+    private static int maxBullets = 10;
     private static int currentBullets;
     public GameObject healthCard;
     public GameObject goldCard;
     public GameObject gunCard;
     public GameObject bombCard;
-    [SerializeField]
-    private GunFiringController playerFiringController;
 
     private static bool numberOfBulletsIsChanged = false;
 
@@ -31,16 +26,15 @@ public class HUDController : MonoBehaviour
 
     private static int damageTaken;
 
+    [SerializeField]
+    private AudioSource potionCollectAudio;
+
     private void Start()
     {
         damageTaken = 0;
-        maxHealth = 5;
         goldScore = 0;
         currentHealth = maxHealth;
         bombs = 3;
-
-        maxBullets = playerFiringController.GetMagazineSize();
-        currentBullets = maxBullets;
 
         healthGUI = healthCard.GetComponent<TextMeshProUGUI>();
         healthGUI.text = $"{maxHealth}/{maxHealth}";
@@ -56,7 +50,7 @@ public class HUDController : MonoBehaviour
 
         playerIsDead = false;
         healthBar.SetMaxHealth(maxHealth);
-        healthBar.SetHealth(5);
+        healthBar.SetHealth(maxHealth);
 
         gunBar.SetMaxBullets(maxBullets);
         gunBar.SetBullets(currentBullets);
@@ -71,10 +65,17 @@ public class HUDController : MonoBehaviour
 
         if (numberOfBulletsIsChanged)
         {
+            gunBar.SetMaxBullets(maxBullets);
             gunBar.SetBullets(currentBullets);
             gunGUI.text = $"{currentBullets}/{maxBullets}";
             numberOfBulletsIsChanged = false;
         }
+    }
+
+    public static void ChangeValueOfMagazineSize(int currentValue)
+    {
+        maxBullets = currentValue;
+        numberOfBulletsIsChanged = true;
     }
 
     public static void ChangeValueOfActiveMagazine(int currentValue)
@@ -99,7 +100,7 @@ public class HUDController : MonoBehaviour
             if (currentHealth <= 0)
             {
                 playerIsDead = true;
-            }
+            } 
         }
     }
 
@@ -120,6 +121,7 @@ public class HUDController : MonoBehaviour
         {
             if(currentHealth < maxHealth)
             {
+                potionCollectAudio.Play();
                 currentHealth++;
                 healthGUI.text = $"{currentHealth}/{maxHealth}";
                 healthBar.SetHealth(currentHealth);
@@ -131,6 +133,7 @@ public class HUDController : MonoBehaviour
         {
             if (currentHealth < maxHealth)
             {
+                potionCollectAudio.Play();
                 currentHealth = maxHealth;
                 healthGUI.text = $"{currentHealth}/{maxHealth}";
                 healthBar.SetHealth(currentHealth);

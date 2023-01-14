@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class GunFiringController : MonoBehaviour
 {
+    enum BulletType { Bullet, Rocket };
     [SerializeField]
     private GameObject bullet = null;
+    [SerializeField]
+    private BulletType bulletType = BulletType.Bullet;
     [SerializeField]
     private GameObject tipOfGun = null;
     private Transform tipTransform = null;
@@ -19,6 +22,8 @@ public class GunFiringController : MonoBehaviour
     private Quaternion rotate180 = Quaternion.Euler(0, 0, 180);
     [SerializeField]
     private int magazineSize = 10;
+    [SerializeField]
+    private uint damage = 1;
     private int activeMagazine = 0;
     [SerializeField]
     private float reloadTime = 2.0f;
@@ -29,6 +34,10 @@ public class GunFiringController : MonoBehaviour
     //references to reuse the bullets
     private Queue<GameObject> inactiveBullets;
     private GameObject activeBullet = null;
+    [SerializeField]
+    private AudioSource reloadAudio;
+    [SerializeField]
+    private AudioSource gunshotAudio;
 
     public int GetMagazineSize()
     {
@@ -49,6 +58,14 @@ public class GunFiringController : MonoBehaviour
 
         //getting all the particle effects and making them 10 times faster
         tipParticleEffects = tipOfGun.GetComponentsInChildren<ParticleSystem>();
+        HUDController.ChangeValueOfMagazineSize(magazineSize);
+        HUDController.ChangeValueOfActiveMagazine(magazineSize);
+    }
+
+    private void OnEnable()
+    {
+        HUDController.ChangeValueOfMagazineSize(magazineSize);
+        HUDController.ChangeValueOfActiveMagazine(activeMagazine);
     }
 
     void Update()
@@ -92,9 +109,13 @@ public class GunFiringController : MonoBehaviour
                     else
                     {
                         activeBullet = Instantiate(bullet, tipTransform.position, tipTransform.rotation * rotate180);
-                        if (activeBullet.TryGetComponent<BulletMovement>(out var bulletMovement))
+                        if (bulletType == BulletType.Bullet)
                         {
-                            bulletMovement.SetActionAddBullet(AddBullet);
+                            activeBullet.GetComponent<BulletMovement>().SetActionAddBullet(AddBullet);
+                        }
+                        else
+                        {
+                            activeBullet.GetComponent<RocketMovement>().SetActionAddBullet(AddBullet);
                         }
                     }
                 }
@@ -104,14 +125,28 @@ public class GunFiringController : MonoBehaviour
                     {
                         activeBullet = inactiveBullets.Dequeue();
                         activeBullet.transform.SetPositionAndRotation(tipTransform.position, tipTransform.rotation);
+                        if (bulletType == BulletType.Bullet)
+                        {
+                            activeBullet.GetComponent<BulletMovement>().SetDamage(damage);
+                        }
+                        else
+                        {
+                            activeBullet.GetComponent<RocketMovement>().SetDamage(damage);
+                        }
                         activeBullet.SetActive(true);
                     }
                     else
                     {
                         activeBullet = Instantiate(bullet, tipTransform.position, tipTransform.rotation);
-                        if (activeBullet.TryGetComponent<BulletMovement>(out var bulletMovement))
+                        if (bulletType == BulletType.Bullet)
                         {
-                            bulletMovement.SetActionAddBullet(AddBullet);
+                            activeBullet.GetComponent<BulletMovement>().SetDamage(damage);
+                            activeBullet.GetComponent<BulletMovement>().SetActionAddBullet(AddBullet);
+                        }
+                        else
+                        {
+                            activeBullet.GetComponent<RocketMovement>().SetDamage(damage);
+                            activeBullet.GetComponent<RocketMovement>().SetActionAddBullet(AddBullet);
                         }
                     }
                 }
@@ -129,6 +164,7 @@ public class GunFiringController : MonoBehaviour
 
     private IEnumerator WaitToFire()
     {
+        gunshotAudio.Play();
         canFire = false;
         yield return new WaitForSeconds(firingDelay);
         canFire = true;
@@ -136,6 +172,7 @@ public class GunFiringController : MonoBehaviour
 
     private IEnumerator Reload()
     {
+        reloadAudio.Play();
         reloadObjectAnimation.SetActive(true);
         yield return new WaitForSeconds(reloadTime);
         activeReloading = false;

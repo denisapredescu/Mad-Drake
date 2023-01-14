@@ -14,7 +14,7 @@ public class ShadowBehaviour : MonoBehaviour
     private bool canAttack = false;
     private Animator anim;
     private Vector3 allignToCenter = new(0.0f, -0.5f);
-    private readonly int layerMask = ~(1 << 2);
+    private readonly int layerMask = ~(1 << 8);
 
     [SerializeField]
     private int health = 5;
@@ -22,6 +22,8 @@ public class ShadowBehaviour : MonoBehaviour
     private Slider healthBar;
     [SerializeField]
     private Canvas canvas;
+    [SerializeField]
+    private AudioSource shadowDamageAudio;
 
     private void Start()
     {
@@ -108,6 +110,7 @@ public class ShadowBehaviour : MonoBehaviour
     }
     public void TakeDamage(int value)
     {
+        shadowDamageAudio.Play();
         health -= value;
         healthBar.value = health;
         if (health <= 0)
