@@ -61,13 +61,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8aaad1266781f4a8151f3bf39e80f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 533692863077850683, guid: 3abfe752dbd0d4d47b5e0667e1c5e883, type: 3}
+  bullet: {fileID: 1334951404256435274, guid: fb6993f4650895f418ac6047f059f678, type: 3}
+  bulletType: 1
   tipOfGun: {fileID: 5981653537463268174}
   parent: {fileID: 2629746995567776209}
-  firingDelay: 0.15
-  magazineSize: 20
-  damage: 1
-  reloadTime: 0.7
+  firingDelay: 0.5
+  magazineSize: 3
+  damage: 5
+  reloadTime: 1.3
   reloadObjectAnimation: {fileID: 6734888249988681922}
 --- !u!1 &896509246889501895
 GameObject:
@@ -4943,10 +4944,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 533692863077850683, guid: 3abfe752dbd0d4d47b5e0667e1c5e883, type: 3}
+  bulletType: 0
   tipOfGun: {fileID: 3696071324846962451}
   parent: {fileID: 2629746995567776209}
-  firingDelay: 0.4
-  magazineSize: 4
+  firingDelay: 0.3
+  magazineSize: 6
   damage: 5
   reloadTime: 1
   reloadObjectAnimation: {fileID: 6734888249988681922}
@@ -9821,7 +9823,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112142757793002553}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.45, y: -0.51, z: 0}
+  m_LocalPosition: {x: 0.82, y: -0.41, z: 0}
   m_LocalScale: {x: 1.1111112, y: 1.1111112, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10097,7 +10099,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 300
+  m_Mass: 3000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -10136,6 +10138,7 @@ MonoBehaviour:
   gun1: {fileID: 4131988854021531144}
   gun2: {fileID: 1505217781273318331}
   gun3: {fileID: 349530761035208459}
+  reloadAnim: {fileID: 6734888249988681922}
 --- !u!1 &3041104432392782053
 GameObject:
   m_ObjectHideFlags: 0
@@ -19856,6 +19859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 533692863077850683, guid: 3abfe752dbd0d4d47b5e0667e1c5e883, type: 3}
+  bulletType: 0
   tipOfGun: {fileID: 1943606255175642836}
   parent: {fileID: 2629746995567776209}
   firingDelay: 0.15

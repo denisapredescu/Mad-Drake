@@ -870,7 +870,7 @@ public class LevelGenerator : MonoBehaviour
             //the number of enemies to spawn in a room
             int spawn = UnityEngine.Random.Range((int)enemiesInRoom.From, (int)enemiesInRoom.To + 1);
 
-            for(int i = 0; i < spawn; i++)
+            for (int i = 0; i < spawn; i++)
             {
                 int valueChosen = UnityEngine.Random.Range(1, sumOfValues + 1);
                 int currentValue = 0;
@@ -879,7 +879,7 @@ public class LevelGenerator : MonoBehaviour
                 //picking the enemy
                 for (int j = 0; j < enemies.Count(); j++)
                 {
-                    if(j == enemies.Count() - 1 ||  currentValue + enemies[j].valueOfEnemy + enemies[j + 1].valueOfEnemy > valueChosen)
+                    if (j == enemies.Count() - 1 || currentValue + enemies[j].valueOfEnemy + enemies[j + 1].valueOfEnemy > valueChosen)
                     {
                         indexOfEnemy = j;
                         break;
@@ -898,11 +898,11 @@ public class LevelGenerator : MonoBehaviour
                 if (pickedY == 0)
                     pickedY += UnityEngine.Random.Range(0, 2) == 0 ? -1 : 1;
 
-                int foundX = -2;
-                int foundY = -2;
+                int foundX = -1000;
+                int foundY = -1000;
 
                 //trying with the neighbouring tiles if the chosen tile is full
-                if(!room.Enemies.Exists(pickedX, pickedY))
+                if (!room.Enemies.Exists(pickedX, pickedY))
                 {
                     foundX = pickedX;
                     foundY = pickedY;
@@ -922,7 +922,7 @@ public class LevelGenerator : MonoBehaviour
                 }
 
                 //spawn the enemy only if an empty tile was found
-                if (foundX != -2 && foundY != -2)
+                if (foundX != -1000 && foundY != -1000)
                 {
                     Vector3 position = Vector3.zero;
 

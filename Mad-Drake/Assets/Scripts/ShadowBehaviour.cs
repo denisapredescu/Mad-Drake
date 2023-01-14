@@ -14,7 +14,7 @@ public class ShadowBehaviour : MonoBehaviour
     private bool canAttack = false;
     private Animator anim;
     private Vector3 allignToCenter = new(0.0f, -0.5f);
-    private readonly int layerMask = ~(1 << 2);
+    private readonly int layerMask = ~(1 << 8);
 
     [SerializeField]
     private int health = 5;
