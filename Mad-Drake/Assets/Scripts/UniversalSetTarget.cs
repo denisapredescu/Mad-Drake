@@ -16,6 +16,10 @@ public class UniversalSetTarget : MonoBehaviour
         if(gameObject.CompareTag("Shadow"))
         {
             gameObject.GetComponent<ShadowBehaviour>().SetFollowingObject(target);
+        } 
+        else if(gameObject.CompareTag("Shadow Guard"))
+        {
+            gameObject.GetComponent<EnemySkirmisherBehaviour>().SetFollowingObject(target);
         }
     }
 
@@ -30,6 +34,10 @@ public class UniversalSetTarget : MonoBehaviour
         if(gameObject.CompareTag("Shadow"))
         {
             gameObject.GetComponent<ShadowBehaviour>().SetFollowing(active);
+        }
+        else if (gameObject.CompareTag("Shadow Guard"))
+        {
+            gameObject.GetComponent<EnemySkirmisherBehaviour>().SetFollowing(active);
         }
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - IgnoreBullet
   - InfoNextLevel
   - Shadow
+  - Shadow Guard
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,8 @@ TagManager:
   - UI
   - GroundForBoxParts
   - BoxParts
-  - 
-  - 
+  - Enemy
+  - Enemy Bullet
   - 
   - 
   - 

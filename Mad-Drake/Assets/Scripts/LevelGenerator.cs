@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using MyUtility;
-using System.ComponentModel;
-using Unity.VisualScripting;
 
 //an integer interval struct
 [Serializable]
