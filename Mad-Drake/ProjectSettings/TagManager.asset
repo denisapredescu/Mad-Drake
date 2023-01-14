@@ -12,6 +12,8 @@ TagManager:
   - IgnoreBullet
   - InfoNextLevel
   - Shadow
+  - Door
+  - Wall
   - Shadow Guard
   layers:
   - Default
