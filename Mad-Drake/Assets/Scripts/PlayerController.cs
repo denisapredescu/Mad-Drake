@@ -32,6 +32,10 @@ public class PlayerController : MonoBehaviour
     private Vector3 forcesToApply = Vector3.zero;
     private bool reanebleFixedUpdateStarted = false;
     private float timeToEnableFixedUpdate = 0.0f;
+
+    [SerializeField]
+    private bool disableMoveCamera;
+
     public void TakeDamage(int damage, Vector3 forces, float time)
     {
         hudController.TakeDamage(damage);
@@ -88,7 +92,8 @@ public class PlayerController : MonoBehaviour
         }
 
         RotatePlayer();
-        MoveCamera();
+        if (!disableMoveCamera)
+            MoveCamera();
     }
 
     private void FixedUpdate()
@@ -182,4 +187,6 @@ public class PlayerController : MonoBehaviour
             camera.transform.position = new Vector3(camera.transform.position.x, camera.transform.position.y - 10, camera.transform.position.z);
         }
     }
+
+    
 }
