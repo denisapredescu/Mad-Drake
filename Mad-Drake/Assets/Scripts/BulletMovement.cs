@@ -20,6 +20,10 @@ public class BulletMovement : MonoBehaviour
     [SerializeField]
     private ParticleSystem explosionEffect;
 
+    private enum Target { Player, Enemy };
+    [SerializeField]
+    private Target target = Target.Enemy;
+
     private void Start()
     {
         transform = GetComponent<Transform>();
@@ -58,14 +62,31 @@ public class BulletMovement : MonoBehaviour
         if (startDeactivating == true)
             return;
 
-        if (!collision.gameObject.CompareTag("IgnoreBullet"))
+        if (collision.gameObject.CompareTag("IgnoreBullet"))
+            return;
+
+        if(target == Target.Enemy)
         {
-            startDeactivating = true;
+            if(!collision.gameObject.CompareTag("Player"))
+                startDeactivating = true;
             HitBreakableBoxIfHit(collision.gameObject);
 
             if (collision.gameObject.CompareTag("Shadow"))
                 collision.gameObject.GetComponent<ShadowBehaviour>().TakeDamage(damage);
+            else if(collision.gameObject.CompareTag("Shadow Guard"))
+                collision.gameObject.GetComponent<EnemySkirmisherBehaviour>().TakeDamage(damage);
         }
+        else
+        {
+            if (!collision.gameObject.CompareTag("Shadow") &&
+                !collision.gameObject.CompareTag("Shadow Guard"))
+                startDeactivating = true;
+
+            HitBreakableBoxIfHit(collision.gameObject);
+            if (collision.gameObject.CompareTag("Player"))
+                collision.gameObject.GetComponent<HUDController>().TakeDamage(damage);
+        }
+
     }
 
     //passing the function from the controller back to the bullet to use it
