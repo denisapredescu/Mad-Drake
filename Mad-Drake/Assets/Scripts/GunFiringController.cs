@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class GunFiringController : MonoBehaviour
 {
+    enum BulletType { Bullet, Rocket };
     [SerializeField]
     private GameObject bullet = null;
+    [SerializeField]
+    private BulletType bulletType = BulletType.Bullet;
     [SerializeField]
     private GameObject tipOfGun = null;
     private Transform tipTransform = null;
@@ -102,9 +105,13 @@ public class GunFiringController : MonoBehaviour
                     else
                     {
                         activeBullet = Instantiate(bullet, tipTransform.position, tipTransform.rotation * rotate180);
-                        if (activeBullet.TryGetComponent<BulletMovement>(out var bulletMovement))
+                        if (bulletType == BulletType.Bullet)
                         {
-                            bulletMovement.SetActionAddBullet(AddBullet);
+                            activeBullet.GetComponent<BulletMovement>().SetActionAddBullet(AddBullet);
+                        }
+                        else
+                        {
+                            activeBullet.GetComponent<RocketMovement>().SetActionAddBullet(AddBullet);
                         }
                     }
                 }
@@ -114,16 +121,28 @@ public class GunFiringController : MonoBehaviour
                     {
                         activeBullet = inactiveBullets.Dequeue();
                         activeBullet.transform.SetPositionAndRotation(tipTransform.position, tipTransform.rotation);
-                        activeBullet.GetComponent<BulletMovement>().SetDamage(damage);
+                        if (bulletType == BulletType.Bullet)
+                        {
+                            activeBullet.GetComponent<BulletMovement>().SetDamage(damage);
+                        }
+                        else
+                        {
+                            activeBullet.GetComponent<RocketMovement>().SetDamage(damage);
+                        }
                         activeBullet.SetActive(true);
                     }
                     else
                     {
                         activeBullet = Instantiate(bullet, tipTransform.position, tipTransform.rotation);
-                        if (activeBullet.TryGetComponent<BulletMovement>(out var bulletMovement))
+                        if (bulletType == BulletType.Bullet)
                         {
-                            bulletMovement.SetDamage(damage);
-                            bulletMovement.SetActionAddBullet(AddBullet);
+                            activeBullet.GetComponent<BulletMovement>().SetDamage(damage);
+                            activeBullet.GetComponent<BulletMovement>().SetActionAddBullet(AddBullet);
+                        }
+                        else
+                        {
+                            activeBullet.GetComponent<RocketMovement>().SetDamage(damage);
+                            activeBullet.GetComponent<RocketMovement>().SetActionAddBullet(AddBullet);
                         }
                     }
                 }

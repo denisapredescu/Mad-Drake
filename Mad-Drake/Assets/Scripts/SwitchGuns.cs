@@ -8,10 +8,12 @@ public class SwitchGuns : MonoBehaviour
     private GameObject gun2;
     [SerializeField]
     private GameObject gun3;
+    [SerializeField]
+    private GameObject reloadAnim;
     private float activeGun = 1;
 
     private bool gun2Unlocked = true;
-    private bool gun3Unlocked = false;
+    private bool gun3Unlocked = true;
     
     public void UnlockGun2()
     {
@@ -31,6 +33,7 @@ public class SwitchGuns : MonoBehaviour
                 gun2.SetActive(false);
                 gun3.SetActive(false);
                 gun1.SetActive(true);
+                reloadAnim.SetActive(false);
                 activeGun = 1;
                 break;
             case 2:
@@ -39,6 +42,7 @@ public class SwitchGuns : MonoBehaviour
                 gun1.SetActive(false);
                 gun3.SetActive(false);
                 gun2.SetActive(true);
+                reloadAnim.SetActive(false);
                 activeGun = 2;
                 break;
             case 3:
@@ -47,6 +51,7 @@ public class SwitchGuns : MonoBehaviour
                 gun1.SetActive(false);
                 gun2.SetActive(false);
                 gun3.SetActive(true);
+                reloadAnim.SetActive(false);
                 activeGun = 3;
                 break;
             default: break;
