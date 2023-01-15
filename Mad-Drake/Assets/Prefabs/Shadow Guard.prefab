@@ -1260,7 +1260,7 @@ MonoBehaviour:
   minimumDistanceToFire: 5
   speed: 2
   moveCooldown: 2
-  health: 8
+  health: 5
   healthBar: {fileID: 5489812728801072212}
   canvas: {fileID: 5489812728665062804}
   enemyDamageAudio: {fileID: -8317097483662598705}

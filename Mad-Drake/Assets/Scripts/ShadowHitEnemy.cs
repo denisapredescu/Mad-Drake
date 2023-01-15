@@ -30,6 +30,7 @@ public class ShadowHitEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log("ajunge aici");
         if (canHit && toHit != null)
         {
             Vector3 forces = toHit.transform.position - transform.position;
