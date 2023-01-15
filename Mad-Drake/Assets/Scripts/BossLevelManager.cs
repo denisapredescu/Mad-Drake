@@ -7,7 +7,7 @@ public class BossLevelManager : MonoBehaviour
     [SerializeField]
     private GameObject player;
     [SerializeField]
-    private GameObject camera;
+    private new GameObject camera;
     [SerializeField]
     private Transform fireballSpawn;
     [SerializeField]

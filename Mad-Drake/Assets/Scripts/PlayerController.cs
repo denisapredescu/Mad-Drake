@@ -41,7 +41,8 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage, Vector3 forces, float time)
     {
-        playerDamageAudio.Play();
+        if (playerDamageAudio != null)
+            playerDamageAudio.Play();
         hudController.TakeDamage(damage);
         forcesToApply = forces;
         disableFixedUpdate = true;
@@ -143,7 +144,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.CompareTag("Coin"))
         {
-            coinCollectAudio.Play();
+            if (coinCollectAudio != null)
+                coinCollectAudio.Play();
             collision.gameObject.SetActive(false);
             HUDController.AddGold();
         }

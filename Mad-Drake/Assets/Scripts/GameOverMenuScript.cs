@@ -19,7 +19,7 @@ public class GameOverMenuScript : MonoBehaviour
     }
     public void OnRestartButtonPressed()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("L1");
     }
 
     public void OnMainMenuButtonPressed()

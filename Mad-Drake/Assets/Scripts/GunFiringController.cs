@@ -164,7 +164,8 @@ public class GunFiringController : MonoBehaviour
 
     private IEnumerator WaitToFire()
     {
-        gunshotAudio.Play();
+        if(gunshotAudio != null)
+            gunshotAudio.Play();
         canFire = false;
         yield return new WaitForSeconds(firingDelay);
         canFire = true;
@@ -172,7 +173,8 @@ public class GunFiringController : MonoBehaviour
 
     private IEnumerator Reload()
     {
-        reloadAudio.Play();
+        if(reloadAudio != null)
+            reloadAudio.Play();
         reloadObjectAnimation.SetActive(true);
         yield return new WaitForSeconds(reloadTime);
         activeReloading = false;
