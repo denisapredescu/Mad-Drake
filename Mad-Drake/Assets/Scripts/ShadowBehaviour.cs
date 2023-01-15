@@ -117,4 +117,9 @@ public class ShadowBehaviour : MonoBehaviour
         if (health <= 0)
             gameObject.SetActive(false);
     }
+
+    public int GetHealth()
+    {
+        return health;
+    }
 }
