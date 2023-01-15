@@ -13,7 +13,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void OnPlayButtonPressed()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("L1");
     }
 
     public void OnExitButtonPressed()

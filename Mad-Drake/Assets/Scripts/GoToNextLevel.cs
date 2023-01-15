@@ -28,6 +28,7 @@ public class GoToNextLevel : MonoBehaviour
 
             if (SceneManager.GetActiveScene().name.Equals("BossLevel")) // aici va trebui modificat cu ultimul nivel
             {
+
                 isEnded = true;
                 Debug.Log("isEnded");
             }
