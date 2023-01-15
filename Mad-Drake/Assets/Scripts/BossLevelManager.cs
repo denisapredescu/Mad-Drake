@@ -11,6 +11,8 @@ public class BossLevelManager : MonoBehaviour
     [SerializeField]
     private new GameObject camera;
     [SerializeField]
+    private GameObject door;
+    [SerializeField]
     private Transform fireballSpawn;
     [SerializeField]
     private GameObject fireballPrefab;
@@ -56,15 +58,14 @@ public class BossLevelManager : MonoBehaviour
 
     private bool canGoToPhase2;
     private bool bossArrivedAtPhase2;
-    private bool noFireRainChosen;
     private int noFireRainIndex;
 
     private void Start()
     {
+        door.SetActive(false);
         bossRevealed = false;
         canGoToPhase2 = false;
         bossArrivedAtPhase2 = false;
-        noFireRainChosen = false;
         fireballsInOneSetCopy = fireballsInOneSet;
         rain1.Stop();
         rain2.Stop();
@@ -97,11 +98,17 @@ public class BossLevelManager : MonoBehaviour
             }
         }
 
+        if (!boss.activeInHierarchy)
+        {
+            Debug.Log("Boss dead");
+        }
+
     }
     private void BossReveal()
     {
         if (player.transform.position.x > 9.2f)
         {
+            door.SetActive(true);
             camera.transform.position = new Vector3(camera.transform.position.x + 18, camera.transform.position.y, camera.transform.position.z);
             bossRevealCameraAnimator.Play("camera_reveal_boss");
             bossHealthShowAnimator.Play("boss_health_show");
@@ -159,8 +166,8 @@ public class BossLevelManager : MonoBehaviour
     {
         noFireRainIndex = Random.Range(1, 4);
         Debug.Log("Chosen fire rain index with no rain: " + noFireRainIndex);
-        /*noFireRainChosen = true;*/
-        StartCoroutine(ShowRainWarnings());
+        if (boss.activeInHierarchy)
+            StartCoroutine(ShowRainWarnings());
 
     }
 
@@ -176,11 +183,11 @@ public class BossLevelManager : MonoBehaviour
         warning1.SetActive(false);
         warning2.SetActive(false);
         warning3.SetActive(false);
-        StartCoroutine(StartRain());
+        if (boss.activeInHierarchy)
+            StartCoroutine(StartRain());
 
     }
 
-    // HERE STARTS/STOPS THE RAIN
     private IEnumerator StartRain()
     {
         if (noFireRainIndex != 1)
@@ -193,14 +200,15 @@ public class BossLevelManager : MonoBehaviour
         rain1.Stop();
         rain2.Stop();
         rain3.Stop();
-        StartCoroutine(WaitBetweenRain());
+        if (boss.activeInHierarchy)
+            StartCoroutine(WaitBetweenRain());
     }
 
     private IEnumerator WaitBetweenRain()
     {
         yield return new WaitForSeconds(delayBetweenRain);
-        /*noFireRainChosen = false;*/
-        ChooseFireRainIndex();
+        if (boss.activeInHierarchy)
+            ChooseFireRainIndex();
     }
 
 }
