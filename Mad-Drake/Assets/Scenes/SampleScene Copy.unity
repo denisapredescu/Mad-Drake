@@ -5159,6 +5159,10 @@ PrefabInstance:
       propertyPath: healthCard
       value: 
       objectReference: {fileID: 746626584}
+    - target: {fileID: 5558823407596721466, guid: 002443ff5ec3dce4b8727f9dbb21a069, type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 002443ff5ec3dce4b8727f9dbb21a069, type: 3}
 --- !u!1 &2018896135

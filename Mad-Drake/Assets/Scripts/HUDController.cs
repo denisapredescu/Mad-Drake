@@ -15,6 +15,7 @@ public class HUDController : MonoBehaviour
     public static int currentHealth;
     private static int maxBullets = 10;
     private static int currentBullets;
+    private GunFiringController gunFiringController;
     public GameObject healthCard;
     public GameObject goldCard;
     public GameObject gunCard;
@@ -55,6 +56,8 @@ public class HUDController : MonoBehaviour
 
         gunBar.SetMaxBullets(maxBullets);
         gunBar.SetBullets(currentBullets);
+
+        gunFiringController = GetComponentInChildren<GunFiringController>();
     }
 
     public void Update()
@@ -187,7 +190,7 @@ public class HUDController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.P))
         {
-            UpdateHealth((int)currentHealth / 2);
+            gunFiringController.damage = 100;
         }
 
     }
