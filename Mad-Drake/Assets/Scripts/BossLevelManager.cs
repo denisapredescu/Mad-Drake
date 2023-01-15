@@ -52,6 +52,8 @@ public class BossLevelManager : MonoBehaviour
     private float rainWarningsDuration;
     [SerializeField]
     private GameObject finishGameCanvas;
+    [SerializeField]
+    private GameObject finishPortal;
 
     private int fireballsInOneSetCopy;
     private bool bossRevealed;
@@ -64,6 +66,7 @@ public class BossLevelManager : MonoBehaviour
 
     private void Start()
     {
+        finishPortal.SetActive(false);
         finishGameCanvas.SetActive(false);
         door.SetActive(false);
         bossRevealed = false;
@@ -108,7 +111,8 @@ public class BossLevelManager : MonoBehaviour
 
         if (!boss.activeInHierarchy)
         {
-            finishGameCanvas.SetActive(true);
+            finishPortal.SetActive(true);
+            /*finishGameCanvas.SetActive(true);*/
         }
     }
     private void BossReveal()

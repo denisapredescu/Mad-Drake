@@ -50,15 +50,16 @@ public class EndGameScript : MonoBehaviour
             isTaken = true;
             // cod folosit doar la finalul jocului cand se ajunge la nivelul X
             Debug.Log(SceneManager.GetActiveScene().name);
-            if (SceneManager.GetActiveScene().name.Equals("SampleScene")) // aici va trebui modificat cu ultimul nivel
+            if (SceneManager.GetActiveScene().name.Equals("BossLevel")) // aici va trebui modificat cu ultimul nivel
             {
+                Debug.Log("test");
                 Time.timeScale = 0;
                 _endGameCanvas.gameObject.SetActive(true);
 
                 float gold = (float)HUDController.getGold();
                 float lives = (float)HUDController.getLives();
                 float damageTaken = (float)HUDController.getDamageTaken();
-                newScore = gold / ((lives + 1) * damageTaken);
+                newScore = ((gold + lives) + 1) / (damageTaken + 1);
                 newScore = (float)(Mathf.Round(newScore * 100) / 100.0);
                 scoreGUI.text = $"Your score: {newScore}";
 
