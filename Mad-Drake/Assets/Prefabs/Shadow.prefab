@@ -505,6 +505,7 @@ MonoBehaviour:
   toFollow: {fileID: 4598070040644708721}
   speed: 3.5
   attackRange: 1.1
+  coin: {fileID: 6345514548074416105, guid: 6016964eb09ad0948acf9b77ceb78f35, type: 3}
   health: 5
   healthBar: {fileID: 4598070041569979629}
   canvas: {fileID: 4598070040644708717}

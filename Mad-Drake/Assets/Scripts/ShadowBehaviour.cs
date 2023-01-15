@@ -15,6 +15,7 @@ public class ShadowBehaviour : MonoBehaviour
     private Animator anim;
     private Vector3 allignToCenter = new(0.0f, -0.5f);
     private readonly int layerMask = ~(1 << 8);
+    public GameObject coin;
 
     [SerializeField]
     private int health = 5;
@@ -114,8 +115,10 @@ public class ShadowBehaviour : MonoBehaviour
             shadowDamageAudio.Play();
         health -= value;
         healthBar.value = health;
-        if (health <= 0)
+        if (health <= 0) {
+            Instantiate(coin,transform.position,Quaternion.identity);
             gameObject.SetActive(false);
+        }
     }
 
     public int GetHealth()

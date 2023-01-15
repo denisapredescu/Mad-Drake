@@ -1297,7 +1297,7 @@ MonoBehaviour:
   m_Version: 2
 --- !u!95 &519420035
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1314,7 +1314,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &532974986
 GameObject:
   m_ObjectHideFlags: 0
@@ -7140,7 +7140,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &808399212
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -7157,7 +7157,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &809349437
 GameObject:
   m_ObjectHideFlags: 0
@@ -21329,6 +21329,7 @@ MonoBehaviour:
   toFollow: {fileID: 8426568964262617135}
   speed: 3.5
   attackRange: 1.1
+  coin: {fileID: 6345514548074416105, guid: 6016964eb09ad0948acf9b77ceb78f35, type: 3}
   health: 20
   healthBar: {fileID: 8426568964409058739}
   canvas: {fileID: 8426568964262617139}
@@ -21351,7 +21352,7 @@ CapsuleCollider2D:
   m_Direction: 0
 --- !u!95 &8139423056884546519
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -21368,7 +21369,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &8139907710325616788
 GameObject:
   m_ObjectHideFlags: 0
@@ -22288,7 +22289,7 @@ Canvas:
   m_TargetDisplay: 0
 --- !u!95 &8426568964262617141
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -22305,7 +22306,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &8426568964409058737
 GameObject:
   m_ObjectHideFlags: 0
