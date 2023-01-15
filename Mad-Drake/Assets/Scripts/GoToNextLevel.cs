@@ -11,8 +11,6 @@ public class GoToNextLevel : MonoBehaviour
     [SerializeField]
     private GameObject textInfoNextLevel;
     private bool inTrigger;
-    [SerializeField]
-    private string nextSceneName;
 
     public static bool isEnded = false;
 
@@ -32,7 +30,14 @@ public class GoToNextLevel : MonoBehaviour
                 isEnded = true;
             else 
             {
-                //SceneManager.LoadScene(nextSceneName);    // nu mai functioneaza trecerea la nivel 2 pentru ca hudul nu mai se potriveste
+                Scene scene = SceneManager.GetActiveScene();
+                switch(scene.name)
+                {
+                    case "L1": SceneManager.LoadScene("L2"); break;
+                    case "L2": SceneManager.LoadScene("L3"); break;
+                    case "L3": SceneManager.LoadScene("Boss Level"); break;
+                    default: break;
+                }
                 Start();
             }
             
