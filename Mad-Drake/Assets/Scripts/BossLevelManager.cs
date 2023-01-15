@@ -103,12 +103,15 @@ public class BossLevelManager : MonoBehaviour
             Debug.Log("Boss dead");
         }
 
+        if(player.transform.position.x > 11f)
+        {
+            door.SetActive(true);
+        }
     }
     private void BossReveal()
     {
         if (player.transform.position.x > 9.2f)
-        {
-            door.SetActive(true);
+        {   
             camera.transform.position = new Vector3(camera.transform.position.x + 18, camera.transform.position.y, camera.transform.position.z);
             bossRevealCameraAnimator.Play("camera_reveal_boss");
             bossHealthShowAnimator.Play("boss_health_show");

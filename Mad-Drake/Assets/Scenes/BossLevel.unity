@@ -160,6 +160,7 @@ MonoBehaviour:
   boss: {fileID: 8138054418790564202}
   player: {fileID: 1818455085}
   camera: {fileID: 519420028}
+  door: {fileID: 2110118542}
   fireballSpawn: {fileID: 1128022939}
   fireballPrefab: {fileID: 1624561058507052862, guid: 6bd777465c6704a4bac1c59c8d136777, type: 3}
   delayBetweenFireballs: 1
@@ -20471,7 +20472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2110118543
 Transform:
   m_ObjectHideFlags: 0
@@ -20500,7 +20501,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01140511, y: 0.7413393}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0.25, y: 0.25, z: 0.25, w: 0.25}
     pivot: {x: 0.5, y: 0.5}
@@ -20511,7 +20512,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.9475794, y: 2.4526787}
+  m_Size: {x: 3.37, y: 0.5}
   m_EdgeRadius: 0
 --- !u!212 &2110118545
 SpriteRenderer:
