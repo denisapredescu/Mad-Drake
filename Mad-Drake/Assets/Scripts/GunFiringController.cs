@@ -23,7 +23,7 @@ public class GunFiringController : MonoBehaviour
     [SerializeField]
     private int magazineSize = 10;
     [SerializeField]
-    private uint damage = 1;
+    public uint damage = 1;
     private int activeMagazine = 0;
     [SerializeField]
     private float reloadTime = 2.0f;

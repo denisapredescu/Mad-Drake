@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class HUDController : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class HUDController : MonoBehaviour
     public static int currentHealth;
     private static int maxBullets = 10;
     private static int currentBullets;
+    private GunFiringController gunFiringController;
     public GameObject healthCard;
     public GameObject goldCard;
     public GameObject gunCard;
@@ -54,6 +56,8 @@ public class HUDController : MonoBehaviour
 
         gunBar.SetMaxBullets(maxBullets);
         gunBar.SetBullets(currentBullets);
+
+        gunFiringController = GetComponentInChildren<GunFiringController>();
     }
 
     public void Update()
@@ -70,6 +74,7 @@ public class HUDController : MonoBehaviour
             gunGUI.text = $"{currentBullets}/{maxBullets}";
             numberOfBulletsIsChanged = false;
         }
+        GodMode();
     }
 
     public static void ChangeValueOfMagazineSize(int currentValue)
@@ -102,6 +107,22 @@ public class HUDController : MonoBehaviour
                 playerIsDead = true;
             } 
         }
+    }
+
+    public void UpdateHealth(int healthValue)
+    {
+        if(healthValue <= maxHealth)
+        {
+            currentHealth = healthValue;
+            healthBar.SetHealth(currentHealth);
+            healthGUI.text = $"{currentHealth}/{maxHealth}";
+        }
+    }
+
+    public void UpdateMaxHealth(int maxHealthValue)
+    {
+        maxHealth = maxHealthValue;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     public static void AddGold()
@@ -156,5 +177,21 @@ public class HUDController : MonoBehaviour
     {
         return damageTaken;
     }
+    private void GodMode()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            UpdateMaxHealth(100);
+            UpdateHealth(currentHealth);
+        }
+        else if (Input.GetKeyDown(KeyCode.O))
+        {
+            UpdateHealth(maxHealth);
+        }
+        else if (Input.GetKeyDown(KeyCode.P))
+        {
+            gunFiringController.damage = 100;
+        }
 
+    }
 }
