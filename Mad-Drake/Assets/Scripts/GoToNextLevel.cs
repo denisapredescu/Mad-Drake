@@ -40,7 +40,7 @@ public class GoToNextLevel : MonoBehaviour
                 {
                     case "L1": SceneManager.LoadScene("L2"); break;
                     case "L2": SceneManager.LoadScene("L3"); break;
-                    case "L3": SceneManager.LoadScene("Boss Level"); break;
+                    case "L3": SceneManager.LoadScene("BossLevel"); break;
                     default: break;
                 }
                 Start();
