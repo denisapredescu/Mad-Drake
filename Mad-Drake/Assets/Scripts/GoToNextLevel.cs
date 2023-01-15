@@ -26,7 +26,7 @@ public class GoToNextLevel : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && inTrigger)
         {
 
-            if (SceneManager.GetActiveScene().name.Equals("SampleScene")) // aici va trebui modificat cu ultimul nivel
+            if (SceneManager.GetActiveScene().name.Equals("Boss Level")) // aici va trebui modificat cu ultimul nivel
                 isEnded = true;
             else 
             {
