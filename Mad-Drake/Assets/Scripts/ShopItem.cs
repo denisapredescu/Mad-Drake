@@ -15,7 +15,7 @@ public class ShopItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("IgnoreBullet");
+        player = GameObject.FindGameObjectWithTag("Player");
         area = transform.Find("AreaOfEffect").gameObject;
         text = transform.Find("Texts").gameObject;
     }

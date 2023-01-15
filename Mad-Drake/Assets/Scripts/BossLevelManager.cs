@@ -50,6 +50,8 @@ public class BossLevelManager : MonoBehaviour
     private float delayBetweenRain;
     [SerializeField]
     private float rainWarningsDuration;
+    [SerializeField]
+    private GameObject finishGameCanvas;
 
     private int fireballsInOneSetCopy;
     private bool bossRevealed;
@@ -62,6 +64,7 @@ public class BossLevelManager : MonoBehaviour
 
     private void Start()
     {
+        finishGameCanvas.SetActive(false);
         door.SetActive(false);
         bossRevealed = false;
         canGoToPhase2 = false;
@@ -98,14 +101,14 @@ public class BossLevelManager : MonoBehaviour
             }
         }
 
-        if (!boss.activeInHierarchy)
-        {
-            Debug.Log("Boss dead");
-        }
-
         if(player.transform.position.x > 11f)
         {
             door.SetActive(true);
+        }
+
+        if (!boss.activeInHierarchy)
+        {
+            finishGameCanvas.SetActive(true);
         }
     }
     private void BossReveal()
