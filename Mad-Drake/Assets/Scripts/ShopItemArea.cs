@@ -13,14 +13,14 @@ public class ShopItemArea : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "IgnoreBullet") {
+        if(col.gameObject.tag == "Player") {
             isInArea = true;
         }
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
-        if(col.gameObject.tag == "IgnoreBullet") {
+        if(col.gameObject.tag == "Player") {
             isInArea = false;
         }
     }
