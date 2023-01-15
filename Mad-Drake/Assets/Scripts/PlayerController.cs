@@ -151,6 +151,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnParticleCollision(GameObject other)
+    {
+        // for final boss phase 2 
+        TakeDamage(1, new Vector3(0, 0, 0), 0.2f);
+    }
+
     public void RotatePlayer()
     {
         if (MenuController.GameRunning)
