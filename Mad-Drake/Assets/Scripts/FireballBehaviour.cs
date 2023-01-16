@@ -23,7 +23,9 @@ public class FireballBehaviour : MonoBehaviour
         float xTarget = playerPosition.x;
         float yTarget = playerPosition.y;
 
-        targetPosition = new Vector3(-10, yStart + ((yTarget-yStart)/(xTarget-xStart))*(-10-xStart), transform.position.z);
+        /*targetPosition = new Vector3(-10, yStart + ((yTarget-yStart)/(xTarget-xStart))*(-10-xStart), transform.position.z);*/
+        Vector3 moveVec = (new Vector3(xTarget, yTarget) - new Vector3(xStart, yStart));
+        targetPosition = new Vector3(xStart, yStart) + moveVec * 20;
 
         fireball = transform.Find("FireBall").gameObject;
         explosion = transform.Find("Explosion").gameObject;
@@ -35,7 +37,7 @@ public class FireballBehaviour : MonoBehaviour
     private void Update()
     {
         if(canMove)
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition * 2, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
