@@ -523,6 +523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  delayActivate: 0.5
 --- !u!82 &-5310813712467481444
 AudioSource:
   m_ObjectHideFlags: 0

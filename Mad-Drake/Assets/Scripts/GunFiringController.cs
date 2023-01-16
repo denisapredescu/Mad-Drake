@@ -39,6 +39,9 @@ public class GunFiringController : MonoBehaviour
     [SerializeField]
     private AudioSource gunshotAudio;
 
+    [SerializeField]
+    private PlayerController playerController;
+
     public int GetMagazineSize()
     {
         return magazineSize;
@@ -127,11 +130,11 @@ public class GunFiringController : MonoBehaviour
                         activeBullet.transform.SetPositionAndRotation(tipTransform.position, tipTransform.rotation);
                         if (bulletType == BulletType.Bullet)
                         {
-                            activeBullet.GetComponent<BulletMovement>().SetDamage(damage);
+                            activeBullet.GetComponent<BulletMovement>().SetDamage(damage + (uint)playerController.bonusDamage);
                         }
                         else
                         {
-                            activeBullet.GetComponent<RocketMovement>().SetDamage(damage);
+                            activeBullet.GetComponent<RocketMovement>().SetDamage(damage + (uint)playerController.bonusDamage);
                         }
                         activeBullet.SetActive(true);
                     }
@@ -140,12 +143,12 @@ public class GunFiringController : MonoBehaviour
                         activeBullet = Instantiate(bullet, tipTransform.position, tipTransform.rotation);
                         if (bulletType == BulletType.Bullet)
                         {
-                            activeBullet.GetComponent<BulletMovement>().SetDamage(damage);
+                            activeBullet.GetComponent<BulletMovement>().SetDamage(damage + (uint)playerController.bonusDamage);
                             activeBullet.GetComponent<BulletMovement>().SetActionAddBullet(AddBullet);
                         }
                         else
                         {
-                            activeBullet.GetComponent<RocketMovement>().SetDamage(damage);
+                            activeBullet.GetComponent<RocketMovement>().SetDamage(damage + (uint)playerController.bonusDamage);
                             activeBullet.GetComponent<RocketMovement>().SetActionAddBullet(AddBullet);
                         }
                     }

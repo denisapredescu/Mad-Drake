@@ -12,9 +12,9 @@ public class SwitchGuns : MonoBehaviour
     private GameObject reloadAnim;
     private float activeGun = 1;
 
-    private bool gun2Unlocked = true;
-    private bool gun3Unlocked = true;
-    
+    private bool gun2Unlocked = false;
+    private bool gun3Unlocked = false;
+
     public void UnlockGun2()
     {
         gun2Unlocked = true;

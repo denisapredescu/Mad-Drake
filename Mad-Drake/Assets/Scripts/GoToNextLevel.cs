@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
-using System;
-using System.IO;
 
 public class GoToNextLevel : MonoBehaviour
 {
@@ -32,7 +27,6 @@ public class GoToNextLevel : MonoBehaviour
                 isEnded = true;
                 Debug.Log("isEnded");
             }
-                
             else 
             {
                 Scene scene = SceneManager.GetActiveScene();

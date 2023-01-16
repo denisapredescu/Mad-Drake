@@ -2108,8 +2108,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000022888184, y: -1.0283}
-  m_SizeDelta: {x: 59.4322, y: 46.572}
+  m_AnchoredPosition: {x: -0.56020355, y: -1.0283003}
+  m_SizeDelta: {x: 201.748, y: 46.572}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &746626586
 MonoBehaviour:
@@ -2165,7 +2165,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2208,6 +2208,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746626584}
   m_CullTransparentMesh: 1
+--- !u!1 &751348541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751348543}
+  - component: {fileID: 751348542}
+  m_Layer: 0
+  m_Name: SaveData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &751348542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751348541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b554bd0833afb8c4c8189a1a19e4b8ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 1818455090}
+  hudController: {fileID: 1818455088}
+  switchGuns: {fileID: 1818455086}
+  freshStart: 1
+  _coins:
+    number: 0
+  _damageTaken:
+    damage: 0
+  _weaponUnlocked:
+    gun2: 0
+    gun3: 0
+  _upgrades:
+    health: 0
+    damage: 0
+    speed: 0
+--- !u!4 &751348543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751348541}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 440.06238, y: 184.8784, z: -6.557871}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &787658227
 GameObject:
   m_ObjectHideFlags: 0
@@ -4185,6 +4244,7 @@ MonoBehaviour:
   - {fileID: 3276946393025172312, guid: 402d3ac6a9bbfec42976e682879a32cc, type: 3}
   playerIfUsingStartRooms: {fileID: 1818455085}
   specialEndRooms:
+  - {fileID: 4850755581596231123, guid: 399bf08b093095a4c8f5fc476f46d351, type: 3}
   - {fileID: 2726891468649286100, guid: bb0656b4d8e42e448ad91c56eaa9d611, type: 3}
   doorsNone: {fileID: 5441472426128138861, guid: 6d32f5725c35bf54ba0a1745bdea2dad, type: 3}
   doorsLeft: {fileID: 4769564092439180397, guid: ca2a7a0ad2f4e344e9a0e0d0d249afb6, type: 3}
@@ -4212,10 +4272,10 @@ MonoBehaviour:
   maximumYForSpawn: 3
   collectibles:
   - gameObject: {fileID: 6345514548074416105, guid: 6016964eb09ad0948acf9b77ceb78f35, type: 3}
-    maximumNumber: 20
+    maximumNumber: 10
     chanceOfSpawn: 0.99
   - gameObject: {fileID: 5471230374469097056, guid: f0a75908ecd29af4ea97faf51529f001, type: 3}
-    maximumNumber: 2
+    maximumNumber: 3
     chanceOfSpawn: 0.99
   - gameObject: {fileID: 3591640962735648407, guid: a76b56d22c14acd478e3bdfe4515b1ed, type: 3}
     maximumNumber: 1
@@ -4685,7 +4745,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1746116213
 MonoBehaviour:
@@ -4720,6 +4780,39 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2993097353134942194, guid: 002443ff5ec3dce4b8727f9dbb21a069, type: 3}
   m_PrefabInstance: {fileID: 2017559931}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1818455086 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1461138402137765995, guid: 002443ff5ec3dce4b8727f9dbb21a069, type: 3}
+  m_PrefabInstance: {fileID: 2017559931}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818455085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba8caab1c252d5479526533c64a09f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1818455088 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4430560646246288708, guid: 002443ff5ec3dce4b8727f9dbb21a069, type: 3}
+  m_PrefabInstance: {fileID: 2017559931}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818455085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cd5003f0f2bc5b4dbe28d9013bba8cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1818455090 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4453671489880107438, guid: 002443ff5ec3dce4b8727f9dbb21a069, type: 3}
+  m_PrefabInstance: {fileID: 2017559931}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818455085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a0092c427e6374e83c8d60fd1f2ee7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1850490506
 GameObject:
   m_ObjectHideFlags: 0
@@ -5377,7 +5470,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2629746995567776209, guid: 002443ff5ec3dce4b8727f9dbb21a069, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2629746995567776209, guid: 002443ff5ec3dce4b8727f9dbb21a069, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5654,8 +5747,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000022888184, y: -1.0283}
-  m_SizeDelta: {x: 59.4322, y: 46.572}
+  m_AnchoredPosition: {x: 0.00009918213, y: -1.0283003}
+  m_SizeDelta: {x: 165.4742, y: 46.572}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2077556315
 MonoBehaviour:
@@ -5711,7 +5804,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

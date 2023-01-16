@@ -483,6 +483,9 @@ public class LevelGenerator : MonoBehaviour
             {
                 while (index == -1)
                 {
+                    RoomInfo intermRoom = rooms.GetByCoord(room.Coord.x + directionX[(int)direction] * pas, room.Coord.y + directionY[(int)direction] * pas);
+                    intermRoom.AddDirection(direction);
+                    intermRoom.AddDirection(OppositeDirection(direction));
                     pas++;
                     index = AddRoom(room.Coord.x + directionX[(int)direction] * pas, room.Coord.y + directionY[(int)direction] * pas);
                 }

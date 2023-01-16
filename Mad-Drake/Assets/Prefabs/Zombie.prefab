@@ -954,6 +954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  delayActivate: 0.5
 --- !u!58 &2841250325134429164
 CircleCollider2D:
   m_ObjectHideFlags: 0
