@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1334951404256435317}
   - component: {fileID: 1334951404256435319}
   - component: {fileID: 1334951404256435318}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,8 +104,6 @@ MonoBehaviour:
   timeUntilDestruction: 5
   explosionEffect: {fileID: 1334951405469524421}
   explosionRange: 1.8
-  delayToLock: 0.5
-  distanceToSearch: 5
 --- !u!50 &1334951404256435319
 Rigidbody2D:
   serializedVersion: 4

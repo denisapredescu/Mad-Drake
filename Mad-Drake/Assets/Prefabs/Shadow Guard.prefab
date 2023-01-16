@@ -1264,6 +1264,7 @@ MonoBehaviour:
   healthBar: {fileID: 5489812728801072212}
   canvas: {fileID: 5489812728665062804}
   enemyDamageAudio: {fileID: -8317097483662598705}
+  coin: {fileID: 6345514548074416105, guid: 6016964eb09ad0948acf9b77ceb78f35, type: 3}
 --- !u!50 &7378842590492641695
 Rigidbody2D:
   serializedVersion: 4
@@ -1334,6 +1335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  delayActivate: 0.5
 --- !u!82 &-8317097483662598705
 AudioSource:
   m_ObjectHideFlags: 0

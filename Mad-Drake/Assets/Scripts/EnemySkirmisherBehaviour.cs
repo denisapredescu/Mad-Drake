@@ -29,6 +29,8 @@ public class EnemySkirmisherBehaviour : MonoBehaviour
 
     [SerializeField]
     private AudioSource enemyDamageAudio;
+    [SerializeField]
+    private GameObject coin;
 
     private void Start()
     {
@@ -132,6 +134,9 @@ public class EnemySkirmisherBehaviour : MonoBehaviour
         health -= value;
         healthBar.value = health;
         if (health <= 0)
+        {
+            Instantiate(coin, transform.position, Quaternion.identity);
             gameObject.SetActive(false);
+        }
     }
 }

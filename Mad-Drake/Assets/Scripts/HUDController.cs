@@ -26,13 +26,16 @@ public class HUDController : MonoBehaviour
     public static int goldScore = 0;
     public static int bombs = 3;
 
-    private static int damageTaken;
+    public static int damageTaken;
+
+    public static SaveData saveData;
 
     [SerializeField]
     private AudioSource potionCollectAudio;
 
     private void Start()
     {
+        saveData = FindObjectOfType<SaveData>();
         damageTaken = 0;
         goldScore = 0;
         currentHealth = maxHealth;
@@ -98,8 +101,10 @@ public class HUDController : MonoBehaviour
     {
         if (!playerIsDead)
         {
-            damageTaken += 1;
-            currentHealth -= damage;
+            saveData.AddDamageTaken(Math.Min(damage, currentHealth));
+            damageTaken += Math.Min(damage, currentHealth);
+            currentHealth -= Math.Min(damage, currentHealth);
+
             healthBar.SetHealth(currentHealth);
             healthGUI.text = $"{currentHealth}/{maxHealth}";
             if (currentHealth <= 0)
@@ -127,6 +132,7 @@ public class HUDController : MonoBehaviour
 
     public static void AddGold()
     {
+        saveData.AddCoins(1);
         goldScore++;
         goldGUI.text = $"{goldScore}";
     }
