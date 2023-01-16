@@ -30,27 +30,33 @@ public class ShadowHitEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log("ajunge aici");
-        if (canHit && toHit != null)
+        if (!waiting && canHit && toHit != null)
         {
             Vector3 forces = toHit.transform.position - transform.position;
             toHit.GetComponent<PlayerController>().TakeDamage(damage, forceOfImpact * forces.normalized, timeForImpact);
-            canHit = false;
+            waiting = true;
             StartCoroutine(WaitToHitAgain());
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(!waiting && collision.gameObject == toHit)
+        if(collision.gameObject == toHit)
         {
             canHit = true;
         }
     }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject == toHit)
+        {
+            canHit = false;
+        }
+    }
+
     private IEnumerator WaitToHitAgain()
     {
-        waiting = true;
         yield return new WaitForSeconds(delay);
         waiting = false;
     }

@@ -31,11 +31,15 @@ public class ShadowBehaviour : MonoBehaviour
         rb2 = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         healthBar.maxValue = health;
+        healthBar.value = health;
     }
 
     private void Update()
     {
-        if (toFollow.transform.position.x - transform.position.x < 0.0f)
+        if (follow && toFollow != null)
+            anim.SetBool("run", true);
+
+        if (toFollow != null && toFollow.transform.position.x - transform.position.x < 0.0f)
         {
             transform.localScale = new Vector3(
                 Mathf.Abs(transform.localScale.x),

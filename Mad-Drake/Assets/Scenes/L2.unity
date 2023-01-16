@@ -4097,13 +4097,13 @@ MonoBehaviour:
   player: {fileID: 1818455085}
   playerCamera: {fileID: 519420032}
   enemiesInRoom:
-    from: 2
-    to: 4
+    from: 3
+    to: 5
   enemies:
   - enemy: {fileID: 4309560997670373428, guid: 1221d039055473d41880cb9980a15df3, type: 3}
-    valueOfEnemy: 1
+    valueOfEnemy: 2
   - enemy: {fileID: 7380782120730986635, guid: f1a97baddfc5d3b41ba7c3c40e147891, type: 3}
-    valueOfEnemy: 3
+    valueOfEnemy: 2
 --- !u!114 &1683081793
 MonoBehaviour:
   m_ObjectHideFlags: 0
