@@ -66,7 +66,8 @@ public class BossLevelManager : MonoBehaviour
 
     private void Start()
     {
-        finishPortal.SetActive(false);
+        finishPortal.GetComponent<CircleCollider2D>().enabled = false;
+        finishPortal.GetComponent<SpriteRenderer>().enabled = false;
         finishGameCanvas.SetActive(false);
         door.SetActive(false);
         bossRevealed = false;
@@ -111,7 +112,8 @@ public class BossLevelManager : MonoBehaviour
 
         if (!boss.activeInHierarchy)
         {
-            finishPortal.SetActive(true);
+            finishPortal.GetComponent<CircleCollider2D>().enabled = true;
+            finishPortal.GetComponent<SpriteRenderer>().enabled = true;
             /*finishGameCanvas.SetActive(true);*/
         }
     }
