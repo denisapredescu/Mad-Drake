@@ -8,6 +8,8 @@ public class FireballBehaviour : MonoBehaviour
     private float speed;
     [SerializeField]
     private float forceOfImpact;
+    [SerializeField]
+    private AudioSource fireballHitSound;
     private Vector3 targetPosition;
     GameObject fireball;
     GameObject explosion;
@@ -50,6 +52,7 @@ public class FireballBehaviour : MonoBehaviour
             collision.gameObject.GetComponent<PlayerController>().TakeDamage(1, forces.normalized * forceOfImpact, 0.2f);
             canMove = false;
             Destroy(fireball);
+            fireballHitSound.Play();
             explosion.GetComponent<Animator>().enabled = true;
             StartCoroutine(DestroyMe());
         }
@@ -58,6 +61,7 @@ public class FireballBehaviour : MonoBehaviour
         {
             canMove = false;
             Destroy(fireball);
+            fireballHitSound.Play();
             explosion.GetComponent<Animator>().enabled = true;
             StartCoroutine(DestroyMe());
         }
