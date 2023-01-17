@@ -22,15 +22,18 @@ public class ShowHighscoreScript : MonoBehaviour
 
     void Start()
     {
+        Highscore highscore = new();
 
-        var pullData = File.ReadAllText(saveFilePath);
-        var highscore = JsonUtility.FromJson<Highscore>(pullData);
-
-
-        if (highscore.players.Count >= 1)
+        if(File.Exists(saveFilePath))
         {
-            name1.text = highscore.players[0].name;
-            score1.text = highscore.players[0].score.ToString();
+            string pullData = File.ReadAllText(saveFilePath);
+            highscore = JsonUtility.FromJson<Highscore>(pullData);
+        }
+
+        if (highscore.Players.Count >= 1)
+        {
+            name1.text = highscore.Players[0].name;
+            score1.text = highscore.Players[0].score.ToString();
         }
         else
         {
@@ -38,10 +41,10 @@ public class ShowHighscoreScript : MonoBehaviour
             score1.text = "";
         }
 
-        if (highscore.players.Count >= 2)
+        if (highscore.Players.Count >= 2)
         {
-            name2.text = highscore.players[1].name;
-            score2.text = highscore.players[1].score.ToString();
+            name2.text = highscore.Players[1].name;
+            score2.text = highscore.Players[1].score.ToString();
         }
         else
         {
@@ -49,10 +52,10 @@ public class ShowHighscoreScript : MonoBehaviour
             score2.text = "";
         }
 
-        if (highscore.players.Count >= 3)
+        if (highscore.Players.Count >= 3)
         {
-            name3.text = highscore.players[2].name;
-            score3.text = highscore.players[2].score.ToString();
+            name3.text = highscore.Players[2].name;
+            score3.text = highscore.Players[2].score.ToString();
         }
         else
         {
@@ -60,10 +63,10 @@ public class ShowHighscoreScript : MonoBehaviour
             score3.text = "";
         }
 
-        if (highscore.players.Count >= 4)
+        if (highscore.Players.Count >= 4)
         {
-            name4.text = highscore.players[3].name;
-            score4.text = highscore.players[3].score.ToString();
+            name4.text = highscore.Players[3].name;
+            score4.text = highscore.Players[3].score.ToString();
         }
         else
         {
@@ -71,10 +74,10 @@ public class ShowHighscoreScript : MonoBehaviour
             score4.text = "";
         }
 
-        if (highscore.players.Count == 5)
+        if (highscore.Players.Count == 5)
         {
-            name5.text = highscore.players[4].name;
-            score5.text = highscore.players[4].score.ToString();
+            name5.text = highscore.Players[4].name;
+            score5.text = highscore.Players[4].score.ToString();
         }
         else
         {

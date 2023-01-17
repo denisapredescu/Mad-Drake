@@ -48,6 +48,7 @@ public class UniversalSetTarget : MonoBehaviour
 
     public void SetEnemyActivity(bool active)
     {
-        StartCoroutine(WaitToSetActivity(active));
+        if(gameObject.activeSelf)
+            StartCoroutine(WaitToSetActivity(active));
     }
 }
