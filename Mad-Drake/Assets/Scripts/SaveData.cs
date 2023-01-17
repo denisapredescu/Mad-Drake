@@ -29,10 +29,6 @@ public class SaveData : MonoBehaviour
             GetDamageTaken();
             GetWeaponUnlocked();
             GetUpgrades();
-            Debug.Log("Coins:" + _coins.number);
-            Debug.Log("DamageTaken:" + _damageTaken.damage);
-            Debug.Log("Upgrades: damage " + _upgrades.damage + " speed " + _upgrades.speed + " health " + _upgrades.health);
-            Debug.Log("Weapons:" + _weaponUnlocked.gun2 + " " + _weaponUnlocked.gun3);
         }
         else
         {

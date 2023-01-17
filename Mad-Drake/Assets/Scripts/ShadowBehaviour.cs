@@ -115,13 +115,17 @@ public class ShadowBehaviour : MonoBehaviour
     }
     public void TakeDamage(int value)
     {
-        if (shadowDamageAudio != null)
-            shadowDamageAudio.Play();
         health -= value;
         healthBar.value = health;
-        if (health <= 0) {
+        if (health <= 0) 
+        {
             Instantiate(coin,transform.position,Quaternion.identity);
             gameObject.SetActive(false);
+        } 
+        else
+        {
+            if(shadowDamageAudio != null)
+                shadowDamageAudio.Play();
         }
     }
 

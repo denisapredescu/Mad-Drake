@@ -302,6 +302,8 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField]
     private List<Enemy> enemies;
 
+    private bool initialized = false;
+
     //adds the new room in array and also the reference in the map
     private int AddRoom(int x, int y)
     {
@@ -327,6 +329,8 @@ public class LevelGenerator : MonoBehaviour
         {
             Build(i);
         }
+
+        initialized = true;
     }
 
     private RoomInfo activeRoomForEnemies;
@@ -357,6 +361,9 @@ public class LevelGenerator : MonoBehaviour
 
     private void Update()
     {
+        if (!initialized)
+            return;
+
         if (lastCameraPosition != playerCamera.position)
         {
             if (lastCameraPosition.x < playerCamera.position.x)

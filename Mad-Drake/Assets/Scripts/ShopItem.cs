@@ -8,7 +8,6 @@ public class ShopItem : MonoBehaviour
     public int price;
     private GameObject player;
     private GameObject area;
-    private HUDController coinController;
     private GameObject text;
     // Start is called before the first frame update
 

@@ -11,8 +11,6 @@ public class GoToNextLevel : MonoBehaviour
 
     private void Start()
     {
-        textInfoNextLevel = GameObject.Find("InfoNextLevel");
-        textInfoNextLevel.SetActive(false);
         inTrigger = false;
         isEnded = false;
     }
@@ -25,7 +23,6 @@ public class GoToNextLevel : MonoBehaviour
             {
 
                 isEnded = true;
-                Debug.Log("isEnded");
             }
             else 
             {
