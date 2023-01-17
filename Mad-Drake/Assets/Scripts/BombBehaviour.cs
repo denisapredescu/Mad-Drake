@@ -13,6 +13,10 @@ public class BombBehaviour : MonoBehaviour
         if (collision.gameObject.CompareTag("Shadow"))
         {
             collision.gameObject.GetComponent<ShadowBehaviour>().TakeDamage(damage);
+        } 
+        else if (collision.gameObject.CompareTag("Shadow Guard"))
+        {
+            collision.gameObject.GetComponent<EnemySkirmisherBehaviour>().TakeDamage(damage);
         }
     }
 
