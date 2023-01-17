@@ -54,6 +54,8 @@ public class BossLevelManager : MonoBehaviour
     private GameObject finishGameCanvas;
     [SerializeField]
     private GameObject finishPortal;
+    [SerializeField]
+    private AudioSource fireballSpawnSound;
 
     private int fireballsInOneSetCopy;
     private bool bossRevealed;
@@ -66,7 +68,8 @@ public class BossLevelManager : MonoBehaviour
 
     private void Start()
     {
-        finishPortal.SetActive(false);
+        finishPortal.GetComponent<CircleCollider2D>().enabled = false;
+        finishPortal.GetComponent<SpriteRenderer>().enabled = false;
         finishGameCanvas.SetActive(false);
         door.SetActive(false);
         bossRevealed = false;
@@ -111,7 +114,8 @@ public class BossLevelManager : MonoBehaviour
 
         if (!boss.activeInHierarchy)
         {
-            finishPortal.SetActive(true);
+            finishPortal.GetComponent<CircleCollider2D>().enabled = true;
+            finishPortal.GetComponent<SpriteRenderer>().enabled = true;
             /*finishGameCanvas.SetActive(true);*/
         }
     }
@@ -151,6 +155,7 @@ public class BossLevelManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delayBetweenFireballs);
         Instantiate(fireballPrefab, new Vector3(fireballSpawn.position.x, fireballSpawn.position.y, fireballSpawn.position.z), Quaternion.identity);
+        fireballSpawnSound.Play();
         if(boss.activeInHierarchy)
         {
             if(bossCurrentHealth > bossMaxHealth / 2)
