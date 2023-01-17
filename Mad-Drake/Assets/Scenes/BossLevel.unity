@@ -19568,7 +19568,7 @@ MonoBehaviour:
   playerController: {fileID: 2017559934}
   hudController: {fileID: 2017559933}
   switchGuns: {fileID: 2017559932}
-  freshStart: 0
+  freshStart: 1
   _coins:
     number: 0
   _damageTaken:
@@ -19578,7 +19578,7 @@ MonoBehaviour:
     gun3: 0
   _upgrades:
     health: 0
-    damage: 0
+    damage: 500
     speed: 0
 --- !u!4 &1368882042
 Transform:
@@ -23942,7 +23942,7 @@ MonoBehaviour:
   speed: 3.5
   attackRange: 1.1
   coin: {fileID: 6345514548074416105, guid: 6016964eb09ad0948acf9b77ceb78f35, type: 3}
-  health: 500
+  health: 800
   healthBar: {fileID: 8426568964409058739}
   canvas: {fileID: 8426568964262617139}
   shadowDamageAudio: {fileID: 0}
