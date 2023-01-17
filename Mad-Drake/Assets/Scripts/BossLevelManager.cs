@@ -101,7 +101,6 @@ public class BossLevelManager : MonoBehaviour
             // just first time will enter in this else
             else
             {
-                Debug.Log("Boss arrived at phase2");
                 ChooseFireRainIndex();
                 bossArrivedAtPhase2 = true;
             }
@@ -180,7 +179,6 @@ public class BossLevelManager : MonoBehaviour
     private void ChooseFireRainIndex()
     {
         noFireRainIndex = Random.Range(1, 4);
-        Debug.Log("Chosen fire rain index with no rain: " + noFireRainIndex);
         if (boss.activeInHierarchy)
             StartCoroutine(ShowRainWarnings());
 

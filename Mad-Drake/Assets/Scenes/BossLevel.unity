@@ -23942,7 +23942,7 @@ MonoBehaviour:
   speed: 3.5
   attackRange: 1.1
   coin: {fileID: 6345514548074416105, guid: 6016964eb09ad0948acf9b77ceb78f35, type: 3}
-  health: 500
+  health: 800
   healthBar: {fileID: 8426568964409058739}
   canvas: {fileID: 8426568964262617139}
   shadowDamageAudio: {fileID: 0}
