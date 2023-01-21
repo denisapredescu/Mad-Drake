@@ -5,11 +5,10 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using System;
 using System.IO;
-using System.Linq;
 
 public class EndGameScript : MonoBehaviour
 {
-    public string SaveFilePath => Application.persistentDataPath + "/highscore.json";
+    public string saveFilePath => Application.persistentDataPath + "/highscore.json";
     private string newName;
     private float newScore = 0.0f;
     private static TextMeshProUGUI scoreGUI;
@@ -21,12 +20,6 @@ public class EndGameScript : MonoBehaviour
     {
         public string name;
         public float score;
-
-        public PlayerInfo(string name, float score)
-        {
-            this.name = name;
-            this.score = score;
-        }
     }
 
     [System.Serializable]
@@ -55,8 +48,11 @@ public class EndGameScript : MonoBehaviour
         if (GoToNextLevel.isEnded && !isTaken) // s-a terminat jocul
         {
             isTaken = true;
+            // cod folosit doar la finalul jocului cand se ajunge la nivelul X
+            Debug.Log(SceneManager.GetActiveScene().name);
             if (SceneManager.GetActiveScene().name.Equals("BossLevel")) // aici va trebui modificat cu ultimul nivel
             {
+                Debug.Log("test");
                 Time.timeScale = 0;
                 _endGameCanvas.gameObject.SetActive(true);
 
@@ -67,24 +63,25 @@ public class EndGameScript : MonoBehaviour
                 newScore = (float)(Mathf.Round(newScore * 100) / 100.0);
                 scoreGUI.text = $"Your score: {newScore}";
 
-                string _highscore;
-                if (!File.Exists(SaveFilePath))
-                {
-                    highscore.Players = new List<PlayerInfo> { new PlayerInfo("Player#" + UnityEngine.Random.Range(1000, 10000), newScore) };
-                    _highscore = JsonUtility.ToJson(highscore);
-                    File.WriteAllText(SaveFilePath, _highscore);
+                if (!File.Exists(saveFilePath))
                     return;
+
+                var pullData = File.ReadAllText(saveFilePath);
+                highscore = JsonUtility.FromJson<Highscore>(pullData);
+
+                if (highscore.Players.Count == 0)
+                {
+                    _inputField.gameObject.SetActive(true);
                 }
                 else
                 {
-                    _highscore = File.ReadAllText(SaveFilePath);
-                    highscore = JsonUtility.FromJson<Highscore>(_highscore);
+                    var index = highscore.Players.Count - 1;
 
-                    highscore.Players.Add(new PlayerInfo("Player#" + UnityEngine.Random.Range(1000, 10000), newScore));
-                    highscore.Players = highscore.Players.OrderByDescending(x => x.score).ToList();
+                    while (index != -1 && highscore.Players[index].score < newScore)
+                        index--;
 
-                    _highscore = JsonUtility.ToJson(highscore);
-                    File.WriteAllText(SaveFilePath, _highscore);
+                    if (index != highscore.Players.Count - 1)
+                       _inputField.gameObject.SetActive(true);  
                 }
             }
         }
@@ -92,6 +89,7 @@ public class EndGameScript : MonoBehaviour
 
     public void OnMainMenuButtonPressed()
     {
+        Debug.Log("merge");
         _endGameCanvas.gameObject.SetActive(false);
         SceneManager.LoadScene("MainMenuScene");
     }
@@ -100,5 +98,36 @@ public class EndGameScript : MonoBehaviour
     {
         newName = input;
         _inputField.interactable = false;
+
+        PlayerInfo newPlayer = new PlayerInfo();
+        newPlayer.name = newName;
+        newPlayer.score = newScore;
+
+        if (highscore.Players.Count == 0)
+        {
+            highscore.Players.Add(newPlayer);
+            var pushData = JsonUtility.ToJson(highscore);
+            File.WriteAllText(saveFilePath, pushData);
+        }
+        else
+        {
+            var index = highscore.Players.Count - 1;
+
+            while (index != -1 && highscore.Players[index].score < newScore)
+                index--;
+
+            if (highscore.Players.Count != 5)
+                highscore.Players.Add(highscore.Players[highscore.Players.Count - 1]);
+
+            for (var j = highscore.Players.Count - 1; j > index + 1; j--)
+                highscore.Players[j] = highscore.Players[j - 1];
+
+
+            if (index != highscore.Players.Count - 1)
+                highscore.Players[index + 1] = newPlayer;
+
+            var pushData = JsonUtility.ToJson(highscore);
+            File.WriteAllText(saveFilePath, pushData);
+        }
     }
 }

@@ -37,42 +37,42 @@ public struct IntRange
     }
 }
 
-//the layout for the interval struct
-[CustomPropertyDrawer(typeof(IntRange))]
-public class IntRangeDrawerUIE : PropertyDrawer
-{
-    // Draw the property inside the given rect
-    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
-    {
-        // Using BeginProperty / EndProperty on the parent property means that
-        // prefab override logic works on the entire property.
-        EditorGUI.BeginProperty(position, label, property);
+// //the layout for the interval struct
+// [CustomPropertyDrawer(typeof(IntRange))]
+// public class IntRangeDrawerUIE : PropertyDrawer
+// {
+//     // Draw the property inside the given rect
+//     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+//     {
+//         // Using BeginProperty / EndProperty on the parent property means that
+//         // prefab override logic works on the entire property.
+//         EditorGUI.BeginProperty(position, label, property);
 
-        // Draw label
-        position = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Passive), label);
+//         // Draw label
+//         position = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Passive), label);
 
-        // Don't make child fields be indented
-        var indent = EditorGUI.indentLevel;
-        EditorGUI.indentLevel = 0;
+//         // Don't make child fields be indented
+//         var indent = EditorGUI.indentLevel;
+//         EditorGUI.indentLevel = 0;
 
-        // Calculate rects
-        var fromRectLabel = new Rect(position.x, position.y, 30, position.height);
-        var fromRect = new Rect(position.x + 35, position.y, 50, position.height);
-        var toRectLabel = new Rect(position.x + 90, position.y, 20, position.height);
-        var toRect = new Rect(position.x + 115, position.y, 50, position.height);
+//         // Calculate rects
+//         var fromRectLabel = new Rect(position.x, position.y, 30, position.height);
+//         var fromRect = new Rect(position.x + 35, position.y, 50, position.height);
+//         var toRectLabel = new Rect(position.x + 90, position.y, 20, position.height);
+//         var toRect = new Rect(position.x + 115, position.y, 50, position.height);
 
-        // Draw fields - pass GUIContent.none to each so they are drawn without labels
-        EditorGUI.LabelField(fromRectLabel, "From");
-        EditorGUI.PropertyField(fromRect, property.FindPropertyRelative("from"), GUIContent.none);
-        EditorGUI.LabelField(toRectLabel, "To");
-        EditorGUI.PropertyField(toRect, property.FindPropertyRelative("to"), GUIContent.none);
+//         // Draw fields - pass GUIContent.none to each so they are drawn without labels
+//         EditorGUI.LabelField(fromRectLabel, "From");
+//         EditorGUI.PropertyField(fromRect, property.FindPropertyRelative("from"), GUIContent.none);
+//         EditorGUI.LabelField(toRectLabel, "To");
+//         EditorGUI.PropertyField(toRect, property.FindPropertyRelative("to"), GUIContent.none);
 
-        // Set indent back to what it was
-        EditorGUI.indentLevel = indent;
+//         // Set indent back to what it was
+//         EditorGUI.indentLevel = indent;
 
-        EditorGUI.EndProperty();
-    }
-}
+//         EditorGUI.EndProperty();
+//     }
+// }
 
 //informations for building special paths
 [Serializable]

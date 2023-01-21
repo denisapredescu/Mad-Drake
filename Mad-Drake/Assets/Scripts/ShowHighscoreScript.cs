@@ -22,6 +22,7 @@ public class ShowHighscoreScript : MonoBehaviour
 
     void Start()
     {
+        Debug.Log(saveFilePath);
         Highscore highscore = new();
 
         if(File.Exists(saveFilePath))
@@ -29,8 +30,7 @@ public class ShowHighscoreScript : MonoBehaviour
             string pullData = File.ReadAllText(saveFilePath);
             highscore = JsonUtility.FromJson<Highscore>(pullData);
         }
-
-        if (highscore.Players.Count >= 1)
+        if (highscore.Players != null && highscore.Players.Count >= 1)
         {
             name1.text = highscore.Players[0].name;
             score1.text = highscore.Players[0].score.ToString();
@@ -41,7 +41,7 @@ public class ShowHighscoreScript : MonoBehaviour
             score1.text = "";
         }
 
-        if (highscore.Players.Count >= 2)
+        if (highscore.Players != null && highscore.Players.Count >= 2)
         {
             name2.text = highscore.Players[1].name;
             score2.text = highscore.Players[1].score.ToString();
@@ -52,7 +52,7 @@ public class ShowHighscoreScript : MonoBehaviour
             score2.text = "";
         }
 
-        if (highscore.Players.Count >= 3)
+        if (highscore.Players != null && highscore.Players.Count >= 3)
         {
             name3.text = highscore.Players[2].name;
             score3.text = highscore.Players[2].score.ToString();
@@ -63,7 +63,7 @@ public class ShowHighscoreScript : MonoBehaviour
             score3.text = "";
         }
 
-        if (highscore.Players.Count >= 4)
+        if (highscore.Players != null && highscore.Players.Count >= 4)
         {
             name4.text = highscore.Players[3].name;
             score4.text = highscore.Players[3].score.ToString();
@@ -74,7 +74,7 @@ public class ShowHighscoreScript : MonoBehaviour
             score4.text = "";
         }
 
-        if (highscore.Players.Count == 5)
+        if (highscore.Players != null && highscore.Players.Count == 5)
         {
             name5.text = highscore.Players[4].name;
             score5.text = highscore.Players[4].score.ToString();
